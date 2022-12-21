@@ -1,0 +1,1 @@
+(()=>{var e;(e=document.createElement("b")).innerHTML="hello",document.body.appendChild(e)})();
