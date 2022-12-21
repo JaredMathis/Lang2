@@ -2,14 +2,14 @@ import datetime
 import os
 import inspect
 
-def system_command(command):
+def system_command(command, after_each=None):
     print(os.system(command))
+    if after_each != None:
+        after_each(c)
 
-def system_commands(commands, after_each=None):
+def system_commands(commands, after_each):
     for c in commands:
-        system_command(c)
-        if after_each != None:
-            after_each(c)
+        system_command(c, after_each)
 
 def git_acp(message):
     system_commands([
