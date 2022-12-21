@@ -1,5 +1,7 @@
 from pycro_common import *
 
+gitignore_only = True
+
 gitignore = '.gitignore'
 lines = [
     'node_modules',
@@ -8,6 +10,9 @@ lines = [
 git_command(lambda: file_create_if_no_exists(gitignore, """"""))
 for line in lines:
     git_command(lambda: file_append_if_not_exists(gitignore, line))
+
+if gitignore_only:
+    exit()
 
 directories = [
     './src',
