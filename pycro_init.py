@@ -1,6 +1,6 @@
 from pycro_common import *
 
-gitignore_only = True
+gitignore_only = False
 
 gitignore = '.gitignore'
 lines = [
