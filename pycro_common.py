@@ -35,7 +35,7 @@ def file_append_if_not_exists(my_path, line):
     f = open(my_path, 'w')
     lines.append(line)
     print(lines)
-    f.writelines(lines)
+    f.writelines(lines, '\n')
     return True
 
 def git_command(fun):
