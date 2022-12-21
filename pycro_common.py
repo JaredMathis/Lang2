@@ -20,11 +20,22 @@ def git_acp(message):
 
 def file_create_if_no_exists(my_path, contents_init):
     if os.path.exists(my_path):
-        return
-    else:
-        f = open(my_path, 'w')
-        f.write(contents_init)
-        return True
+        return False
+    f = open(my_path, 'w')
+    f.write(contents_init)
+    f.close()
+    return True
+
+def file_append_if_not_exists(my_path, line):
+    f = open(my_path, 'r')
+    lines = f.readlines()
+    f.close()
+    if line in lines:
+        return False
+    f = open(my_path, 'a')
+    f.writelines([line])
+    f.close()
+    return True
 
 def git_command(fun):
     source = inspect.getsource(fun)

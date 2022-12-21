@@ -1,6 +1,13 @@
 from pycro_common import *
 
-git_command(lambda: file_create_if_no_exists('.gitignore', """node_modules"""))
+gitignore = '.gitignore'
+lines = [
+    'node_modules',
+    '__pycache__',
+]
+git_command(lambda: file_create_if_no_exists(gitignore, """"""))
+for line in lines:
+    file_append_if_not_exists(gitignore, line)
 
 directories = [
     './src',
