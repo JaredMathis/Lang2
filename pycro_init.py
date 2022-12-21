@@ -1,17 +1,21 @@
+import datetime
 import os
 import inspect
+
 
 def system_command(command):
     print(os.system(command))
 
-def system_commands(commands):
+def system_commands(commands, after_each=None):
     for c in commands:
         system_command(c)
+        if after_each != None:
+            after_each(c)
 
 def git_acp(message):
     system_commands([
         'git add *',
-        f'git commit -m "{message}"',
+        f'git commit -m "{datetime.datetime.now()} {message}"',
         'git push',
     ])
 
@@ -31,8 +35,6 @@ def git_command(fun):
         print(f'{source} returned False')
 
 git_command(lambda: file_create_if_no_exists('.gitignore', """node_modules"""))
-
-exit()
 
 def dir_create_if_not_exists(my_path):
     if os.path.exists(my_path):
@@ -55,4 +57,4 @@ system_commands([
     # 'npm install -g n',
     # 'npm install -g npm@latest',
     'npm i webpack -D'
-])
+], git_acp)
