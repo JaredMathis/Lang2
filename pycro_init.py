@@ -6,5 +6,4 @@ def dir_create_if_not_exists(my_path):
     else:
         os.makedirs(my_path)
 
-
 dir_create_if_not_exists('./src')
