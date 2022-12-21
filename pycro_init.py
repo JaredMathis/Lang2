@@ -46,6 +46,7 @@ directories = [
     './src',
     './src/js',
     './src/py',
+    './dist'
 ]
 for d in directories:
     dir_create_if_not_exists(d)
