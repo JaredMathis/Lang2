@@ -17,5 +17,6 @@ system_commands([
     # 'npm cache clean -f',
     # 'npm install -g n',
     # 'npm install -g npm@latest',
-    'npm i webpack -D'
+    'npm i webpack -D',
+    'npm install -D webpack-cli',
 ], git_acp)
