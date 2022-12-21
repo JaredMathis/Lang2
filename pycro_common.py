@@ -33,7 +33,8 @@ def file_append_if_not_exists(my_path, line):
     if line in lines:
         return False
     f = open(my_path, 'a')
-    f.writelines(['', line])
+    lines.append(line)
+    f.writelines(lines)
     f.close()
     return True
 
