@@ -1,0 +1,1 @@
+{"version": 3, "mappings": ";AAAAA,IAAIC,QAAAC,cAAA,CAAuB,GAAvB;AACJF,CAAAG,aAAc;AACdF,QAAAG,KAAAC,YAAA,CAA0BL,CAA1B", "sources": ["..\\py\\main.py"], "names": ["b", "document", "document.createElement", "b.innerHTML", "document.body", "document.body.appendChild"], "sourcesContent": ["b = document.createElement('b')\nb.innerHTML = 'hello'\ndocument.body.appendChild(b)"]}
