@@ -5,9 +5,9 @@ import inspect
 def system_command(command, after_each=None):
     print(os.system(command))
     if after_each != None:
-        after_each(c)
+        after_each(command)
 
-def system_commands(commands, after_each):
+def system_commands(commands, after_each=None):
     for c in commands:
         system_command(c, after_each)
 
@@ -33,7 +33,7 @@ def file_append_if_not_exists(my_path, line):
     if line in lines:
         return False
     f = open(my_path, 'a')
-    f.writelines([line])
+    f.writelines(['', line])
     f.close()
     return True
 

@@ -7,7 +7,7 @@ lines = [
 ]
 git_command(lambda: file_create_if_no_exists(gitignore, """"""))
 for line in lines:
-    file_append_if_not_exists(gitignore, line)
+    git_command(lambda: file_append_if_not_exists(gitignore, line))
 
 directories = [
     './src',
