@@ -32,11 +32,9 @@ def file_append_if_not_exists(my_path, line):
     f.close()
     if line in lines:
         return False
-    f = open(my_path, 'a')
+    f = open(my_path, 'w')
     lines.append(line)
-    print('hi', lines, line)
     f.writelines(lines)
-    f.close()
     return True
 
 def git_command(fun):
