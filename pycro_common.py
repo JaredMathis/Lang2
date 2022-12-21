@@ -34,7 +34,7 @@ def file_append_if_not_exists(my_path, line):
         return False
     f = open(my_path, 'a')
     lines.append(line)
-    print('hi', lines)
+    print('hi', lines, line)
     f.writelines(lines)
     f.close()
     return True
