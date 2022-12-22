@@ -1,4 +1,5 @@
 from browser import *
+from languages import *
 
 def element_full_width(b):
     b.style.width = '100%'
@@ -49,10 +50,6 @@ mistakes = []
 def on_learn():
     print('here on learn')
 
-
-languages = [{
-    "name": "Spanish",
-}]
 
 def home():
     document <= element_chooser(
