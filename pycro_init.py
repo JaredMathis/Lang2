@@ -15,9 +15,6 @@ if gitignore_only:
     exit()
 
 directories = [
-    './src',
-    './src/js',
-    './src/py',
     './dist'
 ]
 for d in directories:
@@ -25,10 +22,22 @@ for d in directories:
 
 system_commands([
     'C:\Python310\python.exe -m pip install --upgrade pip',
-    'pip install javascripthon',
-    # 'npm cache clean -f',
-    # 'npm install -g n',
-    # 'npm install -g npm@latest',
-    'npm i webpack -D',
-    'npm install -D webpack-cli',
+    'npm i http-server -D',
 ], git_acp)
+
+git_command(lambda:file_create_if_no_exists('./dist/index.html', """
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js">
+        </script>
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js">
+        </script>
+    </head>
+    <body onload="brython()">
+    <script type="text/python" src="main.py"></script>
+    </body>
+</html>
+"""))

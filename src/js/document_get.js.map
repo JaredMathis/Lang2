@@ -1,1 +1,0 @@
-{"version": 3, "mappings": "AAAA;IACI,OAAOA;AADX", "sources": ["..\\py\\document_get.py"], "names": ["document"], "sourcesContent": ["def document_get():\n    return document"]}
