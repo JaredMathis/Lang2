@@ -23,4 +23,7 @@ languages = [{
     "name": "Spanish"
 }]
 
-document <= element_chooser(languages, lambda c:c["name"], lambda c:None)
+document <= element_chooser(
+    languages, 
+    lambda c:c["name"], 
+    lambda c:None)
