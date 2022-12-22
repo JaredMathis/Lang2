@@ -1,4 +1,4 @@
-from py.document_get import document_get
+from document_get import document_get
 
 
 tag_name = 'b'
