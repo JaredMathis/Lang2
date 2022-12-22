@@ -1,4 +1,7 @@
+from py.document_get import document_get
+
+
 tag_name = 'b'
-b = document.createElement(tag_name)
+b = document_get().createElement(tag_name)
 b.innerHTML = 'hello'
-document.body.appendChild(b)
+document_get().body.appendChild(b)
