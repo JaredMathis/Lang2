@@ -1,1 +1,0 @@
-(()=>{var e;(e=document_get().createElement("b")).innerHTML="hello",document_get().body.appendChild(e)})();
