@@ -19,11 +19,25 @@ def element_chooser(choices, label_get, on_choice):
         chooser <= b
     return chooser
 
+def name_get(x):
+    return x["name"]
+
+def on_choose_language(ev):
+    main_choices = [{
+        "name":"Learn",
+    },{
+        "name":"Read",
+    },]
+    document <= element_chooser(
+        main_choices, 
+        name_get, 
+        lambda c:None)
+
 languages = [{
     "name": "Spanish"
 }]
 
 document <= element_chooser(
     languages, 
-    lambda c:c["name"], 
-    lambda c:None)
+    name_get, 
+    on_choose_language)
