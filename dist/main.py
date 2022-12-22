@@ -37,11 +37,12 @@ def on_choose_language(ev):
         "choose": on_learn
     }, {
         "name":"Read",
+        "choose": lambda:None
     },]
     document <= element_chooser(
         main_choices, 
         name_get, 
-        lambda c:print_me(c)["choose"]())
+        lambda c:c["choose"]())
 
 mistakes = []
 
