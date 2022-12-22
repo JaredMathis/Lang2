@@ -2,6 +2,8 @@ import os
 from languages import *
 import json
 
+books = ["59"]
+
 path_bible_versions = os.path.join('..', 'BibleVersions')
 path_bible_versions_public = os.path.join(path_bible_versions, 'public')
 
@@ -9,10 +11,10 @@ filter_letters = ".,:;¿?()\xad![]\n01\""
 
 for l in languages:
     letters = {}
-    words = {}
+    words = []
     path = os.path.join(path_bible_versions_public, l["path"]["bible"])
     for dir in os.listdir(path):
-        if dir.isnumeric():
+        if dir.isnumeric() and (len(books) == 0 or dir in books):
             book_path = os.path.join(path, dir)
             for dir in os.listdir(book_path):
                 chapter_path = os.path.join(book_path, dir)
@@ -22,10 +24,11 @@ for l in languages:
                         for t in p["tokens"]:
                             for r in filter_letters:
                                 t = t.replace(r, '').lower()
-                            words[t] = True
+                            if not t in words:
+                                words.append(t)
                             for l in t:
                                 letters[l] = True
     print(letters.keys())
-    print(len(words))
+    print(words)
 
 
