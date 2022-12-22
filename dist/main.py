@@ -12,10 +12,10 @@ def element_button(text, on_click):
 def element_chooser(choices, label_get, on_choice):
     chooser = html.DIV()
     for choice in choices:
-        def on_click_language(ev):
+        def on_click_choice(ev):
             chooser.remove()
             on_choice(choice)
-        b = element_button(label_get(choice), on_click_language)
+        b = element_button(label_get(choice), on_click_choice)
         chooser <= b
     return chooser
 
