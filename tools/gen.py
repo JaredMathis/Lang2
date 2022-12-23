@@ -36,7 +36,8 @@ for l in languages:
     language_name = l["name"]
     file_json_write(os.path.join('bucket', 'words', language_path_bible + '.json'), words)
 
-
-
+path = 'bucket/translations/es_en.json'
+o = file_json_read(path)
+file_json_write(path, o)
 
 

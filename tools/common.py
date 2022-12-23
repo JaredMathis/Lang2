@@ -15,3 +15,8 @@ def json_to(result):
 def file_json_write(path, object):
     with open(path, 'w', encoding="utf-8") as f:
         f.write(json_to(object))
+
+def file_json_read(path):
+    with open(path, 'r', encoding="utf-8") as f:
+        return json.loads(f.read())
+
