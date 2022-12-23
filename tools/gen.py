@@ -34,7 +34,7 @@ for l in languages:
     #print(words)
 
     language_name = l["name"]
-    file_json_write(os.path.join('bucket', language_path_bible + '.json'), words)
+    file_json_write(os.path.join('bucket', 'words', language_path_bible + '.json'), words)
 
 
 
