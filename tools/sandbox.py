@@ -1,7 +1,7 @@
 from google.cloud import translate
 import os
 
-os['GOOGLE_APPLICATION_CREDENTIALS'] = 'gitignore/key.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'gitignore/key.json'
 
 # Initialize Translation client
 def translate_text(text, source_language_code, target_language_code):
