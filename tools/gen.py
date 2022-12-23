@@ -46,8 +46,6 @@ for l in languages:
         if word in translations:
             continue
         translations[word] = gcloud_translate(word, language_code, target_language_code)
-        file_json_write(translations_path, translations)
-        exit()
 
     file_json_write(translations_path, translations)
 
