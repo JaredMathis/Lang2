@@ -23,13 +23,14 @@ for l in languages:
                     parsed = json.load(f)
                     for p in parsed:
                         for t in p["tokens"]:
+                            t = t.lower()
                             for r in filter_letters:
-                                t = t.replace(r, '').lower()
+                                t = t.replace(r, '')
                             if not t in words:
                                 words.append(t)
                             for letter in t:
                                 letters[letter] = True
-    #print(letters.keys())
+    print(''.join(letters.keys()))
     #print(words)
 
     language_name = l["name"]
