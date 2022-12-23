@@ -14,7 +14,6 @@ def gcloud_translate(text, source_language_code, target_language_code):
 
     parent = f"projects/{project_id}/locations/{location}"
 
-    # Translate text from English to French
     # Detail on supported types can be found here:
     # https://cloud.google.com/translate/docs/supported-formats
     response = client.translate_text(
