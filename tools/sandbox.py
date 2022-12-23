@@ -1,10 +1,13 @@
 from google.cloud import translate
+import os
+
+os['GOOGLE_APPLICATION_CREDENTIALS'] = 'gitignore/key.json'
 
 # Initialize Translation client
 def translate_text(text, source_language_code, target_language_code):
     """Translating Text."""
 
-    client = translate.TranslationServiceClient('gitignore/key.json')
+    client = translate.TranslationServiceClient()
 
     project_id = 'peaceful-garden-346121'
     location = 'global'
