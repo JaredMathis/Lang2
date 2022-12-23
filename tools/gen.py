@@ -2,7 +2,7 @@ import os
 from common import *
 import json
 
-from tools.gcloud import gcloud_translate
+from gcloud import gcloud_translate
 
 books = ["59"]
 
@@ -48,7 +48,7 @@ for l in languages:
         translations[word] = gcloud_translate(word, language_code, target_language_code)
         file_json_write(translations_path, translations)
         exit()
-        
+
     file_json_write(translations_path, translations)
 
 
