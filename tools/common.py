@@ -5,7 +5,8 @@ languages = [{
     "name": "Spanish",
     "path": {
         "bible": "wordproject/sp"
-    }
+    },
+    "code": "es",
 }]
 
 def json_to(result):

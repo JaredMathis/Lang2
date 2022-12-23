@@ -35,10 +35,11 @@ for l in languages:
                             for letter in t:
                                 letters[letter] = True
     print(''.join(letters.keys()))
-    #print(words)
 
     language_name = l["name"]
     file_json_write(os.path.join('bucket', 'words', language_path_bible + '.json'), words)
+
+    
 
 
 
