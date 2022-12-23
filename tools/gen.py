@@ -1,5 +1,5 @@
 import os
-from languages import *
+from common import *
 import json
 
 books = ["59"]
@@ -28,7 +28,12 @@ for l in languages:
                                 words.append(t)
                             for l in t:
                                 letters[l] = True
-    print(letters.keys())
-    print(words)
+    #print(letters.keys())
+    #print(words)
+
+    with open(os.path.join('bucket', l["name"]), 'w') as f:
+        f.write(json_to(words))
+
+
 
 
