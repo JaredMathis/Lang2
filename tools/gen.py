@@ -19,7 +19,7 @@ for l in languages:
     language_path_bible = l["path"]["bible"]
     language_code = l["code"]
     translations_path = f'bucket/translations/{language_code}_{target_language_code}.json'
-    translations = file_json_read(path)
+    translations = file_json_read(translations_path)
     path = os.path.join(path_bible_versions_public, language_path_bible)
     for dir in os.listdir(path):
         if dir.isnumeric() and (len(books) == 0 or dir in books):
