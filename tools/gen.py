@@ -9,6 +9,10 @@ path_bible_versions_public = os.path.join(path_bible_versions, 'public')
 
 filter_letters = ".,:;¿?()\xad![]\n01\""
 
+path = 'bucket/translations/es_en.json'
+o = file_json_read(path)
+file_json_write(path, o)
+
 for l in languages:
     letters = {}
     words = []
@@ -36,8 +40,5 @@ for l in languages:
     language_name = l["name"]
     file_json_write(os.path.join('bucket', 'words', language_path_bible + '.json'), words)
 
-path = 'bucket/translations/es_en.json'
-o = file_json_read(path)
-file_json_write(path, o)
 
 
