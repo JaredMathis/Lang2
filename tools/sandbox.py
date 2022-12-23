@@ -4,7 +4,7 @@ import os
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'gitignore/key.json'
 
 # Initialize Translation client
-def translate_text(text, source_language_code, target_language_code):
+def gcloud_translate(text, source_language_code, target_language_code):
     """Translating Text."""
 
     client = translate.TranslationServiceClient()
@@ -27,8 +27,6 @@ def translate_text(text, source_language_code, target_language_code):
         }
     )
 
-    # Display the translation for each input text provided
-    for translation in response.translations:
-        print("Translated text: {}".format(translation.translated_text))
+    return [x for x in map(lambda t:t.translated_text, response.translations)]
 
-translate_text("hello", "en-US", "fr")
+print(gcloud_translate("hello", "en-US", "fr"))
