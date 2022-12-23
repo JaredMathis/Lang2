@@ -2,6 +2,8 @@ import os
 from common import *
 import json
 
+from tools.gcloud import gcloud_translate
+
 books = ["59"]
 
 path_bible_versions = os.path.join('..', 'BibleVersions')
@@ -9,14 +11,15 @@ path_bible_versions_public = os.path.join(path_bible_versions, 'public')
 
 filter_letters = ".,:;¿?()\xad![]\n01\""
 
-path = 'bucket/translations/es_en.json'
-o = file_json_read(path)
-file_json_write(path, o)
+target_language_code = "en"
 
 for l in languages:
     letters = {}
     words = []
     language_path_bible = l["path"]["bible"]
+    language_code = l["code"]
+    translations_path = f'bucket/translations/{language_code}_{target_language_code}.json'
+    translations = file_json_read(path)
     path = os.path.join(path_bible_versions_public, language_path_bible)
     for dir in os.listdir(path):
         if dir.isnumeric() and (len(books) == 0 or dir in books):
@@ -39,7 +42,14 @@ for l in languages:
     language_name = l["name"]
     file_json_write(os.path.join('bucket', 'words', language_path_bible + '.json'), words)
 
-    
+    for word in words:
+        if word in translations:
+            continue
+        translations[word] = gcloud_translate(word, language_code, target_language_code)
+        file_json_write(translations_path, translations)
+        exit()
+        
+    file_json_write(translations_path, translations)
 
 
 

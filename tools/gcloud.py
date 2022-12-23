@@ -28,4 +28,4 @@ def gcloud_translate(text, source_language_code, target_language_code):
 
     return [x for x in map(lambda t:t.translated_text, response.translations)]
 
-print(gcloud_translate("hello", "en-US", "fr"))
+# print(gcloud_translate("hello", "en-US", "fr"))
