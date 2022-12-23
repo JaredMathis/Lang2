@@ -12,7 +12,8 @@ filter_letters = ".,:;¿?()\xad![]\n01\""
 for l in languages:
     letters = {}
     words = []
-    path = os.path.join(path_bible_versions_public, l["path"]["bible"])
+    language_path_bible = l["path"]["bible"]
+    path = os.path.join(path_bible_versions_public, language_path_bible)
     for dir in os.listdir(path):
         if dir.isnumeric() and (len(books) == 0 or dir in books):
             book_path = os.path.join(path, dir)
@@ -26,12 +27,14 @@ for l in languages:
                                 t = t.replace(r, '').lower()
                             if not t in words:
                                 words.append(t)
-                            for l in t:
-                                letters[l] = True
+                            for letter in t:
+                                letters[letter] = True
     #print(letters.keys())
     #print(words)
 
-    with open(os.path.join('bucket', l["name"]), 'w') as f:
+    language_name = l["name"]
+    print(language_name)
+    with open(os.path.join('bucket', language_path_bible + '.json'), 'w', encoding="utf-8") as f:
         f.write(json_to(words))
 
 
