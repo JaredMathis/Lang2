@@ -33,7 +33,7 @@ async function screen_language() {
     button(document.body, "Read", ev => screen_read());
     let name = language_current["name"];
     language_current_words = await http_get(file_path_get("words%2F" + name + ".json"));
-    console.log(language_current_words);
+    learn_choice_stack = [{low: 1, high: language_current_words.length}]
 }
 
 function screen_home_non(back_on_click) {
