@@ -3,7 +3,9 @@ from browser import html
 import json
 
 def button(parent, text):
-    parent <= html.BUTTON(text)
+    b = html.BUTTON(text)
+    b.style["width"] = "100%"
+    parent <= b
 
 
 file_path = "https://firebasestorage.googleapis.com/v0/b/wlj-lang.appspot.com/o/languages.json?alt=media&"
