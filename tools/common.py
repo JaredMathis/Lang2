@@ -11,7 +11,7 @@ cred = credentials.Certificate(os.path.join(directory_gitignore, 'firebasecreds.
 firebase_admin.initialize_app(cred)
 
 # Get a reference to the Cloud Storage bucket
-bucket = storage.bucket('wlj-bible-versions.appspot.com')
+bucket = storage.bucket('wlj-lang.appspot.com')
 
 delete_firebase_blobs = False
 file_json_write_first_only = False
