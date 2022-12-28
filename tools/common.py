@@ -1,5 +1,11 @@
 import json
+import os
 
+
+bible_version_books = ["59"]
+
+path_bible_versions = os.path.join('..', 'BibleVersions')
+path_bible_versions_public = os.path.join(path_bible_versions, 'public')
 
 languages = [{
     "name": "Spanish",

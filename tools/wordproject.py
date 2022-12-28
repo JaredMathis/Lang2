@@ -4,10 +4,6 @@ import json
 
 from gcloud import gcloud_translate
 
-bible_version_books = ["59"]
-
-path_bible_versions = os.path.join('..', 'BibleVersions')
-path_bible_versions_public = os.path.join(path_bible_versions, 'public')
 
 filter_letters = ".,:;¿?()\xad![]\n01\""
 
