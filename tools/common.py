@@ -57,7 +57,7 @@ def file_write(file_path, result, bytes=False, transform=None):
         if bytes:
             with open(file_path, "wb") as out:
                 # Write the response to the output file.
-                out.write(result)
+                out.write(j)
         else:
             with open(file_path, 'w', encoding='utf-8') as output:
                 output.write(j)
