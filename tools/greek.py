@@ -13,5 +13,10 @@ for child in root:
             words.append(word_result)
             for prop in word:
                 if prop.tag == "strongs":
-                    word_result["strongs"] = prop.text
+                    word_result["id"] = prop.text
+                elif prop.tag == "strongs_def":
+                    word_result["definition"] = prop.text.strip()
+                elif prop.tag == "greek":
+                    word_result["word"] = prop.get("unicode")
+                    word_result["transliteration"] = prop.get("translit")
             print(word_result)
