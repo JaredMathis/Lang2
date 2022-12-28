@@ -1,6 +1,7 @@
 from google.cloud import translate
 import os
 import base64
+from common import *
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'gitignore/key.json'
 
@@ -63,10 +64,6 @@ def gcloud_tts(text, language_code):
         input=synthesis_input, voice=voice, audio_config=audio_config
     )
 
-    # The response's audio_content is binary.
-    with open(file_name_string, "wb") as out:
-        # Write the response to the output file.
-        out.write(response.audio_content)
-        print('Audio content written to file ' + file_name_string)
-    
+    file_write(file_name_string, response.audio_content, True)
+
     exit()

@@ -43,7 +43,7 @@ def json_to(result):
     j = json.dumps(result, ensure_ascii=False, indent=4)
     return j
 
-def file_write(file_path, result, transform=None):
+def file_write(file_path, result, bytes=False, transform=None):
     # Create a new blob in the bucket
     blob = bucket.blob(file_path.replace('\\','/').replace('bucket/',''))
     if delete_firebase_blobs:
@@ -54,8 +54,14 @@ def file_write(file_path, result, transform=None):
             j = result
         else:
             j = transform(result)
-        with open(file_path, 'w', encoding='utf-8') as output:
-            output.write(j)
+        if bytes:
+            with open(file_path, "wb") as out:
+                # Write the response to the output file.
+                out.write(result)
+        else:
+            with open(file_path, 'w', encoding='utf-8') as output:
+                output.write(j)
+        print('Audio content written to file ' + file_path)
         if firebase_blobs_update:
             # Upload the file to the bucket
             blob.upload_from_filename(file_path)
