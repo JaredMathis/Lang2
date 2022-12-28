@@ -43,7 +43,7 @@ def json_to(result):
 
 def file_json_write(file_path, result):
     # Create a new blob in the bucket
-    blob = bucket.blob(file_path.replace('\\','/').replace('public/',''))
+    blob = bucket.blob(file_path.replace('\\','/').replace('bucket/',''))
     if delete_firebase_blobs:
         if blob.exists():
             blob.delete()
