@@ -53,11 +53,39 @@ let word_group_sizes = [
     5
 ]
 let depth_current = 0;
+let learn_choice_stack = [];
 
 async function screen_learn() {
     screen_home_non(screen_language);
-    button(document.body, "All");
-    console.log(language_current)
+    let choices = screen_learn_choices_get()
+    for (let choice of choices) {
+        button(document.body, `Learn words ${choice.low} to ${choice.high}`);
+    }
+    button(document.body, "Learn all words");
+}
+
+function list_last(list) {
+    return list[list.length - 1]
+}
+
+function screen_learn_choices_get() {
+    let word_group_size = word_group_sizes[depth_current];
+    let remaining = language_current_words.length;
+    let result = [];
+    let current = 1;
+    while (remaining > word_group_size) {
+        result.push({
+            low: current,
+            high: current + word_group_size - 1 
+        })
+        current += word_group_size;
+        remaining -= word_group_size;
+    }
+    result.push({
+        low: current,
+        high: current + remaining - 1
+    })
+    return result;
 }
 
 async function screen_todo() {
