@@ -78,8 +78,12 @@ function words_to_play_generate(choice) {
 let max_choices = 4
 
 function screen_play(choice) {
-    screen_home_non(screen_learn);
+    let screen_back = screen_learn;
+    screen_home_non(screen_back);
     let current = words_to_play.pop();
+    if (!current) {
+        screen_back();
+    }
     let front = "word";
     let back = "definition";
     if (Math.random() > 1/2) {
