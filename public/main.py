@@ -5,6 +5,7 @@ import json
 def button(parent, text):
     b = html.BUTTON(text)
     b.style["width"] = "100%"
+    b.style["font-size"] = "4vh"
     parent <= b
 
 
