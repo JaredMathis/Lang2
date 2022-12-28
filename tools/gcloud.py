@@ -65,5 +65,3 @@ def gcloud_tts(text, language_code):
     )
 
     file_write(file_name_string, response.audio_content, True)
-
-    exit()

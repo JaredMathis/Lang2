@@ -1,0 +1,19 @@
+[
+    {
+        "name": "Greek",
+        "path": {
+            "bible": "bsb"
+        },
+        "code": "gr",
+        "gcloud_translate": false,
+        "gcloud_code": "el-GR"
+    },
+    {
+        "name": "Spanish",
+        "path": {
+            "bible": "wordproject/sp"
+        },
+        "code": "es",
+        "gcloud_translate": true
+    }
+]

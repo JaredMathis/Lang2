@@ -14,7 +14,7 @@ firebase_admin.initialize_app(cred)
 bucket = storage.bucket('wlj-lang.appspot.com')
 
 delete_firebase_blobs = False
-firebase_blobs_update = False
+firebase_blobs_update = True
 file_json_write_first_only = False
 
 bible_version_books = ["59"]
@@ -61,7 +61,7 @@ def file_write(file_path, result, bytes=False, transform=None):
         else:
             with open(file_path, 'w', encoding='utf-8') as output:
                 output.write(j)
-        print('Audio content written to file ' + file_path)
+        print('Wrote to file ' + file_path)
         if firebase_blobs_update:
             # Upload the file to the bucket
             blob.upload_from_filename(file_path)
