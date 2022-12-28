@@ -25,7 +25,7 @@ let languages = await http_get(file_path_get("languages.json"))
 
 async function screen_language(language_current) {
     element_clear(document.body);
-    button(document.body, "Back", ev => main())
+    button(document.body, "Back", ev => screen_main())
     let name = language_current["name"];
     let words = await http_get(file_path_get("words%2F" + name + ".json"));
     console.log(words);
@@ -35,11 +35,11 @@ function element_clear(element) {
     element.innerHTML = '';
 }
 
-function main() {
+function screen_main() {
     element_clear(document.body);
     for (let l of languages) {
         button(document.body, l["name"], ev => screen_language(l))
     }
 }
 
-main()
+screen_main()
