@@ -26,12 +26,16 @@ for l in languages:
                     parsed = json.load(f)
                     for p in parsed:
                         for t in p["tokens"]:
-                            t = t.lower()
-                            for r in filter_letters:
-                                t = t.replace(r, '')
+                            if (type(t) != str):
+                                word = t["word"]
+                            else:
+                                word = t
+                                word = word.lower()
+                                for r in filter_letters:
+                                    word = word.replace(r, '')
                             if not t in words:
-                                words.append(t)
-                            for letter in t:
+                                words.append(word)
+                            for letter in word:
                                 letters[letter] = True
     print(''.join(letters.keys()))
 
