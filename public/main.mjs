@@ -142,9 +142,10 @@ function screen_practice(choice) {
     let choices_wrong = words_playable_shuffled_get(choice).filter(w => w !== current).slice(0, max_choices - 1);
 
     for (let word of list_shuffle([current].concat(choices_wrong))) {
-        let b = button(document.body, language_current_definitions[word][back], () => {
+        let b = button(document.body, language_current_definitions[word][back], async () => {
             if (word === current) {
                 b.style.color = 'green'
+                await audio_play(language_current["gcloud_code"], language_current_definitions[word]["word"])
                 screen_practice(choice);
             } else {
                 b.style.color = 'red'
