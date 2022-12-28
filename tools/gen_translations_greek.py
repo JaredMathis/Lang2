@@ -19,5 +19,13 @@ for child in root:
                 elif prop.tag == "greek":
                     word_result["word"] = prop.get("unicode")
                     word_result["transliteration"] = prop.get("translit")
+            if "definition" not in word_result:
+                for prop in word:
+                    if prop.tag == "kjv_def":
+                        word_result["definition"] = prop.text.strip()
+            if "definition" not in word_result:
+                for prop in word:
+                    if prop.tag == "strongs_derivation":
+                        word_result["definition"] = prop.text.strip()
 
 file_json_write('bucket/translations/gr_en.json', words)
