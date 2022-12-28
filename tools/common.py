@@ -70,7 +70,7 @@ def file_write(file_path, result, bytes=False, transform=None):
 
 
 def file_json_write(file_path, result):
-    return file_write(file_path, result, json_to)
+    return file_write(file_path, result, False, json_to)
 
 def file_json_read(path):
     with open(path, 'r', encoding="utf-8") as f:
