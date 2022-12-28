@@ -24,6 +24,7 @@ function http_get(url) {
 let languages = await http_get(file_path_get("languages.json"))
 
 let language_current;
+let language_current_words;
 
 async function screen_language() {
     element_clear(document.body);
@@ -31,8 +32,8 @@ async function screen_language() {
     button(document.body, "Learn", ev => screen_learn());
     button(document.body, "Read", ev => screen_read());
     let name = language_current["name"];
-    let words = await http_get(file_path_get("words%2F" + name + ".json"));
-    console.log(words);
+    language_current_words = await http_get(file_path_get("words%2F" + name + ".json"));
+    console.log(language_current_words);
 }
 
 function screen_home_non(back_on_click) {
@@ -46,9 +47,17 @@ async function screen_read() {
     button(document.body, "TODO")
 }
 
+let word_group_sizes = [
+    100,
+    25,
+    5
+]
+let depth_current = 0;
+
 async function screen_learn() {
     screen_home_non(screen_language);
-    button(document.body, "TODO")
+    button(document.body, "All");
+    console.log(language_current)
 }
 
 async function screen_todo() {
