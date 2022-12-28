@@ -27,7 +27,7 @@ for l in languages:
                     for p in parsed:
                         for t in p["tokens"]:
                             if (type(t) != str):
-                                word = t["word"]
+                                word = t["token"]
                             else:
                                 word = t
                                 word = word.lower()
