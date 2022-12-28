@@ -127,8 +127,8 @@ function text_words_low_high(choice) {
 }
 
 function screen_practice(choice) {
-    let screen_back = screen_pre_practice;
-    screen_home_non(screen_pre_practice);
+    let screen_back = () => screen_pre_practice(choice);
+    screen_home_non(screen_back);
     let current = words_to_play.pop();
     if (!current) {
         screen_back();
