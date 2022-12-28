@@ -4,7 +4,7 @@ import json
 
 from gcloud import gcloud_translate
 
-books = ["59"]
+bible_version_books = ["59"]
 
 path_bible_versions = os.path.join('..', 'BibleVersions')
 path_bible_versions_public = os.path.join(path_bible_versions, 'public')
@@ -22,7 +22,7 @@ for l in languages:
     translations = file_json_read(translations_path)
     path = os.path.join(path_bible_versions_public, language_path_bible)
     for dir in os.listdir(path):
-        if dir.isnumeric() and (len(books) == 0 or dir in books):
+        if dir.isnumeric() and (len(bible_version_books) == 0 or dir in bible_version_books):
             book_path = os.path.join(path, dir)
             for dir in os.listdir(book_path):
                 chapter_path = os.path.join(book_path, dir)
