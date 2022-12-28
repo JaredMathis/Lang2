@@ -47,7 +47,7 @@ for l in languages:
                 continue
             translations[word] = gcloud_translate(word, language_code, target_language_code)
 
-    file_json_write(translations_path, translations)
+        file_json_write(translations_path, translations)
 
 
 
