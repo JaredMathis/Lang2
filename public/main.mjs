@@ -172,7 +172,15 @@ function list_shuffle(array) {
   }
 
 function screen_learn() {
-    screen_home_non(screen_language);
+    screen_home_non(() => {
+        if (depth_current <= 0) {
+            screen_language();
+        } else {
+            depth_current--;
+            learn_choice_stack.pop();
+            screen_learn()
+        }
+    });
     let choices = screen_learn_choices_get()
     for (let choice of choices) {
         button(document.body, `Learn words ${choice.low} to ${choice.high}`, () => {
