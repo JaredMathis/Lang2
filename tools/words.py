@@ -33,7 +33,7 @@ for l in languages:
                                 word = word.lower()
                                 for r in filter_letters:
                                     word = word.replace(r, '')
-                            if not t in words:
+                            if not word in words:
                                 words.append(word)
                             for letter in word:
                                 letters[letter] = True
