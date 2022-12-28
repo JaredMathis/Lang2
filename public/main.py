@@ -8,7 +8,8 @@ def button(parent, text):
     b.style["font-size"] = "5vh"
     b.style["font-family"] = "Sans-Serif"
     b.style["border-radius"] = "2vh"
-    b.style["margin"] = "0.2vh 0 0.2vh"
+    margin = "0.2"
+    b.style["margin"] = f"{margin}vh 0 {margin}vh"
     parent <= b
 
 
