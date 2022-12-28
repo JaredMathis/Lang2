@@ -28,7 +28,8 @@ languages = [{
         "bible": "bsb"
     },
     "code": "gr",
-    "gcloud_translate": False
+    "gcloud_translate": False,
+    "gcloud_code": "el-GR",
 }, {
     "name": "Spanish",
     "path": {
