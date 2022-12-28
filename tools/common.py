@@ -13,6 +13,14 @@ languages = [{
         "bible": "wordproject/sp"
     },
     "code": "es",
+    "gcloud_translate": True
+}, {
+    "name": "Greek",
+    "path": {
+        "bible": "bsb"
+    },
+    "code": "gr",
+    "gcloud_translate": False
 }]
 
 def json_to(result):

@@ -38,10 +38,11 @@ for l in languages:
     language_name = l["name"]
     file_json_write(os.path.join('bucket', 'words', language_path_bible + '.json'), words)
 
-    for word in words:
-        if word in translations:
-            continue
-        translations[word] = gcloud_translate(word, language_code, target_language_code)
+    if l["gcloud_translate"]:
+        for word in words:
+            if word in translations:
+                continue
+            translations[word] = gcloud_translate(word, language_code, target_language_code)
 
     file_json_write(translations_path, translations)
 

@@ -1,6 +1,5 @@
 import xml.etree.ElementTree as ET
-
-from common import file_json_write
+from common import *
 
 # Parse the XML document
 tree = ET.parse('tools/bible/interlinear/strongsgreek.xml')
