@@ -4,7 +4,6 @@ import json
 
 from gcloud import gcloud_translate
 
-
 filter_letters = ".,:;¿?()\xad![]\n01\""
 
 target_language_code = "en"
