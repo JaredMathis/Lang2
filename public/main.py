@@ -20,6 +20,6 @@ languages = json.load(open(file_path))
 for l in languages:
     def on_click_get(l):
         def on_click(ev):
-            print(l["name"])
+            langauge_current = l
         return on_click
     button(document, l["name"], on_click_get(l))
