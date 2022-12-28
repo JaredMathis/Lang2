@@ -39,8 +39,7 @@ for l in languages:
                                     word = word.replace(r, '')
                             if not word in words:
                                 words.append(word)
-                                print('here')
-                                gcloud_tts(word, l["gcloud_code"])
+                                gcloud_tts(t["token"], l["gcloud_code"])
                             for letter in word:
                                 letters[letter] = True
     print(''.join(letters.keys()))
