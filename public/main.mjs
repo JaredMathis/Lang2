@@ -2,6 +2,7 @@ function button(parent, text, on_click) {
     let b = element(parent, "BUTTON", text);
     b.style["border-radius"] = "2vh";
     b.addEventListener("click", on_click);
+    return b;
 }
 
 function element(parent, tag_name, text) {
@@ -79,11 +80,23 @@ let max_choices = 4
 function screen_play(choice) {
     screen_home_non(screen_learn);
     let current = words_to_play.pop();
-    text(document.body, language_current_definitions[current]["word"]);
-    let choices_wrong = words_playable_get(choice).slice(0, max_choices).filter(w => w !== current);
+    let front = "word";
+    let back = "definition";
+    if (Math.random() > 1/2) {
+        [front, back] = [back, front]
+    }
+    text(document.body, language_current_definitions[current][front]);
+    let choices_wrong = words_playable_get(choice).filter(w => w !== current).slice(0, max_choices - 1);
 
     for (let word of list_shuffle([current].concat(choices_wrong))) {
-        button(document.body, language_current_definitions[word]["definition"]);
+        let b = button(document.body, language_current_definitions[word][back], () => {
+            if (word === current) {
+                b.style.color = 'green'
+                screen_play(choice);
+            } else {
+                b.style.color = 'red'
+            }
+        });
     }
 }
 
