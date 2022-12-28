@@ -55,13 +55,22 @@ let word_group_sizes = [
 let depth_current = 0;
 let learn_choice_stack = [];
 
-async function screen_learn() {
+function screen_learn() {
     screen_home_non(screen_language);
     let choices = screen_learn_choices_get()
     for (let choice of choices) {
-        button(document.body, `Learn words ${choice.low} to ${choice.high}`);
+        button(document.body, `Learn words ${choice.low} to ${choice.high}`, () => {
+            if (learn_choice_stack.length >= word_group_sizes.length) {
+                screen_todo(screen_learn);
+            } else {
+                depth_current++;
+                learn_choice_stack.push(choice);
+                screen_learn();
+            }
+        });
     }
-    button(document.body, "Learn all words");
+    let last = list_last(learn_choice_stack);
+    button(document.body, `Learn all words ${last.low} to ${last.high}`);
 }
 
 function list_last(list) {
@@ -69,10 +78,11 @@ function list_last(list) {
 }
 
 function screen_learn_choices_get() {
+    let last = list_last(learn_choice_stack);
     let word_group_size = word_group_sizes[depth_current];
-    let remaining = language_current_words.length;
+    let remaining = last.high - last.low + 1;
     let result = [];
-    let current = 1;
+    let current = last.low;
     while (remaining > word_group_size) {
         result.push({
             low: current,
@@ -88,8 +98,8 @@ function screen_learn_choices_get() {
     return result;
 }
 
-async function screen_todo() {
-    screen_home_non();
+function screen_todo(back_on_click) {
+    screen_home_non(back_on_click);
     button(document.body, "TODO")
 }
 
