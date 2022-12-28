@@ -14,6 +14,7 @@ firebase_admin.initialize_app(cred)
 bucket = storage.bucket('wlj-lang.appspot.com')
 
 delete_firebase_blobs = False
+firebase_blobs_update = False
 file_json_write_first_only = False
 
 bible_version_books = ["59"]
@@ -22,19 +23,19 @@ path_bible_versions = os.path.join('..', 'BibleVersions')
 path_bible_versions_public = os.path.join(path_bible_versions, 'public')
 
 languages = [{
-    "name": "Spanish",
-    "path": {
-        "bible": "wordproject/sp"
-    },
-    "code": "es",
-    "gcloud_translate": True
-}, {
     "name": "Greek",
     "path": {
         "bible": "bsb"
     },
     "code": "gr",
     "gcloud_translate": False
+}, {
+    "name": "Spanish",
+    "path": {
+        "bible": "wordproject/sp"
+    },
+    "code": "es",
+    "gcloud_translate": True
 }]
 
 def json_to(result):
@@ -51,8 +52,9 @@ def file_json_write(file_path, result):
         j = json_to(result)
         with open(file_path, 'w', encoding='utf-8') as output:
             output.write(j)
-        # Upload the file to the bucket
-        blob.upload_from_filename(file_path)
+        if firebase_blobs_update:
+            # Upload the file to the bucket
+            blob.upload_from_filename(file_path)
         if file_json_write_first_only:
             exit()
 
