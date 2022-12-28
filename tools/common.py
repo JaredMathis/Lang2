@@ -1,6 +1,20 @@
 import json
 import os
 
+directory_gitignore = 'gitignore'
+
+import firebase_admin
+from firebase_admin import storage
+from firebase_admin import credentials
+
+cred = credentials.Certificate(os.path.join(directory_gitignore, 'firebasecreds.json'))
+firebase_admin.initialize_app(cred)
+
+# Get a reference to the Cloud Storage bucket
+bucket = storage.bucket('wlj-bible-versions.appspot.com')
+
+delete_firebase_blobs = False
+file_json_write_first_only = False
 
 bible_version_books = ["59"]
 
@@ -27,9 +41,20 @@ def json_to(result):
     j = json.dumps(result, ensure_ascii=False, indent=4)
     return j
 
-def file_json_write(path, object):
-    with open(path, 'w', encoding="utf-8") as f:
-        f.write(json_to(object))
+def file_json_write(file_path, result):
+    # Create a new blob in the bucket
+    blob = bucket.blob(file_path.replace('\\','/').replace('public/',''))
+    if delete_firebase_blobs:
+        if blob.exists():
+            blob.delete()
+    else:
+        j = json_to(result)
+        with open(file_path, 'w', encoding='utf-8') as output:
+            output.write(j)
+        # Upload the file to the bucket
+        blob.upload_from_filename(file_path)
+        if file_json_write_first_only:
+            exit()
 
 def file_json_read(path):
     with open(path, 'r', encoding="utf-8") as f:
