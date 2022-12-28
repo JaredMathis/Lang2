@@ -8,7 +8,7 @@ filter_letters = ".,:;¿?()\xad![]\n01\""
 
 target_language_code = "en"
 
-file_json_write(os.path.join('bucket', 'langauges.json'), languages)
+file_json_write(os.path.join('bucket', 'languages.json'), languages)
 
 for l in languages:
     letters = {}
