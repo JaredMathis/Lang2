@@ -88,9 +88,26 @@ function screen_study(choice) {
     let words = words_playable_get(choice)
     for (let word of words) {
         let w= language_current_definitions[word];
-        let b = button(document.body, w["word"] + ": " + w["definition"], () => {
+        let b = button(document.body, w["word"] + ": " + w["definition"], async () => {
+            await audio_play(language_current["gcloud_code"], w["word"])
         });
     }
+}
+
+
+function audio(audio_language_code, translated) {
+    var audio = new Audio(file_path_get(`audio%2F${audio_language_code}%2F${translated}.mp3`));
+    return audio;
+}
+
+function audio_play(audio_language_code, translated) {
+    let a = audio(audio_language_code, translated);
+    return new Promise(resolve => {
+        a.play();
+        a.addEventListener('ended', async () => {
+            resolve();
+        })
+    })
 }
 
 function screen_pre_practice(choice) {
