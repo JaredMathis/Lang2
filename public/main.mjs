@@ -65,21 +65,53 @@ let depth_current = 0;
 let learn_choice_stack = [];
 let words_to_play;
 
-function words_playable_get(choice) {
-    let result = language_current_words.slice(choice.low - 1, choice.high);
+function words_playable_shuffled_get(choice) {
+    let result = words_playable_get(choice);
     list_shuffle(result);
     return result;
 }
 
-function words_to_play_generate(choice) {
-    words_to_play = words_playable_get(choice);
+function words_playable_get(choice) {
+    return language_current_words.slice(choice.low - 1, choice.high);
 }
 
-let max_choices = 4
+function words_to_play_generate(choice) {
+    words_to_play = words_playable_shuffled_get(choice);
+}
 
-function screen_play(choice) {
+let max_choices = 4;
+
+function screen_study(choice) {
+    let screen_back = () => screen_pre_practice(choice);
+    screen_home_non(screen_back);
+    text_words_low_high(choice);
+    let words = words_playable_get(choice)
+    for (let word of words) {
+        let w= language_current_definitions[word];
+        let b = button(document.body, w["word"] + ": " + w["definition"], () => {
+        });
+    }
+}
+
+function screen_pre_practice(choice) {
     let screen_back = screen_learn;
     screen_home_non(screen_back);
+
+    text_words_low_high(choice);
+    button(document.body, 'Study', () => screen_study(choice));
+    button(document.body, 'Practice', () => {
+        words_to_play_generate(choice);
+        screen_practice(choice);
+    });
+}
+
+function text_words_low_high(choice) {
+    text(document.body, `Words ${choice.low} to ${choice.high}`);
+}
+
+function screen_practice(choice) {
+    let screen_back = screen_pre_practice;
+    screen_home_non(screen_pre_practice);
     let current = words_to_play.pop();
     if (!current) {
         screen_back();
@@ -90,13 +122,13 @@ function screen_play(choice) {
         [front, back] = [back, front]
     }
     text(document.body, language_current_definitions[current][front]);
-    let choices_wrong = words_playable_get(choice).filter(w => w !== current).slice(0, max_choices - 1);
+    let choices_wrong = words_playable_shuffled_get(choice).filter(w => w !== current).slice(0, max_choices - 1);
 
     for (let word of list_shuffle([current].concat(choices_wrong))) {
         let b = button(document.body, language_current_definitions[word][back], () => {
             if (word === current) {
                 b.style.color = 'green'
-                screen_play(choice);
+                screen_practice(choice);
             } else {
                 b.style.color = 'red'
             }
@@ -128,19 +160,17 @@ function screen_learn() {
     for (let choice of choices) {
         button(document.body, `Learn words ${choice.low} to ${choice.high}`, () => {
             if (learn_choice_stack.length >= word_group_sizes.length) {
-                words_to_play_generate(choice);
-                screen_play(choice);
+                screen_pre_practice(choice);
             } else {
                 depth_current++;
                 learn_choice_stack.push(choice);
-                screen_learn();
+                screen_learn(choice);
             }
         });
     }
     let last = list_last(learn_choice_stack);
     button(document.body, `Learn all words ${last.low} to ${last.high}`, () => {
-        words_to_play_generate(last);
-        screen_play(last);
+        screen_pre_practice(last);
     });
 }
 
