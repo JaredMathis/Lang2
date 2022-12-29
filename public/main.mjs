@@ -22,6 +22,11 @@ function element(parent, tag_name, text) {
 function text(parent, text) {
     return element(parent, 'div', text)
 }
+function span(parent, text) {
+    let result = element(parent, 'span', text)
+    result.style.display = "inline-block";
+    return result;
+}
 
 function file_path_get(name) {
     return file_path_generic_get(name, "wlj-lang");
@@ -86,7 +91,7 @@ async function screen_read() {
             min_found = true;
         }
         if (min_found && !max_found) {
-            button(document.body,book_index.name, () => screen_read_book(book_index));
+            button(document.body,book_index.name, () => screen_read_book(key, book_index));
         }
         if (book_index.name === language_current.bible.max) {
             max_found = true;
@@ -94,16 +99,24 @@ async function screen_read() {
     }
 }
 
-async function screen_read_book(book_index) {
+async function screen_read_book(key, book_index) {
     screen_base(screen_read);
     for (let chapter of book_index.chapters) {
-        button(document.body,chapter, () => screen_read_chapter(book_index, chapter));
+        button(document.body,chapter, () => screen_read_chapter(key, book_index, chapter));
     }
 }
 
-function screen_read_chapter(book_index, chapter){
-    screen_base(() =>  screen_read_book(book_index));
-    console.log(book_index, chapter)
+async function screen_read_chapter(key, book_index, chapter){
+    screen_base(() =>  screen_read_book(key, book_index));
+    let chapter_json = await http_get(file_path_bible_get(`${language_current.path.bible}%2F${key}%2F${chapter}.json`));
+    for (let verse of chapter_json) {
+        let verse_element = text(document.body, '');
+        span(verse_element, verse.verse)
+        for (let token of verse.tokens) {
+            span(verse_element, token.token)
+        }
+        return;
+    }
 }
 
 let word_group_sizes = [
