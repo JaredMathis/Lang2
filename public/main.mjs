@@ -78,17 +78,22 @@ function words_playable_get(choice) {
     return language_current_words.slice(choice.low - 1, choice.high);
 }
 
-function words_to_play_generate(choice) {
-    words_to_play = words_playable_shuffled_get(choice);
+function words_to_play_generate(choice, use_mistakes) {
+    if (use_mistakes) {
+        words_to_play = mistakes.slice();
+        list_shuffle(words_to_play);
+    } else {
+        words_to_play = words_playable_shuffled_get(choice);
+    }
 }
 
 let max_choices = 4;
 
-function screen_study(choice) {
+function screen_study(choice, use_mistakes) {
     let screen_back = () => screen_pre_practice(choice);
     screen_home_non(screen_back);
-    text_words_low_high(choice);
-    let words = words_playable_get(choice)
+    text_words_low_high(choice, use_mistakes ? "Mistakes" : "Words");
+    let words = use_mistakes ? mistakes : words_playable_get(choice)
     for (let word of words) {
         let w= language_current_definitions[word];
         let b = button(document.body, w["word"] + ": " + w["definition"], async () => {
@@ -112,24 +117,35 @@ function audio_play(audio_language_code, translated) {
         })
     })
 }
-
+let mistakes = [];
+function screen_mistakes() {
+    let screen_back = screen_language;
+    screen_pre_practice_generic({
+        low: 1,
+        high: mistakes.length
+    }, screen_back, true, "Mistakes")
+    button(document.body, 'Clear', () => mistakes.length = 0);
+}
 function screen_pre_practice(choice) {
     let screen_back = screen_learn;
+    screen_pre_practice_generic(choice, screen_back, false)
+}
+function screen_pre_practice_generic(choice, screen_back, use_mistakes, noun) {
     screen_home_non(screen_back);
 
-    text_words_low_high(choice);
-    button(document.body, 'Study', () => screen_study(choice));
+    text_words_low_high(choice, noun);
+    button(document.body, 'Study', () => screen_study(choice, use_mistakes));
     button(document.body, 'Practice', () => {
-        words_to_play_generate(choice);
-        screen_practice(choice);
+        words_to_play_generate(choice, use_mistakes);
+        screen_practice(choice, use_mistakes);
     });
 }
 
-function text_words_low_high(choice) {
-    text(document.body, `Words ${choice.low} to ${choice.high}`);
+function text_words_low_high(choice, noun="Words") {
+    text(document.body, `${noun} ${choice.low} to ${choice.high}`);
 }
 
-function screen_practice(choice) {
+function screen_practice(choice, use_mistakes) {
     let screen_back = () => screen_pre_practice(choice);
     screen_home_non(screen_back);
     let current = words_to_play.pop();
@@ -149,9 +165,14 @@ function screen_practice(choice) {
             if (word === current) {
                 b.style.color = 'green'
                 await audio_play(language_current["gcloud_code"], language_current_definitions[word]["word"])
-                screen_practice(choice);
+                screen_practice(choice, use_mistakes);
             } else {
-                b.style.color = 'red'
+                b.style.color = 'red';
+                for (let w of [word, current]) {
+                    if (!mistakes.includes(w)) {
+                        mistakes.push(w)
+                    }
+                }
             }
         });
     }
@@ -175,15 +196,8 @@ function list_shuffle(array) {
     return array;
   }
 
-function screen_mistakes() {
-    screen_learn_generic();
-}
 
 function screen_learn() {
-    screen_learn_generic();
-}
-
-function screen_learn_generic() {
     screen_home_non(() => {
         if (depth_current <= 0) {
             screen_language();
