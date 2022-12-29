@@ -111,7 +111,7 @@ async function screen_read_book(key, book_index) {
 
 async function screen_read_chapter(book_key, book_index, chapter){
     screen_base(() =>  screen_read_book(book_key, book_index));
-    let chapter_json = await http_get(file_path_bible_get(`${language_current.path.bible}%2F${book_key}%2F${chapter}.json`));
+    let chapter_json = await bible_chapter_get(language_current.path.bible, book_key, chapter);
     for (let verse of chapter_json) {
         console.log(verse)
         let verse_element = text(document.body, '');
@@ -146,6 +146,10 @@ let word_group_sizes = [
 let depth_current = 0;
 let learn_choice_stack = [];
 let words_to_play;
+
+async function bible_chapter_get(bible_version, book_key, chapter) {
+    return await http_get(file_path_bible_get(`${bible_version}%2F${book_key}%2F${chapter}.json`));
+}
 
 function words_playable_shuffled_get(choice, use_mistakes) {
     let result = words_playable_get(choice, use_mistakes);
