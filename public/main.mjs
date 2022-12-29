@@ -125,9 +125,10 @@ async function screen_read_chapter(book_key, book_index, chapter){
             let translation = span(verse_element, token.translation);
             translation.style.color = '#bbb';
             translation.style['font-weight'] = '100';
-            translation.display = false;
+            translation.hidden = true;
             function translation_display_toggle() {
-                translation.diplay = !translation.display
+                translation.hidden = !translation.hidden
+                console.log('here')
             }
         }
     }
