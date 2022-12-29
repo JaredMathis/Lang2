@@ -24,7 +24,11 @@ function text(parent, text) {
 }
 
 function file_path_get(name) {
-    let file_path = "https://firebasestorage.googleapis.com/v0/b/wlj-lang.appspot.com/o/" + name  + "?alt=media";
+    return file_path_generic_get(name, "wlj-lang");
+}
+
+function file_path_generic_get(name, firebase_project_name) {
+    let file_path = `https://firebasestorage.googleapis.com/v0/b/${firebase_project_name}.appspot.com/o/` + name  + "?alt=media";
     console.log(file_path);
     return file_path;
 }
@@ -60,7 +64,7 @@ function screen_home_non(back_on_click) {
 
 async function screen_read() {
     screen_home_non(screen_language);
-    button(document.body, "TODO")
+    
 }
 
 let word_group_sizes = [
