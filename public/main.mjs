@@ -43,6 +43,7 @@ async function screen_language() {
     element_clear(document.body);
     button(document.body, "Home", ev => screen_main());
     button(document.body, "Learn", ev => screen_learn());
+    button(document.body, "Mistakes", ev => screen_mistakes());
     button(document.body, "Read", ev => screen_read());
     learn_choice_stack = [{low: 1, high: language_current_words.length}]
 }
