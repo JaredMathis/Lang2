@@ -1,0 +1,34 @@
+[debug] [2022-12-29T11:45:50.708Z] ----------------------------------------------------------------------
+[debug] [2022-12-29T11:45:50.710Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\jared\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-29T11:45:50.711Z] CLI Version:   11.19.0
+[debug] [2022-12-29T11:45:50.711Z] Platform:      win32
+[debug] [2022-12-29T11:45:50.711Z] Node Version:  v17.9.0
+[debug] [2022-12-29T11:45:50.712Z] Time:          Thu Dec 29 2022 06:45:50 GMT-0500 (Eastern Standard Time)
+[debug] [2022-12-29T11:45:50.712Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-29T11:45:50.797Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-29T11:45:50.797Z] > authorizing via signed-in user (wordslikejared@gmail.com)
+[debug] [2022-12-29T11:45:50.797Z] [iam] checking project wlj-lang for permissions ["firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2022-12-29T11:45:50.799Z] > refreshing access token with scopes: []
+[debug] [2022-12-29T11:45:50.800Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-12-29T11:45:50.801Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-29T11:45:51.173Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-12-29T11:45:51.174Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-29T11:45:51.184Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/wlj-lang:testIamPermissions [none]
+[debug] [2022-12-29T11:45:51.185Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/wlj-lang:testIamPermissions x-goog-quota-user=projects/wlj-lang
+[debug] [2022-12-29T11:45:51.185Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/wlj-lang:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2022-12-29T11:45:51.345Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/wlj-lang:testIamPermissions 200
+[debug] [2022-12-29T11:45:51.345Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/wlj-lang:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2022-12-29T11:45:51.346Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/wlj-lang [none]
+[debug] [2022-12-29T11:45:51.655Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/wlj-lang 200
+[debug] [2022-12-29T11:45:51.655Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/wlj-lang {"projectId":"wlj-lang","projectNumber":"664619536204","displayName":"wlj-lang","name":"projects/wlj-lang","resources":{"hostingSite":"wlj-lang","storageBucket":"wlj-lang.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_f1196301-57d5-419d-8933-b0f01afec27a"}
+[info] 
+[info] === Deploying to 'wlj-lang'...
+[info] 
+[info] i  deploying storage, hosting 
+[debug] [2022-12-29T11:45:51.658Z] >>> [apiv2][query] GET https://appengine.googleapis.com/v1/apps/wlj-lang [none]
+[debug] [2022-12-29T11:45:51.972Z] <<< [apiv2][status] GET https://appengine.googleapis.com/v1/apps/wlj-lang 200
+[debug] [2022-12-29T11:45:51.972Z] <<< [apiv2][body] GET https://appengine.googleapis.com/v1/apps/wlj-lang {"name":"apps/wlj-lang","id":"wlj-lang","authDomain":"gmail.com","locationId":"us-central","codeBucket":"staging.wlj-lang.appspot.com","servingStatus":"SERVING","defaultHostname":"wlj-lang.uc.r.appspot.com","defaultBucket":"wlj-lang.appspot.com","serviceAccount":"wlj-lang@appspot.gserviceaccount.com","gcrDomain":"us.gcr.io","databaseType":"CLOUD_DATASTORE_COMPATIBILITY","featureSettings":{"splitHealthChecks":true,"useContainerOptimizedOs":true}}
+[info] i  firebase.storage: checking storage.rules for compilation errors... 
+[debug] [2022-12-29T11:45:51.975Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/wlj-lang:test [none]
+[debug] [2022-12-29T11:45:51.975Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/wlj-lang:test [omitted]

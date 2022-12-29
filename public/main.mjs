@@ -122,17 +122,23 @@ async function screen_read_chapter(book_key, book_index, chapter){
             span(verse_element, ' ');
             let translated = span(verse_element, token.token);
             translated.style['font-weight'] = '600';
-            translated.style['color'] = '00e';
+            let blue = '00e';
+            translated.style['color'] = blue;
             click(translated, translation_display_toggle)
             span(verse_element, ' ');
             let translation = span(verse_element, '');
-            let translation1 = span(translation, token.translation + " | ")
-            let translation2 = span(translation, language_current_definitions[token.strong]["word"])
-            let translation3 = span(translation, " | " + language_current_definitions[token.strong]["definition"])
-            translation.style.color = '#bbb';
             translation.style['font-weight'] = '100';
             translation.hidden = true;
-            translation.style['font-size'] = "4.5vh";
+            let translation1 = span(translation, token.translation + " ")
+            translation1.style['font-style'] = 'italic';
+            translation1.style['font-size'] = "4.5vh";
+            let translation2 = span(translation, language_current_definitions[token.strong]["word"])
+            translation2.style['font-size'] = "4.5vh";
+            translation2.style.opacity = '0.6';
+            translation2.style.color = blue;
+            let translation3 = span(translation, " " + language_current_definitions[token.strong]["definition"])
+            translation3.style['font-size'] = "4.5vh";
+            translation3.style.opacity = '0.6';
             async function translation_display_toggle() {
                 translation.hidden = !translation.hidden
                 if (!translation.hidden) {
@@ -143,7 +149,8 @@ async function screen_read_chapter(book_key, book_index, chapter){
         let verse_element_english = text(verse_element, '');
         verse_element_english.innerHTML = english_version.tokens.join(' ')
         verse_element_english.style['font-size'] = "4.5vh";
-        verse_element_english.style.color = '#333';
+        verse_element_english.style.color = '#000';
+        verse_element_english.style['font-style'] = 'italic';
     }
 }
 
