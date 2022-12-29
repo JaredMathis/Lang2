@@ -2,13 +2,12 @@ function button(parent, text, on_click) {
     let b = element(parent, "BUTTON", text);
     b.style["border-radius"] = "2vh";
     b.style["border"] = "0.5vh solid";
-    on_click(b, on_click)
+    click(b, on_click);
     return b;
 }
 
-function on_click(b, on) {
+function click(b, on) {
     b.addEventListener("click", on);
-
 }
 
 function element(parent, tag_name, text) {
@@ -121,11 +120,15 @@ async function screen_read_chapter(book_key, book_index, chapter){
             span(verse_element, ' ');
             let translated = span(verse_element, token.token);
             translated.style['font-weight'] = '600';
-            on_clic
+            click(translated, translation_display_toggle)
             span(verse_element, ' ');
             let translation = span(verse_element, token.translation);
             translation.style.color = '#bbb';
             translation.style['font-weight'] = '100';
+            translation.display = false;
+            function translation_display_toggle() {
+                translation.diplay = !translation.display
+            }
         }
     }
 }
