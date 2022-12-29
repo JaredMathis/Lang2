@@ -68,32 +68,30 @@ let depth_current = 0;
 let learn_choice_stack = [];
 let words_to_play;
 
-function words_playable_shuffled_get(choice) {
-    let result = words_playable_get(choice);
+function words_playable_shuffled_get(choice, use_mistakes) {
+    let result = words_playable_get(choice, use_mistakes);
     list_shuffle(result);
     return result;
 }
 
-function words_playable_get(choice) {
+function words_playable_get(choice, use_mistakes) {
+    if (use_mistakes) {
+        return mistakes.slice();
+    }
     return language_current_words.slice(choice.low - 1, choice.high);
 }
 
 function words_to_play_generate(choice, use_mistakes) {
-    if (use_mistakes) {
-        words_to_play = mistakes.slice();
-        list_shuffle(words_to_play);
-    } else {
-        words_to_play = words_playable_shuffled_get(choice);
-    }
+    words_to_play = words_playable_shuffled_get(choice, use_mistakes);
 }
 
 let max_choices = 4;
 
 function screen_study(choice, use_mistakes) {
-    let screen_back = () => screen_pre_practice(choice);
+    let screen_back = () => use_mistakes ? screen_mistakes : screen_pre_practice(choice);
     screen_home_non(screen_back);
     text_words_low_high(choice, use_mistakes ? "Mistakes" : "Words");
-    let words = use_mistakes ? mistakes : words_playable_get(choice)
+    let words = words_playable_get(choice, use_mistakes)
     for (let word of words) {
         let w= language_current_definitions[word];
         let b = button(document.body, w["word"] + ": " + w["definition"], async () => {
@@ -146,11 +144,13 @@ function text_words_low_high(choice, noun="Words") {
 }
 
 function screen_practice(choice, use_mistakes) {
-    let screen_back = () => screen_pre_practice(choice);
+    let screen_back = () => use_mistakes ? screen_mistakes() : screen_pre_practice(choice);
     screen_home_non(screen_back);
+    console.log(JSON.stringify(words_to_play.map(w => language_current_definitions[w])))
     let current = words_to_play.pop();
     if (!current) {
         screen_back();
+        return;
     }
     let front = "word";
     let back = "definition";
@@ -158,9 +158,10 @@ function screen_practice(choice, use_mistakes) {
         [front, back] = [back, front]
     }
     text(document.body, language_current_definitions[current][front]);
-    let choices_wrong = words_playable_shuffled_get(choice).filter(w => w !== current).slice(0, max_choices - 1);
+    let choices_wrong = words_playable_shuffled_get(choice, use_mistakes).filter(w => w !== current).slice(0, max_choices - 1);
 
-    for (let word of list_shuffle([current].concat(choices_wrong))) {
+    for (let word_ of list_shuffle([current].concat(choices_wrong))) {
+        let word = word_;
         let b = button(document.body, language_current_definitions[word][back], async () => {
             if (word === current) {
                 b.style.color = 'green'
