@@ -40,17 +40,21 @@ let language_current_words;
 let language_current_definitions;
 
 async function screen_language() {
+    depth_current = 0;
+    learn_choice_stack.length = 0;
     element_clear(document.body);
-    button(document.body, "Home", ev => screen_main());
+    button(document.body, "Back", ev => screen_main());
     button(document.body, "Learn", ev => screen_learn());
-    button(document.body, "Mistakes", ev => screen_mistakes());
+    if (mistakes.length > 0) {
+        button(document.body, "Mistakes", ev => screen_mistakes());
+    }
     button(document.body, "Read", ev => screen_read());
     learn_choice_stack = [{low: 1, high: language_current_words.length}]
 }
 
 function screen_home_non(back_on_click) {
     element_clear(document.body);
-    button(document.body, "Home", ev => screen_main())
+    button(document.body, "Home", ev => screen_language())
     button(document.body, "Back", ev => back_on_click())
 }
 
@@ -88,7 +92,7 @@ function words_to_play_generate(choice, use_mistakes) {
 let max_choices = 4;
 
 function screen_study(choice, use_mistakes) {
-    let screen_back = () => use_mistakes ? screen_mistakes : screen_pre_practice(choice);
+    let screen_back = () => use_mistakes ? screen_mistakes() : screen_pre_practice(choice);
     screen_home_non(screen_back);
     text_words_low_high(choice, use_mistakes ? "Mistakes" : "Words");
     let words = words_playable_get(choice, use_mistakes)
@@ -122,7 +126,7 @@ function screen_mistakes() {
         low: 1,
         high: mistakes.length
     }, screen_back, true, "Mistakes")
-    button(document.body, 'Clear', () => mistakes.length = 0);
+    button(document.body, 'Clear', () => { mistakes.length = 0; screen_back() });
 }
 function screen_pre_practice(choice) {
     let screen_back = screen_learn;
