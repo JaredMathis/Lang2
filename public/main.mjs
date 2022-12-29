@@ -1,6 +1,7 @@
 function button(parent, text, on_click) {
     let b = element(parent, "BUTTON", text);
     b.style["border-radius"] = "2vh";
+    b.style["border"] = "0.5vh solid";
     b.addEventListener("click", on_click);
     return b;
 }
@@ -11,6 +12,7 @@ function element(parent, tag_name, text) {
     b.innerHTML = text;
     b.style["width"] = "100%";
     b.style["font-size"] = "5vh";
+    b.style["padding"] = "0.5vh";
     b.style["font-family"] = "Sans-Serif";
     let margin = "0.2";
     b.style["margin"] = `${margin}vh 0 ${margin}vh`;
