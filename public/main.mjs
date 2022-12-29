@@ -126,9 +126,11 @@ async function screen_read_chapter(book_key, book_index, chapter){
             translation.style.color = '#bbb';
             translation.style['font-weight'] = '100';
             translation.hidden = true;
-            function translation_display_toggle() {
+            async function translation_display_toggle() {
                 translation.hidden = !translation.hidden
-                console.log('here')
+                if (!translation.hidden) {
+                    await audio_play(language_current["gcloud_code"], token.token)
+                }
             }
         }
     }
