@@ -6,7 +6,11 @@
         },
         "code": "gr",
         "gcloud_translate": false,
-        "gcloud_code": "el-GR"
+        "gcloud_code": "el-GR",
+        "bible": {
+            "min": "Matthew",
+            "max": "Revelation"
+        }
     },
     {
         "name": "Spanish",

@@ -30,6 +30,10 @@ languages = [{
     "code": "gr",
     "gcloud_translate": False,
     "gcloud_code": "el-GR",
+    "bible": {
+        "min": "Matthew",
+        "max": "Revelation"
+    }
 }, {
     "name": "Spanish",
     "path": {
