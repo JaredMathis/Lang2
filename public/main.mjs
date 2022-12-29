@@ -175,7 +175,15 @@ function list_shuffle(array) {
     return array;
   }
 
+function screen_mistakes() {
+    screen_learn_generic();
+}
+
 function screen_learn() {
+    screen_learn_generic();
+}
+
+function screen_learn_generic() {
     screen_home_non(() => {
         if (depth_current <= 0) {
             screen_language();
