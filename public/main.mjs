@@ -71,11 +71,39 @@ function screen_home_non(back_on_click) {
     button(document.body, "Back", ev => back_on_click())
 }
 
+function screen_base(back_on_click) {
+    element_clear(document.body);
+    button(document.body, "Back", ev => back_on_click())
+}
+
 async function screen_read() {
-    screen_home_non(screen_language);
+    screen_base(screen_language);
+    let min_found = false;
+    let max_found = false;
     for (let key in bible_index) {
-        console.log(bible_index[key])
+        let book_index = bible_index[key];
+        if (book_index.name === language_current.bible.min) {
+            min_found = true;
+        }
+        if (min_found && !max_found) {
+            button(document.body,book_index.name, () => screen_read_book(book_index));
+        }
+        if (book_index.name === language_current.bible.max) {
+            max_found = true;
+        }
     }
+}
+
+async function screen_read_book(book_index) {
+    screen_base(screen_read);
+    for (let chapter of book_index.chapters) {
+        button(document.body,chapter, () => screen_read_chapter(book_index, chapter));
+    }
+}
+
+function screen_read_chapter(book_index, chapter){
+    screen_base(() =>  screen_read_book(book_index));
+    console.log(book_index, chapter)
 }
 
 let word_group_sizes = [
