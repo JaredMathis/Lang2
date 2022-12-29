@@ -27,6 +27,14 @@ function file_path_get(name) {
     return file_path_generic_get(name, "wlj-lang");
 }
 
+function file_path_bible_get(name) {
+    return file_path_generic_get(name, "wlj-bible-versions");
+}
+
+function file_path_bible_index_get(name) {
+    return file_path_bible_get(`${name}%2Findex.json`);
+}
+
 function file_path_generic_get(name, firebase_project_name) {
     let file_path = `https://firebasestorage.googleapis.com/v0/b/${firebase_project_name}.appspot.com/o/` + name  + "?alt=media";
     console.log(file_path);
@@ -42,6 +50,7 @@ let languages = await http_get(file_path_get("languages.json"))
 let language_current;
 let language_current_words;
 let language_current_definitions;
+let bible_index;
 
 async function screen_language() {
     depth_current = 0;
@@ -64,7 +73,9 @@ function screen_home_non(back_on_click) {
 
 async function screen_read() {
     screen_home_non(screen_language);
-    
+    for (let key in bible_index) {
+        console.log(bible_index[key])
+    }
 }
 
 let word_group_sizes = [
@@ -280,6 +291,7 @@ function screen_main() {
             let name = language_current["name"];
             language_current_words = await http_get(file_path_get("words%2F" + name + ".json"));
             language_current_definitions = await http_get(file_path_get("translations%2F" + language_current["code"] + `_${target_language_code}.json`));
+            bible_index = await http_get(file_path_bible_index_get('bsb'))
             screen_language();
         })
     }
