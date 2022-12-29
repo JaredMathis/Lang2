@@ -2,8 +2,13 @@ function button(parent, text, on_click) {
     let b = element(parent, "BUTTON", text);
     b.style["border-radius"] = "2vh";
     b.style["border"] = "0.5vh solid";
-    b.addEventListener("click", on_click);
+    on_click(b, on_click)
     return b;
+}
+
+function on_click(b, on) {
+    b.addEventListener("click", on);
+
 }
 
 function element(parent, tag_name, text) {
@@ -24,7 +29,6 @@ function text(parent, text) {
 }
 function span(parent, text) {
     let result = element(parent, 'span', text)
-    result.style.display = "inline-block";
     return result;
 }
 
@@ -106,16 +110,23 @@ async function screen_read_book(key, book_index) {
     }
 }
 
-async function screen_read_chapter(key, book_index, chapter){
-    screen_base(() =>  screen_read_book(key, book_index));
-    let chapter_json = await http_get(file_path_bible_get(`${language_current.path.bible}%2F${key}%2F${chapter}.json`));
+async function screen_read_chapter(book_key, book_index, chapter){
+    screen_base(() =>  screen_read_book(book_key, book_index));
+    let chapter_json = await http_get(file_path_bible_get(`${language_current.path.bible}%2F${book_key}%2F${chapter}.json`));
     for (let verse of chapter_json) {
+        console.log(verse)
         let verse_element = text(document.body, '');
         span(verse_element, verse.verse)
         for (let token of verse.tokens) {
-            span(verse_element, token.token)
+            span(verse_element, ' ');
+            let translated = span(verse_element, token.token);
+            translated.style['font-weight'] = '600';
+            on_clic
+            span(verse_element, ' ');
+            let translation = span(verse_element, token.translation);
+            translation.style.color = '#bbb';
+            translation.style['font-weight'] = '100';
         }
-        return;
     }
 }
 
