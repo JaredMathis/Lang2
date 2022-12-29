@@ -112,20 +112,24 @@ async function screen_read_book(key, book_index) {
 async function screen_read_chapter(book_key, book_index, chapter){
     screen_base(() =>  screen_read_book(book_key, book_index));
     let chapter_json = await bible_chapter_get(language_current.path.bible, book_key, chapter);
+    let chapter_english = await bible_chapter_get("berean", book_key, chapter);
     for (let verse of chapter_json) {
-        console.log(verse)
+        let english_version = chapter_english.filter(v => v.verse === verse.verse)[0];
         let verse_element = text(document.body, '');
-        span(verse_element, verse.verse)
+        let verse_number = span(verse_element, verse.verse);
+        verse_number.style['font-weight'] = '600';
         for (let token of verse.tokens) {
             span(verse_element, ' ');
             let translated = span(verse_element, token.token);
             translated.style['font-weight'] = '600';
+            translated.style['color'] = '00e';
             click(translated, translation_display_toggle)
             span(verse_element, ' ');
             let translation = span(verse_element, token.translation + " | " + language_current_definitions[token.strong]["word"] + " | " + language_current_definitions[token.strong]["definition"]);
             translation.style.color = '#bbb';
             translation.style['font-weight'] = '100';
             translation.hidden = true;
+            translation.style['font-size'] = "4.5vh";
             async function translation_display_toggle() {
                 translation.hidden = !translation.hidden
                 if (!translation.hidden) {
@@ -133,6 +137,10 @@ async function screen_read_chapter(book_key, book_index, chapter){
                 }
             }
         }
+        let verse_element_english = text(verse_element, '');
+        verse_element_english.innerHTML = english_version.tokens.join(' ')
+        verse_element_english.style['font-size'] = "4.5vh";
+        verse_element_english.style.color = '#333';
     }
 }
 
