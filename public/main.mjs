@@ -122,7 +122,7 @@ async function screen_read_chapter(book_key, book_index, chapter){
             translated.style['font-weight'] = '600';
             click(translated, translation_display_toggle)
             span(verse_element, ' ');
-            let translation = span(verse_element, token.translation);
+            let translation = span(verse_element, token.translation + " | " + language_current_definitions[token.strong]["word"] + " | " + language_current_definitions[token.strong]["definition"]);
             translation.style.color = '#bbb';
             translation.style['font-weight'] = '100';
             translation.hidden = true;
