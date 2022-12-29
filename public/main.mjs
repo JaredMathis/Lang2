@@ -64,7 +64,9 @@ async function screen_read() {
 }
 
 let word_group_sizes = [
+    200,
     100,
+    50,
     25,
     5
 ]
