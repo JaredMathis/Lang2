@@ -132,7 +132,11 @@ async function screen_read_chapter(book_key, book_index, chapter){
             let translation1 = span(translation, token.translation + " ")
             translation1.style['font-style'] = 'italic';
             translation1.style['font-size'] = "4.5vh";
+            translation.style['font-weight'] = '400';
             let translation2 = span(translation, language_current_definitions[token.strong]["word"])
+            click(translation2, async () => {
+                await audio_play(language_current["gcloud_code"], language_current_definitions[token.strong]["word"])
+            })
             translation2.style['font-size'] = "4.5vh";
             translation2.style.opacity = '0.6';
             translation2.style.color = blue;
@@ -151,6 +155,7 @@ async function screen_read_chapter(book_key, book_index, chapter){
         verse_element_english.style['font-size'] = "4.5vh";
         verse_element_english.style.color = '#000';
         verse_element_english.style['font-style'] = 'italic';
+        verse_element_english.style['font-weight'] = '400';
     }
 }
 
