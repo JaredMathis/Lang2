@@ -174,16 +174,18 @@ async function screen_read_chapter(){
             translation1.style['font-style'] = 'italic';
             translation1.style['font-size'] = "4.5vh";
             translation.style['font-weight'] = '400';
-            let translation2 = span(translation, language_current_definitions[token.strong]["word"])
-            click(translation2, async () => {
-                await audio_play(language_current["gcloud_code"], language_current_definitions[token.strong]["word"])
-            })
-            translation2.style['font-size'] = "4.5vh";
-            translation2.style.opacity = '0.6';
-            translation2.style.color = blue;
-            let translation3 = span(translation, " " + language_current_definitions[token.strong]["definition"])
-            translation3.style['font-size'] = "4.5vh";
-            translation3.style.opacity = '0.6';
+            if (language_current_definitions[token.strong]) {
+                let translation2 = span(translation, language_current_definitions[token.strong]["word"])
+                click(translation2, async () => {
+                    await audio_play(language_current["gcloud_code"], language_current_definitions[token.strong]["word"])
+                })
+                translation2.style['font-size'] = "4.5vh";
+                translation2.style.opacity = '0.6';
+                translation2.style.color = blue;
+                let translation3 = span(translation, " " + language_current_definitions[token.strong]["definition"])
+                translation3.style['font-size'] = "4.5vh";
+                translation3.style.opacity = '0.6';
+            }
             async function translation_display_toggle() {
                 translation.hidden = !translation.hidden
                 if (!translation.hidden) {
