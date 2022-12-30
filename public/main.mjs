@@ -149,7 +149,7 @@ async function screen_choose_chapter() {
 }
 
 async function screen_read_chapter(){
-    screen_base(() =>  screen_choose_chapter());
+    screen_base(() =>  screen_home());
     let chapter_english = await bible_chapter_get("berean", book_index_key, selected_chapter);
     for (let verse of chapter_json) {
         let english_version = chapter_english.filter(v => v.verse === verse.verse)[0];
