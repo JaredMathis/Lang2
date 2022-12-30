@@ -69,7 +69,7 @@ async function screen_language() {
     if (mistakes.length > 0) {
         button(document.body, "Mistakes", ev => screen_mistakes());
     }
-    button(document.body, "Read", ev => screen_read());
+    button(document.body, "Read", ev => screen_book());
     learn_choice_stack = [{low: 1, high: language_current_words.length}]
 }
 
@@ -84,7 +84,7 @@ function screen_base(back_on_click) {
     button(document.body, "Back", ev => back_on_click())
 }
 
-async function screen_read() {
+async function screen_book() {
     screen_base(screen_language);
     let min_found = false;
     let max_found = false;
@@ -103,7 +103,7 @@ async function screen_read() {
 }
 
 async function screen_read_book(key, book_index) {
-    screen_base(screen_read);
+    screen_base(screen_book);
     for (let chapter of book_index.chapters) {
         button(document.body,chapter, () => screen_read_chapter(key, book_index, chapter));
     }
