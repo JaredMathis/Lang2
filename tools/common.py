@@ -35,13 +35,27 @@ languages = [{
         "max": "Revelation"
     }
 }, {
+    "name": "Hebrew",
+    "path": {
+        "bible": "bsb"
+    },
+    "code": "he",
+    "gcloud_translate": False,
+    "gcloud_code": "el-GR",
+    "bible": {
+        "min": "Genesis",
+        "max": "Malachi"
+    }
+}]
+
+spanish = {
     "name": "Spanish",
     "path": {
         "bible": "wordproject/sp"
     },
     "code": "es",
     "gcloud_translate": True
-}]
+}
 
 def json_to(result):
     j = json.dumps(result, ensure_ascii=False, indent=4)
