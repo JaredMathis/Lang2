@@ -129,7 +129,7 @@ async function screen_choose_book() {
 
 async function screen_choose_chapter() {
     screen_base(screen_choose_book);
-    for (let chapter of book_index.chapters) {
+    for (let chapter of book_index_value.chapters) {
         button(document.body, chapter, () => {
             selected_chapter = chapter;
             screen_home();
