@@ -154,17 +154,18 @@ async function screen_read_chapter(){
     for (let verse of chapter_json) {
         let english_version = chapter_english.filter(v => v.verse === verse.verse)[0];
         let verse_element = text(document.body, '');
-        let verse_number = span(verse_element, verse.verse);
+        let verse_element_translated = text(verse_element, '');
+        let verse_number = span(verse_element_translated, verse.verse);
         verse_number.style['font-weight'] = '600';
         for (let token of verse.tokens) {
-            span(verse_element, ' ');
-            let translated = span(verse_element, token.token);
+            span(verse_element_translated, ' ');
+            let translated = span(verse_element_translated, token.token);
             translated.style['font-weight'] = '600';
             let blue = '00e';
             translated.style['color'] = blue;
             click(translated, translation_display_toggle)
-            span(verse_element, ' ');
-            let translation = span(verse_element, '');
+            span(verse_element_translated, ' ');
+            let translation = span(verse_element_translated, '');
             translation.style['font-weight'] = '100';
             translation.hidden = true;
             let translation1 = span(translation, token.translation + " ")
@@ -189,6 +190,7 @@ async function screen_read_chapter(){
             }
         }
         let verse_element_english = text(verse_element, '');
+        verse_element_english.dir = "ltr";
         verse_element_english.innerHTML = english_version.tokens.join(' ')
         verse_element_english.style['font-size'] = "4.5vh";
         verse_element_english.style.color = '#000';
