@@ -10,7 +10,9 @@
         "bible": {
             "min": "Matthew",
             "max": "Revelation"
-        }
+        },
+        "gcloud_tts": true,
+        "direction": "ltr"
     },
     {
         "name": "Hebrew",
@@ -23,6 +25,8 @@
         "bible": {
             "min": "Genesis",
             "max": "Malachi"
-        }
+        },
+        "gcloud_tts": false,
+        "direction": "rtl"
     }
 ]
