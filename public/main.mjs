@@ -69,7 +69,7 @@ async function screen_language() {
     if (mistakes.length > 0) {
         button(document.body, "Mistakes", ev => screen_mistakes());
     }
-    button(document.body, "Read", ev => screen_book());
+    button(document.body, "Read", ev => screen_choose_book());
     learn_choice_stack = [{low: 1, high: language_current_words.length}]
 }
 
@@ -84,7 +84,7 @@ function screen_base(back_on_click) {
     button(document.body, "Back", ev => back_on_click())
 }
 
-async function screen_book() {
+async function screen_choose_book() {
     screen_base(screen_language);
     let min_found = false;
     let max_found = false;
@@ -94,7 +94,7 @@ async function screen_book() {
             min_found = true;
         }
         if (min_found && !max_found) {
-            button(document.body,book_index.name, () => screen_read_book(key, book_index));
+            button(document.body,book_index.name, () => screen_choose_chapter(key, book_index));
         }
         if (book_index.name === language_current.bible.max) {
             max_found = true;
@@ -102,15 +102,15 @@ async function screen_book() {
     }
 }
 
-async function screen_read_book(key, book_index) {
-    screen_base(screen_book);
+async function screen_choose_chapter(key, book_index) {
+    screen_base(screen_choose_book);
     for (let chapter of book_index.chapters) {
         button(document.body,chapter, () => screen_read_chapter(key, book_index, chapter));
     }
 }
 
 async function screen_read_chapter(book_key, book_index, chapter){
-    screen_base(() =>  screen_read_book(book_key, book_index));
+    screen_base(() =>  screen_choose_chapter(book_key, book_index));
     let chapter_json = await bible_chapter_get(language_current.path.bible, book_key, chapter);
     let chapter_english = await bible_chapter_get("berean", book_key, chapter);
     for (let verse of chapter_json) {
