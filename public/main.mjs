@@ -149,6 +149,11 @@ async function screen_choose_chapter() {
     }
 }
 
+function style_bible_word(element) {
+    element.style['font-weight'] = '600';
+    element.style['color'] = blue;
+}
+
 async function screen_read_chapter(){
     screen_base(() =>  screen_home());
     let chapter_english = await bible_chapter_get("berean", book_index_key, selected_chapter);
@@ -162,8 +167,7 @@ async function screen_read_chapter(){
         for (let token of verse.tokens) {
             span(verse_element_original, ' ');
             let translated = span(verse_element_original, token.token);
-            translated.style['font-weight'] = '600';
-            translated.style['color'] = blue;
+            style_bible_word(translated);
             click(translated, translation_display_toggle)
             span(verse_element_original, ' ');
             let translation = span(verse_element_original, '');
@@ -238,9 +242,12 @@ function screen_study(choice, use_mistakes) {
     let words = words_playable_get(choice, use_mistakes)
     for (let word of words) {
         let w= language_current_definitions[word];
-        let b = button(document.body, w["word"] + " : " + w["transliteration"] + " : " + w["definition"], async () => {
+        let b = button(document.body, '', async () => {
             await audio_play(language_current["gcloud_code"], w["word"])
         });
+        let s = span(b, w["word"] + " : " + w["transliteration"])
+        s.style.color = blue;
+        span(b, " : " + w["definition"])
     }
 }
 
