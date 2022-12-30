@@ -153,6 +153,9 @@ function style_bible_word(element) {
     element.style['font-weight'] = '600';
     element.style['color'] = blue;
 }
+function style_bible_transliteration(element) {
+    element.style['color'] = blue;
+}
 
 async function screen_read_chapter(){
     screen_base(() =>  screen_home());
@@ -185,7 +188,7 @@ async function screen_read_chapter(){
                 })
                 translation2.style['font-size'] = "4.5vh";
                 translation2.style.opacity = '0.6';
-                translation2.style.color = blue;
+                style_bible_transliteration(translation2);
                 let translation3 = span(translation, " " + language_current_definitions[token.strong]["definition"])
                 translation3.style['font-size'] = "4.5vh";
                 translation3.style.opacity = '0.6';
@@ -234,6 +237,12 @@ function words_to_play_generate(choice, use_mistakes) {
     words_to_play = words_playable_shuffled_get(choice, use_mistakes);
 }
 
+function element_text_bible_word_transliteration(parent, w) {
+    let s1 = span(parent, w["word"]);
+    style_bible_word(s1);
+    let s2 = span(parent, " : " + w["transliteration"]);
+    style_bible_transliteration(s2);
+}
 
 function screen_study(choice, use_mistakes) {
     let screen_back = () => use_mistakes ? screen_mistakes() : screen_pre_practice(choice);
@@ -245,8 +254,7 @@ function screen_study(choice, use_mistakes) {
         let b = button(document.body, '', async () => {
             await audio_play(language_current["gcloud_code"], w["word"])
         });
-        let s = span(b, w["word"] + " : " + w["transliteration"])
-        s.style.color = blue;
+        element_text_bible_word_transliteration(b, w);
         span(b, " : " + w["definition"])
     }
 }
@@ -302,17 +310,22 @@ function screen_practice(choice, use_mistakes) {
         screen_back();
         return;
     }
-    let front = w => w["word"] + " : " + w["transliteration"];
-    let back = w => w["definition"];
+    let front = (parent, w) => {
+        element_text_bible_word_transliteration(parent, w);
+    }
+    let back = (parent, w) =>{
+        let t = text(parent, w["definition"]);
+    }
     if (Math.random() > 1/2) {
         [front, back] = [back, front]
     }
-    text(document.body, front(language_current_definitions[current]));
+    let t = text(document.body,'');
+    front(t, language_current_definitions[current]);
     let choices_wrong = words_playable_shuffled_get(choice, use_mistakes).filter(w => w !== current).slice(0, max_choices - 1);
 
     for (let word_ of list_shuffle([current].concat(choices_wrong))) {
         let word = word_;
-        let b = button(document.body, back(language_current_definitions[word]), async () => {
+        let b = button(document.body, '', async () => {
             if (word === current) {
                 b.style.color = 'green'
                 await audio_play(language_current["gcloud_code"], language_current_definitions[word]["word"])
@@ -326,6 +339,7 @@ function screen_practice(choice, use_mistakes) {
                 }
             }
         });
+        back(b, language_current_definitions[word]);
     }
 }
 
