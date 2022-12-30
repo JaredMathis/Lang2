@@ -9,7 +9,6 @@ let book_index_key;
 let book_index_value;
 let selected_chapter;
 let word_group_sizes = [
-    200,
     100,
     50,
     25,
@@ -20,6 +19,7 @@ let learn_choice_stack = [];
 let words_to_play;
 let max_choices = 4;
 let mistakes = [];
+let chapter_json;
 
 let target_language_code = "en";
 
@@ -130,8 +130,19 @@ async function screen_choose_book() {
 async function screen_choose_chapter() {
     screen_base(screen_choose_book);
     for (let chapter of book_index_value.chapters) {
-        button(document.body, chapter, () => {
+        button(document.body, chapter, async () => {
             selected_chapter = chapter;
+            chapter_json = await bible_chapter_get(language_current.path.bible, book_index_key, selected_chapter);
+            language_current_words = [];
+            for (let verse of chapter_json) {
+                for (let token of verse.tokens) {
+                    let {strong} = token;
+                    if (!language_current_words.includes(strong)) {
+                        language_current_words.push(strong)
+                    }
+                }
+            }
+            console.log({language_current_words})
             screen_home();
         });
     }
@@ -139,7 +150,6 @@ async function screen_choose_chapter() {
 
 async function screen_read_chapter(){
     screen_base(() =>  screen_choose_chapter());
-    let chapter_json = await bible_chapter_get(language_current.path.bible, book_index_key, selected_chapter);
     let chapter_english = await bible_chapter_get("berean", book_index_key, selected_chapter);
     for (let verse of chapter_json) {
         let english_version = chapter_english.filter(v => v.verse === verse.verse)[0];
@@ -387,8 +397,6 @@ function screen_main() {
     for (let l of languages) {
         button(document.body, l["name"], async ev => {
             language_current = l;
-            let name = language_current["name"];
-            language_current_words = await http_get(file_path_get("words%2F" + name + ".json"));
             language_current_definitions = await http_get(file_path_get("translations%2F" + language_current["code"] + `_${target_language_code}.json`));
             bible_index = await http_get(file_path_bible_index_get('bsb'))
             screen_choose_book();
