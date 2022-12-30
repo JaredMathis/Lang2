@@ -20,6 +20,7 @@ let words_to_play;
 let max_choices = 4;
 let mistakes = [];
 let chapter_json;
+let blue = '00e';
 
 let target_language_code = "en";
 
@@ -162,7 +163,6 @@ async function screen_read_chapter(){
             span(verse_element_original, ' ');
             let translated = span(verse_element_original, token.token);
             translated.style['font-weight'] = '600';
-            let blue = '00e';
             translated.style['color'] = blue;
             click(translated, translation_display_toggle)
             span(verse_element_original, ' ');
@@ -238,7 +238,7 @@ function screen_study(choice, use_mistakes) {
     let words = words_playable_get(choice, use_mistakes)
     for (let word of words) {
         let w= language_current_definitions[word];
-        let b = button(document.body, w["word"] + ": " + w["definition"], async () => {
+        let b = button(document.body, w["word"] + " : " + w["transliteration"] + " : " + w["definition"], async () => {
             await audio_play(language_current["gcloud_code"], w["word"])
         });
     }
@@ -295,17 +295,17 @@ function screen_practice(choice, use_mistakes) {
         screen_back();
         return;
     }
-    let front = "word";
-    let back = "definition";
+    let front = w => w["word"] + " : " + w["transliteration"];
+    let back = w => w["definition"];
     if (Math.random() > 1/2) {
         [front, back] = [back, front]
     }
-    text(document.body, language_current_definitions[current][front]);
+    text(document.body, front(language_current_definitions[current]));
     let choices_wrong = words_playable_shuffled_get(choice, use_mistakes).filter(w => w !== current).slice(0, max_choices - 1);
 
     for (let word_ of list_shuffle([current].concat(choices_wrong))) {
         let word = word_;
-        let b = button(document.body, language_current_definitions[word][back], async () => {
+        let b = button(document.body, back(language_current_definitions[word]), async () => {
             if (word === current) {
                 b.style.color = 'green'
                 await audio_play(language_current["gcloud_code"], language_current_definitions[word]["word"])
