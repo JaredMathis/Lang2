@@ -64,12 +64,12 @@ async function screen_home() {
     depth_current = 0;
     learn_choice_stack.length = 0;
     element_clear(document.body);
-    button(document.body, "Back", ev => screen_main());
+    button(document.body, "Back", ev => screen_choose_chapter());
     button(document.body, "Learn", ev => screen_learn());
     if (mistakes.length > 0) {
         button(document.body, "Mistakes", ev => screen_mistakes());
     }
-    button(document.body, "Read", ev => screen_choose_book());
+    button(document.body, "Read", ev => screen_read_chapter());
     learn_choice_stack = [{low: 1, high: language_current_words.length}]
 }
 
@@ -85,7 +85,7 @@ function screen_base(back_on_click) {
 }
 
 async function screen_choose_book() {
-    screen_base(screen_home);
+    screen_base(screen_main);
     let min_found = false;
     let max_found = false;
     for (let key in bible_index) {
@@ -377,7 +377,7 @@ function screen_main() {
             language_current_words = await http_get(file_path_get("words%2F" + name + ".json"));
             language_current_definitions = await http_get(file_path_get("translations%2F" + language_current["code"] + `_${target_language_code}.json`));
             bible_index = await http_get(file_path_bible_index_get('bsb'))
-            screen_home();
+            screen_choose_book();
         })
     }
 }
