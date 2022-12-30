@@ -33,7 +33,8 @@ languages = [{
     "bible": {
         "min": "Matthew",
         "max": "Revelation"
-    }
+    },
+    "gcloud_tts": True
 }, {
     "name": "Hebrew",
     "path": {
@@ -45,7 +46,8 @@ languages = [{
     "bible": {
         "min": "Genesis",
         "max": "Malachi"
-    }
+    },
+    "gcloud_tts": False
 }]
 
 spanish = {

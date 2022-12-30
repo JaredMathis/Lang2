@@ -199,7 +199,12 @@ async function screen_read_chapter(){
 
 
 async function bible_chapter_get(bible_version, book_key, chapter) {
-    return await http_get(file_path_bible_get(`${bible_version}%2F${book_key}%2F${chapter}.json`));
+    const padded = new Number(book_key).toLocaleString('en-US', {
+        minimumIntegerDigits: 2,
+        useGrouping: false
+    });
+    console.log(padded)
+    return await http_get(file_path_bible_get(`${bible_version}%2F${padded}%2F${chapter}.json`));
 }
 
 function words_playable_shuffled_get(choice, use_mistakes) {
