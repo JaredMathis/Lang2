@@ -28,6 +28,7 @@ function button(parent, text, on_click) {
     let b = element(parent, "BUTTON", text);
     b.style["border-radius"] = "2vh";
     b.style["border"] = "0.5vh solid";
+    b.style.color = 'black';
     click(b, on_click);
     return b;
 }
