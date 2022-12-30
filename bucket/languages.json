@@ -11,8 +11,7 @@
             "min": "Matthew",
             "max": "Revelation"
         },
-        "gcloud_tts": true,
-        "direction": "ltr"
+        "gcloud_tts": true
     },
     {
         "name": "Hebrew",
@@ -26,7 +25,6 @@
             "min": "Genesis",
             "max": "Malachi"
         },
-        "gcloud_tts": false,
-        "direction": "rtl"
+        "gcloud_tts": false
     }
 ]
