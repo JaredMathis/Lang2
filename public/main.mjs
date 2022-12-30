@@ -1,3 +1,28 @@
+
+let languages = await http_get(file_path_get("languages.json"))
+
+let language_current;
+let language_current_words;
+let language_current_definitions;
+let bible_index;
+let book_index_key;
+let book_index_value;
+let selected_chapter;
+let word_group_sizes = [
+    200,
+    100,
+    50,
+    25,
+    5
+]
+let depth_current = 0;
+let learn_choice_stack = [];
+let words_to_play;
+let max_choices = 4;
+let mistakes = [];
+
+let target_language_code = "en";
+
 function button(parent, text, on_click) {
     let b = element(parent, "BUTTON", text);
     b.style["border-radius"] = "2vh";
@@ -53,12 +78,6 @@ function http_get(url) {
     return fetch(url).then(r => r.json())
 }
 
-let languages = await http_get(file_path_get("languages.json"))
-
-let language_current;
-let language_current_words;
-let language_current_definitions;
-let bible_index;
 
 async function screen_home() {
     depth_current = 0;
@@ -84,8 +103,6 @@ function screen_base(back_on_click) {
     button(document.body, "Back", ev => back_on_click())
 }
 
-let book_index_key;
-let book_index_value;
 
 async function screen_choose_book() {
     screen_base(screen_main);
@@ -109,17 +126,21 @@ async function screen_choose_book() {
     }
 }
 
+
 async function screen_choose_chapter() {
     screen_base(screen_choose_book);
     for (let chapter of book_index.chapters) {
-        button(document.body,chapter, () => screen_read_chapter(book_index_key, book_index_value, chapter));
+        button(document.body, chapter, () => {
+            selected_chapter = chapter;
+            screen_home();
+        });
     }
 }
 
-async function screen_read_chapter(book_key, book_index, chapter){
-    screen_base(() =>  screen_choose_chapter(book_key, book_index));
-    let chapter_json = await bible_chapter_get(language_current.path.bible, book_key, chapter);
-    let chapter_english = await bible_chapter_get("berean", book_key, chapter);
+async function screen_read_chapter(){
+    screen_base(() =>  screen_choose_chapter());
+    let chapter_json = await bible_chapter_get(language_current.path.bible, book_index_key, selected_chapter);
+    let chapter_english = await bible_chapter_get("berean", book_index_key, selected_chapter);
     for (let verse of chapter_json) {
         let english_version = chapter_english.filter(v => v.verse === verse.verse)[0];
         let verse_element = text(document.body, '');
@@ -166,16 +187,6 @@ async function screen_read_chapter(book_key, book_index, chapter){
     }
 }
 
-let word_group_sizes = [
-    200,
-    100,
-    50,
-    25,
-    5
-]
-let depth_current = 0;
-let learn_choice_stack = [];
-let words_to_play;
 
 async function bible_chapter_get(bible_version, book_key, chapter) {
     return await http_get(file_path_bible_get(`${bible_version}%2F${book_key}%2F${chapter}.json`));
@@ -198,7 +209,6 @@ function words_to_play_generate(choice, use_mistakes) {
     words_to_play = words_playable_shuffled_get(choice, use_mistakes);
 }
 
-let max_choices = 4;
 
 function screen_study(choice, use_mistakes) {
     let screen_back = () => use_mistakes ? screen_mistakes() : screen_pre_practice(choice);
@@ -228,7 +238,6 @@ function audio_play(audio_language_code, translated) {
         })
     })
 }
-let mistakes = [];
 function screen_mistakes() {
     let screen_back = screen_home;
     screen_pre_practice_generic({
@@ -372,8 +381,6 @@ function screen_todo(back_on_click) {
 function element_clear(element) {
     element.innerHTML = '';
 }
-
-let target_language_code = "en";
 
 function screen_main() {
     element_clear(document.body);
