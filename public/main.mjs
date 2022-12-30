@@ -167,6 +167,7 @@ async function screen_read_chapter(){
             click(translated, translation_display_toggle)
             span(verse_element_original, ' ');
             let translation = span(verse_element_original, '');
+            translation.dir = 'ltr';
             translation.style['font-weight'] = '100';
             translation.hidden = true;
             let translation1 = span(translation, token.translation + " ")
