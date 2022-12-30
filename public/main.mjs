@@ -328,10 +328,12 @@ function screen_practice(choice, use_mistakes) {
         let b = button(document.body, '', async () => {
             if (word === current) {
                 b.style.color = 'green'
+                b.style['background-color']='lightgreen';
                 await audio_play(language_current["gcloud_code"], language_current_definitions[word]["word"])
                 screen_practice(choice, use_mistakes);
             } else {
-                b.style.color = 'red';
+                b.style.color = '#E74C3C';
+                b.style['background-color']='#F5B7B1';
                 for (let w of [word, current]) {
                     if (!mistakes.includes(w)) {
                         mistakes.push(w)
