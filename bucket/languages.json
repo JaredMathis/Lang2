@@ -13,11 +13,16 @@
         }
     },
     {
-        "name": "Spanish",
+        "name": "Hebrew",
         "path": {
-            "bible": "wordproject/sp"
+            "bible": "bsb"
         },
-        "code": "es",
-        "gcloud_translate": true
-    }
+        "code": "he",
+        "gcloud_translate": false,
+        "gcloud_code": "el-GR",
+        "bible": {
+            "min": "Genesis",
+            "max": "Malachi"
+        }
+    },
 ]
