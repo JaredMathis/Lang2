@@ -266,14 +266,18 @@ function audio(audio_language_code, translated) {
     return audio;
 }
 
-function audio_play(audio_language_code, translated) {
+async function audio_play(audio_language_code, translated) {
     let a = audio(audio_language_code, translated);
-    return new Promise(resolve => {
-        a.play();
-        a.addEventListener('ended', async () => {
+    await new Promise(async resolve => {
+        try {
+            await a.play();
+            a.addEventListener('ended', async () => {
+                resolve();
+            })
+        } catch (e) {
             resolve();
-        })
-    })
+        }
+    });
 }
 function screen_mistakes() {
     let screen_back = screen_home;
