@@ -22,7 +22,6 @@ for l in languages:
         translations = {}
     path = os.path.join(path_bible_versions_public, language_path_bible)
     bible_index = file_json_read(os.path.join(path, "index.json"))
-    print(bible_index)
     min_found = False
     max_found = False
     for dir in os.listdir(path):
@@ -31,9 +30,11 @@ for l in languages:
         if len(bible_version_books) > 1 and dir not in bible_version_books:
             continue
 
-        if bible_index[dir]["name"] == l["bible"]["min"]:
+        
+
+        if bible_index[dir.lstrip('0')]["name"] == l["bible"]["min"]:
             min_found = True
-        if bible_index[dir]["name"] == l["bible"]["max"]:
+        if bible_index[dir.lstrip('0')]["name"] == l["bible"]["max"]:
             max_found = True
 
         if not min_found:
