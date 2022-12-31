@@ -161,7 +161,11 @@ function style_bible_word(element, regular_weight) {
         element.style['font-weight'] = '700';
     }
     element.style['color'] = blue;
-    element.style["font-family"] = "Gentium Book Plus";
+    if (true) {
+        element.style["font-family"] = "Gentium Book Plus";
+        element.style["line-height"] = "1.2";
+        element.style["font-size"] = language_current_hebrew_is() ? "6.5vh" : "5.5vh";
+    }
 }
 function style_bible_transliteration(element) {
     element.style['color'] = blue;
@@ -174,15 +178,15 @@ async function screen_read_chapter(){
         let english_version = chapter_english.filter(v => v.verse === verse.verse)[0];
         let verse_element = text(document.body, '');
         let verse_element_original = text(verse_element, '');
-        verse_element_original.dir = language_current.direction || (language_current.name === "Hebrew" ? "rtl" : "ltr");
+        verse_element_original.dir = language_current.direction || (language_current_hebrew_is() ? "rtl" : "ltr");
         let verse_number = span(verse_element_original, verse.verse);
         verse_number.style['font-weight'] = '600';
         for (let token of verse.tokens) {
-            span(verse_element_original, ' ');
+            let spacer = span(verse_element_original, ' ');
+            style_bible_word(spacer);
             let translated = span(verse_element_original, token.token);
             style_bible_word(translated);
-            click(translated, translation_display_toggle)
-            span(verse_element_original, ' ');
+            click(translated, translation_display_toggle);
             let translation = span(verse_element_original, '');
             translation.dir = 'ltr';
             translation.style['font-weight'] = '100';
@@ -220,6 +224,10 @@ async function screen_read_chapter(){
     }
 }
 
+
+function language_current_hebrew_is() {
+    return language_current.name === "Hebrew";
+}
 
 async function bible_chapter_get(bible_version, book_key, chapter) {
     const padded = new Number(book_key).toLocaleString('en-US', {
