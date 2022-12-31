@@ -12,7 +12,7 @@ file_json_write(os.path.join('bucket', 'languages.json'), languages)
 
 for l in languages:
     letters = {}
-    words = []
+    language_words = []
     language_path_bible = l["path"]["bible"]
     language_code = l["code"]
     translations_path = f'bucket/translations/{language_code}_{target_language_code}.json'
@@ -58,11 +58,14 @@ for l in languages:
                             word = word.lower()
                             for r in filter_letters:
                                 word = word.replace(r, '')
-                        if not word in words:
-                            words.append(word)
-                            for w in [t["token"], translations[word]["word"]]:
-                                if l["gcloud_tts"]:
-                                    gcloud_tts(translations[word]["word"], l["gcloud_code"])
+                        if not word in language_words:
+                            words = [t["token"]]
+                            if (word in translations):
+                                words.append(translations[word]["word"])
+                            for w in words:
+                                if False:
+                                    if l["gcloud_tts"]:
+                                        gcloud_tts(translations[word]["word"], l["gcloud_code"])
                             for letter in w:
                                 letters[letter] = True
         if max_found:
@@ -72,12 +75,12 @@ for l in languages:
 
     language_name = l["name"]
     if False:
-        file_json_write(os.path.join('bucket', 'words', language_name + '.json'), words)
-    print(len(words), l["name"])
+        file_json_write(os.path.join('bucket', 'words', language_name + '.json'), language_words)
+    print(len(language_words), l["name"])
 
     if False:
         if l["gcloud_translate"]:
-            for word in words:
+            for word in language_words:
                 if word in translations:
                     continue
                 translations[word] = gcloud_translate(word, language_code, target_language_code)
