@@ -66,6 +66,7 @@ def json_to(result):
     return j
 
 def file_write(file_path, result, bytes=False, transform=None):
+    print('writing to file ' + file_path)
     # Create a new blob in the bucket
     blob = bucket.blob(file_path.replace('\\','/').replace('bucket/',''))
     if delete_firebase_blobs:
@@ -83,12 +84,14 @@ def file_write(file_path, result, bytes=False, transform=None):
         else:
             with open(file_path, 'w', encoding='utf-8') as output:
                 output.write(j)
-        print('Wrote to file ' + file_path)
         if firebase_blobs_update:
+            print('upload to bucket')
             # Upload the file to the bucket
             blob.upload_from_filename(file_path)
+            print('uploaded to bucket')
         if file_json_write_first_only:
             exit()
+    print('wrote to file ' + file_path)
 
 
 def file_json_write(file_path, result):
