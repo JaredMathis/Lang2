@@ -86,6 +86,7 @@ async function screen_home() {
     learn_choice_stack.length = 0;
     element_clear(document.body);
     button(document.body, "Back", ev => screen_choose_chapter());
+    text_book_chapter();
     button(document.body, "Learn", ev => screen_learn());
     if (mistakes.length > 0) {
         button(document.body, "Mistakes", ev => screen_mistakes());
@@ -94,10 +95,15 @@ async function screen_home() {
     learn_choice_stack = [{low: 1, high: language_current_words.length}]
 }
 
+function text_book_chapter() {
+    text(document.body, book_index_value.name + " " + selected_chapter);
+}
+
 function screen_home_non(back_on_click) {
     element_clear(document.body);
-    button(document.body, "Home", ev => screen_home())
-    button(document.body, "Back", ev => back_on_click())
+    button(document.body, "Home", ev => screen_home());
+    button(document.body, "Back", ev => back_on_click());
+    text_book_chapter();
 }
 
 function screen_base(back_on_click) {
@@ -131,6 +137,7 @@ async function screen_choose_book() {
 
 async function screen_choose_chapter() {
     screen_base(screen_choose_book);
+    text(document.body, book_index_value.name)
     for (let chapter of book_index_value.chapters) {
         button(document.body, chapter, async () => {
             selected_chapter = chapter;
@@ -144,7 +151,6 @@ async function screen_choose_chapter() {
                     }
                 }
             }
-            console.log({language_current_words})
             screen_home();
         });
     }
@@ -159,7 +165,7 @@ function style_bible_transliteration(element) {
 }
 
 async function screen_read_chapter(){
-    screen_base(() =>  screen_home());
+    screen_home_non(() =>  screen_home());
     let chapter_english = await bible_chapter_get("berean", book_index_key, selected_chapter);
     for (let verse of chapter_json) {
         let english_version = chapter_english.filter(v => v.verse === verse.verse)[0];
