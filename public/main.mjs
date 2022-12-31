@@ -185,7 +185,7 @@ async function screen_read_chapter(){
             if (language_current_definitions[token.strong]) {
                 let translation2 = span(translation, language_current_definitions[token.strong]["word"])
                 click(translation2, async () => {
-                    await audio_play(language_current["gcloud_code"], language_current_definitions[token.strong]["word"])
+                    await audio_play_try(language_current["gcloud_code"], language_current_definitions[token.strong]["word"])
                 })
                 translation2.style['font-size'] = "4.5vh";
                 translation2.style.opacity = '0.6';
@@ -197,7 +197,7 @@ async function screen_read_chapter(){
             async function translation_display_toggle() {
                 translation.hidden = !translation.hidden
                 if (!translation.hidden) {
-                    await audio_play(language_current["gcloud_code"], token.token)
+                    await audio_play_try(language_current["gcloud_code"], token.token)
                 }
             }
         }
@@ -253,7 +253,7 @@ function screen_study(choice, use_mistakes) {
     for (let word of words) {
         let w= language_current_definitions[word];
         let b = button(document.body, '', async () => {
-            await audio_play(language_current["gcloud_code"], w["word"])
+            await audio_play_try(language_current["gcloud_code"], w["word"])
         });
         element_text_bible_word_transliteration(b, w);
         span(b, " : " + w["definition"])
@@ -266,7 +266,7 @@ function audio(audio_language_code, translated) {
     return audio;
 }
 
-async function audio_play(audio_language_code, translated) {
+async function audio_play_try(audio_language_code, translated) {
     let a = audio(audio_language_code, translated);
     await new Promise(async resolve => {
         try {
@@ -334,7 +334,7 @@ function screen_practice(choice, use_mistakes) {
             if (word === current) {
                 b.style.color = 'green'
                 b.style['background-color']='lightgreen';
-                await audio_play(language_current["gcloud_code"], language_current_definitions[word]["word"])
+                await audio_play_try(language_current["gcloud_code"], language_current_definitions[word]["word"])
                 screen_practice(choice, use_mistakes);
             } else {
                 b.style.color = '#E74C3C';
