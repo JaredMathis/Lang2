@@ -23,7 +23,6 @@ for l in languages:
     path = os.path.join(path_bible_versions_public, language_path_bible)
     bible_index = file_json_read(os.path.join(path, "index.json"))
     print(bible_index)
-    exit()
     min_found = False
     max_found = False
     for dir in os.listdir(path):
@@ -56,8 +55,9 @@ for l in languages:
                                 word = word.replace(r, '')
                         if not word in words:
                             words.append(word)
-                            if l["gcloud_tts"]:
-                                gcloud_tts(translations[word]["word"], l["gcloud_code"])
+                            if False:
+                                if l["gcloud_tts"]:
+                                    gcloud_tts(translations[word]["word"], l["gcloud_code"])
                         for letter in word:
                             letters[letter] = True
         if not max_found:
@@ -68,13 +68,14 @@ for l in languages:
     language_name = l["name"]
     file_json_write(os.path.join('bucket', 'words', language_name + '.json'), words)
 
-    if l["gcloud_translate"]:
-        for word in words:
-            if word in translations:
-                continue
-            translations[word] = gcloud_translate(word, language_code, target_language_code)
+    if False:
+        if l["gcloud_translate"]:
+            for word in words:
+                if word in translations:
+                    continue
+                translations[word] = gcloud_translate(word, language_code, target_language_code)
 
-        file_json_write(translations_path, translations)
+            file_json_write(translations_path, translations)
 
 
 
