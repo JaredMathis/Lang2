@@ -162,9 +162,15 @@ function style_bible_word(element, regular_weight) {
     }
     element.style['color'] = blue;
     if (true) {
-        element.style["font-family"] = "Gentium Book Plus";
-        element.style["line-height"] = "1.2";
-        element.style["font-size"] = language_current_hebrew_is() ? "6.5vh" : "5.5vh";
+        if (language_current_hebrew_is()) {
+            element.style["line-height"] = "1";
+            element.style["font-family"] = "bsthebrew";
+            element.style["font-size"] = "6.5vh";
+        } else {
+            element.style["line-height"] = "1.2";
+            element.style["font-family"] = "Gentium Book Plus";
+            element.style["font-size"] = "5.5vh";
+        }
     }
 }
 function style_bible_transliteration(element) {
