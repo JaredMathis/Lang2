@@ -62,7 +62,7 @@ for l in languages:
                                     gcloud_tts(translations[word]["word"], l["gcloud_code"])
                         for letter in word:
                             letters[letter] = True
-        if not max_found:
+        if max_found:
             break
 
     print(''.join(letters.keys()))
