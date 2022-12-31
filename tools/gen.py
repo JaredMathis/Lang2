@@ -24,10 +24,20 @@ for l in languages:
     bible_index = file_json_read(os.path.join(path, "index.json"))
     print(bible_index)
     exit()
+    min_found = False
+    max_found = False
     for dir in os.listdir(path):
         if not dir.isnumeric():
             continue
         if len(bible_version_books) > 1 and dir not in bible_version_books:
+            continue
+
+        if bible_index[dir]["name"] == l["bible"]["min"]:
+            min_found = True
+        if bible_index[dir]["name"] == l["bible"]["max"]:
+            max_found = True
+
+        if not min_found:
             continue
 
         book_path = os.path.join(path, dir)
@@ -50,6 +60,9 @@ for l in languages:
                                 gcloud_tts(translations[word]["word"], l["gcloud_code"])
                         for letter in word:
                             letters[letter] = True
+        if not max_found:
+            break
+
     print(''.join(letters.keys()))
 
     language_name = l["name"]
