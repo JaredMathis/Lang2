@@ -156,8 +156,10 @@ async function screen_choose_chapter() {
     }
 }
 
-function style_bible_word(element) {
-    element.style['font-weight'] = '700';
+function style_bible_word(element, regular_weight) {
+    if (!regular_weight) {
+        element.style['font-weight'] = '700';
+    }
     element.style['color'] = blue;
     element.style["font-family"] = "Gentium Book Plus";
 }
@@ -167,13 +169,12 @@ function style_bible_transliteration(element) {
 
 async function screen_read_chapter(){
     screen_home_non(() =>  screen_home());
-    console.log({language_current})
     let chapter_english = await bible_chapter_get("berean", book_index_key, selected_chapter);
     for (let verse of chapter_json) {
         let english_version = chapter_english.filter(v => v.verse === verse.verse)[0];
         let verse_element = text(document.body, '');
         let verse_element_original = text(verse_element, '');
-        verse_element_original.dir = language_current.direction;
+        verse_element_original.dir = language_current.direction || (language_current.name === "Hebrew" ? "rtl" : "ltr");
         let verse_number = span(verse_element_original, verse.verse);
         verse_number.style['font-weight'] = '600';
         for (let token of verse.tokens) {
@@ -197,7 +198,7 @@ async function screen_read_chapter(){
                 })
                 translation2.style['font-size'] = "4.5vh";
                 translation2.style.opacity = '0.6';
-                style_bible_transliteration(translation2);
+                style_bible_word(translation2, true);
                 let translation3 = span(translation, " " + language_current_definitions[token.strong]["definition"])
                 translation3.style['font-size'] = "4.5vh";
                 translation3.style.opacity = '0.6';
