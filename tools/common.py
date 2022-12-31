@@ -31,6 +31,7 @@ path_bible_versions_public = os.path.join(path_bible_versions, 'public')
 
 languages = [{
     "name": "Greek",
+    "direction": "ltr",
     "path": {
         "bible": "bsb"
     },
@@ -44,6 +45,7 @@ languages = [{
     "gcloud_tts": True
 }, {
     "name": "Hebrew",
+    "direction": "rtl",
     "path": {
         "bible": "bsb"
     },
@@ -59,6 +61,7 @@ languages = [{
 
 spanish = {
     "name": "Spanish",
+    "direction": "ltr",
     "path": {
         "bible": "wordproject/sp"
     },

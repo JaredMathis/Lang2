@@ -157,8 +157,9 @@ async function screen_choose_chapter() {
 }
 
 function style_bible_word(element) {
-    element.style['font-weight'] = '600';
+    element.style['font-weight'] = '700';
     element.style['color'] = blue;
+    element.style["font-family"] = "Gentium Book Plus";
 }
 function style_bible_transliteration(element) {
     element.style['color'] = blue;
@@ -166,6 +167,7 @@ function style_bible_transliteration(element) {
 
 async function screen_read_chapter(){
     screen_home_non(() =>  screen_home());
+    console.log({language_current})
     let chapter_english = await bible_chapter_get("berean", book_index_key, selected_chapter);
     for (let verse of chapter_json) {
         let english_version = chapter_english.filter(v => v.verse === verse.verse)[0];

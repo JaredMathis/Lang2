@@ -1,6 +1,7 @@
 [
     {
         "name": "Greek",
+        "direction": "ltr",
         "path": {
             "bible": "bsb"
         },
@@ -15,6 +16,7 @@
     },
     {
         "name": "Hebrew",
+        "direction": "rtl",
         "path": {
             "bible": "bsb"
         },
