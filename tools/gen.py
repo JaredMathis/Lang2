@@ -67,6 +67,7 @@ for l in languages:
 
     language_name = l["name"]
     file_json_write(os.path.join('bucket', 'words', language_name + '.json'), words)
+    print(len(words), l["name"])
 
     if False:
         if l["gcloud_translate"]:
