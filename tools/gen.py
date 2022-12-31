@@ -64,7 +64,7 @@ for l in languages:
                                 words.append(translations[word]["word"])
                             for w in words:
                                 if l["gcloud_tts"]:
-                                    gcloud_tts(translations[word]["word"], l["gcloud_code"])
+                                    gcloud_tts(w, l["gcloud_code"])
                             for letter in w:
                                 letters[letter] = True
         if max_found:
