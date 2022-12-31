@@ -64,6 +64,8 @@ for l in languages:
                             if (word in translations):
                                 words.append(translations[word]["word"])
                             for w in words:
+                                for r in ["*"]:
+                                    w = w.replace(r, '')
                                 if l["gcloud_tts"]:
                                     gcloud_tts(w, l["gcloud_code"])
                             for letter in w:
