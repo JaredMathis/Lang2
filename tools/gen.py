@@ -63,8 +63,8 @@ for l in languages:
                             for w in [t["token"], translations[word]["word"]]:
                                 if l["gcloud_tts"]:
                                     gcloud_tts(translations[word]["word"], l["gcloud_code"])
-                        for letter in word:
-                            letters[letter] = True
+                            for letter in w:
+                                letters[letter] = True
         if max_found:
             break
 
