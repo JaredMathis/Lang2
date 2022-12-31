@@ -21,28 +21,35 @@ for l in languages:
     else:
         translations = {}
     path = os.path.join(path_bible_versions_public, language_path_bible)
+    bible_index = file_json_read(os.path.join(path, "index.json"))
+    print(bible_index)
+    exit()
     for dir in os.listdir(path):
-        if dir.isnumeric() and (len(bible_version_books) == 0 or dir in bible_version_books):
-            book_path = os.path.join(path, dir)
-            for dir in os.listdir(book_path):
-                chapter_path = os.path.join(book_path, dir)
-                with open(chapter_path, 'r', encoding="utf-8") as f:
-                    parsed = json.load(f)
-                    for p in parsed:
-                        for t in p["tokens"]:
-                            if (type(t) != str):
-                                word = t["strong"]
-                            else:
-                                word = t
-                                word = word.lower()
-                                for r in filter_letters:
-                                    word = word.replace(r, '')
-                            if not word in words:
-                                words.append(word)
-                                if l["gcloud_tts"]:
-                                    gcloud_tts(translations[word]["word"], l["gcloud_code"])
-                            for letter in word:
-                                letters[letter] = True
+        if not dir.isnumeric():
+            continue
+        if len(bible_version_books) > 1 and dir not in bible_version_books:
+            continue
+
+        book_path = os.path.join(path, dir)
+        for dir in os.listdir(book_path):
+            chapter_path = os.path.join(book_path, dir)
+            with open(chapter_path, 'r', encoding="utf-8") as f:
+                parsed = json.load(f)
+                for p in parsed:
+                    for t in p["tokens"]:
+                        if (type(t) != str):
+                            word = t["strong"]
+                        else:
+                            word = t
+                            word = word.lower()
+                            for r in filter_letters:
+                                word = word.replace(r, '')
+                        if not word in words:
+                            words.append(word)
+                            if l["gcloud_tts"]:
+                                gcloud_tts(translations[word]["word"], l["gcloud_code"])
+                        for letter in word:
+                            letters[letter] = True
     print(''.join(letters.keys()))
 
     language_name = l["name"]
