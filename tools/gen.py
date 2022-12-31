@@ -30,15 +30,16 @@ for l in languages:
         if len(bible_version_books) > 1 and dir not in bible_version_books:
             continue
 
-        
-
-        if bible_index[dir.lstrip('0')]["name"] == l["bible"]["min"]:
+        book_name = bible_index[dir.lstrip('0')]["name"]
+        if book_name == l["bible"]["min"]:
             min_found = True
-        if bible_index[dir.lstrip('0')]["name"] == l["bible"]["max"]:
+        if book_name == l["bible"]["max"]:
             max_found = True
 
         if not min_found:
             continue
+
+        print(l["name"], book_name)
 
         book_path = os.path.join(path, dir)
         for dir in os.listdir(book_path):
