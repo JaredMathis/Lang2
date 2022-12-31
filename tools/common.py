@@ -18,8 +18,13 @@ firebase_blobs_update = True
 file_json_write_first_only = False
 
 bible_version_books = [
+    # "01"
     # "59"
     ]
+bible_version_chapters = [
+    # "1"
+    ]
+bible_version_chapters = [x for x in map(lambda c:c + ".json",bible_version_chapters)]
 
 path_bible_versions = os.path.join('..', 'BibleVersions')
 path_bible_versions_public = os.path.join(path_bible_versions, 'public')

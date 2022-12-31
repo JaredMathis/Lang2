@@ -27,7 +27,7 @@ for l in languages:
     for dir in os.listdir(path):
         if not dir.isnumeric():
             continue
-        if len(bible_version_books) > 1 and dir not in bible_version_books:
+        if len(bible_version_books) >= 1 and dir not in bible_version_books:
             continue
 
         book_name = bible_index[dir.lstrip('0')]["name"]
@@ -43,6 +43,9 @@ for l in languages:
 
         book_path = os.path.join(path, dir)
         for dir in os.listdir(book_path):
+            if len(bible_version_chapters) >= 1 and dir not in bible_version_chapters:
+                continue
+
             chapter_path = os.path.join(book_path, dir)
             with open(chapter_path, 'r', encoding="utf-8") as f:
                 parsed = json.load(f)
@@ -57,8 +60,9 @@ for l in languages:
                                 word = word.replace(r, '')
                         if not word in words:
                             words.append(word)
-                            if l["gcloud_tts"]:
-                                gcloud_tts(translations[word]["word"], l["gcloud_code"])
+                            for w in [t["token"], translations[word]["word"]]:
+                                if l["gcloud_tts"]:
+                                    gcloud_tts(translations[word]["word"], l["gcloud_code"])
                         for letter in word:
                             letters[letter] = True
         if max_found:
@@ -67,7 +71,8 @@ for l in languages:
     print(''.join(letters.keys()))
 
     language_name = l["name"]
-    file_json_write(os.path.join('bucket', 'words', language_name + '.json'), words)
+    if False:
+        file_json_write(os.path.join('bucket', 'words', language_name + '.json'), words)
     print(len(words), l["name"])
 
     if False:
