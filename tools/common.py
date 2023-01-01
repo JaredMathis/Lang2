@@ -42,7 +42,10 @@ languages = [{
         "min": "Matthew",
         "max": "Revelation"
     },
-    "gcloud_tts": True
+    "gcloud_tts": True,
+    "narakeet": {
+        "tts": False
+    }
 }, {
     "name": "Hebrew",
     "direction": "rtl",
@@ -56,7 +59,11 @@ languages = [{
         "min": "Genesis",
         "max": "Malachi"
     },
-    "gcloud_tts": False
+    "gcloud_tts": False,
+    "narakeet": {
+        "tts": True,
+        "voice": "Ayelet"
+    }
 }]
 
 spanish = {
