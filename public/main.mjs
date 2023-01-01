@@ -338,7 +338,7 @@ function screen_pre_quiz_generic(choice, screen_back, use_mistakes, noun) {
     button(document.body, 'Study', () => screen_study(choice, use_mistakes));
     button(document.body, 'Practice', () => {
         words_to_play_generate(choice, use_mistakes);
-        screen_practice(choice, use_mistakes);
+        screen_quiz(choice, use_mistakes);
     });
 }
 
@@ -346,7 +346,7 @@ function text_words_low_high(choice, noun="Words") {
     text(document.body, `${noun} ${choice.low} to ${choice.high}`);
 }
 
-function screen_practice(choice, use_mistakes) {
+function screen_quiz(choice, use_mistakes) {
     let screen_back = () => use_mistakes ? screen_mistakes() : screen_pre_quiz(choice);
     screen_home_non(screen_back);
     console.log(JSON.stringify(words_to_play.map(w => language_current_definitions[w])))
@@ -375,7 +375,7 @@ function screen_practice(choice, use_mistakes) {
                 style_color_and_border(b, 'green');
                 b.style['background-color']='lightgreen';
                 await audio_play_try(language_current_audio_code_get(), language_current_definitions[word]["word"])
-                screen_practice(choice, use_mistakes);
+                screen_quiz(choice, use_mistakes);
             } else {
                 style_color_and_border(b, '#E74C3C');
                 b.style['background-color']='#F5B7B1';
