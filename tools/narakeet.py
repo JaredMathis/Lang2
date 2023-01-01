@@ -31,4 +31,6 @@ def narakeet_tts(text, language_code, voice):
 
     shutil.copyfile(output_path, file_name_string)
 
+    file_write(file_name_string, None,  write=False)
+
     exit()
