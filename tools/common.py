@@ -54,7 +54,6 @@ languages = [{
     },
     "code": "he",
     "gcloud_translate": False,
-    "gcloud_code": "el-GR",
     "bible": {
         "min": "Genesis",
         "max": "Malachi"
