@@ -5,13 +5,16 @@ import json
 from gcloud import *
 from narakeet import narakeet_tts
 
+update_languages_json = True
+
 filter_letters = ".,:;¿?()\xad![]\n01\""
 
 target_language_code = "en"
 
-if False:
+if update_languages_json:
     file_json_write(os.path.join('bucket', 'languages.json'), languages)
-
+    exit()
+    
 for l in languages:
     letters = {}
     language_words = []
