@@ -276,11 +276,13 @@ function element_text_bible_word_transliteration(parent, w) {
         debugger;
     }
     element_text_bible_word(parent, w);
+    let s3 = span(parent, " : ");
+    style_bible_transliteration(s3);
     element_text_bible_transliteration(parent, w);
 }
 
 function element_text_bible_transliteration(parent, w) {
-    let s2 = span(parent, " : " + w["transliteration"]);
+    let s2 = span(parent, w["transliteration"]);
     style_bible_transliteration(s2);
 }
 
