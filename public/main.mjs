@@ -306,7 +306,9 @@ function screen_study(choice, use_mistakes) {
             await audio_play_try(language_current_audio_code_get(), w["word"])
         });
         element_text_bible_word_transliteration(b, w);
-        span(b, " : " + w["definition"])
+        if (category_selected === category_definition) {
+            span(b, " : " + w["definition"]);
+        }
     }
 }
 
