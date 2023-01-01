@@ -20,3 +20,5 @@ def narakeet_tts(text, language_code, voice):
  --output {file_name_string}"""
 
     print(os.popen(command).read())
+
+    exit()
