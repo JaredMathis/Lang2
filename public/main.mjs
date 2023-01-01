@@ -27,8 +27,9 @@ let target_language_code = "en";
 function button(parent, text, on_click) {
     let b = element(parent, "BUTTON", text);
     b.style["border-radius"] = "2vh";
-    b.style["border"] = "0.5vh solid";
+    b.style["border"] = "0.3vh solid";
     b.style.color = 'black';
+    b.style['border-color'] = 'lightgray';
     click(b, on_click);
     return b;
 }
@@ -156,11 +157,16 @@ async function screen_choose_chapter() {
     }
 }
 
+function style_color_and_border(element, color) {
+    element.style['color'] = color;
+    element.style['border-color'] = color;
+}
+
 function style_bible_word(element, regular_weight) {
     if (!regular_weight) {
         element.style['font-weight'] = '700';
     }
-    element.style['color'] = blue;
+    style_color_and_border(element, blue);
     if (true) {
         if (language_current_hebrew_is()) {
             element.style["line-height"] = "1";
@@ -174,7 +180,7 @@ function style_bible_word(element, regular_weight) {
     }
 }
 function style_bible_transliteration(element) {
-    element.style['color'] = blue;
+    style_color_and_border(element, blue);
 }
 
 async function screen_read_chapter(){
@@ -355,12 +361,12 @@ function screen_practice(choice, use_mistakes) {
         let word = word_;
         let b = button(document.body, '', async () => {
             if (word === current) {
-                b.style.color = 'green'
+                style_color_and_border(b, 'green');
                 b.style['background-color']='lightgreen';
                 await audio_play_try(language_current["gcloud_code"], language_current_definitions[word]["word"])
                 screen_practice(choice, use_mistakes);
             } else {
-                b.style.color = '#E74C3C';
+                style_color_and_border(b, '#E74C3C');
                 b.style['background-color']='#F5B7B1';
                 for (let w of [word, current]) {
                     if (!mistakes.includes(w)) {
