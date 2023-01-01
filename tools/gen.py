@@ -72,7 +72,7 @@ for l in languages:
                                     w = w.replace(r, '')
                                 if l["gcloud_tts"]:
                                     gcloud_tts(w, l["gcloud_code"])
-                                if l["narakeet"]["tts"]:
+                                elif l["narakeet"]["tts"]:
                                     narakeet_tts(w, l["code"], l["narakeet"]["voice"])
                             for letter in w:
                                 letters[letter] = True
