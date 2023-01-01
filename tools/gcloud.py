@@ -37,8 +37,8 @@ from google.cloud import texttospeech
 
 
 def gcloud_tts(text, language_code):
-    file_name_string = file_path_audio(text, language_code)
-    if (os.path.exists(file_name_string)):
+    file_name_string, file_name_string_exists = file_path_audio(text, language_code)
+    if (file_name_string_exists):
         return
 
     # Instantiates a client
@@ -68,4 +68,5 @@ def gcloud_tts(text, language_code):
 
 def file_path_audio(text, language_code):
     file_name_string = os.path.join("bucket", "audio", language_code, text + '.mp3')
-    return file_name_string
+    file_name_string_exists = os.path.exists(file_name_string)
+    return file_name_string, file_name_string_exists
