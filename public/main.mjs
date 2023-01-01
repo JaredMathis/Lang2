@@ -328,9 +328,25 @@ function screen_mistakes() {
     button(document.body, 'Clear', () => { mistakes.length = 0; screen_back() });
 }
 function screen_pre_quiz(choice) {
-    let screen_back = screen_learn;
-    screen_pre_quiz_generic(choice, screen_back, false)
+    screen_pre_quiz_generic(choice, () => screen_category(choice), false)
 }
+
+let category_selected;
+
+function screen_category(choice) {
+    screen_home_non(screen_learn);
+    let categories = [
+        'Definition',
+        'Transliteration',
+    ]
+    for (let category of categories) {
+        button(document.body, category, () => {
+            category_selected = category;
+            screen_pre_quiz(choice);
+        });
+    }
+}
+
 function screen_pre_quiz_generic(choice, screen_back, use_mistakes, noun) {
     screen_home_non(screen_back);
 
@@ -423,7 +439,7 @@ function screen_learn() {
     for (let choice of choices) {
         button(document.body, `Learn words ${choice.low} to ${choice.high}`, () => {
             if (learn_choice_stack.length >= word_group_sizes.length) {
-                screen_pre_quiz(choice);
+                screen_category(choice);
             } else {
                 depth_current++;
                 learn_choice_stack.push(choice);
@@ -433,9 +449,10 @@ function screen_learn() {
     }
     let last = list_last(learn_choice_stack);
     button(document.body, `Learn all words ${last.low} to ${last.high}`, () => {
-        screen_pre_quiz(last);
+        screen_category(last);
     });
 }
+
 
 function list_last(list) {
     return list[list.length - 1]
