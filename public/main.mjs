@@ -238,7 +238,7 @@ async function screen_read_chapter(){
 
 
 function language_current_audio_code_get() {
-    return language_current["gcloud_code"];
+    return language_current["gcloud_code"] || language_current["code"];
 }
 
 function language_current_hebrew_is() {
