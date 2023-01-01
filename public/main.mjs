@@ -210,7 +210,7 @@ async function screen_read_chapter(){
             if (language_current_definitions[token.strong]) {
                 let translation2 = span(translation, language_current_definitions[token.strong]["word"])
                 click(translation2, async () => {
-                    await audio_play_try(language_current["gcloud_code"], language_current_definitions[token.strong]["word"])
+                    await audio_play_try(language_current_audio_code_get(), language_current_definitions[token.strong]["word"])
                 })
                 translation2.style['font-size'] = "4.5vh";
                 translation2.style.opacity = '0.6';
@@ -222,7 +222,7 @@ async function screen_read_chapter(){
             async function translation_display_toggle() {
                 translation.hidden = !translation.hidden
                 if (!translation.hidden) {
-                    await audio_play_try(language_current["gcloud_code"], token.token)
+                    await audio_play_try(language_current_audio_code_get(), token.token)
                 }
             }
         }
@@ -236,6 +236,10 @@ async function screen_read_chapter(){
     }
 }
 
+
+function language_current_audio_code_get() {
+    return language_current["gcloud_code"];
+}
 
 function language_current_hebrew_is() {
     return language_current.name === "Hebrew";
@@ -282,7 +286,7 @@ function screen_study(choice, use_mistakes) {
     for (let word of words) {
         let w= language_current_definitions[word];
         let b = button(document.body, '', async () => {
-            await audio_play_try(language_current["gcloud_code"], w["word"])
+            await audio_play_try(language_current_audio_code_get(), w["word"])
         });
         element_text_bible_word_transliteration(b, w);
         span(b, " : " + w["definition"])
@@ -363,7 +367,7 @@ function screen_practice(choice, use_mistakes) {
             if (word === current) {
                 style_color_and_border(b, 'green');
                 b.style['background-color']='lightgreen';
-                await audio_play_try(language_current["gcloud_code"], language_current_definitions[word]["word"])
+                await audio_play_try(language_current_audio_code_get(), language_current_definitions[word]["word"])
                 screen_practice(choice, use_mistakes);
             } else {
                 style_color_and_border(b, '#E74C3C');
