@@ -387,24 +387,32 @@ function screen_quiz(choice, use_mistakes) {
         return;
     }
     let front = (parent, w) => {
-        if (category_selected === category_definition) {
-            element_text_bible_word_transliteration(parent, w);
+        if (use_mistakes) {
+            w.front(parent);
         } else {
-            element_text_bible_word(parent, w);
+            if (category_selected === category_definition) {
+                element_text_bible_word_transliteration(parent, w);
+            } else {
+                element_text_bible_word(parent, w);
+            }
         }
     }
     let back = (parent, w) =>{
-        if (category_selected === category_definition) {
-            let t = text(parent, w["definition"]);
+        if (use_mistakes) {
+            w.back(parent);
         } else {
-            element_text_bible_transliteration(parent, w);
+            if (category_selected === category_definition) {
+                let t = text(parent, w["definition"]);
+            } else {
+                element_text_bible_transliteration(parent, w);
+            }
         }
     }
     if (Math.random() > 1/2) {
         [front, back] = [back, front]
     }
     let t = text(document.body,'');
-    front(t, language_current_definitions[current]);
+    front(t, use_mistakes ? current : language_current_definitions[current]);
     let choices_wrong = words_playable_shuffled_get(choice, use_mistakes).filter(w => w !== current).slice(0, max_choices - 1);
 
     for (let word_ of list_shuffle([current].concat(choices_wrong))) {
@@ -413,19 +421,31 @@ function screen_quiz(choice, use_mistakes) {
             if (word === current) {
                 style_color_and_border(b, 'green');
                 b.style['background-color']='lightgreen';
-                await audio_play_try(language_current_audio_code_get(), language_current_definitions[word]["word"])
+                await audio_play_try(
+                    language_current_audio_code_get(), 
+                    language_current_definitions[use_mistakes ? word.strong : word]["word"]
+                    )
                 screen_quiz(choice, use_mistakes);
             } else {
                 style_color_and_border(b, '#E74C3C');
                 b.style['background-color']='#F5B7B1';
-                for (let w of [word, current]) {
-                    if (!mistakes.includes(w)) {
-                        mistakes.push(w)
+                if (!use_mistakes) {
+                    for (let w of [word, current]) {
+                        let mistake_id = `${category_selected}::${w}`;
+                        let mistake = {
+                            front: (parent) => front(parent, language_current_definitions[w]),
+                            back: (parent) => back(parent, language_current_definitions[w]),
+                            strong: w,
+                            id: mistake_id
+                        };
+                        if (mistakes.filter(m => m.id === mistake.id).length === 0) {
+                            mistakes.push(mistake);
+                        }
                     }
                 }
             }
         });
-        back(b, language_current_definitions[word]);
+        back(b, use_mistakes ? word : language_current_definitions[word]);
     }
 }
 
