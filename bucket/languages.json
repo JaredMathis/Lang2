@@ -12,7 +12,10 @@
             "min": "Matthew",
             "max": "Revelation"
         },
-        "gcloud_tts": true
+        "gcloud_tts": true,
+        "narakeet": {
+            "tts": false
+        }
     },
     {
         "name": "Hebrew",
@@ -22,11 +25,14 @@
         },
         "code": "he",
         "gcloud_translate": false,
-        "gcloud_code": "el-GR",
         "bible": {
             "min": "Genesis",
             "max": "Malachi"
         },
-        "gcloud_tts": false
+        "gcloud_tts": false,
+        "narakeet": {
+            "tts": true,
+            "voice": "Ayelet"
+        }
     }
 ]
