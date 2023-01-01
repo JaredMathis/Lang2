@@ -64,7 +64,7 @@ def gcloud_tts(text, language_code):
         input=synthesis_input, voice=voice, audio_config=audio_config
     )
 
-    file_write(file_name_string, response.audio_content, True)
+    file_write(file_name_string, response.audio_content, bytes=True)
 
 def file_path_audio(text, language_code):
     file_name_string = os.path.join("bucket", "audio", language_code, text + '.mp3')
