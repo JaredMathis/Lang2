@@ -1,8 +1,7 @@
 from common import file_json_read
 from gcloud import file_path_audio
 import os
-
-from tools.common import file_write
+from common import file_write
 
 api_key = file_json_read('./gitignore/narakeet-api-client.json')["api_key"]
 
