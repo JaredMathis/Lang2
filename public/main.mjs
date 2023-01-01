@@ -272,6 +272,9 @@ function words_to_play_generate(choice, use_mistakes) {
 }
 
 function element_text_bible_word_transliteration(parent, w) {
+    if (!w) {
+        debugger;
+    }
     let s1 = span(parent, w["word"]);
     style_bible_word(s1);
     let s2 = span(parent, " : " + w["transliteration"]);
@@ -285,6 +288,10 @@ function screen_study(choice, use_mistakes) {
     let words = words_playable_get(choice, use_mistakes)
     for (let word of words) {
         let w= language_current_definitions[word];
+        if (!w) {
+            console.log('missing word');
+            continue;
+        }
         let b = button(document.body, '', async () => {
             await audio_play_try(language_current_audio_code_get(), w["word"])
         });
