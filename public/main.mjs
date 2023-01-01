@@ -282,7 +282,7 @@ function element_text_bible_word_transliteration(parent, w) {
 }
 
 function screen_study(choice, use_mistakes) {
-    let screen_back = () => use_mistakes ? screen_mistakes() : screen_pre_practice(choice);
+    let screen_back = () => use_mistakes ? screen_mistakes() : screen_pre_quiz(choice);
     screen_home_non(screen_back);
     text_words_low_high(choice, use_mistakes ? "Mistakes" : "Words");
     let words = words_playable_get(choice, use_mistakes)
@@ -327,7 +327,7 @@ function screen_mistakes() {
     }, screen_back, true, "Mistakes")
     button(document.body, 'Clear', () => { mistakes.length = 0; screen_back() });
 }
-function screen_pre_practice(choice) {
+function screen_pre_quiz(choice) {
     let screen_back = screen_learn;
     screen_pre_quiz_generic(choice, screen_back, false)
 }
@@ -347,7 +347,7 @@ function text_words_low_high(choice, noun="Words") {
 }
 
 function screen_practice(choice, use_mistakes) {
-    let screen_back = () => use_mistakes ? screen_mistakes() : screen_pre_practice(choice);
+    let screen_back = () => use_mistakes ? screen_mistakes() : screen_pre_quiz(choice);
     screen_home_non(screen_back);
     console.log(JSON.stringify(words_to_play.map(w => language_current_definitions[w])))
     let current = words_to_play.pop();
@@ -423,7 +423,7 @@ function screen_learn() {
     for (let choice of choices) {
         button(document.body, `Learn words ${choice.low} to ${choice.high}`, () => {
             if (learn_choice_stack.length >= word_group_sizes.length) {
-                screen_pre_practice(choice);
+                screen_pre_quiz(choice);
             } else {
                 depth_current++;
                 learn_choice_stack.push(choice);
@@ -433,7 +433,7 @@ function screen_learn() {
     }
     let last = list_last(learn_choice_stack);
     button(document.body, `Learn all words ${last.low} to ${last.high}`, () => {
-        screen_pre_practice(last);
+        screen_pre_quiz(last);
     });
 }
 
