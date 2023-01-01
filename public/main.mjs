@@ -365,7 +365,8 @@ function text_words_low_high(choice, noun="Words") {
 function screen_quiz(choice, use_mistakes) {
     let screen_back = () => use_mistakes ? screen_mistakes() : screen_pre_quiz(choice);
     screen_home_non(screen_back);
-    console.log(JSON.stringify(words_to_play.map(w => language_current_definitions[w])))
+    if (false)
+        console.log(JSON.stringify(words_to_play.map(w => language_current_definitions[w])))
     let current = words_to_play.pop();
     if (!current) {
         screen_back();
