@@ -4,6 +4,7 @@ import os
 from common import file_write
 import shutil
 
+exit_after_first = False
 
 api_key = file_json_read('./gitignore/narakeet-api-client.json')["api_key"]
 
@@ -33,4 +34,5 @@ def narakeet_tts(text, language_code, voice):
 
     file_write(file_name_string, None,  write=False)
 
-    exit()
+    if exit_after_first:
+        exit()
