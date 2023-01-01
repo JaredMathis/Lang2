@@ -275,10 +275,18 @@ function element_text_bible_word_transliteration(parent, w) {
     if (!w) {
         debugger;
     }
-    let s1 = span(parent, w["word"]);
-    style_bible_word(s1);
+    element_text_bible_word(parent, w);
+    element_text_bible_transliteration(parent, w);
+}
+
+function element_text_bible_transliteration(parent, w) {
     let s2 = span(parent, " : " + w["transliteration"]);
     style_bible_transliteration(s2);
+}
+
+function element_text_bible_word(parent, w) {
+    let s1 = span(parent, w["word"]);
+    style_bible_word(s1);
 }
 
 function screen_study(choice, use_mistakes) {
@@ -332,12 +340,14 @@ function screen_pre_quiz(choice) {
 }
 
 let category_selected;
+let category_transliteration = 'Transliteration';
+let category_definition = 'Definition';
 
 function screen_category(choice) {
     screen_home_non(screen_learn);
     let categories = [
-        'Definition',
-        'Transliteration',
+        category_definition,
+        category_transliteration,
     ]
     for (let category of categories) {
         button(document.body, category, () => {
@@ -373,10 +383,18 @@ function screen_quiz(choice, use_mistakes) {
         return;
     }
     let front = (parent, w) => {
-        element_text_bible_word_transliteration(parent, w);
+        if (category_selected === category_definition) {
+            element_text_bible_word_transliteration(parent, w);
+        } else {
+            element_text_bible_word(parent, w);
+        }
     }
     let back = (parent, w) =>{
-        let t = text(parent, w["definition"]);
+        if (category_selected === category_definition) {
+            let t = text(parent, w["definition"]);
+        } else {
+            element_text_bible_transliteration(parent, w);
+        }
     }
     if (Math.random() > 1/2) {
         [front, back] = [back, front]
