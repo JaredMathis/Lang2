@@ -321,7 +321,7 @@ async function audio_play_try(audio_language_code, translated) {
 }
 function screen_mistakes() {
     let screen_back = screen_home;
-    screen_pre_practice_generic({
+    screen_pre_quiz_generic({
         low: 1,
         high: mistakes.length
     }, screen_back, true, "Mistakes")
@@ -329,9 +329,9 @@ function screen_mistakes() {
 }
 function screen_pre_practice(choice) {
     let screen_back = screen_learn;
-    screen_pre_practice_generic(choice, screen_back, false)
+    screen_pre_quiz_generic(choice, screen_back, false)
 }
-function screen_pre_practice_generic(choice, screen_back, use_mistakes, noun) {
+function screen_pre_quiz_generic(choice, screen_back, use_mistakes, noun) {
     screen_home_non(screen_back);
 
     text_words_low_high(choice, noun);
