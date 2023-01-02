@@ -199,6 +199,7 @@ function document_scroll_to_top() {
 
 async function screen_read_chapter(){
     screen_home_non(() =>  screen_home());
+    let verse_toolbars = [];
     let translitties = [];
     let englishes = [];
     let ltrs = [];
@@ -222,25 +223,43 @@ async function screen_read_chapter(){
     element_two_click_toggle(english_hide, english_show);
     let choose_verse_container = element(document.body, 'div');
 
+    let verse_element_previous_;
+    let set_next;
     let chapter_english = await bible_chapter_get("berean", book_index_key, selected_chapter);
     for (let verse of chapter_json) {
+        let verse_element_previous = verse_element_previous_;
         let english_version = chapter_english.filter(v => v.verse === verse.verse)[0];
         let verse_element = text(document.body, '');
 
         let verse_toolbar = span(verse_element);
+        verse_toolbar.hidden = true;
+        verse_toolbars.push(verse_toolbar);
         button_fifth(verse_toolbar, '↑', () => {
             document_scroll_to_top();
-            verse_toolbar.hidden = true;
         });
-        verse_toolbar.hidden = true;
-        
+        let verse_element_previous_button = button_fifth(verse_toolbar, '←', () => {
+            verse_element_previous.scrollIntoView();
+        });
+        if (!verse_element_previous) {
+            verse_element_previous_button.disabled = true;
+        }
+        let next = button_fifth(verse_toolbar, '→');
+        next.disabled = true;
+        if (set_next) {
+            set_next(verse_element);
+        }
+        set_next = (verse_element_next) => {
+            click(next, () => verse_element_next.scrollIntoView());
+            next.disabled = false;
+        }
+
         let verse_element_original = text(verse_element, '');
         verse_element_original.dir = language_current_direction_ltr_get();
         ltrs.push(verse_element_original);
         
         let verse_number = span(verse_element_original, verse.verse);
         click(verse_number, () => {
-            verse_toolbar.hidden = !verse_toolbar.hidden;
+            verse_toolbars.forEach(v => v.hidden = !v.hidden);
         })
         button_fifth(choose_verse_container, verse.verse, () => {
             verse_element.scrollIntoView();            
@@ -305,6 +324,8 @@ async function screen_read_chapter(){
         verse_element_english.style['font-style'] = 'italic';
         verse_element_english.style['font-weight'] = '400';
         englishes.push(verse_element_english);
+
+        verse_element_previous_ = verse_element;
     }
 }
 
