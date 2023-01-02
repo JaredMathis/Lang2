@@ -531,6 +531,8 @@ function screen_quiz(choice, use_mistakes) {
         } else {
             if (no_transliteration) {
                 back = (parent, w) => element_text_bible_word(parent, w);
+            } else if (category_selected == category_transliteration) {
+                back = (parent, w) => element_text_bible_transliteration(parent, w);
             } else {
                 back = (parent, w) => element_text_bible_word_transliteration(parent, w);
             }
