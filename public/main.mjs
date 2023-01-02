@@ -260,7 +260,10 @@ async function screen_read_chapter(){
         let verse_number = span(verse_element_original, verse.verse);
         click(verse_number, () => {
             verse_toolbars.forEach(v => v.hidden = !v.hidden);
-            verse_toolbar.scrollIntoView();
+            // Give the browser a chance to render
+            setTimeout(() => {
+                verse_toolbar.scrollIntoView();
+            });
         })
         button_fifth(choose_verse_container, verse.verse, () => {
             verse_element.scrollIntoView();            
