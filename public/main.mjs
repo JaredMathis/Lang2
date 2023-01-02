@@ -187,18 +187,12 @@ async function screen_read_chapter(){
     screen_home_non(() =>  screen_home());
     let englishes = [];
     let english_hide = button(document.body, 'Hide English', () => {
-        english_hide.hidden = true;
-        english_show.hidden = false;
-
         englishes.forEach(e => e.hidden = true);
     });
     let english_show = button(document.body, 'Show English', () => {
-        english_hide.hidden = false;
-        english_show.hidden = true;
-
         englishes.forEach(e => e.hidden = false);
     });
-    english_show.hidden = true;
+    element_two_click_toggle(english_hide, english_show);
     let chapter_english = await bible_chapter_get("berean", book_index_key, selected_chapter);
     for (let verse of chapter_json) {
         let english_version = chapter_english.filter(v => v.verse === verse.verse)[0];
