@@ -135,12 +135,16 @@ async function screen_choose_book() {
     }
 }
 
+function button_fifth(parent, text, on_click) {
+    let b = button(parent, text, on_click);
+    return b;
+}
 
 async function screen_choose_chapter() {
     screen_base(screen_choose_book);
     text(document.body, book_index_value.name)
     for (let chapter of book_index_value.chapters) {
-        button(document.body, chapter, async () => {
+        button_fifth(document.body, chapter, async () => {
             selected_chapter = chapter;
             chapter_json = await bible_chapter_get(language_current.path.bible, book_index_key, selected_chapter);
             language_current_words = [];
