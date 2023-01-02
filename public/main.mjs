@@ -38,7 +38,7 @@ function click(b, on) {
     b.addEventListener("click", on);
 }
 
-function element(parent, tag_name, text) {
+function element(parent, tag_name, text='') {
     let b = document.createElement(tag_name.toUpperCase());
     parent.appendChild(b);
     b.innerHTML = text;
@@ -216,6 +216,8 @@ async function screen_read_chapter(){
         console.log({ltrs});
     });
     element_two_click_toggle(english_hide, english_show);
+    let choose_verse_container = element(document.body, 'div');
+
     let chapter_english = await bible_chapter_get("berean", book_index_key, selected_chapter);
     for (let verse of chapter_json) {
         let english_version = chapter_english.filter(v => v.verse === verse.verse)[0];
@@ -224,6 +226,9 @@ async function screen_read_chapter(){
         verse_element_original.dir = language_current_direction_ltr_get();
         ltrs.push(verse_element_original);
         let verse_number = span(verse_element_original, verse.verse);
+        button_fifth(choose_verse_container, verse.verse, () => {
+            verse_number.scrollIntoView();            
+        });
         verse_number.style['font-weight'] = '600';
         for (let token of verse.tokens) {
             let spacer = span(verse_element_original, ' ');
