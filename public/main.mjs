@@ -420,9 +420,8 @@ function definition_short(s) {
     return s.substr(0, 30) + "...";
 }
 
-function parenthesis_nested_remove() {
+function parenthesis_nested_remove(Input) {
     var pCount = 0;
-    var Input = "ABCDEF ((3) abcdef),GHIJKLMN ((4)(5) Value),OPQRSTUVW((4(5)) Value (3))";
     var Output = "";
     for (var i=0; i < Input.length; i++) {
         if (Input[i] === '(') {
@@ -435,6 +434,7 @@ function parenthesis_nested_remove() {
             Output += Input[i];
         }
     }
+    return Output;
 }
 
 function screen_quiz(choice, use_mistakes) {
