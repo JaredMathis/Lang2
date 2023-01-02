@@ -368,10 +368,10 @@ function screen_category(choice) {
     let categories = [
         { label: category_definition, action: category_definition_set },
         { 
-            label: category_definition + "(No transliteration)", 
+            label: category_definition + " (No transliteration)", 
             action: c => { 
                 no_transliteration = true;
-                category_definition_set(c); 
+                category_definition_set(category_definition); 
             }
         },
         { label: category_transliteration, action: category_definition_set },
@@ -379,7 +379,7 @@ function screen_category(choice) {
     for (let category of categories) {
         button(document.body, category.label, () => {
             no_transliteration = false;
-            category.action();
+            category.action(category.label);
             screen_pre_quiz(choice);
         });
     }
@@ -432,9 +432,9 @@ function screen_quiz(choice, use_mistakes) {
             back = (parent, w) => text(parent, w["definition"]);
         } else {
             if (no_transliteration) {
-                front = (parent, w) => element_text_bible_word(parent, w);
+                back = (parent, w) => element_text_bible_word(parent, w);
             } else {
-                front = (parent, w) => element_text_bible_word_transliteration(parent, w);
+                back = (parent, w) => element_text_bible_word_transliteration(parent, w);
             }
         }
     }
