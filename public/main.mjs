@@ -385,7 +385,7 @@ function screen_category(choice) {
             }
         },
         { 
-            label: category_definition + " (No transliteration)", 
+            label: category_definition + " (Long) (No transliteration)", 
             action: c => { 
                 no_transliteration = true;
                 category_definition_set(category_definition); 
