@@ -757,6 +757,8 @@ function hash_get() {
     return result;
 }
 
+let language_first = true;
+
 function screen_main() {
     element_clear(document.body);
     for (let l of languages) {
@@ -767,7 +769,8 @@ function screen_main() {
             bible_index = await http_get(file_path_bible_index_get('bsb'))
             screen_choose_book();
         });
-        if (hash_get()["Language"] === label) {
+        if (language_first && hash_get()["Language"] === label) {
+            language_first = false;
             b.click();
         }
     }
