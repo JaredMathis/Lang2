@@ -81,6 +81,7 @@ function http_get(url) {
     return fetch(url).then(r => r.json())
 }
 
+let hash_home_first = true;
 
 async function screen_home() {
     depth_current = 0;
@@ -90,6 +91,10 @@ async function screen_home() {
     text_book_chapter();
     let read = button(document.body, "Read chapter", ev => screen_read_chapter());
     let learn = button(document.body, "Learn words in chapter", ev => screen_learn());
+    if (hash_home_first && hash_get()['Home']=== 'Read') {
+        hash_home_first= false;
+        read.click();
+    }
     if (mistakes.length > 0) {
         button(document.body, "Mistakes", ev => screen_mistakes());
     }
@@ -206,7 +211,7 @@ function style_bible_transliteration(element) {
 function document_scroll_to_top() {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
-
+let hash_chapter_read_first = true;
 async function screen_read_chapter(){
     screen_home_non(() =>  screen_home());
     let verse_toolbars = [];
@@ -233,6 +238,7 @@ async function screen_read_chapter(){
     element_two_click_toggle(english_hide, english_show);
     let choose_verse_container = element(document.body, 'div');
 
+    let choose_verse_after_render;
     let verse_element_previous_;
     let set_next;
     let chapter_english = await bible_chapter_get("berean", book_index_key, selected_chapter);
@@ -240,6 +246,12 @@ async function screen_read_chapter(){
         let verse_element_previous = verse_element_previous_;
         let english_version = chapter_english.filter(v => v.verse === verse.verse)[0];
         let verse_element = text(document.body, '');
+
+        console.log({v:verse.verse,v2:hash_get()['Verse']})
+        if (hash_chapter_read_first && hash_get()['Verse'] === verse.verse) {
+            hash_chapter_read_first= false;
+            choose_verse_after_render = verse_element;
+        }
 
         let verse_toolbar = span(verse_element);
         verse_toolbar.hidden = true;
@@ -337,6 +349,10 @@ async function screen_read_chapter(){
         englishes.push(verse_element_english);
 
         verse_element_previous_ = verse_element;
+    }
+
+    if (choose_verse_after_render) {
+        choose_verse_after_render.scrollIntoView();
     }
 }
 
