@@ -755,7 +755,7 @@ function element_clear(element) {
 function hash_get() {
     let result = {};
     if (window.location.hash) {
-        window.location.hash.split('#').filter(a => a).forEach(kvp => {
+        window.location.hash.replace('#', '').split('+').filter(a => a).forEach(kvp => {
             let split = kvp.split('=');
             let key = split[0];
             let value = split[1];
