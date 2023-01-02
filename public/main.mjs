@@ -359,6 +359,7 @@ let category_transliteration = 'Transliteration';
 let category_definition = 'Definition';
 
 let no_transliteration;
+let definition_short_use;
 
 function screen_category(choice) {
     screen_home_non(screen_learn);
@@ -367,6 +368,13 @@ function screen_category(choice) {
     }
     let categories = [
         { label: category_definition, action: category_definition_set },
+        { 
+            label: category_definition + " (Short)", 
+            action: c => { 
+                definition_short_use = true;
+                category_definition_set(category_definition); 
+            }
+        },
         { 
             label: category_definition + " (No transliteration)", 
             action: c => { 
@@ -379,6 +387,7 @@ function screen_category(choice) {
     for (let category of categories) {
         button(document.body, category.label, () => {
             no_transliteration = false;
+            definition_short_use = false;
             category.action(category.label);
             screen_pre_quiz(choice);
         });
