@@ -228,7 +228,7 @@ async function screen_read_chapter(){
         let verse_element = text(document.body, '');
 
         let verse_toolbar = span(verse_element);
-        let verse_top_button = button_fifth(verse_toolbar, '↑', () => {
+        button_fifth(verse_toolbar, '↑', () => {
             document_scroll_to_top();
             verse_toolbar.hidden = true;
         });
