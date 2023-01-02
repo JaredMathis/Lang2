@@ -362,6 +362,12 @@ function screen_category(choice) {
     }
     let categories = [
         { label: category_definition, action: category_definition_set },
+        { 
+            label: category_definition + "(No transliteration)", 
+            action: c => { 
+                category_definition_set(c); 
+            }
+        },
         { label: category_transliteration, action: category_definition_set },
     ]
     for (let category of categories) {
