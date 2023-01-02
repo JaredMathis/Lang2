@@ -317,10 +317,14 @@ function screen_study(choice, use_mistakes) {
             }
 
             if (category_selected === category_definition) {
-                span(b, " : " + w["definition"]);
+                span(b, " : " + (definition_short_use ? definition_short : identity)(w["definition"]));
             }
         }
     }
+}
+
+function identity(a) {
+    return a;
 }
 
 
@@ -409,6 +413,10 @@ function text_words_low_high(choice, noun="Words") {
     text(document.body, `${noun} ${choice.low} to ${choice.high}`);
 }
 
+function definition_short(s) {
+    return s.substr(0, 30) + s.length > 30 ? "..." : "";
+}
+
 function screen_quiz(choice, use_mistakes) {
     let screen_back = () => use_mistakes ? screen_mistakes() : screen_pre_quiz(choice);
     screen_home_non(screen_back);
@@ -438,7 +446,11 @@ function screen_quiz(choice, use_mistakes) {
         back = (parent, w) => w.back(parent);
     } else {
         if (category_selected === category_definition) {
-            back = (parent, w) => text(parent, w["definition"]);
+            if (definition_short_use) {
+                back = (parent, w) => text(parent, w["definition"]);
+            } else {
+                back = (parent, w) => text(parent, definition_short(w["definition"]));
+            }
         } else {
             if (no_transliteration) {
                 back = (parent, w) => element_text_bible_word(parent, w);
