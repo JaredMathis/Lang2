@@ -137,6 +137,7 @@ async function screen_choose_book() {
 
 function button_fifth(parent, text, on_click) {
     let b = button(parent, text, on_click);
+    b.style.width = '20%';
     return b;
 }
 
