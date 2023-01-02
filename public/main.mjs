@@ -123,11 +123,16 @@ async function screen_choose_book() {
             min_found = true;
         }
         if (min_found && !max_found) {
-            button(document.body,book_index.name, () => {
-                book_index_key = key;
-                book_index_value = book_index;
-                screen_choose_chapter();
-            });
+            let book_name_length_max = 3;
+            let b = button_fifth(
+                document.body,
+                book_index.name.replace(' ', '').substr(0, book_name_length_max), 
+                () => {
+                    book_index_key = key;
+                    book_index_value = book_index;
+                    screen_choose_chapter();
+                });
+            b.style['font-size'] = '4vh';
         }
         if (book_index.name === language_current.bible.max) {
             max_found = true;
