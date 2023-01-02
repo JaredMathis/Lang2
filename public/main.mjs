@@ -371,7 +371,12 @@ function screen_category(choice) {
         category_selected = c
     }
     let categories = [
-        { label: category_definition, action: category_definition_set },
+        { 
+            label: category_definition + " (Long)", 
+            action: c => { 
+                category_definition_set(category_definition); 
+            }
+        },
         { 
             label: category_definition + " (Short)", 
             action: c => { 
