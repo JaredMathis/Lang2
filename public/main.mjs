@@ -239,15 +239,7 @@ async function screen_read_chapter(){
                     " " + (language_current_definitions[token.strong]["definition"]))
                 translation4.style['font-size'] = "4.5vh";
                 translation4.style.opacity = '0.6';
-                translation4.hidden = true;
-                click(translation3, () => {
-                    translation4.hidden = false;
-                    translation3.hidden = true;
-                });
-                click(translation4, () => {
-                    translation4.hidden = true;
-                    translation3.hidden = false;
-                });
+                element_two_click_toggle(translation3, translation4);
             }
             async function translation_display_toggle() {
                 translation.hidden = !translation.hidden
@@ -267,6 +259,18 @@ async function screen_read_chapter(){
     }
 }
 
+function element_two_click_toggle(a, b) {
+    b.hidden = true;
+    click(a, () => {
+        b.hidden = false;
+        a.hidden = true;
+    });
+    click(b, () => {
+        b.hidden = true;
+        a.hidden = false;
+    });
+
+}
 
 function language_current_audio_code_get() {
     return language_current["gcloud_code"] || language_current["code"];
