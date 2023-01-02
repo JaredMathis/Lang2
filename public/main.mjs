@@ -226,12 +226,22 @@ async function screen_read_chapter(){
     for (let verse of chapter_json) {
         let english_version = chapter_english.filter(v => v.verse === verse.verse)[0];
         let verse_element = text(document.body, '');
-        let verse_top_button = button(verse_element, 'Top', document_scroll_to_top);
-        verse_top_button.hidden = true;
+
+        let verse_toolbar = span(verse_element);
+        let verse_top_button = button_fifth(verse_toolbar, '↑', () => {
+            document_scroll_to_top();
+            verse_toolbar.hidden = true;
+        });
+        verse_toolbar.hidden = true;
+        
         let verse_element_original = text(verse_element, '');
         verse_element_original.dir = language_current_direction_ltr_get();
         ltrs.push(verse_element_original);
+        
         let verse_number = span(verse_element_original, verse.verse);
+        click(verse_number, () => {
+            verse_toolbar.hidden = !verse_toolbar.hidden;
+        })
         button_fifth(choose_verse_container, verse.verse, () => {
             verse_element.scrollIntoView();            
         });
