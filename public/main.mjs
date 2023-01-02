@@ -480,7 +480,9 @@ function screen_category(choice) {
         },
         {
             label: "Word vs. Transliteration", 
-            action: category_definition_set
+            action: c => { 
+                category_definition_set(category_transliteration); 
+            }
         }
     ]
     for (let category of categories) {
@@ -540,6 +542,7 @@ function parenthesis_nested_remove(Input) {
 function screen_quiz(choice, use_mistakes) {
     let screen_back = () => use_mistakes ? screen_mistakes() : screen_pre_quiz(choice);
     screen_home_non(screen_back);
+    text(document.body, 'Remaining: ' + words_to_play.length);
     if (false)
         console.log(JSON.stringify(words_to_play.map(w => language_current_definitions[w])))
     let current = words_to_play.pop();
