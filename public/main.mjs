@@ -234,6 +234,20 @@ async function screen_read_chapter(){
                     " " + definition_short(language_current_definitions[token.strong]["definition"]))
                 translation3.style['font-size'] = "4.5vh";
                 translation3.style.opacity = '0.6';
+                let translation4 = span(
+                    translation, 
+                    " " + (language_current_definitions[token.strong]["definition"]))
+                translation4.style['font-size'] = "4.5vh";
+                translation4.style.opacity = '0.6';
+                translation4.hidden = true;
+                click(translation3, () => {
+                    translation4.hidden = false;
+                    translation3.hidden = true;
+                });
+                click(translation4, () => {
+                    translation4.hidden = true;
+                    translation3.hidden = false;
+                });
             }
             async function translation_display_toggle() {
                 translation.hidden = !translation.hidden
