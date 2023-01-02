@@ -215,7 +215,9 @@ async function screen_read_chapter(){
                 translation2.style['font-size'] = "4.5vh";
                 translation2.style.opacity = '0.6';
                 style_bible_word(translation2, true);
-                let translation3 = span(translation, " " + language_current_definitions[token.strong]["definition"])
+                let translation3 = span(
+                    translation, 
+                    " " + definition_short(language_current_definitions[token.strong]["definition"]))
                 translation3.style['font-size'] = "4.5vh";
                 translation3.style.opacity = '0.6';
             }
