@@ -418,7 +418,7 @@ function definition_short(s) {
     if (s.length <= threshold) {
         return s;
     }
-    return s.substr(0, threshold) + "...";
+    return parenthesis_nested_remove(s);
 }
 
 function parenthesis_nested_remove(Input) {
@@ -431,7 +431,7 @@ function parenthesis_nested_remove(Input) {
         else if (Input[i] === ')') {
             pCount--;
         }
-        else if (pCount == 0) {
+        else if (pCount <= 0) {
             Output += Input[i];
         }
     }
