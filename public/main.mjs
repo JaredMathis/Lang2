@@ -472,9 +472,9 @@ function screen_quiz(choice, use_mistakes) {
     } else {
         if (category_selected === category_definition) {
             if (definition_short_use) {
-                back = (parent, w) => text(parent, w["definition"]);
-            } else {
                 back = (parent, w) => text(parent, definition_short(w["definition"]));
+            } else {
+                back = (parent, w) => text(parent, w["definition"]);
             }
         } else {
             if (no_transliteration) {
