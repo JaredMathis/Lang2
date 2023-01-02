@@ -353,15 +353,20 @@ let category_selected;
 let category_transliteration = 'Transliteration';
 let category_definition = 'Definition';
 
+let no_transliteration;
+
 function screen_category(choice) {
     screen_home_non(screen_learn);
+    function category_definition_set(c) {
+        category_selected = c
+    }
     let categories = [
-        category_definition,
-        category_transliteration,
+        { label: category_definition, action: category_definition_set },
+        { label: category_transliteration, action: category_definition_set },
     ]
     for (let category of categories) {
-        button(document.body, category, () => {
-            category_selected = category;
+        button(document.body, category.label, () => {
+            category.action();
             screen_pre_quiz(choice);
         });
     }
