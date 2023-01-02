@@ -414,7 +414,27 @@ function text_words_low_high(choice, noun="Words") {
 }
 
 function definition_short(s) {
-    return s.substr(0, 30) + (s.length > 30 ? "..." : "");
+    if (s.length <= 30) {
+        return s;
+    }
+    return s.substr(0, 30) + "...";
+}
+
+function parenthesis_nested_remove() {
+    var pCount = 0;
+    var Input = "ABCDEF ((3) abcdef),GHIJKLMN ((4)(5) Value),OPQRSTUVW((4(5)) Value (3))";
+    var Output = "";
+    for (var i=0; i < Input.length; i++) {
+        if (Input[i] === '(') {
+            pCount++;
+        }
+        else if (Input[i] === ')') {
+            pCount--;
+        }
+        else if (pCount == 0) {
+            Output += Input[i];
+        }
+    }
 }
 
 function screen_quiz(choice, use_mistakes) {
