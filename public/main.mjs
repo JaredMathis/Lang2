@@ -193,6 +193,10 @@ function style_bible_transliteration(element) {
     style_color_and_border(element, blue);
 }
 
+function document_scroll_to_top() {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+}
+
 async function screen_read_chapter(){
     screen_home_non(() =>  screen_home());
     let translitties = [];
@@ -222,6 +226,8 @@ async function screen_read_chapter(){
     for (let verse of chapter_json) {
         let english_version = chapter_english.filter(v => v.verse === verse.verse)[0];
         let verse_element = text(document.body, '');
+        let verse_top_button = button(verse_element, 'Top', document_scroll_to_top);
+        verse_top_button.hidden = true;
         let verse_element_original = text(verse_element, '');
         verse_element_original.dir = language_current_direction_ltr_get();
         ltrs.push(verse_element_original);
