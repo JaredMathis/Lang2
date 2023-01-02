@@ -88,11 +88,11 @@ async function screen_home() {
     element_clear(document.body);
     button(document.body, "Back", ev => screen_choose_chapter());
     text_book_chapter();
+    button(document.body, "Read", ev => screen_read_chapter());
     button(document.body, "Learn", ev => screen_learn());
     if (mistakes.length > 0) {
         button(document.body, "Mistakes", ev => screen_mistakes());
     }
-    button(document.body, "Read", ev => screen_read_chapter());
     learn_choice_stack = [{low: 1, high: language_current_words.length}]
 }
 
