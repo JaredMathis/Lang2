@@ -365,6 +365,7 @@ function screen_category(choice) {
         { 
             label: category_definition + "(No transliteration)", 
             action: c => { 
+                no_transliteration = true;
                 category_definition_set(c); 
             }
         },
@@ -372,6 +373,7 @@ function screen_category(choice) {
     ]
     for (let category of categories) {
         button(document.body, category.label, () => {
+            no_transliteration = false;
             category.action();
             screen_pre_quiz(choice);
         });
