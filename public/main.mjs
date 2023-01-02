@@ -297,7 +297,7 @@ function screen_study(choice, use_mistakes) {
     text_words_low_high(choice, use_mistakes ? "Mistakes" : "Words");
     let words = words_playable_get(choice, use_mistakes)
     for (let word of words) {
-        let w= language_current_definitions[word];
+        let w= language_current_definitions[use_mistakes ? word.strong : word];
         if (!w) {
             console.log('missing word');
             continue;
@@ -305,9 +305,15 @@ function screen_study(choice, use_mistakes) {
         let b = button(document.body, '', async () => {
             await audio_play_try(language_current_audio_code_get(), w["word"])
         });
-        element_text_bible_word_transliteration(b, w);
-        if (category_selected === category_definition) {
-            span(b, " : " + w["definition"]);
+        if (use_mistakes) {
+            word.front(b);
+            span(b, " : ");
+            word.back(b);
+        } else {
+            element_text_bible_word_transliteration(b, w);
+            if (category_selected === category_definition) {
+                span(b, " : " + w["definition"]);
+            }
         }
     }
 }
@@ -386,28 +392,29 @@ function screen_quiz(choice, use_mistakes) {
         screen_back();
         return;
     }
-    let front = (parent, w) => {
-        if (use_mistakes) {
-            w.front(parent);
+    let front;
+    if (use_mistakes) {
+        front = (parent, w) => w.front(parent);
+    } else {
+        if (category_selected === category_definition) {
+            front = (parent, w) => element_text_bible_word_transliteration(parent, w);
         } else {
-            if (category_selected === category_definition) {
-                element_text_bible_word_transliteration(parent, w);
-            } else {
-                element_text_bible_word(parent, w);
-            }
+            front = (parent, w) => element_text_bible_word(parent, w);
         }
     }
-    let back = (parent, w) =>{
-        if (use_mistakes) {
-            w.back(parent);
+    let back;
+    if (use_mistakes) {
+        back = (parent, w) => w.back(parent);
+    } else {
+        if (category_selected === category_definition) {
+            back = (parent, w) => text(parent, w["definition"]);
         } else {
-            if (category_selected === category_definition) {
-                let t = text(parent, w["definition"]);
-            } else {
-                element_text_bible_transliteration(parent, w);
-            }
+            back = (parent, w) => element_text_bible_transliteration(parent, w);
         }
     }
+    
+    let front_original = front;
+    let back_original = back;
     if (Math.random() > 1/2) {
         [front, back] = [back, front]
     }
@@ -433,8 +440,8 @@ function screen_quiz(choice, use_mistakes) {
                     for (let w of [word, current]) {
                         let mistake_id = `${category_selected}::${w}`;
                         let mistake = {
-                            front: (parent) => front(parent, language_current_definitions[w]),
-                            back: (parent) => back(parent, language_current_definitions[w]),
+                            front: (parent) => front_original(parent, language_current_definitions[w]),
+                            back: (parent) => back_original(parent, language_current_definitions[w]),
                             strong: w,
                             id: mistake_id
                         };
