@@ -424,12 +424,16 @@ function definition_short(s) {
 function parenthesis_nested_remove(Input) {
     var pCount = 0;
     var Output = "";
+    var found_left = false;
     for (var i=0; i < Input.length; i++) {
         if (Input[i] === '(') {
+            found_left = true;
             pCount++;
         }
         else if (Input[i] === ')') {
-            pCount--;
+            if (found_left) {
+                pCount--;
+            }
         }
         else if (pCount <= 0) {
             Output += Input[i];
