@@ -213,7 +213,7 @@ async function screen_read_chapter(){
         let english_version = chapter_english.filter(v => v.verse === verse.verse)[0];
         let verse_element = text(document.body, '');
         let verse_element_original = text(verse_element, '');
-        verse_element_original.dir = language_current.direction || (language_current_hebrew_is() ? "rtl" : "ltr");
+        verse_element_original.dir = language_current_direction_ltr_get();
         let verse_number = span(verse_element_original, verse.verse);
         verse_number.style['font-weight'] = '600';
         for (let token of verse.tokens) {
@@ -271,6 +271,10 @@ async function screen_read_chapter(){
         verse_element_english.style['font-weight'] = '400';
         englishes.push(verse_element_english);
     }
+}
+
+function language_current_direction_ltr_get() {
+    return language_current.direction || (language_current_hebrew_is() ? "rtl" : "ltr");
 }
 
 function element_two_click_toggle(a, b) {
