@@ -414,7 +414,7 @@ function text_words_low_high(choice, noun="Words") {
 }
 
 function definition_short(s) {
-    return s.substr(0, 30) + s.length > 30 ? "..." : "";
+    return s.substr(0, 30) + (s.length > 30 ? "..." : "");
 }
 
 function screen_quiz(choice, use_mistakes) {
