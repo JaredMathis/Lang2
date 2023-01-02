@@ -391,6 +391,14 @@ function screen_category(choice) {
                 category_definition_set(category_definition); 
             }
         },
+        { 
+            label: category_definition + " (Short) (No transliteration)", 
+            action: c => { 
+                definition_short_use = true;
+                no_transliteration = true;
+                category_definition_set(category_definition); 
+            }
+        },
         { label: category_transliteration, action: category_definition_set },
     ]
     for (let category of categories) {
