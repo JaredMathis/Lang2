@@ -414,10 +414,11 @@ function text_words_low_high(choice, noun="Words") {
 }
 
 function definition_short(s) {
-    if (s.length <= 30) {
+    let threshold = 30;
+    if (s.length <= threshold) {
         return s;
     }
-    return s.substr(0, 30) + "...";
+    return s.substr(0, threshold) + "...";
 }
 
 function parenthesis_nested_remove(Input) {
