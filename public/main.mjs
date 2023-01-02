@@ -195,12 +195,17 @@ function style_bible_transliteration(element) {
 
 async function screen_read_chapter(){
     screen_home_non(() =>  screen_home());
+    let rooties = [];
+    let translitties = [];
     let englishes = [];
     let english_hide = button(document.body, 'Hide English', () => {
         englishes.forEach(e => e.hidden = true);
     });
     let english_show = button(document.body, 'Show English', () => {
         englishes.forEach(e => e.hidden = false);
+    });
+    let toggle_transliteration = button(document.body, 'Toggle transliteration', () => {
+        [translitties, rooties].forEach(list => list.forEach(e => e.hidden = !e.hidden));
     });
     element_two_click_toggle(english_hide, english_show);
     let chapter_english = await bible_chapter_get("berean", book_index_key, selected_chapter);
@@ -214,8 +219,13 @@ async function screen_read_chapter(){
         for (let token of verse.tokens) {
             let spacer = span(verse_element_original, ' ');
             style_bible_word(spacer);
-            let translated = span(verse_element_original, token.token);
-            style_bible_word(translated);
+            let translated = span(verse_element_original, '');
+            let translateda = span(translated, token.token);
+            rooties.push(translateda);
+            let translatedb = span(translated, token.transliteration);
+            translitties.push(translatedb);
+            translatedb.hidden = true;
+            [translateda,translatedb].forEach(t => style_bible_word(t));
             click(translated, translation_display_toggle);
             let translation = span(verse_element_original, '');
             translation.dir = 'ltr';
