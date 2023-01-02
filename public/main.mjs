@@ -88,8 +88,8 @@ async function screen_home() {
     element_clear(document.body);
     button(document.body, "Back", ev => screen_choose_chapter());
     text_book_chapter();
-    button(document.body, "Read chapter", ev => screen_read_chapter());
-    button(document.body, "Learn words in chapter", ev => screen_learn());
+    let read = button(document.body, "Read chapter", ev => screen_read_chapter());
+    let learn = button(document.body, "Learn words in chapter", ev => screen_learn());
     if (mistakes.length > 0) {
         button(document.body, "Mistakes", ev => screen_mistakes());
     }
@@ -112,7 +112,7 @@ function screen_base(back_on_click) {
     button(document.body, "Back", ev => back_on_click())
 }
 
-
+let book_first = true;
 async function screen_choose_book() {
     screen_base(screen_main);
     let min_found = false;
@@ -124,15 +124,21 @@ async function screen_choose_book() {
         }
         if (min_found && !max_found) {
             let book_name_length_max = 3;
+            let label = book_index.name.replace(' ', '').substr(0, book_name_length_max);
             let b = button_fifth(
                 document.body,
-                book_index.name.replace(' ', '').substr(0, book_name_length_max), 
+                label, 
                 () => {
                     book_index_key = key;
                     book_index_value = book_index;
                     screen_choose_chapter();
                 });
             b.style['font-size'] = '4vh';
+            
+            if (book_first && hash_get()["Book"] === label) {
+                book_first = false;
+                b.click();
+            }
         }
         if (book_index.name === language_current.bible.max) {
             max_found = true;
@@ -145,12 +151,12 @@ function button_fifth(parent, text, on_click) {
     b.style.width = '20%';
     return b;
 }
-
+let chapter_first = true;
 async function screen_choose_chapter() {
     screen_base(screen_choose_book);
     text(document.body, book_index_value.name)
     for (let chapter of book_index_value.chapters) {
-        button_fifth(document.body, chapter, async () => {
+        let b = button_fifth(document.body, chapter, async () => {
             selected_chapter = chapter;
             chapter_json = await bible_chapter_get(language_current.path.bible, book_index_key, selected_chapter);
             language_current_words = [];
@@ -164,6 +170,10 @@ async function screen_choose_chapter() {
             }
             screen_home();
         });
+        if (chapter_first && hash_get()["Chapter"] === chapter) {
+            chapter_first = false;
+            b.click();
+        }
     }
 }
 
