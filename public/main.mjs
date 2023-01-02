@@ -742,15 +742,34 @@ function element_clear(element) {
     element.innerHTML = '';
 }
 
+function hash_get() {
+    let result = {};
+    if (window.location.hash) {
+        window.location.hash.split('#').filter(a => a).forEach(kvp => {
+            let split = kvp.split('=');
+            let key = split[0];
+            let value = split[1];
+            result[key] = value;
+        })
+        return result;
+    }
+
+    return result;
+}
+
 function screen_main() {
     element_clear(document.body);
     for (let l of languages) {
-        button(document.body, l["name"], async ev => {
+        let label = l["name"];
+        let b = button(document.body, label, async ev => {
             language_current = l;
             language_current_definitions = await http_get(file_path_get("translations%2F" + language_current["code"] + `_${target_language_code}.json`));
             bible_index = await http_get(file_path_bible_index_get('bsb'))
             screen_choose_book();
-        })
+        });
+        if (hash_get()["Language"] === label) {
+            b.click();
+        }
     }
 }
 
