@@ -195,7 +195,6 @@ function style_bible_transliteration(element) {
 
 async function screen_read_chapter(){
     screen_home_non(() =>  screen_home());
-    let rooties = [];
     let translitties = [];
     let englishes = [];
     let ltrs = [];
@@ -207,7 +206,7 @@ async function screen_read_chapter(){
     });
     let toggle_transliteration_toggled = false;
     let toggle_transliteration = button(document.body, 'Toggle transliteration', () => {
-        [translitties, rooties].forEach(list => list.forEach(e => e.hidden = !e.hidden));
+        translitties.forEach(e => e.hidden = !e.hidden);
         toggle_transliteration_toggled = !toggle_transliteration_toggled;
         if (toggle_transliteration_toggled) {
             ltrs.forEach(e => e.dir = "ltr");
@@ -231,7 +230,7 @@ async function screen_read_chapter(){
             style_bible_word(spacer);
             let translated = span(verse_element_original, '');
             let translateda = span(translated, token.token);
-            rooties.push(translateda);
+            translitties.push(translateda);
             let translatedb = span(translated, token.transliteration);
             translitties.push(translatedb);
             translatedb.hidden = true;
@@ -248,7 +247,7 @@ async function screen_read_chapter(){
             if (language_current_definitions[token.strong]) {
                 let translation2 = span(translation, '');
                 let translation2a = span(translation2, language_current_definitions[token.strong]["word"]);
-                rooties.push(translation2a);
+                translitties.push(translation2a);
                 let translation2b = span(translation2, language_current_definitions[token.strong]["transliteration"]);
                 translitties.push(translation2b);
                 translation2b.hidden = true;
