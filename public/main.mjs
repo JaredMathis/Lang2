@@ -205,8 +205,16 @@ async function screen_read_chapter(){
     let english_show = button(document.body, 'Show English', () => {
         englishes.forEach(e => e.hidden = false);
     });
+    let toggle_transliteration_toggled = false;
     let toggle_transliteration = button(document.body, 'Toggle transliteration', () => {
         [translitties, rooties].forEach(list => list.forEach(e => e.hidden = !e.hidden));
+        toggle_transliteration_toggled = !toggle_transliteration_toggled;
+        if (toggle_transliteration_toggled) {
+            ltrs.forEach(e => e.dir = "ltr");
+        } else {
+            ltrs.forEach(e => e.dir = language_current_direction_ltr_get());
+        }
+        console.log({ltrs});
     });
     element_two_click_toggle(english_hide, english_show);
     let chapter_english = await bible_chapter_get("berean", book_index_key, selected_chapter);
