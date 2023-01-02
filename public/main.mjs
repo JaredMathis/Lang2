@@ -198,6 +198,7 @@ async function screen_read_chapter(){
     let rooties = [];
     let translitties = [];
     let englishes = [];
+    let ltrs = [];
     let english_hide = button(document.body, 'Hide English', () => {
         englishes.forEach(e => e.hidden = true);
     });
@@ -214,6 +215,7 @@ async function screen_read_chapter(){
         let verse_element = text(document.body, '');
         let verse_element_original = text(verse_element, '');
         verse_element_original.dir = language_current_direction_ltr_get();
+        ltrs.push(verse_element_original);
         let verse_number = span(verse_element_original, verse.verse);
         verse_number.style['font-weight'] = '600';
         for (let token of verse.tokens) {
