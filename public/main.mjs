@@ -227,7 +227,7 @@ async function screen_read_chapter(){
         ltrs.push(verse_element_original);
         let verse_number = span(verse_element_original, verse.verse);
         button_fifth(choose_verse_container, verse.verse, () => {
-            verse_number.scrollIntoView();            
+            verse_element.scrollIntoView();            
         });
         verse_number.style['font-weight'] = '600';
         for (let token of verse.tokens) {
