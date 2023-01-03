@@ -107,7 +107,7 @@ function text_book_chapter() {
 
 function screen_home_non(back_on_click) {
     element_clear(document.body);
-    main_toolbar(document.body);
+    main_toolbar(document.body, back_on_click);
     button(document.body, "Home", ev => screen_home());
     button(document.body, "Back", ev => back_on_click());
     text_book_chapter();
@@ -115,7 +115,7 @@ function screen_home_non(back_on_click) {
 
 function screen_base(back_on_click) {
     element_clear(document.body);
-    main_toolbar(document.body);
+    main_toolbar(document.body, back_on_click);
     button(document.body, "Back", ev => back_on_click())
 }
 
@@ -810,10 +810,11 @@ function hash_get() {
     return result;
 }
 
-function main_toolbar(parent) {
+function main_toolbar(parent, button_back_on_click) {
     if (language_current) {
         button_fifth(parent, flag_html_get(language_current), screen_main);
     }
+    button_fifth(parent, arrow_left_get(), button_back_on_click)
 }
 
 function flag_html_get(language) {
