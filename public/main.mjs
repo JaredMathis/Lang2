@@ -358,7 +358,9 @@ async function screen_read_chapter(){
                 if (!translation.hidden) {
                     await audio_play_try(
                         language_current_audio_code_get(), 
-                        toggle_root_inflection_toggled ? language_current_definitions[token.strong]["word"] : token.token)
+                        toggle_root_inflection_toggled 
+                            ? language_current_definitions[token.strong]["word"] 
+                            : token.token)
                 }
             });
 
@@ -372,15 +374,29 @@ async function screen_read_chapter(){
             translation.style['font-weight'] = '400';
             if (language_current_definitions[token.strong]) {
                 let translation2 = span(translation, '');
-                let translation2_a = span(translation2, language_current_definitions[token.strong]["word"]);
-                let translation2_b = span(translation2, language_current_definitions[token.strong]["transliteration"]);
+                let translation2_a = span(translation2);
+                let translation2_c = span(translation2_a, language_current_definitions[token.strong]["word"]);
+                inflectties.push(translation2_c);
+                let translation2_d = span(translation2_a, token.token);
+                inflectties.push(translation2_d);
+                translation2_d.hidden = true;
+                let translation2_b = span(translation2);
                 translation2_b.hidden = true;
+                let translation2_e = span(translation2_b, language_current_definitions[token.strong]["transliteration"]);
+                inflectties.push(translation2_e);
+                let translation2_f = span(translation2_b, token.transliteration);
+                translation2_f.hidden = true;
+                inflectties.push(translation2_f);
                 click(translation2, async () => {
-                    await audio_play_try(language_current_audio_code_get(), language_current_definitions[token.strong]["word"])
+                    await audio_play_try(
+                        language_current_audio_code_get(), 
+                        toggle_root_inflection_toggled 
+                            ? token.token
+                            : language_current_definitions[token.strong]["word"] )
                 })
                 translation2.style['font-size'] = "4.5vh";
                 translation2.style.opacity = '0.6';
-                [translation2_a,translation2_b].forEach(t => style_bible_word(t, true));
+                [translation2_c,translation2_d].forEach(t => style_bible_word(t, true));
                 translitties.push(translation2_a);
                 translitties.push(translation2_b);
                 let translation3 = span(
