@@ -358,8 +358,7 @@ async function screen_read_chapter(){
                 if (!translation.hidden) {
                     await audio_play_try(
                         language_current_audio_code_get(), 
-                        
-                        token.token)
+                        toggle_root_inflection_toggled ? language_current_definitions[token.strong]["word"] : token.token)
                 }
             });
 
@@ -373,7 +372,7 @@ async function screen_read_chapter(){
             translation.style['font-weight'] = '400';
             if (language_current_definitions[token.strong]) {
                 let translation2 = span(translation, '');
-                let translation2a = span(translation2, language_current_definitions[token.strong]["word"]);
+                let translation2_a = span(translation2, language_current_definitions[token.strong]["word"]);
                 let translation2b = span(translation2, language_current_definitions[token.strong]["transliteration"]);
                 translation2b.hidden = true;
                 click(translation2, async () => {
@@ -381,8 +380,8 @@ async function screen_read_chapter(){
                 })
                 translation2.style['font-size'] = "4.5vh";
                 translation2.style.opacity = '0.6';
-                [translation2a,translation2b].forEach(t => style_bible_word(t, true));
-                translitties.push(translation2a);
+                [translation2_a,translation2b].forEach(t => style_bible_word(t, true));
+                translitties.push(translation2_a);
                 translitties.push(translation2b);
                 let translation3 = span(
                     translation, 
