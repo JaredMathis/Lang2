@@ -107,6 +107,7 @@ function text_book_chapter() {
 
 function screen_home_non(back_on_click) {
     element_clear(document.body);
+    main_toolbar(document.body);
     button(document.body, "Home", ev => screen_home());
     button(document.body, "Back", ev => back_on_click());
     text_book_chapter();
@@ -114,6 +115,7 @@ function screen_home_non(back_on_click) {
 
 function screen_base(back_on_click) {
     element_clear(document.body);
+    main_toolbar(document.body);
     button(document.body, "Back", ev => back_on_click())
 }
 
