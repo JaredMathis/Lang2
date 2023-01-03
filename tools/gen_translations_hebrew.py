@@ -6,7 +6,7 @@ tree = ET.parse('tools/bible/interlinear/StrongHebrewG.xml')
 root = tree.getroot()
 
 # Iterate over the root element's children
-words = {}
+words_hebrew = {}
 for child in root:
     if child.tag == '{http://www.bibletechnologies.net/2003/OSIS/namespace}osisText':
         for child2 in child:
@@ -20,7 +20,7 @@ for child in root:
                             n = word.get("n")
                             assert type(n) == str
                             assert len(n) >= 1                   
-                            words[n] = word_result
+                            words_hebrew[n] = word_result
                         elif prop.tag.endswith('}note') and prop.get('type') == "translation":
                             word_result["definition"] = prop.text
-file_json_write('bucket/translations/he_en.json', words)
+file_json_write('bucket/translations/he_en.json', words_hebrew)
