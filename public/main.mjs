@@ -330,6 +330,7 @@ async function screen_read_chapter(){
         for (let token of verse.tokens) {
             let spacer = span(verse_element_original, ' ');
             style_bible_word(spacer);
+            
             let translated = span(verse_element_original, '');
             let translateda = span(translated, token.token);
             translitties.push(translateda);
@@ -338,6 +339,7 @@ async function screen_read_chapter(){
             translatedb.hidden = true;
             [translateda,translatedb].forEach(t => style_bible_word(t));
             click(translated, translation_display_toggle);
+
             let translation = span(verse_element_original, '');
             translation.dir = 'ltr';
             translation.style['font-weight'] = '100';
