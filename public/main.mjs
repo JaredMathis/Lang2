@@ -249,6 +249,7 @@ async function screen_read_chapter(){
     let english_show = button(settings_toolbar, 'Show English', () => {
         englishes.forEach(e => e.hidden = false);
     });
+    element_two_click_toggle(english_hide, english_show);
     let toggle_transliteration_toggled = false;
     let toggle_transliteration = button(settings_toolbar, 'Toggle transliteration', () => {
         translitties.forEach(e => e.hidden = !e.hidden);
@@ -261,7 +262,6 @@ async function screen_read_chapter(){
             translitties.forEach(e => style_bible_word(e, false, false));
         }
     });
-    element_two_click_toggle(english_hide, english_show);
 
     let go_to_verse_show = button(document.body, 'Go to verse', () => {
         choose_verse_container.hidden = !choose_verse_container.hidden;
