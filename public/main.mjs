@@ -142,7 +142,7 @@ async function screen_choose_book() {
                     selected_book = book_abberviation;
                     screen_choose_chapter();
                 });
-            b.style['font-size'] = '4vh';
+            style_button_book_choose(b);
             
             if (book_first && hash_get()["Book"] === book_abberviation) {
                 book_first = false;
@@ -153,6 +153,10 @@ async function screen_choose_book() {
             max_found = true;
         }
     }
+}
+
+function style_button_book_choose(b) {
+    b.style['font-size'] = '4vh';
 }
 
 function button_fifth(parent, text, on_click) {
