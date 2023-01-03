@@ -332,10 +332,12 @@ async function screen_read_chapter(){
             style_bible_word(spacer);
 
             let translated = span(verse_element_original);
-            let translateda = span(translated, token.token);
-            translitties.push(translateda);
-            let translatedb = span(translated, token.transliteration);
-            translitties.push(translatedb);
+            let translateda = span(translated);
+            let translatedaa = span(translateda, token.token);
+            translitties.push(translatedaa);
+            let translatedb = span(translated);
+            let translatedba = span(translatedb, token.transliteration);
+            translitties.push(translatedba);
             translatedb.hidden = true;
             [translateda,translatedb].forEach(t => style_bible_word(t));
             click(translated, async function translation_display_toggle() {
