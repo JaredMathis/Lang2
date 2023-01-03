@@ -805,7 +805,9 @@ function hash_get() {
 }
 
 function main_toolbar(parent) {
-
+    if (language_current) {
+        button_fifth(parent, flag_html_get(language_current), screen_main);
+    }
 }
 
 function flag_html_get(language) {
