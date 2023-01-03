@@ -237,6 +237,14 @@ async function screen_read_chapter(){
     });
     element_two_click_toggle(english_hide, english_show);
     let choose_verse_container = element(document.body, 'div');
+    choose_verse_container.hidden = true;
+    let go_to_verse_show = button(document.body, 'Go to verse', () => {
+        choose_verse_container.hidden = !choose_verse_container.hidden;
+    });
+    let go_to_verse_hide = button(document.body, 'Hide go to verse', () => {
+        choose_verse_container.hidden = !choose_verse_container.hidden;
+    });
+    element_two_click_toggle(go_to_verse_show, go_to_verse_hide);
 
     let choose_verse_after_render;
     let verse_element_previous_;
