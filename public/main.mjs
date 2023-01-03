@@ -287,7 +287,9 @@ async function screen_read_chapter(){
         let english_version = chapter_english.filter(v => v.verse === verse.verse)[0];
         let verse_element = text(document.body, '');
 
-        console.log({v:verse.verse,v2:hash_get()['Verse']})
+        if (false) {
+            console.log({v:verse.verse,v2:hash_get()['Verse']})
+        }
         if (hash_chapter_read_first && hash_get()['Verse'] === verse.verse) {
             hash_chapter_read_first= false;
             choose_verse_after_render = verse_element;
