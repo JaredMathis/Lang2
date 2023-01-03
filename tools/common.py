@@ -31,6 +31,7 @@ path_bible_versions_public = os.path.join(path_bible_versions, 'public')
 
 languages = [{
     "name": "Greek",
+    "flag": "🇬🇷",
     "direction": "ltr",
     "path": {
         "bible": "bsb"
@@ -48,6 +49,7 @@ languages = [{
     }
 }, {
     "name": "Hebrew",
+    "flag": "🇮🇱",
     "direction": "rtl",
     "path": {
         "bible": "bsb"
