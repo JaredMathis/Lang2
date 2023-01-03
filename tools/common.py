@@ -111,8 +111,8 @@ def file_write(file_path, result, bytes=False, transform=None, cloud=True, write
             exit()
     print('file_write end ' + file_path)
 
-def file_json_write(file_path, result):
-    return file_write(file_path, result, False, json_to)
+def file_json_write(file_path, result, cloud=True):
+    return file_write(file_path, result, False, json_to, cloud)
 
 def file_json_read(path):
     with open(path, 'r', encoding="utf-8") as f:
