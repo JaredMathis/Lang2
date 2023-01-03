@@ -54,15 +54,18 @@ for child in root_greek:
                     for ref in prop:
                         unicode = ref.get('unicode')
                         if not unicode:
-                            print(ET.tostring(ref, 'utf-8'))
-                            strongs = ref.get('strongs').lstrip('0')
-                            if ref.get('language'):
-                                definition += (lookup[ref.get('language')][strongs])
+                            if ref.tag == 'latin':
+                                definition += ref.text
                             else:
-                                definition += (strongs)
+                                print(ET.tostring(ref, 'utf-8'))
+                                strongs = ref.get('strongs').lstrip('0')
+                                if ref.get('language'):
+                                    definition += (lookup[ref.get('language')][strongs])
+                                else:
+                                    definition += (strongs)
                         if ref.tail:
                             definition += (ref.tail)
-                    word_result["definition"] = definition
+                    word_result["definition"] = definition.strip()
                 elif prop.tag == "greek":
                     word_result["word"] = prop.get("unicode")
                     word_result["transliteration"] = prop.get("translit")
