@@ -264,7 +264,9 @@ async function screen_read_chapter(){
         }
     });
 
+    let toggle_root_inflection_toggled = false;
     let toggle_root_inflection = button(settings_toolbar, 'Toggle root/inflection', () => {
+        toggle_root_inflection_toggled = !toggle_root_inflection_toggled;
         inflectties.forEach(e => e.hidden = !e.hidden);
     });
 
