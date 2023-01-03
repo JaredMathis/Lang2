@@ -373,16 +373,16 @@ async function screen_read_chapter(){
             if (language_current_definitions[token.strong]) {
                 let translation2 = span(translation, '');
                 let translation2_a = span(translation2, language_current_definitions[token.strong]["word"]);
-                let translation2b = span(translation2, language_current_definitions[token.strong]["transliteration"]);
-                translation2b.hidden = true;
+                let translation2_b = span(translation2, language_current_definitions[token.strong]["transliteration"]);
+                translation2_b.hidden = true;
                 click(translation2, async () => {
                     await audio_play_try(language_current_audio_code_get(), language_current_definitions[token.strong]["word"])
                 })
                 translation2.style['font-size'] = "4.5vh";
                 translation2.style.opacity = '0.6';
-                [translation2_a,translation2b].forEach(t => style_bible_word(t, true));
+                [translation2_a,translation2_b].forEach(t => style_bible_word(t, true));
                 translitties.push(translation2_a);
-                translitties.push(translation2b);
+                translitties.push(translation2_b);
                 let translation3 = span(
                     translation, 
                     " " + definition_short(language_current_definitions[token.strong]["definition"]))
