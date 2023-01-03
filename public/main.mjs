@@ -827,6 +827,7 @@ function main_toolbar(parent, button_back_on_click) {
         button_fifth(toolbar, selected_book, screen_choose_book);
     }
     if (selected_chapter) {
+        button_fifth(toolbar, selected_chapter, screen_choose_chapter);
         button_fifth(toolbar, `🏠`, screen_home);
     }
     button_fifth(toolbar, arrow_left_get(), button_back_on_click);
