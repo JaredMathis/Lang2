@@ -3,11 +3,11 @@ from common import *
 
 # Parse the XML document
 tree_hebrew = ET.parse('tools/bible/interlinear/StrongHebrewG.xml')
-root = tree_hebrew.getroot()
+root_rename = tree_hebrew.getroot()
 
 # Iterate over the root element's children
 words_hebrew = {}
-for child in root:
+for child in root_rename:
     if child.tag == '{http://www.bibletechnologies.net/2003/OSIS/namespace}osisText':
         for child2 in child:
             if child2.tag == '{http://www.bibletechnologies.net/2003/OSIS/namespace}div' and child2.get('type') == 'glossary':
