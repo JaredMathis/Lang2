@@ -241,10 +241,11 @@ async function screen_read_chapter(){
         toggle_transliteration_toggled = !toggle_transliteration_toggled;
         if (toggle_transliteration_toggled) {
             ltrs.forEach(e => e.dir = "ltr");
+            translitties.forEach(e => style_bible_word(e, false, true));
         } else {
             ltrs.forEach(e => e.dir = language_current_direction_ltr_get());
+            translitties.forEach(e => style_bible_word(e, false, false));
         }
-        console.log({ltrs});
     });
     element_two_click_toggle(english_hide, english_show);
 
