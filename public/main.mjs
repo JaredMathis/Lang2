@@ -210,6 +210,10 @@ function style_bible_transliteration(element) {
     style_color_and_border(element, blue);
 }
 
+function arrow_left_get() {
+    return '←'
+}
+
 function document_scroll_to_top() {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
@@ -282,7 +286,7 @@ async function screen_read_chapter(){
         button_fifth(verse_toolbar, '↑', () => {
             document_scroll_to_top();
         });
-        let verse_element_previous_button = button_fifth(verse_toolbar, '←', () => {
+        let verse_element_previous_button = button_fifth(verse_toolbar, arrow_left_get(), () => {
             verse_element_previous.scrollIntoView();
         });
         if (!verse_element_previous) {
