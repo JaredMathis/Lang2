@@ -333,12 +333,17 @@ async function screen_read_chapter(){
 
             let translated = span(verse_element_original, '');
             let translateda = span(translated, token.token);
+            translitties.push(translateda);
             let translatedb = span(translated, token.transliteration);
+            translitties.push(translatedb);
             translatedb.hidden = true;
             [translateda,translatedb].forEach(t => style_bible_word(t));
-            click(translated, translation_display_toggle);
-            translitties.push(translateda);
-            translitties.push(translatedb);
+            click(translated, async function translation_display_toggle() {
+                translation.hidden = !translation.hidden
+                if (!translation.hidden) {
+                    await audio_play_try(language_current_audio_code_get(), token.token)
+                }
+            });
 
             let translation = span(verse_element_original, '');
             translation.dir = 'ltr';
@@ -373,12 +378,7 @@ async function screen_read_chapter(){
                 translation4.style.opacity = '0.6';
                 element_two_click_toggle(translation3, translation4);
             }
-            async function translation_display_toggle() {
-                translation.hidden = !translation.hidden
-                if (!translation.hidden) {
-                    await audio_play_try(language_current_audio_code_get(), token.token)
-                }
-            }
+
         }
         let verse_element_english = text(verse_element, '');
         verse_element_english.dir = "ltr";
