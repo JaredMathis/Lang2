@@ -263,6 +263,9 @@ async function screen_read_chapter(){
         }
     });
 
+    let toggle_root_inflection = button(settings_toolbar, 'Toggle root/inflection', () => {
+    });
+
     let go_to_verse_show = button(document.body, 'Go to verse', () => {
         choose_verse_container.hidden = !choose_verse_container.hidden;
     });
