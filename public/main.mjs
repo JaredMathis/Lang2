@@ -86,8 +86,7 @@ let hash_home_first = true;
 async function screen_home() {
     depth_current = 0;
     learn_choice_stack.length = 0;
-    element_clear(document.body);
-    button(document.body, "Back", ev => screen_choose_chapter());
+    screen_base(ev => screen_choose_chapter());
     text_book_chapter();
     let read = button(document.body, "Read chapter", ev => screen_read_chapter());
     let learn = button(document.body, "Learn words in chapter", ev => screen_learn());
