@@ -2,8 +2,8 @@ import xml.etree.ElementTree as ET
 from common import *
 
 # Parse the XML document
-tree = ET.parse('tools/bible/interlinear/strongsgreek.xml')
-root = tree.getroot()
+tree_greek = ET.parse('tools/bible/interlinear/strongsgreek.xml')
+root = tree_greek.getroot()
 
 words_greek = {}
 for child in root:
