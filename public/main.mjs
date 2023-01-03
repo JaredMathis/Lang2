@@ -187,13 +187,13 @@ function style_color_and_border(element, color) {
     element.style['border-color'] = color;
 }
 
-function style_bible_word(element, regular_weight) {
+function style_bible_word(element, regular_weight, english_letters=false) {
     if (!regular_weight) {
         element.style['font-weight'] = '700';
     }
     style_color_and_border(element, blue);
     if (true) {
-        if (language_current_hebrew_is()) {
+        if (!english_letters && language_current_hebrew_is()) {
             element.style["line-height"] = "1";
             element.style["font-family"] = "bsthebrew";
             element.style["font-size"] = "6.5vh";
@@ -218,7 +218,7 @@ async function screen_read_chapter(){
     let translitties = [];
     let englishes = [];
     let ltrs = [];
-    
+
     let settings_show = button(document.body, 'Settings', () => {
         settings_toolbar.hidden = !settings_toolbar.hidden;
     });
