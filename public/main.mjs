@@ -331,7 +331,7 @@ async function screen_read_chapter(){
             let spacer = span(verse_element_original, ' ');
             style_bible_word(spacer);
 
-            let translated = span(verse_element_original, '');
+            let translated = span(verse_element_original);
             let translateda = span(translated, token.token);
             translitties.push(translateda);
             let translatedb = span(translated, token.transliteration);
