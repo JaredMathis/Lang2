@@ -57,7 +57,7 @@ for child in root_greek:
                             if ref.tag == 'latin':
                                 definition += ref.text
                             else:
-                                print(ET.tostring(ref, 'utf-8'))
+                                # print(ET.tostring(ref, 'utf-8'))
                                 strongs = ref.get('strongs').lstrip('0')
                                 if ref.get('language'):
                                     definition += (lookup[ref.get('language')][strongs])
@@ -79,4 +79,4 @@ for child in root_greek:
                         word_result["definition"] = prop.text.strip()
 
 # exit()
-file_json_write('bucket/translations/gr_en.json', words, cloud=False)
+file_json_write('bucket/translations/gr_en.json', words, cloud=True)
