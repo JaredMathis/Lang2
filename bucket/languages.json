@@ -1,6 +1,7 @@
 [
     {
         "name": "Greek",
+        "flag": "🇬🇷",
         "direction": "ltr",
         "path": {
             "bible": "bsb"
@@ -19,6 +20,7 @@
     },
     {
         "name": "Hebrew",
+        "flag": "🇮🇱",
         "direction": "rtl",
         "path": {
             "bible": "bsb"
