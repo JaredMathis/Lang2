@@ -30,8 +30,9 @@ for child in root_greek:
                         if prop.text:
                             print(prop.text)
                         for ref in prop:
-                            assert (ref.get('language')) == "GREEK"
                             print(ref.get('strongs'))
+                            print(ref.get('language'))
+                            assert ref.get('language') in ["GREEK", "HEBREW"]
                             if ref.tail:
                                 print(ref.tail)
                     word_result["definition"] = "[…]".join(prop.itertext()).strip()
