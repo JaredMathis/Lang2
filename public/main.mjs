@@ -264,6 +264,7 @@ async function screen_read_chapter(){
     });
 
     let toggle_root_inflection = button(settings_toolbar, 'Toggle root/inflection', () => {
+        
     });
 
     let go_to_verse_show = button(document.body, 'Go to verse', () => {
@@ -348,9 +349,7 @@ async function screen_read_chapter(){
             if (language_current_definitions[token.strong]) {
                 let translation2 = span(translation, '');
                 let translation2a = span(translation2, language_current_definitions[token.strong]["word"]);
-                translitties.push(translation2a);
                 let translation2b = span(translation2, language_current_definitions[token.strong]["transliteration"]);
-                translitties.push(translation2b);
                 translation2b.hidden = true;
                 click(translation2, async () => {
                     await audio_play_try(language_current_audio_code_get(), language_current_definitions[token.strong]["word"])
@@ -358,6 +357,8 @@ async function screen_read_chapter(){
                 translation2.style['font-size'] = "4.5vh";
                 translation2.style.opacity = '0.6';
                 [translation2a,translation2b].forEach(t => style_bible_word(t, true));
+                translitties.push(translation2a);
+                translitties.push(translation2b);
                 let translation3 = span(
                     translation, 
                     " " + definition_short(language_current_definitions[token.strong]["definition"]))
