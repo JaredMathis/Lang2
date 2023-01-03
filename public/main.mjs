@@ -121,6 +121,7 @@ async function screen_choose_book() {
     selected_chapter = undefined;
     book_index_key = undefined;
     book_index_value = undefined;
+    selected_book = undefined;
 
     screen_base(screen_main);
     let min_found = false;
@@ -822,6 +823,9 @@ function main_toolbar(parent, button_back_on_click) {
     if (language_current) {
         button_fifth(toolbar, flag_html_get(language_current), screen_main);
     }
+    if (selected_book) {
+        button_fifth(toolbar, selected_book, screen_choose_book);
+    }
     if (selected_chapter) {
         button_fifth(toolbar, `🏠`, screen_home);
     }
@@ -838,6 +842,7 @@ function screen_main() {
     selected_chapter = undefined;
     book_index_key = undefined;
     book_index_value = undefined;
+    selected_book = undefined;
     language_current = false;
 
     element_clear(document.body);
