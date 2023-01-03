@@ -16,7 +16,8 @@ for child in root_greek:
                     word_result["strongs"] = prop.text
                 elif prop.tag == "greek":
                     word_result["word"] = prop.get("unicode")
-            lookup["GREEK"][word_result["strongs"]] = word_result["word"]
+            if "strongs" in word_result and "word" in word_result:
+                lookup["GREEK"][word_result["strongs"]] = word_result["word"]
 
 # Parse the XML document
 tree_hebrew = ET.parse('tools/bible/interlinear/StrongHebrewG.xml')
@@ -53,8 +54,8 @@ for child in root_greek:
                     for ref in prop:
                         unicode = ref.get('unicode')
                         if not unicode:
-                            # print(ET.tostring(ref, 'utf-8'))
-                            strongs = ref.get('strongs')
+                            print(ET.tostring(ref, 'utf-8'))
+                            strongs = ref.get('strongs').lstrip('0')
                             if ref.get('language'):
                                 definition += (lookup[ref.get('language')][strongs])
                             else:
