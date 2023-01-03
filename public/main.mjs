@@ -356,7 +356,10 @@ async function screen_read_chapter(){
             click(translated, async function translation_display_toggle() {
                 translation.hidden = !translation.hidden
                 if (!translation.hidden) {
-                    await audio_play_try(language_current_audio_code_get(), token.token)
+                    await audio_play_try(
+                        language_current_audio_code_get(), 
+                        
+                        token.token)
                 }
             });
 
