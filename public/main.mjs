@@ -114,6 +114,8 @@ function screen_base(back_on_click) {
     main_toolbar(document.body, back_on_click);
 }
 
+let selected_book = false;
+
 let book_first = true;
 async function screen_choose_book() {
     selected_chapter = undefined;
@@ -130,18 +132,19 @@ async function screen_choose_book() {
         }
         if (min_found && !max_found) {
             let book_name_length_max = 3;
-            let label = book_index.name.replace(' ', '').substr(0, book_name_length_max);
+            let book_abberviation = book_index.name.replace(' ', '').substr(0, book_name_length_max);
             let b = button_fifth(
                 document.body,
-                label, 
+                book_abberviation, 
                 () => {
                     book_index_key = key;
                     book_index_value = book_index;
+                    selected_book = book_abberviation;
                     screen_choose_chapter();
                 });
             b.style['font-size'] = '4vh';
             
-            if (book_first && hash_get()["Book"] === label) {
+            if (book_first && hash_get()["Book"] === book_abberviation) {
                 book_first = false;
                 b.click();
             }
@@ -832,7 +835,7 @@ function screen_main() {
     book_index_key = undefined;
     book_index_value = undefined;
     language_current = false;
-    
+
     element_clear(document.body);
     for (let l of languages) {
         let label = l["name"];
