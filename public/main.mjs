@@ -230,6 +230,7 @@ async function screen_read_chapter(){
     screen_home_non(() =>  screen_home());
     let verse_toolbars = [];
     let translitties = [];
+    let inflectties = [];
     let englishes = [];
     let ltrs = [];
 
@@ -264,7 +265,7 @@ async function screen_read_chapter(){
     });
 
     let toggle_root_inflection = button(settings_toolbar, 'Toggle root/inflection', () => {
-        
+        inflectties.forEach(e => e.hidden = !e.hidden);
     });
 
     let go_to_verse_show = button(document.body, 'Go to verse', () => {
@@ -332,14 +333,22 @@ async function screen_read_chapter(){
             style_bible_word(spacer);
 
             let translated = span(verse_element_original);
-            let translateda = span(translated);
-            let translatedaa = span(translateda, token.token);
-            translitties.push(translateda);
-            let translatedb = span(translated);
-            let translatedba = span(translatedb, token.transliteration);
-            translitties.push(translatedb);
-            translatedb.hidden = true;
-            [translatedaa,translatedba].forEach(t => style_bible_word(t));
+            let translated_a = span(translated);
+            translitties.push(translated_a);
+            let translated_c = span(translated_a, token.token);
+            inflectties.push(translated_c);
+            let translated_d = span(translated_a, language_current_definitions[token.strong]["word"]);
+            translated_d.hidden = true;
+            inflectties.push(translated_d);
+            let translated_b = span(translated);
+            translated_b.hidden = true;
+            translitties.push(translated_b);
+            let translated_e = span(translated_b, token.transliteration);
+            inflectties.push(translated_e);
+            let translated_f = span(translated_b, language_current_definitions[token.strong]["transliteration"]);
+            translated_f.hidden = true;
+            inflectties.push(translated_f);
+            [translated_c,translated_e,translated_d,translated_f].forEach(t => style_bible_word(t));
             click(translated, async function translation_display_toggle() {
                 translation.hidden = !translation.hidden
                 if (!translation.hidden) {
