@@ -804,13 +804,21 @@ function hash_get() {
     return result;
 }
 
+function main_toolbar(parent) {
+
+}
+
+function flag_html_get(language) {
+    return `<span class="fi fi-${language["flag"]}"></span>`;
+}
+
 let language_first = true;
 
 function screen_main() {
     element_clear(document.body);
     for (let l of languages) {
         let label = l["name"];
-        let b = button(document.body, `<span class="fi fi-${l["flag"]}"></span> ${label}` , async ev => {
+        let b = button(document.body, `${flag_html_get(l)} ${label}` , async ev => {
             language_current = l;
             language_current_definitions = await http_get(file_path_get("translations%2F" + language_current["code"] + `_${target_language_code}.json`));
             bible_index = await http_get(file_path_bible_index_get('bsb'))
