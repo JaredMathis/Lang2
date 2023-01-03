@@ -116,6 +116,10 @@ function screen_base(back_on_click) {
 
 let book_first = true;
 async function screen_choose_book() {
+    selected_chapter = undefined;
+    book_index_key = undefined;
+    book_index_value = undefined;
+
     screen_base(screen_main);
     let min_found = false;
     let max_found = false;
@@ -155,6 +159,7 @@ function button_fifth(parent, text, on_click) {
 }
 let chapter_first = true;
 async function screen_choose_chapter() {
+    selected_chapter = undefined;
     screen_base(screen_choose_book);
     text(document.body, book_index_value.name)
     for (let chapter of book_index_value.chapters) {
@@ -823,6 +828,11 @@ function flag_html_get(language) {
 let language_first = true;
 
 function screen_main() {
+    selected_chapter = undefined;
+    book_index_key = undefined;
+    book_index_value = undefined;
+    language_current = false;
+    
     element_clear(document.body);
     for (let l of languages) {
         let label = l["name"];
