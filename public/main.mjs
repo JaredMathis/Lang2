@@ -218,14 +218,25 @@ async function screen_read_chapter(){
     let translitties = [];
     let englishes = [];
     let ltrs = [];
-    let english_hide = button(document.body, 'Hide English', () => {
+    
+    let settings_show = button(document.body, 'Settings', () => {
+        settings_toolbar.hidden = !settings_toolbar.hidden;
+    });
+    let settings_hide = button(document.body, 'Hide settings', () => {
+        settings_toolbar.hidden = !settings_toolbar.hidden;
+    });
+    element_two_click_toggle(settings_show, settings_hide);
+
+    let settings_toolbar = span(document.body);
+    settings_toolbar.hidden = true;
+    let english_hide = button(settings_toolbar, 'Hide English', () => {
         englishes.forEach(e => e.hidden = true);
     });
-    let english_show = button(document.body, 'Show English', () => {
+    let english_show = button(settings_toolbar, 'Show English', () => {
         englishes.forEach(e => e.hidden = false);
     });
     let toggle_transliteration_toggled = false;
-    let toggle_transliteration = button(document.body, 'Toggle transliteration', () => {
+    let toggle_transliteration = button(settings_toolbar, 'Toggle transliteration', () => {
         translitties.forEach(e => e.hidden = !e.hidden);
         toggle_transliteration_toggled = !toggle_transliteration_toggled;
         if (toggle_transliteration_toggled) {
@@ -236,8 +247,7 @@ async function screen_read_chapter(){
         console.log({ltrs});
     });
     element_two_click_toggle(english_hide, english_show);
-    let choose_verse_container = element(document.body, 'div');
-    choose_verse_container.hidden = true;
+
     let go_to_verse_show = button(document.body, 'Go to verse', () => {
         choose_verse_container.hidden = !choose_verse_container.hidden;
     });
@@ -245,6 +255,8 @@ async function screen_read_chapter(){
         choose_verse_container.hidden = !choose_verse_container.hidden;
     });
     element_two_click_toggle(go_to_verse_show, go_to_verse_hide);
+    let choose_verse_container = element(document.body, 'div');
+    choose_verse_container.hidden = true;
 
     let choose_verse_after_render;
     let verse_element_previous_;
