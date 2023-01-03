@@ -3,10 +3,10 @@ from common import *
 
 # Parse the XML document
 tree_greek = ET.parse('tools/bible/interlinear/strongsgreek.xml')
-root = tree_greek.getroot()
+root_greek = tree_greek.getroot()
 
 words_greek = {}
-for child in root:
+for child in root_greek:
     if child.tag == 'entries':
         for word in child:
             word_result = {}
@@ -18,7 +18,7 @@ for child in root:
 
 # Iterate over the root element's children
 words = {}
-for child in root:
+for child in root_greek:
     if child.tag == 'entries':
         for word in child:
             word_result = {}
