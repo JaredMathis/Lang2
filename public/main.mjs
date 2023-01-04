@@ -734,7 +734,7 @@ function screen_quiz(choice, use_mistakes) {
         front = (parent, w) => w.front(parent);
     } else {
         if (category_selected === category_inflected) {
-
+            front = (parent, w) => style_bible_word(span(parent, w["root"]));
         } else if (category_selected === category_definition) {
             if (no_transliteration) {
                 front = (parent, w) => element_text_bible_word(parent, w);
@@ -756,7 +756,9 @@ function screen_quiz(choice, use_mistakes) {
                 back = (parent, w) => text(parent, w["definition"]);
             }
         } else {
-            if (no_transliteration) {
+            if (category_selected === category_inflected) {
+                front = (parent, w) => style_bible_word(span(parent, w["token"]));
+            } else if (no_transliteration) {
                 back = (parent, w) => element_text_bible_word(parent, w);
             } else if (category_selected == category_transliteration) {
                 back = (parent, w) => element_text_bible_transliteration(parent, w);
@@ -773,7 +775,10 @@ function screen_quiz(choice, use_mistakes) {
     }
     let t = text(document.body,'');
     front(t, use_mistakes ? current : language_current_definitions[current]);
-    let choices_wrong = words_playable_shuffled_get(choice, use_mistakes).filter(w => w !== current).slice(0, max_choices - 1);
+    const all_choices = words_playable_shuffled_get(choice, use_mistakes);
+    let filtered_choices;
+    filtered_choices = all_choices.filter(w => w !== current);
+    let choices_wrong = filtered_choices.slice(0, max_choices - 1);
 
     for (let word_ of list_shuffle([current].concat(choices_wrong))) {
         let word = word_;
