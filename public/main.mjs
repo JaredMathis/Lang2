@@ -542,9 +542,12 @@ function screen_study(choice, use_mistakes) {
             console.log('missing word');
             continue;
         }
-        let word = category_inflected ? word_playable["token"] : root_word["word"];
+        let word_audio = category_inflected ? word_playable["token"] : root_word["word"];
+        if (word_playable.audio) {
+            word_audio = word_playable.audio;
+        }
         let b = button(document.body, '', async () => {
-            await audio_play_try(language_current_audio_code_get(), word)
+            await audio_play_try(language_current_audio_code_get(), word_audio)
         });
         if (use_mistakes) {
             word_playable.front(b);
@@ -803,7 +806,11 @@ function screen_quiz(choice, use_mistakes) {
                 if (category_selected === category_inflected) {
                     word_audio = word["token"];
                 } else {
-                    word_audio = language_current_definitions[use_mistakes ? word.strong : word]["word"];
+                    if (word.audio) {
+                        word_audio = word.audio;
+                    } else {
+                        word_audio = language_current_definitions[use_mistakes ? word.strong : word]["word"];
+                    }
                 }
                 await audio_play_try(
                     language_current_audio_code_get(), 
@@ -829,6 +836,9 @@ function screen_quiz(choice, use_mistakes) {
                             strong,
                             id: mistake_id
                         };
+                        if (category_selected === category_inflected) {
+                            mistake.audio = w["token"];
+                        }
                         if (mistakes.filter(m => m.id === mistake.id).length === 0) {
                             mistakes.push(mistake);
                         }
