@@ -781,15 +781,16 @@ function screen_quiz(choice, use_mistakes) {
         if (typeof left === typeof '') {
             left = w;
         } else {
-            left = w['root'];
+            left = w['strong'];
         }
         if (typeof right === typeof '') {
             right = current;
         } else {
-            right = current['root'];
+            right = current['strong'];
         }
         return left !== right;
     });
+    console.log({all_choices});
     let choices_wrong = filtered_choices.slice(0, max_choices - 1);
 
     for (let word_ of list_shuffle([current].concat(choices_wrong))) {
