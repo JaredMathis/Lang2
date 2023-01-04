@@ -774,10 +774,14 @@ function screen_quiz(choice, use_mistakes) {
         [front, back] = [back, front]
     }
     let t = text(document.body,'');
-    front(t, use_mistakes ? current : language_current_definitions[current]);
+    front(t, screen_quiz_w_get(use_mistakes, current));
     const all_choices = words_playable_shuffled_get(choice, use_mistakes);
     let filtered_choices;
-    filtered_choices = all_choices.filter(w => w !== current);
+    if (category_selected === category_inflected) {
+        filtered_choices = all_choices.filter(w => w['root'] !== current['root']);
+    } else {
+        filtered_choices = all_choices.filter(w => w !== current);
+    }
     let choices_wrong = filtered_choices.slice(0, max_choices - 1);
 
     for (let word_ of list_shuffle([current].concat(choices_wrong))) {
@@ -786,9 +790,13 @@ function screen_quiz(choice, use_mistakes) {
             if (word === current) {
                 style_color_and_border(b, 'green');
                 b.style['background-color']='lightgreen';
+                let word_audio = language_current_definitions[use_mistakes ? word.strong : word]["word"];
+                if (category_selected === category_inflected) {
+                    word_audio = word["token"];
+                }
                 await audio_play_try(
                     language_current_audio_code_get(), 
-                    language_current_definitions[use_mistakes ? word.strong : word]["word"]
+                    word_audio
                     )
                 screen_quiz(choice, use_mistakes);
             } else {
@@ -797,10 +805,17 @@ function screen_quiz(choice, use_mistakes) {
                 if (!use_mistakes) {
                     for (let w of [word, current]) {
                         let mistake_id = `${category_selected}::${w}`;
+                        let w_arg = language_current_definitions[w];
+                        let strong = w;
+                        if (category_selected === category_inflected) {
+                            mistake_id = `${category_selected}::${w["token"]}`
+                            w_arg = w;
+                            strong = w["strong"];
+                        }
                         let mistake = {
-                            front: (parent) => front_original(parent, language_current_definitions[w]),
-                            back: (parent) => back_original(parent, language_current_definitions[w]),
-                            strong: w,
+                            front: (parent) => front_original(parent, w_arg),
+                            back: (parent) => back_original(parent, w_arg),
+                            strong,
                             id: mistake_id
                         };
                         if (mistakes.filter(m => m.id === mistake.id).length === 0) {
@@ -810,8 +825,12 @@ function screen_quiz(choice, use_mistakes) {
                 }
             }
         });
-        back(b, use_mistakes ? word : language_current_definitions[word]);
+        back(b, screen_quiz_w_get(use_mistakes, word));
     }
+}
+
+function screen_quiz_w_get(use_mistakes, word) {
+    return (use_mistakes || (category_selected === category_inflected)) ? word : language_current_definitions[word];
 }
 
 function list_shuffle(array) {
