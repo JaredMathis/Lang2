@@ -713,7 +713,10 @@ function parenthesis_nested_remove(Input) {
 }
 
 function screen_quiz(choice, use_mistakes) {
-    let screen_back = () => use_mistakes ? screen_mistakes() : screen_pre_quiz(choice);
+    let screen_back = 
+        () => use_mistakes 
+            ? screen_mistakes() 
+            : screen_pre_quiz(choice);
     screen_home_non(screen_back);
     text(document.body, 'Remaining: ' + words_to_play.length);
     if (false)
