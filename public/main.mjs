@@ -881,7 +881,7 @@ function style_bible_word_alternate(parent, w) {
     let result = span(parent, w["root"]);
     style_bible_word(result);
     result.style.color = 'darkgray';
-    return r;
+    return result;
 }
 
 function screen_quiz_w_get(use_mistakes, word) {
