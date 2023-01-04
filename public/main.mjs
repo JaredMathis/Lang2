@@ -537,8 +537,9 @@ function screen_study(choice, use_mistakes) {
             console.log('missing word');
             continue;
         }
+        let word = w["word"];
         let b = button(document.body, '', async () => {
-            await audio_play_try(language_current_audio_code_get(), w["word"])
+            await audio_play_try(language_current_audio_code_get(), word)
         });
         if (use_mistakes) {
             word_playable.front(b);
