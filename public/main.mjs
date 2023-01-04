@@ -776,12 +776,13 @@ function screen_quiz(choice, use_mistakes) {
     let t = text(document.body,'');
     front(t, screen_quiz_w_get(use_mistakes, current));
     const all_choices = words_playable_shuffled_get(choice, use_mistakes);
-    let filtered_choices;
-    if (category_selected === category_inflected) {
-        filtered_choices = all_choices.filter(w => w['root'] !== current['root']);
-    } else {
-        filtered_choices = all_choices.filter(w => w !== current);
-    }
+    let filtered_choices = all_choices.filter(w => { 
+        if (typeof w === typeof '') {
+            return w !== current;
+        } else {
+            return w['root'] !== current['root'];
+        }
+    });
     let choices_wrong = filtered_choices.slice(0, max_choices - 1);
 
     for (let word_ of list_shuffle([current].concat(choices_wrong))) {
