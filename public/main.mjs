@@ -560,7 +560,7 @@ function screen_study(choice, use_mistakes) {
                 element_text_bible_word_transliteration(b, root_word);
             }
 
-            if (category_selected === category_definition) {
+            if (definition_use) {
                 span(b, " : " + (definition_short_use ? definition_short : identity)(root_word["definition"]));
             } else if (category_selected === category_inflected) {
                 span(b, " : " );
@@ -613,6 +613,7 @@ let category_inflected = 'Inflected';
 let definition_use;
 let no_transliteration;
 let definition_short_use;
+let inflected_use;
 
 function screen_category(choice) {
     screen_home_non(screen_learn);
@@ -630,12 +631,14 @@ function screen_category(choice) {
         { 
             label: "Word(+Transliteration) vs. Long definition", 
             action: c => { 
+                definition_use = true;
                 category_set(category_definition); 
             }
         },
         { 
             label: "Word(+Transliteration) vs. Short definition",
             action: c => { 
+                definition_use = true;
                 definition_short_use = true;
                 category_set(category_definition); 
             }
@@ -643,6 +646,7 @@ function screen_category(choice) {
         {
             label: "Word vs. Short definition", 
             action: c => { 
+                definition_use = true;
                 definition_short_use = true;
                 no_transliteration = true;
                 category_set(category_definition); 
@@ -652,6 +656,7 @@ function screen_category(choice) {
             label: "Inflected vs. Root", 
             action: c => { 
                 no_transliteration = true;
+                inflected_use = true;
                 category_set(category_inflected); 
             }
         },
@@ -661,6 +666,7 @@ function screen_category(choice) {
                 no_transliteration = true;
                 definition_short_use = true;
                 definition_use = true;
+                inflected_use = true;
                 category_set(category_inflected); 
             }
         },
@@ -680,6 +686,7 @@ function screen_category(choice) {
             definition_short_use = false;
             definition_use = false;
             category_selected = false;
+            inflected_use = false;
             category.action(category.label);
             screen_pre_quiz(choice);
         });
@@ -748,14 +755,14 @@ function screen_quiz(choice, use_mistakes) {
     if (use_mistakes) {
         front = (parent, w) => w.front(parent);
     } else {
-        if (category_selected === category_inflected) {
-            front = (parent, w) => style_bible_word(span(parent, w["root"]));
-        } else if (category_selected === category_definition) {
+        if (definition_use) {
             if (no_transliteration) {
                 front = (parent, w) => element_text_bible_word(parent, w);
             } else {
                 front = (parent, w) => element_text_bible_word_transliteration(parent, w);
             }
+        } else if (category_selected === category_inflected) {
+            front = (parent, w) => style_bible_word(span(parent, w["root"]));
         } else {
             front = (parent, w) => element_text_bible_word(parent, w);
         }
@@ -764,7 +771,7 @@ function screen_quiz(choice, use_mistakes) {
     if (use_mistakes) {
         back = (parent, w) => w.back(parent);
     } else {
-        if (category_selected === category_definition) {
+        if (definition_use) {
             if (definition_short_use) {
                 back = (parent, w) => text(parent, definition_short(w["definition"]));
             } else {
