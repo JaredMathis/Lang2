@@ -782,12 +782,12 @@ function screen_quiz(choice, use_mistakes) {
     const all_choices = words_playable_shuffled_get(choice, use_mistakes);
     let filtered_choices = all_choices.filter(w => { 
         let left, right;
-        if (typeof left === typeof '') {
+        if (typeof w === typeof '') {
             left = w;
         } else {
             left = w['strong'];
         }
-        if (typeof right === typeof '') {
+        if (typeof current === typeof '') {
             right = current;
         } else {
             right = current['strong'];
