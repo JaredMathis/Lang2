@@ -540,7 +540,7 @@ function screen_study(choice, use_mistakes) {
             console.log('missing word');
             continue;
         }
-        let word = root_word["word"];
+        let word = category_inflected ? word_playable["token"] : root_word["word"];
         let b = button(document.body, '', async () => {
             await audio_play_try(language_current_audio_code_get(), word)
         });
