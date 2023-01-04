@@ -528,7 +528,11 @@ function screen_study(choice, use_mistakes) {
     text_words_low_high(choice, use_mistakes ? "Mistakes" : "Words");
     let words_playable = words_playable_get(choice, use_mistakes)
     for (let word_playable of words_playable) {
-        let w= language_current_definitions[(use_mistakes || category_selected === category_inflected) ? word_playable.strong : word_playable];
+        let w= language_current_definitions[
+            (use_mistakes || category_selected === category_inflected) 
+                ? word_playable.strong 
+                : word_playable
+            ];
         if (!w) {
             console.log('missing word');
             continue;
