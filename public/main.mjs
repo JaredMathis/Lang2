@@ -777,11 +777,18 @@ function screen_quiz(choice, use_mistakes) {
     front(t, screen_quiz_w_get(use_mistakes, current));
     const all_choices = words_playable_shuffled_get(choice, use_mistakes);
     let filtered_choices = all_choices.filter(w => { 
-        if (typeof w === typeof '') {
-            return w !== current;
+        let left, right;
+        if (typeof left === typeof '') {
+            left = w;
         } else {
-            return w['root'] !== current['root'];
+            left = w['root'];
         }
+        if (typeof right === typeof '') {
+            right = current;
+        } else {
+            right = current['root'];
+        }
+        return left !== right;
     });
     let choices_wrong = filtered_choices.slice(0, max_choices - 1);
 
