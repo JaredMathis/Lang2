@@ -769,12 +769,20 @@ function screen_quiz(choice, use_mistakes) {
     } else {
         if (definition_use) {
             if (definition_short_use) {
-                back = (parent, w) => text(parent, definition_short(w["definition"]));
+                if (inflected_use) {
+                    back = (parent, w) => text(parent, definition_short(language_current_definitions[w["strong"]]["definition"]));
+                } else {
+                    back = (parent, w) => text(parent, definition_short(w["definition"]));
+                }
             } else {
-                back = (parent, w) => text(parent, w["definition"]);
+                if (inflected_use) {
+                    back = (parent, w) => text(parent, (language_current_definitions[w["strong"]]["definition"]));
+                } else {
+                    back = (parent, w) => text(parent, (w["definition"]));
+                }
             }
         } else {
-            if (category_selected === category_inflected) {
+            if (inflected_use) {
                 back = (parent, w) => style_bible_word(span(parent, w["root"]));
             } else if (no_transliteration) {
                 back = (parent, w) => element_text_bible_word(parent, w);
