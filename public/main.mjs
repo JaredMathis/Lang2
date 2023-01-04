@@ -475,6 +475,24 @@ function words_playable_get(choice, use_mistakes) {
         return mistakes.slice();
     }
     let roots = language_current_words.slice(choice.low - 1, choice.high);
+
+    let inflections = [];
+    for (let verse of chapter_json) {
+        for (let t of verse.tokens) {
+            let {strong} = t;
+            if (roots.includes(strong)) {
+                let {token} = t;
+                if (inflections.filter(i => i.token.toLowerCase() === token.toLowerCase()).length === 0) {
+                    inflections.push({
+                        strong,
+                        token,
+                    })
+                }
+            }
+        }
+    }
+    console.log(inflections)
+
     return roots;
 }
 
