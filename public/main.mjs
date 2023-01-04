@@ -578,27 +578,27 @@ let definition_short_use;
 function screen_category(choice) {
     screen_home_non(screen_learn);
     text_words_low_high(choice);
-    function category_definition_set(c) {
+    function category_set(c) {
         category_selected = c
     }
     let categories = [
         {
             label: "Word vs. Transliteration", 
             action: c => { 
-                category_definition_set(category_transliteration); 
+                category_set(category_transliteration); 
             }
         },
         { 
             label: "Word(+Transliteration) vs. Long definition", 
             action: c => { 
-                category_definition_set(category_definition); 
+                category_set(category_definition); 
             }
         },
         { 
             label: "Word(+Transliteration) vs. Short definition",
             action: c => { 
                 definition_short_use = true;
-                category_definition_set(category_definition); 
+                category_set(category_definition); 
             }
         },
         {
@@ -606,13 +606,13 @@ function screen_category(choice) {
             action: c => { 
                 definition_short_use = true;
                 no_transliteration = true;
-                category_definition_set(category_definition); 
+                category_set(category_definition); 
             }
         },
         {
             label: "Inflected vs. Root", 
             action: c => { 
-                category_definition_set(category_definition); 
+                category_set(category_definition); 
             }
         },
     ]
@@ -621,7 +621,7 @@ function screen_category(choice) {
             label: "Word vs. Long definition", 
             action: c => { 
                 no_transliteration = true;
-                category_definition_set(category_definition); 
+                category_set(category_definition); 
             }
         },
     ]
