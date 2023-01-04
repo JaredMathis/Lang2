@@ -558,7 +558,7 @@ function screen_study(choice, use_mistakes) {
             if (category_selected === category_definition) {
                 span(b, " : " + (definition_short_use ? definition_short : identity)(root_word["definition"]));
             } else if (category_selected === category_inflected) {
-                span(b, " : " + (word_playable["token"]));
+                element_text_bible_word(b, " : " + (word_playable["token"]));
             }
         }
     }
