@@ -582,16 +582,15 @@ function screen_category(choice) {
         category_selected = c
     }
     let categories = [
-        { 
-            label: "Word(+Transliteration) vs. Long definition", 
+        {
+            label: "Word vs. Transliteration", 
             action: c => { 
-                category_definition_set(category_definition); 
+                category_definition_set(category_transliteration); 
             }
         },
         { 
-            label: "Word vs. Long definition", 
+            label: "Word(+Transliteration) vs. Long definition", 
             action: c => { 
-                no_transliteration = true;
                 category_definition_set(category_definition); 
             }
         },
@@ -610,12 +609,15 @@ function screen_category(choice) {
                 category_definition_set(category_definition); 
             }
         },
-        {
-            label: "Word vs. Transliteration", 
+    ]
+    let others = [
+        { 
+            label: "Word vs. Long definition", 
             action: c => { 
-                category_definition_set(category_transliteration); 
+                no_transliteration = true;
+                category_definition_set(category_definition); 
             }
-        }
+        },
     ]
     for (let category of categories) {
         button(document.body, category.label, () => {
