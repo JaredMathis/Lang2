@@ -476,7 +476,7 @@ function words_playable_get(choice, use_mistakes) {
     }
     let roots = language_current_words.slice(choice.low - 1, choice.high);
 
-    if (category_selected === category_inflected) {
+    if (inflected_use) {
         let inflections = [];
         for (let verse of chapter_json) {
             for (let t of verse.tokens) {
@@ -534,7 +534,7 @@ function screen_study(choice, use_mistakes) {
     let words_playable = words_playable_get(choice, use_mistakes)
     for (let word_playable of words_playable) {
         let root_word = language_current_definitions[
-            (use_mistakes || category_selected === category_inflected) 
+            (use_mistakes || inflected_use) 
                 ? word_playable.strong 
                 : word_playable
             ];
@@ -542,7 +542,7 @@ function screen_study(choice, use_mistakes) {
             console.log('missing word');
             continue;
         }
-        let word_audio = (category_selected === category_inflected) ? word_playable["token"] : root_word["word"];
+        let word_audio = inflected_use ? word_playable["token"] : root_word["word"];
         if (word_playable.audio) {
             word_audio = word_playable.audio;
         }
@@ -830,7 +830,7 @@ function screen_quiz(choice, use_mistakes) {
                 style_color_and_border(b, 'green');
                 b.style['background-color']='lightgreen';
                 let word_audio;
-                if (!use_mistakes && category_selected === category_inflected) {
+                if (!use_mistakes && inflected_use) {
                     word_audio = word["token"];
                 } else {
                     if (word.audio) {
@@ -852,7 +852,7 @@ function screen_quiz(choice, use_mistakes) {
                         let mistake_id = `${category_selected}::${w}`;
                         let w_arg = language_current_definitions[w];
                         let strong = w;
-                        if (category_selected === category_inflected) {
+                        if (inflected_use) {
                             mistake_id = `${category_selected}::${w["token"]}`
                             w_arg = w;
                             strong = w["strong"];
@@ -863,7 +863,7 @@ function screen_quiz(choice, use_mistakes) {
                             strong,
                             id: mistake_id
                         };
-                        if (category_selected === category_inflected) {
+                        if (inflected_use) {
                             mistake.audio = w["token"];
                         }
                         if (mistakes.filter(m => m.id === mistake.id).length === 0) {
@@ -884,7 +884,7 @@ function style_bible_word_alternate(parent, w) {
 }
 
 function screen_quiz_w_get(use_mistakes, word) {
-    return (use_mistakes || (category_selected === category_inflected)) ? word : language_current_definitions[word];
+    return (use_mistakes || inflected_use) ? word : language_current_definitions[word];
 }
 
 function list_shuffle(array) {
