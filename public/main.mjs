@@ -790,9 +790,11 @@ function screen_quiz(choice, use_mistakes) {
             if (word === current) {
                 style_color_and_border(b, 'green');
                 b.style['background-color']='lightgreen';
-                let word_audio = language_current_definitions[use_mistakes ? word.strong : word]["word"];
+                let word_audio;
                 if (category_selected === category_inflected) {
                     word_audio = word["token"];
+                } else {
+                    word_audio = language_current_definitions[use_mistakes ? word.strong : word]["word"];
                 }
                 await audio_play_try(
                     language_current_audio_code_get(), 
