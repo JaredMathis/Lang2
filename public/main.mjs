@@ -555,14 +555,14 @@ function screen_study(choice, use_mistakes) {
             word_playable.back(b);
         } else {
             if (no_transliteration) {
-                element_text_bible_word(b, root_word);
+                (inflected_use ? style_bible_word_alternate : element_text_bible_word)(b, root_word);
             } else {
                 element_text_bible_word_transliteration(b, root_word);
             }
 
             if (definition_use) {
                 span(b, " : " + (definition_short_use ? definition_short : identity)(root_word["definition"]));
-            } else if (category_selected === category_inflected) {
+            } else if (inflected_use) {
                 span(b, " : " );
                 style_bible_word(span(b, (word_playable["token"])));
             }
@@ -784,7 +784,7 @@ function screen_quiz(choice, use_mistakes) {
         } else {
             if (inflected_use) {
                 back = (parent, w) => { 
-                    let r = style_bible_word(span(parent, w["root"])); 
+                    let r = style_bible_word_alternate(parent, w);
                     return r;
                 };
             } else if (no_transliteration) {
@@ -875,6 +875,12 @@ function screen_quiz(choice, use_mistakes) {
         });
         back(b, screen_quiz_w_get(use_mistakes, word));
     }
+}
+
+function style_bible_word_alternate(parent, w) {
+    let r = style_bible_word(span(parent, w["root"]));
+    r.color = 'darkgray';
+    return r;
 }
 
 function screen_quiz_w_get(use_mistakes, word) {
