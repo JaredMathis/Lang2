@@ -483,13 +483,15 @@ function words_playable_get(choice, use_mistakes) {
                 let {strong} = t;
                 if (roots.includes(strong)) {
                     let {token} = t;
-                    if (language_current_definitions[strong]["word"] === token) {
+                    const root = language_current_definitions[strong]["word"];
+                    if (root === token) {
                         continue;
                     }
                     if (inflections.filter(i => i.token.toLowerCase() === token.toLowerCase()).length === 0) {
                         inflections.push({
                             strong,
                             token,
+                            root,
                         })
                     }
                 }
@@ -558,7 +560,8 @@ function screen_study(choice, use_mistakes) {
             if (category_selected === category_definition) {
                 span(b, " : " + (definition_short_use ? definition_short : identity)(root_word["definition"]));
             } else if (category_selected === category_inflected) {
-                style_bible_word(span(b, " : " + (word_playable["token"])));
+                span(b, " : " );
+                style_bible_word(span(b, (word_playable["token"])));
             }
         }
     }
@@ -730,7 +733,9 @@ function screen_quiz(choice, use_mistakes) {
     if (use_mistakes) {
         front = (parent, w) => w.front(parent);
     } else {
-        if (category_selected === category_definition) {
+        if (category_selected === category_inflected) {
+
+        } else if (category_selected === category_definition) {
             if (no_transliteration) {
                 front = (parent, w) => element_text_bible_word(parent, w);
             } else {
