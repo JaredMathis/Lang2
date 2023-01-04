@@ -875,6 +875,14 @@ function list_shuffle(array) {
   }
 
 
+function word_group_sizes_get() {
+    let result = word_group_sizes.slice();
+    while (result[0] >= language_current_words.length) {
+        result.splice(0, 1);
+    }
+    return result;
+}
+
 function screen_learn() {
     screen_home_non(() => {
         if (depth_current <= 0) {
@@ -888,7 +896,7 @@ function screen_learn() {
     let choices = screen_learn_choices_get()
     for (let choice of choices) {
         button(document.body, `Learn words ${choice.low} to ${choice.high}`, () => {
-            if (learn_choice_stack.length >= word_group_sizes.length) {
+            if (learn_choice_stack.length >= word_group_sizes_get().length) {
                 screen_category(choice);
             } else {
                 depth_current++;
@@ -910,7 +918,7 @@ function list_last(list) {
 
 function screen_learn_choices_get() {
     let last = list_last(learn_choice_stack);
-    let word_group_size = word_group_sizes[depth_current];
+    let word_group_size = word_group_sizes_get()[depth_current];
     let remaining = last.high - last.low + 1;
     let result = [];
     let current = last.low;
