@@ -526,9 +526,9 @@ function screen_study(choice, use_mistakes) {
     let screen_back = () => use_mistakes ? screen_mistakes() : screen_pre_quiz(choice);
     screen_home_non(screen_back);
     text_words_low_high(choice, use_mistakes ? "Mistakes" : "Words");
-    let words = words_playable_get(choice, use_mistakes)
-    for (let word of words) {
-        let w= language_current_definitions[use_mistakes ? word.strong : word];
+    let words_playable = words_playable_get(choice, use_mistakes)
+    for (let word of words_playable) {
+        let w= language_current_definitions[(use_mistakes || category_selected === category_inflected) ? word.strong : word];
         if (!w) {
             console.log('missing word');
             continue;
@@ -592,7 +592,7 @@ function screen_pre_quiz(choice) {
 let category_selected;
 let category_transliteration = 'Transliteration';
 let category_definition = 'Definition';
-let category_inflected = 'Word';
+let category_inflected = 'Inflected';
 
 let no_transliteration;
 let definition_short_use;
