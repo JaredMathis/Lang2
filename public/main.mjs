@@ -804,7 +804,7 @@ function screen_quiz(choice, use_mistakes) {
                 style_color_and_border(b, 'green');
                 b.style['background-color']='lightgreen';
                 let word_audio;
-                if (category_selected === category_inflected) {
+                if (!use_mistakes && category_selected === category_inflected) {
                     word_audio = word["token"];
                 } else {
                     if (word.audio) {
