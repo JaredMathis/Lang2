@@ -527,8 +527,8 @@ function screen_study(choice, use_mistakes) {
     screen_home_non(screen_back);
     text_words_low_high(choice, use_mistakes ? "Mistakes" : "Words");
     let words_playable = words_playable_get(choice, use_mistakes)
-    for (let word of words_playable) {
-        let w= language_current_definitions[(use_mistakes || category_selected === category_inflected) ? word.strong : word];
+    for (let word_playable of words_playable) {
+        let w= language_current_definitions[(use_mistakes || category_selected === category_inflected) ? word_playable.strong : word_playable];
         if (!w) {
             console.log('missing word');
             continue;
@@ -537,9 +537,9 @@ function screen_study(choice, use_mistakes) {
             await audio_play_try(language_current_audio_code_get(), w["word"])
         });
         if (use_mistakes) {
-            word.front(b);
+            word_playable.front(b);
             span(b, " : ");
-            word.back(b);
+            word_playable.back(b);
         } else {
             if (no_transliteration) {
                 element_text_bible_word(b, w);
