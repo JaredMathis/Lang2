@@ -668,6 +668,7 @@ function screen_category(choice) {
         button(document.body, category.label, () => {
             no_transliteration = false;
             definition_short_use = false;
+            category_inflected = false;
             category.action(category.label);
             screen_pre_quiz(choice);
         });
