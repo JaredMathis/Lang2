@@ -609,6 +609,12 @@ function screen_category(choice) {
                 category_definition_set(category_definition); 
             }
         },
+        {
+            label: "Inflected vs. Root", 
+            action: c => { 
+                category_definition_set(category_definition); 
+            }
+        },
     ]
     let others = [
         { 
