@@ -483,6 +483,9 @@ function words_playable_get(choice, use_mistakes) {
                 let {strong} = t;
                 if (roots.includes(strong)) {
                     let {token} = t;
+                    if (language_current_definitions[strong]["word"] === token) {
+                        continue;
+                    }
                     if (inflections.filter(i => i.token.toLowerCase() === token.toLowerCase()).length === 0) {
                         inflections.push({
                             strong,
@@ -554,6 +557,8 @@ function screen_study(choice, use_mistakes) {
 
             if (category_selected === category_definition) {
                 span(b, " : " + (definition_short_use ? definition_short : identity)(root_word["definition"]));
+            } else if (category_selected === category_inflected) {
+                span(b, " : " + (word_playable["token"]));
             }
         }
     }
@@ -639,6 +644,7 @@ function screen_category(choice) {
         {
             label: "Inflected vs. Root", 
             action: c => { 
+                no_transliteration = true;
                 category_set(category_inflected); 
             }
         },
