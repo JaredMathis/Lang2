@@ -783,7 +783,10 @@ function screen_quiz(choice, use_mistakes) {
             }
         } else {
             if (inflected_use) {
-                back = (parent, w) => style_bible_word(span(parent, w["root"]));
+                back = (parent, w) => { 
+                    let r = style_bible_word(span(parent, w["root"])); 
+                    return r;
+                };
             } else if (no_transliteration) {
                 back = (parent, w) => element_text_bible_word(parent, w);
             } else if (category_selected == category_transliteration) {
