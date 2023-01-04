@@ -528,16 +528,16 @@ function screen_study(choice, use_mistakes) {
     text_words_low_high(choice, use_mistakes ? "Mistakes" : "Words");
     let words_playable = words_playable_get(choice, use_mistakes)
     for (let word_playable of words_playable) {
-        let w= language_current_definitions[
+        let root_word = language_current_definitions[
             (use_mistakes || category_selected === category_inflected) 
                 ? word_playable.strong 
                 : word_playable
             ];
-        if (!w) {
+        if (!root_word) {
             console.log('missing word');
             continue;
         }
-        let word = w["word"];
+        let word = root_word["word"];
         let b = button(document.body, '', async () => {
             await audio_play_try(language_current_audio_code_get(), word)
         });
@@ -547,13 +547,13 @@ function screen_study(choice, use_mistakes) {
             word_playable.back(b);
         } else {
             if (no_transliteration) {
-                element_text_bible_word(b, w);
+                element_text_bible_word(b, root_word);
             } else {
-                element_text_bible_word_transliteration(b, w);
+                element_text_bible_word_transliteration(b, root_word);
             }
 
             if (category_selected === category_definition) {
-                span(b, " : " + (definition_short_use ? definition_short : identity)(w["definition"]));
+                span(b, " : " + (definition_short_use ? definition_short : identity)(root_word["definition"]));
             }
         }
     }
