@@ -474,7 +474,8 @@ function words_playable_get(choice, use_mistakes) {
     if (use_mistakes) {
         return mistakes.slice();
     }
-    return language_current_words.slice(choice.low - 1, choice.high);
+    let roots = language_current_words.slice(choice.low - 1, choice.high);
+    return roots;
 }
 
 function words_to_play_generate(choice, use_mistakes) {
