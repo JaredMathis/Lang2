@@ -542,7 +542,7 @@ function screen_study(choice, use_mistakes) {
             console.log('missing word');
             continue;
         }
-        let word_audio = category_inflected ? word_playable["token"] : root_word["word"];
+        let word_audio = (category_selected === category_inflected) ? word_playable["token"] : root_word["word"];
         if (word_playable.audio) {
             word_audio = word_playable.audio;
         }
