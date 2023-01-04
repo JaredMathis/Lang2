@@ -653,7 +653,7 @@ function screen_category(choice) {
             }
         },
         {
-            label: "Inflected vs. Root", 
+            label: `Inflected vs. ${icon_root_get()}Root`, 
             action: c => { 
                 no_transliteration = true;
                 inflected_use = true;
@@ -878,10 +878,13 @@ function screen_quiz(choice, use_mistakes) {
 }
 
 function style_bible_word_alternate(parent, w) {
-    let result = span(parent, w["root"]);
+    let result = span(parent, icon_root_get() + (w["root"] || w["word"]));
     style_bible_word(result);
-    result.style.color = 'black';
     return result;
+}
+
+function icon_root_get() {
+    return "🪵";
 }
 
 function screen_quiz_w_get(use_mistakes, word) {
