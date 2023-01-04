@@ -755,14 +755,10 @@ function screen_quiz(choice, use_mistakes) {
     if (use_mistakes) {
         front = (parent, w) => w.front(parent);
     } else {
-        if (definition_use) {
-            if (no_transliteration) {
-                front = (parent, w) => element_text_bible_word(parent, w);
-            } else {
-                front = (parent, w) => element_text_bible_word_transliteration(parent, w);
-            }
-        } else if (category_selected === category_inflected) {
-            front = (parent, w) => style_bible_word(span(parent, w["root"]));
+        if (definition_use && !no_transliteration) {
+            front = (parent, w) => element_text_bible_word_transliteration(parent, w);
+        } else if (inflected_use) {
+            front = (parent, w) => style_bible_word(span(parent, w["token"]));
         } else {
             front = (parent, w) => element_text_bible_word(parent, w);
         }
@@ -779,7 +775,7 @@ function screen_quiz(choice, use_mistakes) {
             }
         } else {
             if (category_selected === category_inflected) {
-                back = (parent, w) => style_bible_word(span(parent, w["token"]));
+                back = (parent, w) => style_bible_word(span(parent, w["root"]));
             } else if (no_transliteration) {
                 back = (parent, w) => element_text_bible_word(parent, w);
             } else if (category_selected == category_transliteration) {
