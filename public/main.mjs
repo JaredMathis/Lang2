@@ -880,7 +880,7 @@ function screen_quiz(choice, use_mistakes) {
 function style_bible_word_alternate(parent, w) {
     let result = span(parent, w["root"]);
     style_bible_word(result);
-    result.style.color = 'darkgray';
+    result.style.color = 'black';
     return result;
 }
 
