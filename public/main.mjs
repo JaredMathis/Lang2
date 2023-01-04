@@ -610,6 +610,7 @@ let category_transliteration = 'Transliteration';
 let category_definition = 'Definition';
 let category_inflected = 'Inflected';
 
+let definition_use;
 let no_transliteration;
 let definition_short_use;
 
@@ -654,6 +655,15 @@ function screen_category(choice) {
                 category_set(category_inflected); 
             }
         },
+        {
+            label: "Inflected vs. Short definition", 
+            action: c => { 
+                no_transliteration = true;
+                definition_short_use = true;
+                definition_use = true;
+                category_set(category_inflected); 
+            }
+        },
     ]
     let others = [
         { 
@@ -668,6 +678,7 @@ function screen_category(choice) {
         button(document.body, category.label, () => {
             no_transliteration = false;
             definition_short_use = false;
+            definition_use = false;
             category_selected = false;
             category.action(category.label);
             screen_pre_quiz(choice);
