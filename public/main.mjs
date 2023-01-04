@@ -878,8 +878,9 @@ function screen_quiz(choice, use_mistakes) {
 }
 
 function style_bible_word_alternate(parent, w) {
-    let r = style_bible_word(span(parent, w["root"]));
-    r.color = 'darkgray';
+    let result = span(parent, w["root"]);
+    style_bible_word(result);
+    result.style.color = 'darkgray';
     return r;
 }
 
