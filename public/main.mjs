@@ -476,22 +476,24 @@ function words_playable_get(choice, use_mistakes) {
     }
     let roots = language_current_words.slice(choice.low - 1, choice.high);
 
-    let inflections = [];
-    for (let verse of chapter_json) {
-        for (let t of verse.tokens) {
-            let {strong} = t;
-            if (roots.includes(strong)) {
-                let {token} = t;
-                if (inflections.filter(i => i.token.toLowerCase() === token.toLowerCase()).length === 0) {
-                    inflections.push({
-                        strong,
-                        token,
-                    })
+    if (category_selected === category_inflected) {
+        let inflections = [];
+        for (let verse of chapter_json) {
+            for (let t of verse.tokens) {
+                let {strong} = t;
+                if (roots.includes(strong)) {
+                    let {token} = t;
+                    if (inflections.filter(i => i.token.toLowerCase() === token.toLowerCase()).length === 0) {
+                        inflections.push({
+                            strong,
+                            token,
+                        })
+                    }
                 }
             }
         }
+        return inflections;
     }
-    console.log(inflections)
 
     return roots;
 }
@@ -590,7 +592,7 @@ function screen_pre_quiz(choice) {
 let category_selected;
 let category_transliteration = 'Transliteration';
 let category_definition = 'Definition';
-let category_word = 'Word';
+let category_inflected = 'Word';
 
 let no_transliteration;
 let definition_short_use;
@@ -632,7 +634,7 @@ function screen_category(choice) {
         {
             label: "Inflected vs. Root", 
             action: c => { 
-                category_set(category_word); 
+                category_set(category_inflected); 
             }
         },
     ]
