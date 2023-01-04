@@ -780,13 +780,14 @@ function screen_quiz(choice, use_mistakes) {
     let t = text(document.body,'');
     front(t, screen_quiz_w_get(use_mistakes, current));
     const all_choices = words_playable_shuffled_get(choice, use_mistakes);
+    let right;
     if (typeof current === typeof '') {
         right = current;
     } else {
         right = current['strong'];
     }
     let filtered_choices = all_choices.filter(w => { 
-        let left, right;
+        let left;
         if (typeof w === typeof '') {
             left = w;
         } else {
