@@ -571,6 +571,7 @@ function screen_pre_quiz(choice) {
 let category_selected;
 let category_transliteration = 'Transliteration';
 let category_definition = 'Definition';
+let category_word = 'Word';
 
 let no_transliteration;
 let definition_short_use;
@@ -612,7 +613,7 @@ function screen_category(choice) {
         {
             label: "Inflected vs. Root", 
             action: c => { 
-                category_set(category_definition); 
+                category_set(category_word); 
             }
         },
     ]
