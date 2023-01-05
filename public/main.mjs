@@ -764,9 +764,11 @@ function screen_category(choice) {
 function screen_pre_quiz_generic(choice, screen_back, use_mistakes, noun) {
     screen_home_non(screen_back);
 
+    debugger;
+
     text_words_low_high(choice, noun);
     button(document.body, 'Study', () => screen_study(choice, use_mistakes));
-    if (category_selected === category_spelling) {
+    if (!use_mistakes && category_selected === category_spelling) {
         let sizes = [3,2,1];
         for (let size_ of sizes) {
             let size = size_;
@@ -778,7 +780,7 @@ function screen_pre_quiz_generic(choice, screen_back, use_mistakes, noun) {
     } else {
         button(document.body, 'Quiz', () => {
             words_to_play_generate(choice, use_mistakes);
-            screen_quiz(choice);
+            screen_quiz(choice, use_mistakes);
         });
     }
 }
@@ -828,7 +830,7 @@ function screen_quiz_spelling(choice, size) {
         screen_back();
         return;
     }
-    question(screen_next, current);
+    question(screen_next);
 
     function question(screen_next) {
         let w;
@@ -912,6 +914,12 @@ function screen_quiz(choice, use_mistakes) {
         screen_back();
         return;
     }
+
+    if (current.question) {
+        current.question(screen_next);
+        return;
+    }
+
     let front;
     if (use_mistakes) {
         front = (parent, w) => w.front(parent);
