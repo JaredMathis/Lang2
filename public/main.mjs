@@ -764,8 +764,6 @@ function screen_category(choice) {
 function screen_pre_quiz_generic(choice, screen_back, use_mistakes, noun) {
     screen_home_non(screen_back);
 
-    debugger;
-
     text_words_low_high(choice, noun);
     button(document.body, 'Study', () => screen_study(choice, use_mistakes));
     if (!use_mistakes && category_selected === category_spelling) {
