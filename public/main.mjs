@@ -901,6 +901,8 @@ function screen_quiz(choice, use_mistakes) {
         () => use_mistakes 
             ? screen_mistakes() 
             : screen_pre_quiz(choice);
+    let screen_next = () => screen_quiz(choice, use_mistakes);
+    
     screen_home_non(screen_back);
     text(document.body, 'Remaining: ' + words_to_play.length);
     if (false)
@@ -996,11 +998,14 @@ function screen_quiz(choice, use_mistakes) {
                         word_audio = language_current_definitions[use_mistakes ? word.strong : word]["word"];
                     }
                 }
-                await audio_play_try_lower_and_upper(
-                    language_current_audio_code_get(), 
-                    word_audio
-                    )
-                screen_quiz(choice, use_mistakes);
+                try {
+                    await audio_play_try_lower_and_upper(
+                        language_current_audio_code_get(), 
+                        word_audio
+                        )
+                } finally {
+                    screen_next();
+                }
             } else {
                 style_button_wrong(b);
                 if (!use_mistakes) {
