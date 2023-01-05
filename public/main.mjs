@@ -356,7 +356,7 @@ async function screen_read_chapter(){
             click(translated, async function translation_display_toggle() {
                 translation.hidden = !translation.hidden
                 if (!translation.hidden) {
-                    await audio_play_try(
+                    await audio_play_try_lower_and_upper(
                         language_current_audio_code_get(), 
                         toggle_root_inflection_toggled 
                             ? language_current_definitions[token.strong]["word"] 
@@ -388,7 +388,7 @@ async function screen_read_chapter(){
                 translation2_f.hidden = true;
                 inflectties.push(translation2_f);
                 click(translation2, async () => {
-                    await audio_play_try(
+                    await audio_play_try_lower_and_upper(
                         language_current_audio_code_get(), 
                         toggle_root_inflection_toggled 
                             ? token.token
@@ -547,7 +547,7 @@ function screen_study(choice, use_mistakes) {
             word_audio = word_playable.audio;
         }
         let b = button(document.body, '', async () => {
-            await audio_play_try(language_current_audio_code_get(), word_audio)
+            await audio_play_try_lower_and_upper(language_current_audio_code_get(), word_audio)
         });
         if (use_mistakes) {
             word_playable.front(b);
@@ -580,7 +580,7 @@ function audio(audio_language_code, translated) {
     return audio;
 }
 
-async function audio_play_try(audio_language_code, translated) {
+async function audio_play_try_lower_and_upper(audio_language_code, translated) {
     let a = audio(audio_language_code, translated);
     await new Promise(async resolve => {
         try {
@@ -838,7 +838,7 @@ function screen_quiz(choice, use_mistakes) {
                         word_audio = language_current_definitions[use_mistakes ? word.strong : word]["word"];
                     }
                 }
-                await audio_play_try(
+                await audio_play_try_lower_and_upper(
                     language_current_audio_code_get(), 
                     word_audio
                     )
