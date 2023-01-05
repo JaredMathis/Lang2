@@ -580,8 +580,29 @@ function audio(audio_language_code, translated) {
     return audio;
 }
 
+function string_upper_contains(s) {
+    return s.toLowerCase() !== s;
+}
+function string_lower_contains(s) {
+    return s.toUpperCase() !== s;
+}
+
 async function audio_play_try_lower_and_upper(audio_language_code, translated) {
-    await audio_play_try(audio_language_code, translated);
+    if (!await audio_play_try(audio_language_code, translated)) {
+        let other;
+        let first = translated[0];
+        let remaining = translated.slice(1);
+        if (string_lower_contains(first)) {
+            other = first.toUpperCase() + remaining;
+        } else if (string_upper_contains(first)) {
+            other = first.toLowerCase() + remaining;
+        } else {
+            console.log('this should not happen')
+            debugger;
+            return false;
+        }
+        await audio_play_try(audio_language_code, other);
+    }
 }
 
 async function audio_play_try(audio_language_code, translated) {
