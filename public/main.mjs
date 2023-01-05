@@ -830,7 +830,11 @@ function screen_quiz_spelling(choice, size) {
     }
     question(screen_next);
 
+    const all_words = words_playable_shuffled_get(choice, use_mistakes);
+
     function question(screen_next) {
+        let other_words = all_words.filter(w => w !== current);
+
         let w;
         w = language_current_definitions[current];
         span(document.body, definition_short(w["definition"]));
