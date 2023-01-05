@@ -588,21 +588,37 @@ function string_lower_contains(s) {
 }
 
 async function audio_play_try_lower_and_upper(audio_language_code, translated) {
-    if (!await audio_play_try(audio_language_code, translated)) {
-        let other;
-        let first = translated[0];
-        let remaining = translated.slice(1);
-        if (string_lower_contains(first)) {
-            other = first.toUpperCase() + remaining;
-        } else if (string_upper_contains(first)) {
-            other = first.toLowerCase() + remaining;
-        } else {
-            console.log('this should not happen')
-            debugger;
-            return false;
+    return new Promise(async (resolve, reject) => {
+        let completed = false;
+        setTimeout(() => {
+            if (!completed) {
+                reject('Took too long to play audio');
+            }
+        }, 5000);
+        if (!await audio_play_try(audio_language_code, translated)) {
+            let other;
+            let first = translated[0];
+            let remaining = translated.slice(1);
+            if (string_lower_contains(first)) {
+                other = first.toUpperCase() + remaining;
+            } else if (string_upper_contains(first)) {
+                other = first.toLowerCase() + remaining;
+            } else {
+                console.log('this should not happen')
+                debugger;
+                completed = true;
+                reject('This should not happen');
+                return;
+            }
+            if (await audio_play_try(audio_language_code, other)) {
+                completed = true;
+                resolve();
+                return;
+            } 
+            completed = true;
+            reject('Could not find audio file');
         }
-        await audio_play_try(audio_language_code, other);
-    }
+    });
 }
 
 async function audio_play_try(audio_language_code, translated) {
