@@ -828,9 +828,9 @@ function screen_quiz_spelling(choice, size) {
         screen_back();
         return;
     }
-    question(screen_next);
 
-    const all_words = words_playable_shuffled_get(choice, use_mistakes);
+    const all_words = words_playable_shuffled_get(choice, false);
+    question(screen_next);
 
     function question(screen_next) {
         let other_words = all_words.filter(w => w !== current);
@@ -848,6 +848,10 @@ function screen_quiz_spelling(choice, size) {
 
         let current_choice_index = 0;
 
+        let other_word_string = language_current_definitions[list_shuffle(other_words)[0]]["word"].toLowerCase();
+        let other_word_list = word_partition(other_word_string, size);
+        other_word_list.forEach(segment => answer_choices.push(segment));
+
         let buttons = [];
         list_shuffle(answer_choices);
         for (let c_ of answer_choices) {
@@ -856,7 +860,7 @@ function screen_quiz_spelling(choice, size) {
                 let expected = answer_list[current_choice_index];
                 if (c === expected) {
                     current_choice_index++;
-                    answer_preview.innerHTML = answer_list.slice(0, current_choice_index).join("");
+                    answer_preview.innerHTML = answer_string.slice(0, current_choice_index * size);
                     b.hidden = true;
                     buttons.forEach(b => {
                         style_button(b);
