@@ -661,6 +661,7 @@ let category_selected;
 let category_transliteration = 'Transliteration';
 let category_definition = 'Definition';
 let category_inflected = 'Inflected';
+let category_spelling = 'Spelling';
 
 let definition_use;
 let no_transliteration;
@@ -722,6 +723,16 @@ function screen_category(choice) {
                 category_set(category_inflected); 
             }
         },
+        {
+            label: "Short definition vs. Root spelling", 
+            action: c => { 
+                // no_transliteration = true;
+                // definition_short_use = true;
+                // definition_use = true;
+                // inflected_use = true;
+                category_set(category_spelling); 
+            }
+        },
     ]
     let others = [
         { 
@@ -752,7 +763,11 @@ function screen_pre_quiz_generic(choice, screen_back, use_mistakes, noun) {
     button(document.body, 'Study', () => screen_study(choice, use_mistakes));
     button(document.body, 'Quiz', () => {
         words_to_play_generate(choice, use_mistakes);
-        screen_quiz(choice, use_mistakes);
+        if (category_selected === category_spelling) {
+            screen_quiz_spelling(choice);
+        } else {
+            screen_quiz(choice, use_mistakes);
+        }
     });
 }
 
@@ -787,6 +802,22 @@ function parenthesis_nested_remove(Input) {
         }
     }
     return Output;
+}
+
+
+function screen_quiz_spelling(choice) {
+    let screen_back = () => screen_pre_quiz(choice);
+    screen_home_non(screen_back);
+    text(document.body, 'Remaining: ' + words_to_play.length);
+    let current = words_to_play.pop();
+    if (!current) {
+        screen_back();
+        return;
+    }
+    let w;
+    w = language_current_definitions[current];
+    element_text_bible_word(document.body, w);
+    button(document.body, 'Next', () => screen_quiz_spelling(choice));
 }
 
 function screen_quiz(choice, use_mistakes) {
