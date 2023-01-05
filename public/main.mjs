@@ -821,16 +821,16 @@ function screen_quiz_spelling(choice, size) {
     let screen_back = () => screen_pre_quiz(choice);
     let screen_next = () => screen_quiz_spelling(choice, size);
 
-    question(screen_back, screen_next);
+    screen_home_non(screen_back);
+    text(document.body, 'Remaining: ' + words_to_play.length);
+    let current = words_to_play.pop();
+    if (!current) {
+        screen_back();
+        return;
+    }
+    question(screen_next, current);
 
-    function question(screen_back, screen_next) {
-        screen_home_non(screen_back);
-        text(document.body, 'Remaining: ' + words_to_play.length);
-        let current = words_to_play.pop();
-        if (!current) {
-            screen_back();
-            return;
-        }
+    function question(screen_next) {
         let w;
         w = language_current_definitions[current];
         span(document.body, definition_short(w["definition"]));
@@ -902,7 +902,7 @@ function screen_quiz(choice, use_mistakes) {
             ? screen_mistakes() 
             : screen_pre_quiz(choice);
     let screen_next = () => screen_quiz(choice, use_mistakes);
-    
+
     screen_home_non(screen_back);
     text(document.body, 'Remaining: ' + words_to_play.length);
     if (false)
