@@ -820,9 +820,10 @@ function parenthesis_nested_remove(Input) {
 function screen_quiz_spelling(choice, size) {
     let screen_back = () => screen_pre_quiz(choice);
     let screen_next = () => screen_quiz_spelling(choice, size);
-    question();
 
-    function question() {
+    question(screen_back, screen_next);
+
+    function question(screen_back, screen_next) {
         screen_home_non(screen_back);
         text(document.body, 'Remaining: ' + words_to_play.length);
         let current = words_to_play.pop();
