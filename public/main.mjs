@@ -732,8 +732,8 @@ function screen_category(choice) {
             label: "Short definition vs. Root spelling", 
             action: c => { 
                 // no_transliteration = true;
-                // definition_short_use = true;
-                // definition_use = true;
+                definition_short_use = true;
+                definition_use = true;
                 // inflected_use = true;
                 category_set(category_spelling); 
             }
