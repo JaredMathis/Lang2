@@ -841,7 +841,6 @@ function screen_quiz_spelling(choice, size) {
 
     let buttons = [];
     list_shuffle(answer_choices);
-    console.log({answer_choices})
     for (let c_ of answer_choices) {
         let c = c_;
         let b = button_fifth(document.body, c, async () => {
