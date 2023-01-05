@@ -1,41 +1,46 @@
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"
-        />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@400;700&display=swap');
-    </style>
-    <!--https://stackoverflow.com/a/43327311/569302-->
-    <!--https://www.fontsquirrel.com/tools/webfont-generator-->
-    <style>
-        @font-face {
-            font-family: bsthebrew;
-            src: url('fonts/bsthebrew.ttf')
-                url('fonts/bsthebrew-webfont.woff2') format('woff2'),
-                url('fonts/bsthebrew-webfont.woff') format('woff');
+    <head>
+        <meta charset="utf-8">
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"
+            />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@400;700&display=swap');
+        </style>
+        <!--https://stackoverflow.com/a/43327311/569302-->
+        <!--https://www.fontsquirrel.com/tools/webfont-generator-->
+        <style>
+            @font-face {
+                font-family: bsthebrew;
+                src: url('fonts/bsthebrew.ttf')
+                    url('fonts/bsthebrew-webfont.woff2') format('woff2'),
+                    url('fonts/bsthebrew-webfont.woff') format('woff');
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script> -->
+        <script type="module" src="main.mjs">
+        </script>
+
+
+    <!-- <script>
+        if (annyang) {
+            annyang.setLanguage('el-GR');
+            
+            annyang.addCallback('result', function() {
+                alert(JSON.stringify(arguments)); 
+            });
+                
+            annyang.start({ autoRestart: true, continuous: false });
         }
-    </style>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js">
-    </script>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js">
-    </script>
-</head>
-
-<body onload="brython()">
-
-<script type="module" src="main.mjs">
-</script>
-
-
-</body>
+    </script> -->
+    </body>
 
 </html>
