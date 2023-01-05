@@ -585,17 +585,22 @@ async function audio_play_try_lower_and_upper(audio_language_code, translated) {
 }
 
 async function audio_play_try(audio_language_code, translated) {
-    let a = audio(audio_language_code, translated);
-    await new Promise(async (resolve) => {
-        try {
-            await a.play();
-            a.addEventListener('ended', async () => {
+    try {
+        let a = audio(audio_language_code, translated);
+        await new Promise(async (resolve) => {
+            try {
+                await a.play();
+                a.addEventListener('ended', async () => {
+                    resolve();
+                });
+            } catch (e) {
                 resolve();
-            });
-        } catch (e) {
-            resolve();
-        }
-    });
+            }
+        });
+        return true;
+    } catch (e) {
+        return false;
+    }
 }
 
 function screen_mistakes() {
