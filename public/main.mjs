@@ -769,12 +769,12 @@ function screen_pre_quiz_generic(choice, screen_back, use_mistakes, noun) {
     if (category_selected === category_spelling) {
         button(document.body, 'Quiz', () => {
             words_to_play_generate(choice, use_mistakes);
-            screen_quiz_spelling(choice);
+            screen_quiz_spelling(choice, size);
         });
     } else {
         button(document.body, 'Quiz', () => {
             words_to_play_generate(choice, use_mistakes);
-            screen_quiz_spelling(choice);
+            screen_quiz(choice);
         });
     }
 }
@@ -828,7 +828,6 @@ function screen_quiz_spelling(choice, size) {
 
     let answer_string = w["word"];
     let remaining = answer_string;
-    let size = 3;
     let answer_list = [];
     while (remaining.length) {
         answer_list.push(remaining.slice(0, size).toLowerCase());
@@ -864,7 +863,7 @@ function screen_quiz_spelling(choice, size) {
                             w["word"]
                             )
                     } finally {
-                        screen_quiz_spelling(choice);
+                        screen_quiz_spelling(choice, size);
                     }
                 }
             } else {
