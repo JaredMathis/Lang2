@@ -588,36 +588,41 @@ function string_lower_contains(s) {
 }
 
 async function audio_play_try_lower_and_upper(audio_language_code, translated) {
+    let completed = false;
     return new Promise(async (resolve, reject) => {
-        let completed = false;
+        let inner = new Promise(async (resolve, reject) => {
+            if (await audio_play_try(audio_language_code, translated)) {
+                resolve();
+            } else {
+                let other;
+                let first = translated[0];
+                let remaining = translated.slice(1);
+                if (string_lower_contains(first)) {
+                    other = first.toUpperCase() + remaining;
+                } else if (string_upper_contains(first)) {
+                    other = first.toLowerCase() + remaining;
+                } else {
+                    debugger;
+                    reject('This should not happen');
+                    return;
+                }
+                if (await audio_play_try(audio_language_code, other)) {
+                    resolve();
+                    return;
+                } 
+                reject('Could not find audio file');
+            }
+        });
+        inner.then(
+            () => { completed = true; resolve(); }, 
+            () => { completed = true; reject();  }
+            );
+        
         setTimeout(() => {
             if (!completed) {
                 reject('Took too long to play audio');
             }
         }, 5000);
-        if (!await audio_play_try(audio_language_code, translated)) {
-            let other;
-            let first = translated[0];
-            let remaining = translated.slice(1);
-            if (string_lower_contains(first)) {
-                other = first.toUpperCase() + remaining;
-            } else if (string_upper_contains(first)) {
-                other = first.toLowerCase() + remaining;
-            } else {
-                console.log('this should not happen')
-                debugger;
-                completed = true;
-                reject('This should not happen');
-                return;
-            }
-            if (await audio_play_try(audio_language_code, other)) {
-                completed = true;
-                resolve();
-                return;
-            } 
-            completed = true;
-            reject('Could not find audio file');
-        }
     });
 }
 
@@ -626,10 +631,10 @@ async function audio_play_try(audio_language_code, translated) {
         let a = audio(audio_language_code, translated);
         await new Promise(async (resolve, reject) => {
             try {
-                await a.play();
                 a.addEventListener('ended', async () => {
                     resolve();
                 });
+                await a.play();
             } catch (e) {
                 reject();
             }
