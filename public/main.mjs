@@ -831,12 +831,7 @@ function screen_quiz_spelling(choice, size) {
     span(document.body, definition_short(w["definition"]));
 
     let answer_string = w["word"];
-    let remaining = answer_string;
-    let answer_list = [];
-    while (remaining.length) {
-        answer_list.push(remaining.slice(0, size).toLowerCase());
-        remaining = remaining.slice(size);
-    }
+    let answer_list = word_partition(answer_string, size);
     let answer_choices = answer_list.slice();
 
     let answer_preview = button(document.body, '', () => {});
@@ -877,6 +872,16 @@ function screen_quiz_spelling(choice, size) {
         style_bible_word(b);
         buttons.push(b);
     }
+}
+
+function word_partition(answer_string, size) {
+    let remaining = answer_string;
+    let answer_list = [];
+    while (remaining.length) {
+        answer_list.push(remaining.slice(0, size).toLowerCase());
+        remaining = remaining.slice(size);
+    }
+    return answer_list;
 }
 
 function screen_quiz(choice, use_mistakes) {
