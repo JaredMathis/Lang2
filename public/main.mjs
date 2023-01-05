@@ -766,14 +766,17 @@ function screen_pre_quiz_generic(choice, screen_back, use_mistakes, noun) {
 
     text_words_low_high(choice, noun);
     button(document.body, 'Study', () => screen_study(choice, use_mistakes));
-    button(document.body, 'Quiz', () => {
-        words_to_play_generate(choice, use_mistakes);
-        if (category_selected === category_spelling) {
+    if (category_selected === category_spelling) {
+        button(document.body, 'Quiz', () => {
+            words_to_play_generate(choice, use_mistakes);
             screen_quiz_spelling(choice);
-        } else {
-            screen_quiz(choice, use_mistakes);
-        }
-    });
+        });
+    } else {
+        button(document.body, 'Quiz', () => {
+            words_to_play_generate(choice, use_mistakes);
+            screen_quiz_spelling(choice);
+        });
+    }
 }
 
 function text_words_low_high(choice, noun="Words") {
@@ -810,7 +813,7 @@ function parenthesis_nested_remove(Input) {
 }
 
 
-function screen_quiz_spelling(choice) {
+function screen_quiz_spelling(choice, size) {
     let screen_back = () => screen_pre_quiz(choice);
     screen_home_non(screen_back);
     text(document.body, 'Remaining: ' + words_to_play.length);
@@ -833,7 +836,7 @@ function screen_quiz_spelling(choice) {
     }
     let answer_choices = answer_list.slice();
 
-    let answer_preview = element(document.body, 'div');
+    let answer_preview = button(document.body, '', () => {});
     style_bible_word(answer_preview);
 
     let current_choice_index = 0;
@@ -843,19 +846,26 @@ function screen_quiz_spelling(choice) {
     console.log({answer_choices})
     for (let c_ of answer_choices) {
         let c = c_;
-        let b = button_fifth(document.body, c, () => {
+        let b = button_fifth(document.body, c, async () => {
             let expected = answer_list[current_choice_index];
             if (c === expected) {
                 current_choice_index++;
                 answer_preview.innerHTML = answer_list.slice(0, current_choice_index).join("");
                 b.hidden = true;
-                style_button_correct(b);
                 buttons.forEach(b => {
                     style_button(b);
                     style_bible_word(b);
                 });
                 if (current_choice_index >= answer_list.length) {
-                    screen_quiz_spelling(choice);
+                    style_button_correct(answer_preview);
+                    try {
+                        await audio_play_try_lower_and_upper(
+                            language_current_audio_code_get(), 
+                            w["word"]
+                            )
+                    } finally {
+                        screen_quiz_spelling(choice);
+                    }
                 }
             } else {
                 style_button_wrong(b);
