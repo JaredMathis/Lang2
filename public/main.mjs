@@ -816,6 +816,34 @@ function screen_quiz_spelling(choice) {
     }
     let w;
     w = language_current_definitions[current];
+    span(document.body, definition_short(w["definition"]));
+
+    let answer_string = w["word"];
+    let remaining = answer_string;
+    let size = 3;
+    let answer_list = [];
+    while (remaining.length) {
+        answer_list.push(remaining.slice(0, size).toLowerCase());
+    }
+    let choices = answer_list.slice();
+
+    let answer_preview = element(document.body, 'div');
+    style_bible_word(answer_preview);
+
+    let current_choice_index = 0;
+
+    list_shuffle(choices);
+    for (let c of answer_list) {
+        let b = button_fifth(document.body, c, () => {
+            let expected = choices[current_choice_index];
+            if (c === expected) {
+                current_choice_index++;
+                answer_preview.innerHTML = answer_list.slice(0, current_choice_index).join("");
+                b.hidden = true;
+                
+            }
+        });
+    }
     element_text_bible_word(document.body, w);
     button(document.body, 'Next', () => screen_quiz_spelling(choice));
 }
