@@ -871,6 +871,13 @@ function screen_quiz_spelling(choice, size) {
                     }
                 } else {
                     style_button_wrong(b);
+                    let mistake_id = `${category_spelling}::${size}::${answer_string}`;
+                    if (mistakes.filter(m => m.mistake_id === mistake_id).length === 0) {
+                        mistakes.push({
+                            mistake_id,
+                            question,
+                        })
+                    }
                 }
             });
             style_bible_word(b);
