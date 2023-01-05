@@ -819,57 +819,62 @@ function parenthesis_nested_remove(Input) {
 
 function screen_quiz_spelling(choice, size) {
     let screen_back = () => screen_pre_quiz(choice);
-    screen_home_non(screen_back);
-    text(document.body, 'Remaining: ' + words_to_play.length);
-    let current = words_to_play.pop();
-    if (!current) {
-        screen_back();
-        return;
-    }
-    let w;
-    w = language_current_definitions[current];
-    span(document.body, definition_short(w["definition"]));
+    let screen_next = () => screen_quiz_spelling(choice, size);
+    question();
 
-    let answer_string = w["word"];
-    let answer_list = word_partition(answer_string, size);
-    let answer_choices = answer_list.slice();
+    function question() {
+        screen_home_non(screen_back);
+        text(document.body, 'Remaining: ' + words_to_play.length);
+        let current = words_to_play.pop();
+        if (!current) {
+            screen_back();
+            return;
+        }
+        let w;
+        w = language_current_definitions[current];
+        span(document.body, definition_short(w["definition"]));
 
-    let answer_preview = button(document.body, '', () => {});
-    style_bible_word(answer_preview);
+        let answer_string = w["word"];
+        let answer_list = word_partition(answer_string, size);
+        let answer_choices = answer_list.slice();
 
-    let current_choice_index = 0;
+        let answer_preview = button(document.body, '', () => {});
+        style_bible_word(answer_preview);
 
-    let buttons = [];
-    list_shuffle(answer_choices);
-    for (let c_ of answer_choices) {
-        let c = c_;
-        let b = button_fifth(document.body, c, async () => {
-            let expected = answer_list[current_choice_index];
-            if (c === expected) {
-                current_choice_index++;
-                answer_preview.innerHTML = answer_list.slice(0, current_choice_index).join("");
-                b.hidden = true;
-                buttons.forEach(b => {
-                    style_button(b);
-                    style_bible_word(b);
-                });
-                if (current_choice_index >= answer_list.length) {
-                    style_button_correct(answer_preview);
-                    try {
-                        await audio_play_try_lower_and_upper(
-                            language_current_audio_code_get(), 
-                            w["word"]
-                            )
-                    } finally {
-                        screen_quiz_spelling(choice, size);
+        let current_choice_index = 0;
+
+        let buttons = [];
+        list_shuffle(answer_choices);
+        for (let c_ of answer_choices) {
+            let c = c_;
+            let b = button_fifth(document.body, c, async () => {
+                let expected = answer_list[current_choice_index];
+                if (c === expected) {
+                    current_choice_index++;
+                    answer_preview.innerHTML = answer_list.slice(0, current_choice_index).join("");
+                    b.hidden = true;
+                    buttons.forEach(b => {
+                        style_button(b);
+                        style_bible_word(b);
+                    });
+                    if (current_choice_index >= answer_list.length) {
+                        style_button_correct(answer_preview);
+                        try {
+                            await audio_play_try_lower_and_upper(
+                                language_current_audio_code_get(), 
+                                w["word"]
+                                )
+                        } finally {
+                            screen_next();
+                        }
                     }
+                } else {
+                    style_button_wrong(b);
                 }
-            } else {
-                style_button_wrong(b);
-            }
-        });
-        style_bible_word(b);
-        buttons.push(b);
+            });
+            style_bible_word(b);
+            buttons.push(b);
+        }
     }
 }
 
