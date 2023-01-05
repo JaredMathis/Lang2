@@ -767,10 +767,14 @@ function screen_pre_quiz_generic(choice, screen_back, use_mistakes, noun) {
     text_words_low_high(choice, noun);
     button(document.body, 'Study', () => screen_study(choice, use_mistakes));
     if (category_selected === category_spelling) {
-        button(document.body, 'Quiz', () => {
-            words_to_play_generate(choice, use_mistakes);
-            screen_quiz_spelling(choice, size);
-        });
+        let sizes = [1,2,3];
+        for (let size_ of sizes) {
+            let size = size_;
+            button(document.body, `Quiz (${size} letter${size != 1 ? 's' : ''})`, () => {
+                words_to_play_generate(choice, use_mistakes);
+                screen_quiz_spelling(choice, size);
+            });
+        }
     } else {
         button(document.body, 'Quiz', () => {
             words_to_play_generate(choice, use_mistakes);
