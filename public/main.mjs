@@ -587,14 +587,14 @@ async function audio_play_try_lower_and_upper(audio_language_code, translated) {
 async function audio_play_try(audio_language_code, translated) {
     try {
         let a = audio(audio_language_code, translated);
-        await new Promise(async (resolve) => {
+        await new Promise(async (resolve, reject) => {
             try {
                 await a.play();
                 a.addEventListener('ended', async () => {
                     resolve();
                 });
             } catch (e) {
-                resolve();
+                reject();
             }
         });
         return true;
