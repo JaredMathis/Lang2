@@ -28,10 +28,15 @@ function button(parent, text, on_click) {
     let b = element(parent, "BUTTON", text);
     b.style["border-radius"] = "2vh";
     b.style["border"] = "0.3vh solid";
-    b.style.color = 'black';
-    b.style['border-color'] = 'lightgray';
+    style_button(b);
     click(b, on_click);
     return b;
+}
+
+function style_button(b) {
+    b.style.color = 'black';
+    b.style['border-color'] = 'lightgray';
+    b.style['background-color'] = 'WhiteSmoke';
 }
 
 function click(b, on) {
@@ -824,30 +829,41 @@ function screen_quiz_spelling(choice) {
     let answer_list = [];
     while (remaining.length) {
         answer_list.push(remaining.slice(0, size).toLowerCase());
+        remaining = remaining.slice(size);
     }
-    let choices = answer_list.slice();
+    let answer_choices = answer_list.slice();
 
     let answer_preview = element(document.body, 'div');
     style_bible_word(answer_preview);
 
     let current_choice_index = 0;
 
-    list_shuffle(choices);
-    for (let c of answer_list) {
+    let buttons = [];
+    list_shuffle(answer_choices);
+    console.log({answer_choices})
+    for (let c_ of answer_choices) {
+        let c = c_;
         let b = button_fifth(document.body, c, () => {
-            let expected = choices[current_choice_index];
+            let expected = answer_list[current_choice_index];
             if (c === expected) {
                 current_choice_index++;
                 answer_preview.innerHTML = answer_list.slice(0, current_choice_index).join("");
                 b.hidden = true;
-asdf
+                style_button_correct(b);
+                buttons.forEach(b => {
+                    style_button(b);
+                    style_bible_word(b);
+                });
+                if (current_choice_index >= answer_list.length) {
+                    screen_quiz_spelling(choice);
+                }
             } else {
-
+                style_button_wrong(b);
             }
         });
+        style_bible_word(b);
+        buttons.push(b);
     }
-    element_text_bible_word(document.body, w);
-    button(document.body, 'Next', () => screen_quiz_spelling(choice));
 }
 
 function screen_quiz(choice, use_mistakes) {
