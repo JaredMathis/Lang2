@@ -593,6 +593,7 @@ async function audio_play_try_lower_and_upper(audio_language_code, translated) {
         }
     });
 }
+
 function screen_mistakes() {
     let screen_back = screen_home;
     screen_pre_quiz_generic({
