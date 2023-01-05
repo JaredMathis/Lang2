@@ -840,7 +840,9 @@ function screen_quiz_spelling(choice) {
                 current_choice_index++;
                 answer_preview.innerHTML = answer_list.slice(0, current_choice_index).join("");
                 b.hidden = true;
-                
+asdf
+            } else {
+
             }
         });
     }
@@ -937,8 +939,7 @@ function screen_quiz(choice, use_mistakes) {
         let word = word_;
         let b = button(document.body, '', async () => {
             if (word === current) {
-                style_color_and_border(b, 'green');
-                b.style['background-color']='lightgreen';
+                style_button_correct(b);
                 let word_audio;
                 if (!use_mistakes && inflected_use) {
                     word_audio = word["token"];
@@ -955,8 +956,7 @@ function screen_quiz(choice, use_mistakes) {
                     )
                 screen_quiz(choice, use_mistakes);
             } else {
-                style_color_and_border(b, '#E74C3C');
-                b.style['background-color']='#F5B7B1';
+                style_button_wrong(b);
                 if (!use_mistakes) {
                     for (let w of [word, current]) {
                         let mistake_id = `${category_selected}::${w}`;
@@ -985,6 +985,16 @@ function screen_quiz(choice, use_mistakes) {
         });
         back(b, screen_quiz_w_get(use_mistakes, word));
     }
+}
+
+function style_button_correct(b) {
+    style_color_and_border(b, 'green');
+    b.style['background-color'] = 'lightgreen';
+}
+
+function style_button_wrong(b) {
+    style_color_and_border(b, '#E74C3C');
+    b.style['background-color'] = '#F5B7B1';
 }
 
 function style_bible_word_alternate(parent, w) {
