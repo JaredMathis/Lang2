@@ -165,6 +165,11 @@ function style_button_book_choose(b) {
     b.style['font-size'] = '4vh';
 }
 
+function button_fourth(parent, text, on_click) {
+    let b = button(parent, text, on_click);
+    b.style.width = '25%';
+    return b;
+}
 function button_fifth(parent, text, on_click) {
     let b = button(parent, text, on_click);
     b.style.width = '20%';
@@ -856,7 +861,7 @@ function screen_quiz_spelling(choice, size) {
         list_shuffle(answer_choices);
         for (let c_ of answer_choices) {
             let c = c_;
-            let b = button_fifth(document.body, c, async () => {
+            let b = button_fourth(document.body, c, async () => {
                 let expected = answer_list[current_choice_index];
                 if (c === expected) {
                     current_choice_index++;
