@@ -1200,7 +1200,10 @@ function main_toolbar(parent, button_back_on_click) {
         button_fifth(toolbar, flag_html_get(language_current), screen_main);
     }
     if (selected_book) {
-        button_fifth(toolbar, selected_book, screen_choose_book);
+        let sb = button_fifth(toolbar, selected_book, screen_choose_book);
+        if (selected_book.length > 3) {
+            sb.style.fontSize = '2.5vh';
+        }
     }
     if (selected_chapter) {
         button_fifth(toolbar, selected_chapter, screen_choose_chapter);
