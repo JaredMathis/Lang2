@@ -65,17 +65,16 @@ languages = [{
         "tts": True,
         "voice": "Ayelet"
     }
-}]
-
-spanish = {
+}, {
     "name": "Spanish",
+    "flag": "es",
     "direction": "ltr",
     "path": {
-        "bible": "wordproject/sp"
+        "bible": "vatican/sp"
     },
     "code": "es",
-    "gcloud_translate": True
-}
+    "gcloud_translate": False
+}]
 
 def json_to(result):
     j = json.dumps(result, ensure_ascii=False, indent=4)

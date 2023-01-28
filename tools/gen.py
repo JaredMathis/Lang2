@@ -5,7 +5,7 @@ import json
 from gcloud import *
 from narakeet import narakeet_tts
 
-update_languages_json = False
+update_languages_json = True
 
 filter_letters = ".,:;¿?()\xad![]\n01\""
 

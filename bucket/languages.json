@@ -36,5 +36,15 @@
             "tts": true,
             "voice": "Ayelet"
         }
+    },
+    {
+        "name": "Spanish",
+        "flag": "es",
+        "direction": "ltr",
+        "path": {
+            "bible": "vatican/sp"
+        },
+        "code": "es",
+        "gcloud_translate": false
     }
 ]
