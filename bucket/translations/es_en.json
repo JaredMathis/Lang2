@@ -1,2594 +1,1619 @@
 {
-    "santiago": [
-        "Santiago"
-    ],
-    "servidor": [
-        "server"
-    ],
-    "de": [
-        "of"
-    ],
-    "dios": [
-        "god"
-    ],
-    "y": [
-        "Y"
-    ],
-    "del": [
-        "of"
-    ],
-    "señor": [
-        "mister"
-    ],
-    "jesucristo": [
-        "Jesus Christ"
-    ],
-    "saluda": [
-        "greets"
-    ],
     "a": [
-        "a"
+        "Name of the letter A.",
+        "to",
+        "by",
+        "at",
+        "Used before words referring to people, pets, or personified objects or places that function as direct objects: personal a."
     ],
-    "las": [
-        "the"
+    "acompañada": [
+        "feminine singular of acompañado"
     ],
-    "doce": [
-        "twelve o'clock"
+    "aficiona": [
+        "inflection of aficionar: third-person singular present indicative second-person singular imperative"
     ],
-    "tribus": [
-        "tribes"
+    "agitadas": [
+        "feminine plural of agitado"
     ],
-    "la": [
-        "the"
+    "al": [
+        "Contraction of a el (“at the, to the”)."
     ],
-    "dispersión": [
-        "dispersion"
+    "alegre": [
+        "joyful, cheerful",
+        "happy, joyous, merry",
+        "lively",
+        "light-hearted",
+        "jaunty (dress, attire)",
+        "(colloquial) tipsy (slightly drunk)",
+        "inflection of alegrar: first/third-person singular present subjunctive third-person singular imperative"
     ],
-    "hermanos": [
-        "brothers"
+    "alguien": [
+        "someone, somebody",
+        "anyone, anybody"
+    ],
+    "alguno": [
+        "some, any",
+        "any (used for emphasis)",
+        "someone",
+        "some, some people",
+        "one (thing); a few"
+    ],
+    "alto": [
+        "tall",
+        "high",
+        "loud",
+        "upper, top",
+        "senior (rank)",
+        "height (in measurements)",
+        "up, high, highly",
+        "loudly",
+        "stop, halt",
+        "break, pause, rest",
+        "(traffic) stop (signal)",
+        "(traffic) red light",
+        "halt!; stop!"
     ],
     "alégrense": [
-        "rejoice"
+        "third-person plural imperative of alegrar combined with se"
     ],
-    "profundamente": [
-        "deeply"
+    "aman": [
+        "third-person plural present indicative of amar"
+    ],
+    "apenas": [
+        "barely, scarcely",
+        "recently, just",
+        "as soon as",
+        "second-person singular present indicative of apenar"
+    ],
+    "astros": [
+        "plural of astro"
+    ],
+    "así": [
+        "like this; like that; as such; thus; so; thereby; this way, that way",
+        "(followed by a subjunctive clause) Used to express wishes of misfortune against someone, or to cast a spell",
+        "inflection of asir: first-person singular preterite indicative second-person singular voseo imperative"
+    ],
+    "atentamente": [
+        "attentively",
+        "politely",
+        "best regards (polite closing of a letter)"
+    ],
+    "atrae": [
+        "inflection of atraer: third-person singular present indicative second-person singular imperative"
+    ],
+    "bien": [
+        "well (adverbial form of bueno)",
+        "well, fine, okay (state of being satisfied with the status quo)",
+        "properly",
+        "willingly",
+        "very",
+        "as well",
+        "(postpositive, colloquial) well-to-do; affluent; wealthy; upper-class",
+        "(postpositive, colloquial) exclusive; upscale; high-class",
+        "good (as opposed to evil)",
+        "goodness",
+        "good, better (substantive)",
+        "welfare, benefit",
+        "(in the plural) goods, property, possessions, assets, wealth, estate",
+        "(dated) darling"
+    ],
+    "bueno": [
+        "good",
+        "fine",
+        "okay; fine",
+        "(used at the start of a phrase) well; a short pause in a sentence",
+        "(interrogatively, Mexico) Expression used when answering the phone, often with the pronunciation /bweˈno/, rather than /ˈbweno/."
+    ],
+    "cada": [
+        "each; every"
+    ],
+    "calienta": [
+        "inflection of calentar: third-person singular present indicative second-person singular imperative"
+    ],
+    "cambio": [
+        "change, shift",
+        "exchange rate",
+        "gear (of a motor vehicle)",
+        "(telecommunications) over",
+        "first-person singular present indicative of cambiar"
+    ],
+    "campo": [
+        "countryside, country",
+        "field (large open area)",
+        "(sports) pitch, (US) field (field on which soccer, rugby or field hockey is played)",
+        "(golf) course",
+        "field (domain of knowledge or practice)",
+        "(New Mexico, anglicism) camp",
+        "(physics) field",
+        "first-person singular present indicative of campar"
+    ],
+    "capaz": [
+        "able, capable",
+        "(Latin America, sometimes with subjunctive) maybe, perhaps"
+    ],
+    "clase": [
+        "lecture",
+        "class (lesson)",
+        "class (group of students)",
+        "class (level of society)",
+        "kind, sort, type",
+        "(taxonomy) class",
+        "class (elegance)"
+    ],
+    "cometido": [
+        "mission, task",
+        "past participle of cometer"
+    ],
+    "como": [
+        "as (to such an extent or degree)",
+        "like, about (approximately)",
+        "as (introducing a basis of comparison or equality)",
+        "as, since (being that)",
+        "how (in which way)",
+        "(followed by the subjunctive) if, unless (under the condition that)",
+        "as (in the manner or role specified)",
+        "such as (for example)",
+        "like (similar to, reminiscent of)",
+        "first-person singular present indicative of comer"
+    ],
+    "con": [
+        "with",
+        "on"
+    ],
+    "concupiscencia": [
+        "concupiscence, ardent desire"
+    ],
+    "condición": [
+        "condition",
+        "possibility; the makings"
+    ],
+    "considera": [
+        "inflection of considerar: third-person singular present indicative second-person singular imperative"
+    ],
+    "consiste": [
+        "inflection of consistir: third-person singular present indicative second-person singular imperative"
+    ],
+    "contaminarse": [
+        "infinitive of contaminar combined with se"
+    ],
+    "contenten": [
+        "inflection of contentar: third-person plural present subjunctive third-person plural imperative"
+    ],
+    "corona": [
+        "crown",
+        "(heraldry) crown",
+        "crown (various units of currency)",
+        "(of a star) corona",
+        "wreath; ring, circle",
+        "sprocket; (bicycle sprockets) cassette",
+        "(mechanics) larger part of a pair of gear wheels",
+        "washer",
+        "inflection of coronar: third-person singular present indicative second-person singular imperative",
+        "(informal) coronavirus"
+    ],
+    "creación": [
+        "creation",
+        "invention"
+    ],
+    "cree": [
+        "inflection of crear: first/third-person singular present subjunctive third-person singular imperative",
+        "inflection of creer: third-person singular present indicative second-person singular imperative"
+    ],
+    "cualquier": [
+        "(before noun) Apocopic form of cualquiera; any; whatever; whichever"
     ],
     "cuando": [
         "when"
     ],
-    "se": [
-        "I know"
+    "cumplidor": [
+        "reliable"
     ],
-    "vean": [
-        "see"
-    ],
-    "sometidos": [
-        "subdued"
-    ],
-    "cualquier": [
-        "any"
-    ],
-    "clase": [
-        "class"
-    ],
-    "pruebas": [
-        "tests"
-    ],
-    "sabiendo": [
-        "knowing"
-    ],
-    "que": [
-        "that"
-    ],
-    "fe": [
-        "faith"
-    ],
-    "al": [
-        "to the"
-    ],
-    "ser": [
-        "be"
-    ],
-    "probada": [
-        "tested"
-    ],
-    "produce": [
-        "produces"
-    ],
-    "paciencia": [
-        "patience"
-    ],
-    "debe": [
-        "must"
-    ],
-    "ir": [
-        "to go"
-    ],
-    "acompañada": [
-        "accompanied"
-    ],
-    "obras": [
-        "plays"
-    ],
-    "perfectas": [
-        "perfect"
-    ],
-    "fin": [
-        "finish"
-    ],
-    "ustedes": [
-        "your"
-    ],
-    "lleguen": [
-        "arrive"
-    ],
-    "perfección": [
-        "perfection"
-    ],
-    "madurez": [
-        "maturity"
-    ],
-    "sin": [
-        "without"
-    ],
-    "les": [
-        "them"
-    ],
-    "falte": [
-        "miss"
-    ],
-    "nada": [
-        "any"
-    ],
-    "si": [
-        "Yes"
-    ],
-    "alguno": [
-        "some"
-    ],
-    "le": [
-        "you"
-    ],
-    "falta": [
-        "lack"
-    ],
-    "sabiduría": [
-        "wisdom"
-    ],
-    "pida": [
-        "ask"
-    ],
-    "recibirá": [
-        "will receive"
-    ],
-    "porque": [
-        "because"
-    ],
-    "él": [
-        "the"
+    "cómo": [
+        "(interrogative) how?",
+        "(interrogative) sorry? what? (expressing surprise or asking to repeat)",
+        "how"
     ],
     "da": [
-        "gives"
-    ],
-    "todos": [
-        "everybody"
-    ],
-    "generosamente": [
-        "generously"
-    ],
-    "exigir": [
-        "demand"
-    ],
-    "en": [
-        "in"
-    ],
-    "cambio": [
-        "change"
-    ],
-    "pero": [
-        "but"
-    ],
-    "con": [
-        "with"
-    ],
-    "vacilar": [
-        "hesitate"
-    ],
-    "el": [
-        "the"
-    ],
-    "vacila": [
-        "hesitate"
-    ],
-    "parece": [
-        "It seems"
-    ],
-    "olas": [
-        "waves"
-    ],
-    "mar": [
-        "sea"
-    ],
-    "levantadas": [
-        "raised"
-    ],
-    "agitadas": [
-        "agitated"
-    ],
-    "por": [
-        "by"
-    ],
-    "viento": [
-        "wind"
-    ],
-    "es": [
-        "it is"
-    ],
-    "así": [
-        "So"
-    ],
-    "no": [
-        "No"
-    ],
-    "espere": [
-        "Wait"
-    ],
-    "recibir": [
-        "to receive"
-    ],
-    "ya": [
-        "Already"
-    ],
-    "un": [
-        "a"
-    ],
-    "hombre": [
-        "men"
-    ],
-    "interiormente": [
-        "inwardly"
-    ],
-    "dividido": [
-        "divided"
-    ],
-    "e": [
-        "and"
-    ],
-    "inconstante": [
-        "inconstant"
-    ],
-    "su": [
-        "its"
-    ],
-    "manera": [
-        "way"
-    ],
-    "proceder": [
-        "proceed"
-    ],
-    "hermano": [
-        "brother"
-    ],
-    "condición": [
-        "condition"
-    ],
-    "humilde": [
-        "humble"
-    ],
-    "gloríe": [
-        "glory"
-    ],
-    "exaltado": [
-        "exalted"
-    ],
-    "rico": [
-        "rich"
-    ],
-    "alegre": [
-        "cheerful"
-    ],
-    "humillado": [
-        "humiliated"
-    ],
-    "pasará": [
-        "it will happen"
-    ],
-    "como": [
-        "What"
-    ],
-    "una": [
-        "a"
-    ],
-    "flor": [
-        "flower"
-    ],
-    "campo": [
-        "countryside"
-    ],
-    "apenas": [
-        "barely"
-    ],
-    "sale": [
-        "comes out"
-    ],
-    "sol": [
-        "sun"
-    ],
-    "calienta": [
-        "heats up"
-    ],
-    "fuerza": [
-        "strength"
-    ],
-    "hierba": [
-        "herb"
-    ],
-    "seca": [
-        "dry"
-    ],
-    "marchita": [
-        "withered"
-    ],
-    "desaparece": [
-        "disappear"
-    ],
-    "hermosura": [
-        "loveliness"
-    ],
-    "lo": [
-        "it"
-    ],
-    "mismo": [
-        "same"
-    ],
-    "sucederá": [
-        "will happen"
-    ],
-    "sus": [
-        "their"
-    ],
-    "empresas": [
-        "Business"
-    ],
-    "feliz": [
-        "happy"
-    ],
-    "soporta": [
-        "supports"
-    ],
-    "prueba": [
-        "Test"
-    ],
-    "después": [
-        "after"
-    ],
-    "haberla": [
-        "have it"
-    ],
-    "superado": [
-        "overcome"
-    ],
-    "corona": [
-        "crown"
-    ],
-    "vida": [
-        "life"
-    ],
-    "prometió": [
-        "promised"
-    ],
-    "los": [
-        "the"
-    ],
-    "aman": [
-        "love"
-    ],
-    "nadie": [
-        "no one"
-    ],
-    "tentado": [
-        "tempted"
-    ],
-    "diga": [
-        "say"
-    ],
-    "tienta": [
-        "probe"
-    ],
-    "puede": [
-        "can"
-    ],
-    "mal": [
-        "wrong"
-    ],
-    "ni": [
-        "neither"
-    ],
-    "sino": [
-        "otherwise"
-    ],
-    "cada": [
-        "each"
-    ],
-    "uno": [
-        "one"
-    ],
-    "propia": [
-        "own"
-    ],
-    "concupiscencia": [
-        "concupiscence"
-    ],
-    "atrae": [
-        "attracts"
-    ],
-    "seduce": [
-        "seduces"
-    ],
-    "madre": [
-        "mother"
-    ],
-    "pecado": [
-        "sin"
-    ],
-    "este": [
-        "East"
-    ],
-    "vez": [
-        "time"
-    ],
-    "cometido": [
-        "task"
-    ],
-    "engendra": [
-        "spawns"
-    ],
-    "muerte": [
-        "death"
-    ],
-    "engañen": [
-        "deceive"
-    ],
-    "queridos": [
-        "dear"
-    ],
-    "todo": [
-        "all"
-    ],
-    "bueno": [
-        "Okay"
-    ],
-    "perfecto": [
-        "perfect"
-    ],
-    "don": [
-        "Don"
-    ],
-    "alto": [
-        "tall"
-    ],
-    "desciende": [
-        "comes down"
-    ],
-    "padre": [
-        "dad"
-    ],
-    "astros": [
-        "stars"
-    ],
-    "luminosos": [
-        "luminous"
-    ],
-    "quien": [
-        "who"
-    ],
-    "hay": [
-        "there are"
-    ],
-    "sombra": [
-        "shade"
-    ],
-    "declinación": [
-        "decline"
-    ],
-    "ha": [
-        "he has"
-    ],
-    "querido": [
-        "Dear"
-    ],
-    "engendrarnos": [
-        "spawn us"
-    ],
-    "palabra": [
-        "word"
-    ],
-    "verdad": [
-        "TRUE"
-    ],
-    "para": [
-        "for"
-    ],
-    "seamos": [
-        "let's be"
-    ],
-    "primicias": [
-        "first fruits"
-    ],
-    "creación": [
-        "creation"
-    ],
-    "tengan": [
-        "have"
-    ],
-    "bien": [
-        "right"
-    ],
-    "presente": [
-        "Present"
-    ],
-    "muy": [
-        "very"
+        "inflection of dar: third-person singular present indicative second-person singular imperative second-person singular voseo imperative"
+    ],
+    "de": [
+        "The name of the Latin-script letter D.",
+        "of; ’s; used after the thing owned and before the owner",
+        "from (with the source or provenance of or at)",
+        "of (expressing composition, substance)",
+        "about (concerning; with regard to)",
+        "of, from (indicating cause)",
+        "of (indicates a quality or characteristic)",
+        "from (with the origin, starting point or initial reference of or at)",
+        "of (indicates the subject or cause of the adjective)",
+        "from (with the separation, exclusion or differentiation of)",
+        "than (in certain phrases)",
+        "Used to construct compound nouns (with attributive nouns).",
+        "(followed by the infinitive) Indicates a conditional desire.",
+        "Indicates a time of day or period of someone's life.",
+        "(after a noun and before a verb) Indicates the purpose of an object."
+    ],
+    "debe": [
+        "inflection of deber: third-person singular present indicative second-person singular imperative"
     ],
     "debemos": [
-        "must"
+        "first-person plural present indicative of deber"
     ],
-    "estar": [
-        "be"
-    ],
-    "dispuestos": [
-        "ready"
-    ],
-    "escuchar": [
-        "listen"
-    ],
-    "lentos": [
-        "slow"
-    ],
-    "hablar": [
-        "speak"
-    ],
-    "enojarnos": [
-        "get angry"
-    ],
-    "ira": [
-        "gonna"
-    ],
-    "nunca": [
-        "never"
-    ],
-    "realiza": [
-        "makes"
-    ],
-    "justicia": [
-        "Justice"
+    "declinación": [
+        "declension"
     ],
     "dejen": [
-        "let"
+        "inflection of dejar: third-person plural present subjunctive third-person plural imperative"
     ],
-    "lado": [
-        "side"
+    "del": [
+        "of the, from the (+ a masculine noun in singular)."
     ],
-    "entonces": [
-        "then"
+    "delante": [
+        "in front of, before (spatially)",
+        "forward, forwards ( with hacia preceding it)",
+        "ahead ( with por preceding it)"
     ],
-    "toda": [
-        "all"
+    "desaparece": [
+        "inflection of desaparecer: third-person singular present indicative second-person singular imperative"
     ],
-    "impureza": [
-        "impurity"
+    "desciende": [
+        "inflection of descender: third-person singular present indicative second-person singular imperative"
     ],
-    "resto": [
-        "rest"
+    "después": [
+        "later, afterwards, afterward",
+        "next",
+        "(with de) after"
     ],
-    "maldad": [
-        "evil"
+    "diga": [
+        "way to say hello on the telephone",
+        "inflection of decir: first/third-person singular present subjunctive third-person singular imperative"
     ],
-    "reciban": [
-        "receive"
+    "dios": [
+        "god"
+    ],
+    "dispersión": [
+        "dispersion"
+    ],
+    "dispuestos": [
+        "masculine plural of dispuesto"
+    ],
+    "distraído": [
+        "distracted, absent-minded",
+        "past participle of distraer"
+    ],
+    "dividido": [
+        "past participle of dividir"
+    ],
+    "doce": [
+        "twelve"
     ],
     "docilidad": [
         "docility"
     ],
-    "sembrada": [
-        "sown"
+    "domina": [
+        "inflection of dominar: third-person singular present indicative second-person singular imperative"
     ],
-    "capaz": [
-        "capable"
+    "don": [
+        "(obsolete) sir, master, lord",
+        "a title of respect to a man, prefixed to first names",
+        "gift, present",
+        "gift, talent, knack"
     ],
-    "salvarlos": [
-        "save them"
+    "e": [
+        "Name of the letter E",
+        "and"
     ],
-    "pongan": [
-        "put"
+    "el": [
+        "masculine singular definite article; the",
+        "Feminine singular definite article used before nouns which start with a stressed /a/:"
     ],
-    "práctica": [
-        "practice"
+    "ella": [
+        "she, her (used subjectively and after prepositions)",
+        "it (used subjectively and after prepositions to refer to feminine nouns)"
     ],
-    "contenten": [
-        "content"
+    "empresas": [
+        "plural of empresa"
     ],
-    "sólo": [
-        "single"
+    "en": [
+        "in, at, on",
+        "in (a time)",
+        "in (a language)",
+        "used after some verbs and translated by various prepositions in English",
+        "in (in various expressions)"
     ],
-    "oírla": [
-        "hear her"
+    "engaña": [
+        "inflection of engañar: third-person singular present indicative second-person singular imperative"
     ],
-    "mismos": [
-        "themselves"
+    "engañen": [
+        "inflection of engañar: third-person plural present subjunctive third-person plural imperative"
     ],
-    "oye": [
-        "hears"
+    "engendra": [
+        "inflection of engendrar: third-person singular present indicative second-person singular imperative"
     ],
-    "practica": [
-        "practice"
+    "engendrarnos": [
+        "infinitive of engendrar combined with nos"
     ],
-    "mira": [
-        "look"
+    "enojarnos": [
+        "infinitive of enojar combined with nos"
+    ],
+    "entonces": [
+        "then, next, thereupon, at that time, at that point",
+        "then, therefore, so, thus"
+    ],
+    "es": [
+        "third-person singular present indicative of ser",
+        "plural of e"
+    ],
+    "escuchar": [
+        "(transitive) to listen to, to hear out",
+        "(intransitive) to listen",
+        "(Latin America, informal) to hear"
     ],
     "espejo": [
         "mirror"
     ],
-    "seguida": [
-        "followed"
+    "espere": [
+        "inflection of esperar: first/third-person singular present subjunctive third-person singular imperative"
     ],
-    "va": [
-        "goes"
+    "estar": [
+        "to be (have a temporary or permanent location in space).",
+        "to be (denotes a copula, in a transient fashion).",
+        "to be (auxiliary verb for the progressive/continuous aspect, preceding the gerund of the verb)",
+        "to be in a state (in a passive voice sense)",
+        "(reflexive, followed by adjective) to be, stay (denotes a copula, in a transient fashion)",
+        "(with por) to be to be done, to be (still) undone:",
+        "to be in a long-term state (in specific idioms)"
     ],
-    "olvida": [
-        "forget"
+    "este": [
+        "this",
+        "Alternative spelling of éste",
+        "uh, well (space filler in a conversation)",
+        "east"
     ],
-    "cómo": [
-        "What"
+    "están": [
+        "third-person plural present indicative of estar"
     ],
-    "considera": [
-        "considers"
+    "exaltado": [
+        "agitated, worked up, frenzied",
+        "heated, upset, angry",
+        "impassioned",
+        "past participle of exaltar"
     ],
-    "atentamente": [
-        "Sincerely"
+    "exigir": [
+        "(transitive) to demand; to require; to call for",
+        "(transitive) to exact",
+        "(transitive) to hold (e.g., accountable)",
+        "(reflexive) to be required, to be demanded"
     ],
-    "ley": [
-        "law"
+    "falta": [
+        "lack, shortage",
+        "fault",
+        "inflection of faltar: third-person singular present indicative second-person singular imperative",
+        "feminine singular of falto"
     ],
-    "perfecta": [
-        "perfect"
+    "falte": [
+        "inflection of faltar: first/third-person singular present subjunctive third-person singular imperative"
     ],
-    "nos": [
-        "us"
+    "fe": [
+        "faith"
+    ],
+    "feliz": [
+        "happy, merry (trait)",
+        "pleased, glad",
+        "joyous, merry, happy"
+    ],
+    "fin": [
+        "(sometimes feminine) end",
+        "purpose, aim, objective, goal",
+        "end, stop, halt, close, finish (ending point)"
+    ],
+    "flor": [
+        "flower (structure in angiosperms)",
+        "bloom, blossom (an expanded bud)",
+        "(figuratively) best, finest, pick",
+        "compliment, flattery",
+        "(in the plural, Argentina, Uruguay) marijuana"
+    ],
+    "fuerza": [
+        "force",
+        "strength",
+        "(physics) force",
+        "inflection of forzar: third-person singular present indicative second-person singular imperative"
+    ],
+    "generosamente": [
+        "generously"
+    ],
+    "gloríe": [
+        "inflection of gloriar: first/third-person singular present subjunctive third-person singular imperative"
+    ],
+    "ha": [
+        "third-person singular present indicative of haber"
+    ],
+    "haberla": [
+        "infinitive of haber combined with la"
+    ],
+    "hablar": [
+        "(intransitive) to talk; to speak; to communicate using words",
+        "(transitive) to speak (a language)"
     ],
     "hace": [
-        "does"
+        "third-person singular present indicative of hacer",
+        "ago (Note: unlike in English, hace precedes the number.)",
+        "(followed by que) in, it has been...since (a past period of time)"
+    ],
+    "hay": [
+        "third-person singular present indicative of haber"
+    ],
+    "hermano": [
+        "brother",
+        "sibling",
+        "bro",
+        "first-person singular present indicative of hermanar"
+    ],
+    "hermanos": [
+        "plural of hermano (“brothers, siblings”)"
+    ],
+    "hermosura": [
+        "beauty (the quality of being attractive or pleasing)",
+        "beauty (someone who is beautiful)"
+    ],
+    "hierba": [
+        "herb",
+        "grass (the plant itself)",
+        "weed",
+        "(slang) marijuana",
+        "inflection of herbar: third-person singular present indicative second-person singular imperative"
+    ],
+    "hombre": [
+        "man, (adult male human)",
+        "man, (all humans collectively); mankind, humankind",
+        "(anthropology, archaeology, paleontology) man, (individual of the species Homo sapiens, the genus Homo, or the subtribe Hominina)",
+        "(colloquial) husband",
+        "(gay slang) top",
+        "a 17th century card game also called ombre",
+        "man!",
+        "hey!",
+        "oh, come on!"
+    ],
+    "humilde": [
+        "humble",
+        "low, lower (class)"
+    ],
+    "humillado": [
+        "humiliated",
+        "past participle of humillar"
+    ],
+    "huérfanos": [
+        "masculine plural of huérfano",
+        "plural of huérfano"
+    ],
+    "impureza": [
+        "impurity (the condition of being impure)",
+        "impurity (a component or additive that renders something else impure)"
+    ],
+    "inconstante": [
+        "inconstant; changeable"
+    ],
+    "interiormente": [
+        "internally",
+        "inwardly"
+    ],
+    "ir": [
+        "(intransitive) to go (away from speaker and listener)",
+        "(intransitive) to come (towards or with the listener)",
+        "(auxiliary) to be going to (near future), to go (+ a + infinitive)",
+        "(reflexive) to go away, to leave, to depart, to go (when the destination is not essential; when something or someone is going somewhere else)",
+        "(reflexive) to leak out (with liquids and gasses), to boil away, to go flat (gas in drinks)",
+        "(reflexive) to overflow",
+        "(reflexive) to go out (lights)",
+        "(reflexive) to finish, to wear out, to disappear (e.g. money, paint, pains, mechanical parts)",
+        "(reflexive) to die",
+        "(reflexive, informal) to break wind, to fart",
+        "(reflexive, informal) to wet/soil oneself (i.e., urinate or defecate in one's pants)",
+        "(reflexive, vulgar) to come, to cum, to ejaculate, to orgasm"
+    ],
+    "ira": [
+        "anger, ire, wrath, rage"
+    ],
+    "Jesucristo": [
+        "Jesus Christ"
+    ],
+    "justicia": [
+        "justice",
+        "righteousness",
+        "the law"
+    ],
+    "la": [
+        "the",
+        "accusative of ella, ello (when the antecedent's implied gender is feminine), and usted (when referring to a woman); her, it, you (formal)",
+        "impersonal neuter pronoun (accusative) in certain colloquial phrases: it, this",
+        "(music) la (sixth note of the scale)",
+        "(music) A (the musical note or key)"
+    ],
+    "lado": [
+        "side",
+        "face"
+    ],
+    "las": [
+        "the",
+        "accusative of ellas and ustedes (when referring to more than one woman); them, you all (formal)",
+        "feminine plural pronoun",
+        "plural of la"
+    ],
+    "le": [
+        "to him, for him; dative of él",
+        "to her, for her; dative of ella",
+        "to it, for it; dative of ello",
+        "to you, for you (formal); dative of usted",
+        "(gender-neutral, neologism) to them, for them (singular); dative of elle"
+    ],
+    "lengua": [
+        "tongue",
+        "language",
+        "Spanish (subject taught in schools)"
+    ],
+    "lentos": [
+        "masculine plural of lento"
+    ],
+    "les": [
+        "dative of ellos and ellas; to them, for them",
+        "dative of ustedes; to you all, for you all (formal)",
+        "(gender-neutral, neologism) the"
+    ],
+    "levantadas": [
+        "feminine plural of levantado"
+    ],
+    "ley": [
+        "law (a well-established characteristic of nature)",
+        "law (body of rules issued by a legislative body)",
+        "law (particular piece of legislation)",
+        "religion, credence, worship of a god"
     ],
     "libres": [
-        "free"
+        "plural of libre",
+        "second-person singular present subjunctive of librar"
     ],
-    "aficiona": [
-        "amateur"
+    "lleguen": [
+        "inflection of llegar: third-person plural present subjunctive third-person plural imperative"
     ],
-    "ella": [
-        "she"
+    "lo": [
+        "accusative of él, ello, and usted (when referring to a man); him, it, you (formal)",
+        "impersonal neuter pronoun (clitic form of ello); it, that",
+        "neuter definite article used to make abstract nouns from adjectives; the"
+    ],
+    "los": [
+        "the",
+        "accusative of ellos and ustedes (when referring to more than one man); them, you all (formal)",
+        "plural masculine or neuter pronoun"
+    ],
+    "luminosos": [
+        "masculine plural of luminoso"
+    ],
+    "madre": [
+        "mother",
+        "(figuratively) mother (source or origin)",
+        "(Christianity) mother (nun)",
+        "(hydrology) riverbed",
+        "dregs (of a drink)",
+        "(Mexico, colloquial, vulgar, slang) thing"
+    ],
+    "madurez": [
+        "maturity"
+    ],
+    "mal": [
+        "(before the noun) Apocopic form of malo bad; evil",
+        "amiss, awry, off, wrong",
+        "badly, poorly, ill",
+        "awry, amiss, wrong, wrongly",
+        "hard (functions as an adverb in Spanish but translates as an adjective in English)",
+        "evil, harm; a bad thing or situation",
+        "disease, illness, ailment",
+        "worse (substantive)"
+    ],
+    "maldad": [
+        "badness; evilness",
+        "bad or evil deed"
+    ],
+    "mancha": [
+        "spot; stain; blemish",
+        "inflection of manchar: third-person singular present indicative second-person singular imperative"
+    ],
+    "manera": [
+        "way; manner"
+    ],
+    "mar": [
+        "sea",
+        "seaside",
+        "(selenology) lunar mare",
+        "(la mar) loads",
+        "(la mar de) really; hella"
+    ],
+    "marchita": [
+        "feminine singular of marchito",
+        "inflection of marchitar: third-person singular present indicative second-person singular imperative"
+    ],
+    "mira": [
+        "target",
+        "purpose, object",
+        "inflection of mirar: third-person singular present indicative second-person singular imperative"
+    ],
+    "mismo": [
+        "same; identical; one and the same; indicates that the two compared noun clauses both represent the one thing",
+        "similar; alike; practically identical; indicates that the two compared noun clauses have one or more matching qualities",
+        "(with a personal pronoun) self; myself; yourself; himself; herself; itself; ourselves; themselves; emphasises the identity or singularity of the modified noun phrase",
+        "(with a possessive pronoun) own; emphasizes the owner or the exclusivity of ownership in a noun phrase with a possessive pronoun",
+        "right, exactly, immediately"
+    ],
+    "mismos": [
+        "masculine plural of mismo"
+    ],
+    "muerte": [
+        "death (the cessation of life)",
+        "death (the personification of death as a hooded figure)",
+        "death, demise (the collapse or end of something)"
+    ],
+    "mundo": [
+        "world, earth (human collective existence)",
+        "world, globe (the Earth)",
+        "world (a planet, especially one which is inhabitable)",
+        "world (an individual or group perspective or social setting)"
+    ],
+    "muy": [
+        "very"
+    ],
+    "nada": [
+        "nothing, zero, zilch, not...anything",
+        "nothingness, nothing",
+        "nowhere, the void",
+        "inflection of nadar: third-person singular present indicative second-person singular imperative"
+    ],
+    "nadie": [
+        "no one, nobody; anyone, anybody"
+    ],
+    "necesitados": [
+        "masculine plural of necesitado"
+    ],
+    "ni": [
+        "(coordinating) neither... nor  (with three or more referents) none of... Ni Juan, ni Pedro, ni Felipe te darán la razón. None of John, Peter, or Phillip will give you the reason.",
+        "nor, or",
+        "not even",
+        "nu; the Greek letter Ν, ν"
+    ],
+    "no": [
+        "no",
+        "not",
+        "eh? (used as a tag question, to emphasise what goes before or to request that the listener express an opinion about what has been said)",
+        "Abbreviation of número.; no."
+    ],
+    "nos": [
+        "dative of nosotros: to us, for us",
+        "accusative of nosotros: us",
+        "(reflexive) reflexive of nosotros: ourselves; each other",
+        "(archaic, formal) first person; I (singular, cf. vos)",
+        "plural of no"
+    ],
+    "nuestro": [
+        "ours",
+        "our, ours, to us",
+        "(royal) our, ours, to us (as the royal we)"
+    ],
+    "nunca": [
+        "never",
+        "ever"
+    ],
+    "obras": [
+        "plural of obra",
+        "second-person singular present indicative of obrar"
+    ],
+    "ocuparse": [
+        "infinitive of ocupar combined with se"
+    ],
+    "olas": [
+        "plural of ola"
+    ],
+    "olvida": [
+        "inflection of olvidar: third-person singular present indicative second-person singular imperative"
+    ],
+    "oye": [
+        "(exclamation, informal) hey! listen! (call to attract attention)",
+        "inflection of oír: third-person singular present indicative second-person singular imperative"
     ],
     "oyente": [
-        "listener"
+        "hearing",
+        "listener",
+        "hearer, hearing person",
+        "auditor, unregistered student, student who sits in lectures despite not being an official student"
     ],
-    "distraído": [
-        "distracted"
+    "oírla": [
+        "infinitive of oír combined with la"
     ],
-    "verdadero": [
-        "real"
+    "paciencia": [
+        "patience, forbearance (the quality of being patient)"
     ],
-    "cumplidor": [
-        "compliant"
+    "padre": [
+        "(family) father",
+        "(Christianity) father",
+        "(Mexico, slang) cool, acceptable, easy"
     ],
-    "será": [
-        "will be"
+    "palabra": [
+        "word",
+        "wording",
+        "word (promise)"
+    ],
+    "para": [
+        "for, to (expressing a recipient)",
+        "to, in order to, so, for (expressing the intended purpose of an action)",
+        "by, due, due on, due by (expressing a deadline)",
+        "for (expressing contrast from what is expected)",
+        "for, to, in one's opinion, as far as one is concerned (expressing an opinion, perception or perspective)",
+        "for (expressing using one's efforts for a group or an authority figure such as a sports team or a company/boss)",
+        "inflection of parar: third-person singular present indicative second-person singular imperative",
+        "inflection of parir: first/third-person singular present subjunctive third-person singular imperative"
+    ],
+    "parece": [
+        "inflection of parecer: third-person singular present indicative second-person singular imperative"
+    ],
+    "pasará": [
+        "third-person singular future indicative of pasar"
+    ],
+    "pecado": [
+        "sin",
+        "past participle of pecar"
+    ],
+    "perfección": [
+        "perfection"
+    ],
+    "perfecta": [
+        "feminine singular of perfecto"
+    ],
+    "perfectas": [
+        "feminine plural of perfecto"
+    ],
+    "perfecto": [
+        "perfect"
+    ],
+    "pero": [
+        "but",
+        "well well; so; well (used for emphasis)",
+        "but (restriction)"
+    ],
+    "pida": [
+        "inflection of pedir: first/third-person singular present subjunctive third-person singular imperative"
+    ],
+    "pongan": [
+        "inflection of poner: third-person plural present subjunctive third-person plural imperative"
+    ],
+    "por": [
+        "",
+        "by (indicates the creator of a work)",
+        "for (indicates something given in an exchange)",
+        "through, out, via (indicating movement)",
+        "across (indicating movement)",
+        "about",
+        "due to, because of, for, for the sake of, out of (to express cause or motive)",
+        "(used with directions) over",
+        "(mathematics) times, by, multiplied by",
+        "according to, for, regarding (to express opinion or something concerning someone)",
+        "via, through, by (indicating the means of something)",
+        "for (indicating duration)",
+        "for, for the sake of, on behalf of (indicating doing something for someone's benefit)",
+        "per, for each",
+        "to (indicating something that has not yet passed)",
+        "about to (indicating something that will soon happen)",
+        "compared to; against; versus (indicating a comparison)"
+    ],
+    "porque": [
+        "because"
+    ],
+    "practica": [
+        "inflection of practicar: third-person singular present indicative second-person singular imperative"
     ],
     "practicarla": [
-        "practice it"
+        "infinitive of practicar combined with la"
     ],
-    "alguien": [
-        "someone"
+    "presente": [
+        "present (appearing)",
+        "(formal) this",
+        "(grammar) present",
+        "present (the current moment)",
+        "inflection of presentar: first/third-person singular present subjunctive third-person singular imperative"
     ],
-    "cree": [
-        "believe"
+    "primicias": [
+        "plural of primicia"
+    ],
+    "probada": [
+        "feminine singular of probado"
+    ],
+    "proceder": [
+        "demeanor",
+        "to proceed",
+        "to move onwards",
+        "(with preposition de) to come from"
+    ],
+    "produce": [
+        "inflection of producir: third-person singular present indicative second-person singular imperative"
+    ],
+    "profundamente": [
+        "profoundly, deeply"
+    ],
+    "prometió": [
+        "third-person singular preterite indicative of prometer"
+    ],
+    "propia": [
+        "feminine singular of propio"
+    ],
+    "prueba": [
+        "proof; evidence (usually in the plural)",
+        "an examination, test, or quiz",
+        "a trial; an ordeal; an audition",
+        "an athletics event",
+        "(printing) proof, proof sheet",
+        "inflection of probar: third-person singular present indicative second-person singular imperative"
+    ],
+    "pruebas": [
+        "plural of prueba",
+        "second-person singular present indicative of probar"
+    ],
+    "práctica": [
+        "practice",
+        "internship",
+        "feminine singular of práctico"
+    ],
+    "puede": [
+        "inflection of poder: third-person singular present indicative second-person singular imperative"
+    ],
+    "pura": [
+        "feminine singular of puro"
+    ],
+    "que": [
+        "that",
+        "than",
+        "indicating a reason; because, for",
+        "indicating desire or permission; may (used with the subjunctive)",
+        "who; that",
+        "that; whom",
+        "that; which",
+        "like, as",
+        "to"
+    ],
+    "querido": [
+        "dear",
+        "(colloquial, Colombia) handsome (guy), beautiful (girl)",
+        "sweetheart",
+        "lover",
+        "the letter Q in the Spanish spelling alphabet",
+        "past participle of querer"
+    ],
+    "queridos": [
+        "masculine plural of querido",
+        "plural of querido"
+    ],
+    "quien": [
+        "who",
+        "(construed with a) whom",
+        "whoever; whomever; anyone who",
+        "the one who"
+    ],
+    "realiza": [
+        "inflection of realizar: third-person singular present indicative second-person singular imperative"
+    ],
+    "reciban": [
+        "inflection of recebir: third-person plural present subjunctive third-person plural imperative",
+        "inflection of recibir: third-person plural present subjunctive third-person plural imperative"
+    ],
+    "recibir": [
+        "to receive, get",
+        "(reflexive) to graduate"
+    ],
+    "recibirá": [
+        "third-person singular future indicative of recibir"
+    ],
+    "religiosidad": [
+        "religiousness"
     ],
     "religioso": [
         "religious"
     ],
-    "domina": [
-        "dominates"
+    "resto": [
+        "rest, remainder",
+        "(mathematics) remainder",
+        "first-person singular present indicative of restar"
     ],
-    "lengua": [
-        "language"
+    "rico": [
+        "rich (having a lot of money and possessions)",
+        "luxurious",
+        "tasty, yummy"
     ],
-    "engaña": [
-        "deceives"
+    "sabiduría": [
+        "wisdom",
+        "learning; knowledge"
+    ],
+    "sabiendo": [
+        "gerund of saber"
+    ],
+    "sale": [
+        "(Mexico) ok",
+        "inflection of salar: first/third-person singular present subjunctive third-person singular imperative",
+        "third-person singular present indicative of salir"
+    ],
+    "saluda": [
+        "inflection of saludar: third-person singular present indicative second-person singular imperative"
+    ],
+    "salvarlos": [
+        "infinitive of salvar combined with los"
+    ],
+    "Santiago": [
+        "(biblical) James",
+        "a male given name",
+        "Santiago, Santiago de Chile (the capital city of Chile)",
+        "A region of Chile",
+        "Santiago, Santiago Metropolitan Region (a province of Chile)",
+        "Santiago, Santiago de Compostela (a city in Galicia, Spain)",
+        "Santiago (one of the ten islands of Cape Verde)",
+        "The name of several cities in Chile, Cuba, the Dominican Republic, Colombia, Spain, and several other Spanish-speaking countries"
+    ],
+    "se": [
+        "Third person (also used for usted and ustedes) reflexive direct or indirect object oneself, himself, herself, itself, yourself; each other; one another",
+        "Used to convey the meaning of the English passive voice in the third person and with usted and ustedes",
+        "Used instead of indirect object pronouns le and les before the direct object pronouns lo, la, los, or las.",
+        "Misspelling of sé."
+    ],
+    "seamos": [
+        "inflection of ser: first-person plural present subjunctive first-person plural imperative"
+    ],
+    "seca": [
+        "feminine singular of seco",
+        "inflection of secar: third-person singular present indicative second-person singular imperative"
+    ],
+    "seduce": [
+        "inflection of seducir: third-person singular present indicative second-person singular imperative"
+    ],
+    "seguida": [
+        "feminine singular of seguido"
+    ],
+    "sembrada": [
+        "sown land",
+        "feminine singular of sembrado"
+    ],
+    "ser": [
+        "to be (essentially or identified as)",
+        "to be (in the passive voice sense)",
+        "to exist; to occur",
+        "a being, organism",
+        "nature, essence",
+        "value, worth"
+    ],
+    "servidor": [
+        "server",
+        "yours truly; muggins",
+        "urinal",
+        "(computing) server"
+    ],
+    "será": [
+        "third-person singular future indicative of ser"
+    ],
+    "señor": [
+        "mister, sir, lord (title conferred on a married or older male)",
+        "gentleman",
+        "master",
+        "(before a noun) great big; whopping",
+        "free"
+    ],
+    "si": [
+        "if"
+    ],
+    "sin": [
+        "without"
+    ],
+    "sino": [
+        "destiny, fate, lot",
+        "but (after a negative clause) (i.e., \"but rather\", \"but only\", or \"but rather only\")",
+        "except, apart from",
+        "only, solely"
+    ],
+    "sol": [
+        "sun",
+        "sunlight",
+        "sunny side (of a place)",
+        "daylight (the time between sunrise and sunset)",
+        "sol (a unit of currency, currently used in Peru)",
+        "sol (a musical note)",
+        "(chemistry) sol (a colloid suspension of a solid in a liquid)"
+    ],
+    "sombra": [
+        "shade",
+        "shadow",
+        "ghost",
+        "inflection of sombrar: third-person singular present indicative second-person singular imperative"
+    ],
+    "sometidos": [
+        "masculine plural of sometido"
+    ],
+    "soporta": [
+        "inflection of soportar: third-person singular present indicative second-person singular imperative"
+    ],
+    "su": [
+        "(before the noun) Apocopic form of suyo His, her, its, one's, their, your (formal)  used to express an approximate number: About, approximately Pesa sus dos kilogramos.It weighs about two kilograms.(literally, “It weighs its two kilograms.”)",
+        "(before the noun, formal) Apocopic form of suyo Your"
+    ],
+    "sucederá": [
+        "third-person singular future indicative of suceder"
+    ],
+    "superado": [
+        "past participle of superar"
+    ],
+    "sus": [
+        "c'mon; attaboy",
+        "plural of su; one's, his, her, its, their (with plural possessee)",
+        "(formal) Your (with plural possessee)"
     ],
     "sí": [
-        "Yes"
+        "yes, affirmation. Commonly used to respond affirmatively to a question.",
+        "yes; aye, ay; approbation, acceptance",
+        "himself, herself, itself, themselves, yourself, yourselves (form of se used after prepositions)"
     ],
-    "religiosidad": [
-        "religiosity"
+    "sólo": [
+        "Superseded spelling of solo."
+    ],
+    "tengan": [
+        "inflection of tener: third-person plural present subjunctive third-person plural imperative"
+    ],
+    "tentado": [
+        "past participle of tentar"
+    ],
+    "tienta": [
+        "probe",
+        "smartness",
+        "(bullfighting) trial",
+        "inflection of tentar: third-person singular present indicative second-person singular imperative"
+    ],
+    "toda": [
+        "feminine singular of todo"
+    ],
+    "todo": [
+        "all, every",
+        "each, every",
+        "everything"
+    ],
+    "todos": [
+        "masculine plural of todo"
+    ],
+    "tribus": [
+        "plural of tribu"
+    ],
+    "un": [
+        "a",
+        "(before the noun) Apocopic form of uno (“one”)"
+    ],
+    "una": [
+        "feminine of uno",
+        "feminine singular of un",
+        "feminine singular of uno",
+        "one (an indefinite plural pronoun using a singular feminine item, used for females)",
+        "inflection of unir: first/third-person singular present subjunctive third-person singular imperative"
+    ],
+    "uno": [
+        "one",
+        "first-person singular present indicative of unir"
+    ],
+    "ustedes": [
+        "(formal in Spain, Equatorial Guinea, Philippines) you (plural)",
+        "(Latin America, Canary Islands, Western Andalusia) you (plural)"
+    ],
+    "va": [
+        "third-person singular present indicative of ir",
+        "(Mexico) okay"
+    ],
+    "vacila": [
+        "inflection of vacilar: third-person singular present indicative second-person singular imperative"
+    ],
+    "vacilar": [
+        "to hesitate, waver, dither (UK), vacillate",
+        "(colloquial, Colombia, Costa Rica, Cuba, Guatemala) to enjoy",
+        "(colloquial) to spy on",
+        "(colloquial) to kid, tease, rib, trick; to play a joke on, to pull someone's leg"
     ],
     "vacía": [
-        "empty"
+        "feminine singular of vacío",
+        "inflection of vaciar: third-person singular present indicative second-person singular imperative"
     ],
-    "pura": [
-        "pure"
+    "vean": [
+        "inflection of ver: third-person plural present subjunctive third-person plural imperative"
     ],
-    "mancha": [
-        "stain"
+    "verdad": [
+        "truth",
+        "fact",
+        "right"
     ],
-    "delante": [
-        "in front of"
+    "verdadero": [
+        "true, real",
+        "honest",
+        "a person who tells the truth"
     ],
-    "nuestro": [
-        "our"
+    "vez": [
+        "time, instance",
+        "(Spain) place (in a queue)",
+        "(Spain) turn (a chance to use (something) shared in sequence with others)",
+        "(in the plural) place, stead"
     ],
-    "consiste": [
-        "consists"
+    "vida": [
+        "life",
+        "lifestyle",
+        "livelihood; living",
+        "liveliness",
+        "lifespan; lifetime",
+        "a term of endearment; darling, sweetheart",
+        "(la vida) the game (prostitution)",
+        "(computing) life (in a computer game)"
     ],
-    "ocuparse": [
-        "take care"
-    ],
-    "huérfanos": [
-        "orphans"
+    "viento": [
+        "wind (the movement of air)",
+        "woodwind section (of an orchestra)",
+        "guy rope",
+        "first-person singular present indicative of ventar"
     ],
     "viudas": [
-        "widows"
-    ],
-    "están": [
-        "is it so"
-    ],
-    "necesitados": [
-        "people in need"
-    ],
-    "contaminarse": [
-        "contaminate"
-    ],
-    "mundo": [
-        "world"
-    ],
-    "jacobo": [
-        "jacob"
-    ],
-    "siervo": [
-        "servant"
-    ],
-    "á": [
-        "a"
-    ],
-    "esparcidas": [
-        "scattered"
-    ],
-    "salud": [
-        "Health"
-    ],
-    "míos": [
-        "mine"
-    ],
-    "tened": [
-        "have"
-    ],
-    "sumo": [
-        "sumo"
-    ],
-    "gozo": [
-        "joy"
-    ],
-    "cayereis": [
-        "you will fall"
-    ],
-    "diversas": [
-        "various"
-    ],
-    "tentaciones": [
-        "temptations"
-    ],
-    "vuestra": [
-        "your"
-    ],
-    "obra": [
-        "construction site"
-    ],
-    "mas": [
-        "further"
-    ],
-    "tenga": [
-        "have"
-    ],
-    "seáis": [
-        "be"
-    ],
-    "perfectos": [
-        "perfect"
-    ],
-    "cabales": [
-        "sane"
-    ],
-    "faltar": [
-        "lack"
-    ],
-    "alguna": [
-        "some"
-    ],
-    "cosa": [
-        "stuff"
-    ],
-    "vosotros": [
-        "you"
-    ],
-    "tiene": [
-        "have"
-    ],
-    "demándela": [
-        "sue her"
-    ],
-    "cual": [
-        "which"
-    ],
-    "abundantemente": [
-        "abundantly"
-    ],
-    "zahiere": [
-        "zahiere"
-    ],
-    "dada": [
-        "Dadaist"
-    ],
-    "dudando": [
-        "doubting"
-    ],
-    "duda": [
-        "doubt"
-    ],
-    "semejante": [
-        "similar"
-    ],
-    "onda": [
-        "vibe"
-    ],
-    "movida": [
-        "move"
-    ],
-    "echada": [
-        "cast"
-    ],
-    "parte": [
-        "part"
-    ],
-    "otra": [
-        "other"
-    ],
-    "piense": [
-        "think"
-    ],
-    "pues": [
-        "well"
-    ],
-    "tal": [
-        "such"
-    ],
-    "ninguna": [
-        "none"
-    ],
-    "doblado": [
-        "bent"
-    ],
-    "ánimo": [
-        "cheer up"
-    ],
-    "caminos": [
-        "roads"
-    ],
-    "baja": [
-        "low"
-    ],
-    "suerte": [
-        "lucky"
-    ],
-    "gloríese": [
-        "boast"
-    ],
-    "alteza": [
-        "high King"
-    ],
-    "bajeza": [
-        "baseness"
-    ],
-    "salido": [
-        "stepped out"
-    ],
-    "ardor": [
-        "burning"
-    ],
-    "secó": [
-        "dried"
-    ],
-    "cayó": [
-        "it fell"
-    ],
-    "pereció": [
-        "perished"
-    ],
-    "hermosa": [
-        "beautiful"
-    ],
-    "apariencia": [
-        "appearance"
-    ],
-    "también": [
-        "also"
-    ],
-    "marchitará": [
-        "wither away"
-    ],
-    "bienaventurado": [
-        "blessed"
-    ],
-    "varón": [
-        "male"
-    ],
-    "sufre": [
-        "suffers"
-    ],
-    "tentación": [
-        "temptation"
-    ],
-    "fuere": [
-        "be"
-    ],
-    "probado": [
-        "tried"
-    ],
-    "prometido": [
-        "fiance"
-    ],
-    "malos": [
-        "bad"
-    ],
-    "atraído": [
-        "attracted"
-    ],
-    "cebado": [
-        "priming"
-    ],
-    "concebido": [
-        "conceived"
-    ],
-    "pare": [
-        "stop"
-    ],
-    "siendo": [
-        "being"
-    ],
-    "cumplido": [
-        "compliment"
-    ],
-    "amados": [
-        "beloved"
-    ],
-    "erréis": [
-        "you will be wrong"
-    ],
-    "buena": [
-        "good"
-    ],
-    "dádiva": [
-        "gift"
-    ],
-    "luces": [
-        "lights"
-    ],
-    "mudanza": [
-        "moving"
-    ],
-    "variación": [
-        "variation"
-    ],
-    "voluntad": [
-        "Will"
-    ],
-    "engendrado": [
-        "begotten"
-    ],
-    "criaturas": [
-        "creatures"
-    ],
-    "esto": [
-        "this"
-    ],
-    "mis": [
-        "my"
-    ],
-    "sea": [
-        "be"
-    ],
-    "pronto": [
-        "early"
-    ],
-    "oir": [
-        "hear"
-    ],
-    "tardío": [
-        "late"
-    ],
-    "airarse": [
-        "get angry"
-    ],
-    "dejando": [
-        "leaving"
-    ],
-    "inmundicia": [
-        "filth"
-    ],
-    "superfluidad": [
-        "superfluity"
-    ],
-    "malicia": [
-        "malice"
-    ],
-    "recibid": [
-        "receive"
-    ],
-    "mansedumbre": [
-        "meekness"
-    ],
-    "ingerida": [
-        "ingested"
-    ],
-    "hacer": [
-        "to do"
-    ],
-    "salvas": [
-        "you save"
-    ],
-    "vuestras": [
-        "your"
-    ],
-    "almas": [
-        "souls"
-    ],
-    "sed": [
-        "thirst"
-    ],
-    "hacedores": [
-        "doers"
-    ],
-    "tan": [
-        "so"
-    ],
-    "solamente": [
-        "only"
-    ],
-    "oidores": [
-        "hearers"
-    ],
-    "engañándoos": [
-        "deceiving you"
-    ],
-    "pone": [
-        "places"
-    ],
-    "rostro": [
-        "face"
-    ],
-    "natural": [
-        "natural"
-    ],
-    "consideró": [
-        "I consider"
-    ],
-    "fué": [
-        "was"
-    ],
-    "luego": [
-        "later"
-    ],
-    "olvidó": [
-        "I forget"
-    ],
-    "qué": [
-        "than"
-    ],
-    "era": [
-        "it was"
-    ],
-    "hubiere": [
-        "would have"
-    ],
-    "mirado": [
-        "looked"
-    ],
-    "libertad": [
-        "Liberty"
-    ],
-    "perseverado": [
-        "persevered"
-    ],
-    "oidor": [
-        "listener"
-    ],
-    "olvidadizo": [
-        "forgetful"
-    ],
-    "hacedor": [
-        "maker"
-    ],
-    "hecho": [
-        "done"
-    ],
-    "piensa": [
-        "think"
-    ],
-    "entre": [
-        "Come in"
-    ],
-    "refrena": [
-        "restrains"
-    ],
-    "engañando": [
-        "cheating"
-    ],
-    "corazón": [
-        "heart"
-    ],
-    "religión": [
-        "religion"
-    ],
-    "vana": [
-        "going to"
-    ],
-    "mácula": [
-        "taint"
-    ],
-    "esta": [
-        "is"
-    ],
-    "visitar": [
-        "to visit"
-    ],
-    "tribulaciones": [
-        "tribulations"
-    ],
-    "guardarse": [
-        "keep away"
-    ],
-    "tengáis": [
-        "you have"
-    ],
-    "glorioso": [
-        "glorious"
-    ],
-    "acepción": [
-        "meaning"
-    ],
-    "personas": [
-        "people"
-    ],
-    "congregación": [
-        "congregation"
-    ],
-    "entra": [
-        "enters"
-    ],
-    "anillo": [
-        "ring"
-    ],
-    "oro": [
-        "Prayed"
-    ],
-    "preciosa": [
-        "precious"
-    ],
-    "ropa": [
-        "clothes"
-    ],
-    "pobre": [
-        "poor"
-    ],
-    "vestidura": [
-        "clothing"
-    ],
-    "vil": [
-        "vile"
-    ],
-    "tuviereis": [
-        "you will have"
-    ],
-    "respeto": [
-        "respect"
-    ],
-    "trae": [
-        "brings"
-    ],
-    "dijereis": [
-        "you will say"
-    ],
-    "siéntate": [
-        "Sit down"
-    ],
-    "tú": [
-        "your"
-    ],
-    "aquí": [
-        "here"
-    ],
-    "buen": [
-        "good"
-    ],
-    "lugar": [
-        "place"
-    ],
-    "estáte": [
-        "stay"
-    ],
-    "allí": [
-        "over there"
-    ],
-    "pie": [
-        "foot"
-    ],
-    "ó": [
-        "either"
-    ],
-    "debajo": [
-        "below"
-    ],
-    "mi": [
-        "me"
-    ],
-    "estrado": [
-        "dais"
-    ],
-    "juzguáis": [
-        "you judge"
-    ],
-    "venís": [
-        "you come"
-    ],
-    "jueces": [
-        "judges"
-    ],
-    "pensamientos": [
-        "thoughts"
-    ],
-    "oid": [
-        "hear"
-    ],
-    "elegido": [
-        "chosen one"
-    ],
-    "pobres": [
-        "poor"
-    ],
-    "ricos": [
-        "rich"
-    ],
-    "herederos": [
-        "heirs"
-    ],
-    "reino": [
-        "kingdom"
-    ],
-    "habéis": [
-        "have you"
-    ],
-    "afrentado": [
-        "affronted"
-    ],
-    "os": [
-        "you"
-    ],
-    "oprimen": [
-        "oppress"
-    ],
-    "son": [
-        "are"
-    ],
-    "ellos": [
-        "them"
-    ],
-    "arrastran": [
-        "they drag"
-    ],
-    "juzgados": [
-        "courts"
-    ],
-    "blasfeman": [
-        "blasphemer"
-    ],
-    "nombre": [
-        "Name"
-    ],
-    "invocado": [
-        "invoked"
-    ],
-    "sobre": [
-        "on"
-    ],
-    "cumplís": [
-        "you comply"
-    ],
-    "real": [
-        "real"
-    ],
-    "conforme": [
-        "according"
-    ],
-    "escritura": [
-        "writing"
-    ],
-    "amarás": [
-        "you will love"
-    ],
-    "tu": [
-        "your"
-    ],
-    "prójimo": [
-        "neighbor"
-    ],
-    "ti": [
-        "you"
-    ],
-    "hacéis": [
-        "you do"
-    ],
-    "cometéis": [
-        "you commit"
-    ],
-    "sois": [
-        "you are"
-    ],
-    "reconvenidos": [
-        "reprimanded"
-    ],
-    "transgresores": [
-        "transgressors"
+        "feminine plural of viudo",
+        "plural of viuda"
+    ],
+    "y": [
+        "and",
+        "(in names of number) and",
+        "(in arithmetic) plus, and",
+        "(informal) well",
+        "(informal) what about, how about, where is/are the"
+    ],
+    "ya": [
+        "now",
+        "already, yet",
+        "in the near future; soon",
+        "immediately",
+        "anymore; no longer",
+        "(emphatic) emphatic (similar to the use of English \"so\" or \"oh\" as an interjection)",
+        "(in negatives) only",
+        "(before pero) yes",
+        "(before que) since, now",
+        "first (something) then (something else); first (something), now (something else)",
+        "whether (something) or (something else)",
+        "come on!, let's go!",
+        "(colloquial) Used to acknowledge or dismiss the previous statement."
+    ],
+    "él": [
+        "he, him, masculine personal third person subject and disjunctive pronoun (used as a subject and after prepositions)",
+        "it, masculine non-personal third-person subject and disjunctive pronoun (used as a subject and after prepositions to refer to masculine nouns)"
+    ],
+    "acompañado": [
+        "side-dish",
+        "past participle of acompañar"
+    ],
+    "aficionar": [
+        "(transitive) to get someone interested in something; to get someone into something",
+        "(reflexive) to become interested in something"
+    ],
+    "agitado": [
+        "agitated, upset",
+        "hectic",
+        "rough, choppy (sea, waters)",
+        "past participle of agitar"
+    ],
+    "alegrar": [
+        "(transitive) to make happy",
+        "(reflexive) to be happy",
+        "(reflexive) to be glad"
+    ],
+    "amar": [
+        "to love, have great affection for, care about"
+    ],
+    "astro": [
+        "cosmic body, celestial body",
+        "star (famous person)"
+    ],
+    "atraer": [
+        "to attract, to lure"
+    ],
+    "calentar": [
+        "(transitive) to heat, to warm up (cause an increase in temperature)",
+        "(transitive) to turn on (arouse sexually)",
+        "(transitive, intransitive, exercise) to warm up (prepare for a physical activity)"
+    ],
+    "considerar": [
+        "to consider, to regard, to see, to look, to view",
+        "to deem, to hold",
+        "(reflexive) to judge, to estimate"
+    ],
+    "consistir": [
+        "(intransitive, with en) to consist of"
+    ],
+    "contaminar": [
+        "(transitive) to contaminate",
+        "(transitive) to corrupt",
+        "(transitive) to profane"
+    ],
+    "contentar": [
+        "(transitive) to please",
+        "(reflexive) to make do, settle"
     ],
     "cualquiera": [
-        "anyone"
-    ],
-    "guardado": [
-        "saved"
-    ],
-    "ofendiere": [
-        "offend"
-    ],
-    "punto": [
-        "point"
-    ],
-    "culpado": [
-        "guilty"
-    ],
-    "dijo": [
-        "said"
-    ],
-    "cometerás": [
-        "you will commit"
-    ],
-    "adulterio": [
-        "adultery"
-    ],
-    "dicho": [
-        "saying"
-    ],
-    "matarás": [
-        "you will kill"
-    ],
-    "ahora": [
-        "now"
-    ],
-    "hubieres": [
-        "would you have"
-    ],
-    "matado": [
-        "killed"
-    ],
-    "eres": [
-        "are you"
-    ],
-    "transgresor": [
-        "offender"
-    ],
-    "hablad": [
-        "talk"
-    ],
-    "obrad": [
-        "work"
-    ],
-    "juicio": [
-        "judgment"
-    ],
-    "misericordia": [
-        "mercy"
-    ],
-    "aquel": [
-        "that"
-    ],
-    "hiciere": [
-        "I would do"
-    ],
-    "gloría": [
-        "glory"
-    ],
-    "contra": [
-        "against"
-    ],
-    "aprovechará": [
-        "will take advantage"
-    ],
-    "dice": [
-        "He says"
-    ],
-    "podrá": [
-        "may"
-    ],
-    "salvarle": [
-        "save him"
-    ],
-    "hermana": [
-        "sister"
-    ],
-    "desnudos": [
-        "nudes"
-    ],
-    "tienen": [
-        "have"
-    ],
-    "necesidad": [
-        "need"
-    ],
-    "mantenimiento": [
-        "maintenance"
-    ],
-    "día": [
-        "day"
-    ],
-    "id": [
-        "id"
-    ],
-    "paz": [
-        "peace"
-    ],
-    "calentaos": [
-        "get warm"
-    ],
-    "hartaos": [
-        "fed up"
-    ],
-    "diereis": [
-        "you will give"
-    ],
-    "cosas": [
-        "things"
-    ],
-    "necesarias": [
-        "necessary"
-    ],
-    "cuerpo": [
-        "body"
-    ],
-    "tuviere": [
-        "would have"
-    ],
-    "muerta": [
-        "dead"
-    ],
-    "misma": [
-        "same"
-    ],
-    "dirá": [
-        "will tell"
-    ],
-    "tienes": [
-        "have"
-    ],
-    "yo": [
-        "I"
-    ],
-    "tengo": [
-        "I've got"
-    ],
-    "muéstrame": [
-        "show me"
-    ],
-    "tus": [
-        "your"
-    ],
-    "te": [
-        "tea"
-    ],
-    "mostraré": [
-        "I'll show"
-    ],
-    "crees": [
-        "do you think"
-    ],
-    "haces": [
-        "you do"
-    ],
-    "demonios": [
-        "demons"
-    ],
-    "creen": [
-        "believe"
-    ],
-    "tiemblan": [
-        "tremble"
-    ],
-    "quieres": [
-        "you want"
-    ],
-    "saber": [
-        "know"
-    ],
-    "vano": [
-        "vain"
-    ],
-    "justificado": [
-        "justified"
-    ],
-    "abraham": [
-        "Abraham"
-    ],
-    "ofreció": [
-        "offered"
-    ],
-    "hijo": [
-        "child"
-    ],
-    "isaac": [
-        "isaac"
-    ],
-    "altar": [
-        "altar"
-    ],
-    "ves": [
-        "you see"
-    ],
-    "obró": [
-        "worked"
-    ],
-    "cumplida": [
-        "fulfilled"
-    ],
-    "creyó": [
-        "believed"
-    ],
-    "imputado": [
-        "defendant"
-    ],
-    "llamado": [
-        "called"
-    ],
-    "amigo": [
-        "friend"
-    ],
-    "veis": [
-        "you see"
-    ],
-    "asimismo": [
-        "in addition"
-    ],
-    "rahab": [
-        "rahab"
-    ],
-    "ramera": [
-        "harlot"
-    ],
-    "justificada": [
-        "justified"
-    ],
-    "recibió": [
-        "He received"
-    ],
-    "mensajeros": [
-        "messengers"
-    ],
-    "echó": [
-        "threw out"
-    ],
-    "fuera": [
-        "outside"
-    ],
-    "otro": [
-        "other"
-    ],
-    "camino": [
-        "path"
-    ],
-    "espíritu": [
-        "spirit"
-    ],
-    "está": [
-        "is"
-    ],
-    "muerto": [
-        "dead"
-    ],
-    "hagáis": [
-        "do"
-    ],
-    "muchos": [
-        "Many"
-    ],
-    "maestros": [
-        "teachers"
-    ],
-    "recibiremos": [
-        "we will receive"
-    ],
-    "mayor": [
-        "higher"
-    ],
-    "condenación": [
-        "condemnation"
-    ],
-    "ofendemos": [
-        "we offend"
-    ],
-    "muchas": [
-        "many"
-    ],
-    "ofende": [
-        "offends"
-    ],
-    "éste": [
-        "East"
-    ],
-    "freno": [
-        "Brake"
-    ],
-    "gobernar": [
-        "govern"
-    ],
-    "he": [
-        "I have"
-    ],
-    "nosotros": [
-        "us"
-    ],
-    "ponemos": [
-        "we put"
-    ],
-    "frenos": [
-        "brakes"
-    ],
-    "bocas": [
-        "mouths"
-    ],
-    "caballos": [
-        "horses"
-    ],
-    "obedezcan": [
-        "obey"
-    ],
-    "gobernamos": [
-        "we rule"
-    ],
-    "mirad": [
-        "Behold"
-    ],
-    "naves": [
-        "ships"
-    ],
-    "aunque": [
-        "though"
-    ],
-    "grandes": [
-        "large"
-    ],
-    "llevadas": [
-        "carried"
-    ],
-    "impetuosos": [
-        "impetuous"
-    ],
-    "vientos": [
-        "winds"
-    ],
-    "gobernadas": [
-        "governed"
-    ],
-    "pequeño": [
-        "short"
-    ],
-    "timón": [
-        "rudder"
-    ],
-    "donde": [
-        "where"
-    ],
-    "quisiere": [
-        "I would like"
-    ],
-    "gobierna": [
-        "rules"
-    ],
-    "miembro": [
-        "member"
-    ],
-    "fuego": [
-        "fire"
-    ],
-    "cuán": [
-        "how"
-    ],
-    "grande": [
-        "great"
-    ],
-    "bosque": [
-        "forest"
-    ],
-    "enciende": [
-        "turn on"
-    ],
-    "puesta": [
-        "put"
-    ],
-    "nuestros": [
-        "our"
-    ],
-    "miembros": [
-        "members"
-    ],
-    "contamina": [
-        "contaminates"
-    ],
-    "é": [
-        "and"
-    ],
-    "inflama": [
-        "inflames"
-    ],
-    "rueda": [
-        "wheel"
-    ],
-    "inflamada": [
-        "inflamed"
-    ],
-    "infierno": [
-        "hell"
-    ],
-    "naturaleza": [
-        "nature"
-    ],
-    "bestias": [
-        "beasts"
-    ],
-    "aves": [
-        "birds"
-    ],
-    "serpientes": [
-        "snakes"
-    ],
-    "seres": [
-        "beings"
-    ],
-    "doma": [
-        "dressage"
-    ],
-    "domada": [
-        "tamed"
-    ],
-    "humana": [
-        "human"
-    ],
-    "ningún": [
-        "no"
-    ],
-    "domar": [
-        "tame"
-    ],
-    "refrenado": [
-        "restrained"
-    ],
-    "llena": [
-        "full"
-    ],
-    "veneno": [
-        "poison"
-    ],
-    "mortal": [
-        "mortal"
-    ],
-    "bendecimos": [
-        "we bless"
-    ],
-    "maldecimos": [
-        "we curse"
-    ],
-    "hombres": [
-        "mens"
-    ],
-    "cuales": [
-        "which"
-    ],
-    "hechos": [
-        "acts"
-    ],
-    "semejanza": [
-        "likeness"
-    ],
-    "boca": [
-        "mouth"
-    ],
-    "proceden": [
-        "come from"
-    ],
-    "bendición": [
-        "blessing"
-    ],
-    "maldición": [
-        "curse"
-    ],
-    "conviene": [
-        "it suits"
-    ],
-    "estas": [
-        "are"
-    ],
-    "sean": [
-        "be"
-    ],
-    "hechas": [
-        "made"
-    ],
-    "echa": [
-        "check out"
-    ],
-    "fuente": [
-        "fountain"
-    ],
-    "abertura": [
-        "opening"
-    ],
-    "agua": [
-        "Water"
-    ],
-    "dulce": [
-        "sweet"
-    ],
-    "amarga": [
-        "bitter"
-    ],
-    "higuera": [
-        "fig tree"
+        "anyone, whoever, whomever",
+        "any, whatever, whichever",
+        "a person of no importance; a nobody, zero",
+        "(slang) a female prostitute"
+    ],
+    "dar": [
+        "(transitive) to give, to give out",
+        "(transitive) to hand over",
+        "(transitive) to hit",
+        "(transitive) to emit",
+        "(transitive) to produce",
+        "(transitive) to perform",
+        "(transitive) to consider",
+        "(transitive with con) to encounter; to find with effort",
+        "(transitive) to hit upon",
+        "(colloquial, intransitive, or transitive with a) to press, activate",
+        "(transitive, colloquial) to ruin; mess up",
+        "(reflexive) to occur",
+        "(reflexive) to grow naturally",
+        "(reflexive) to hit",
+        "(reflexive + por) to assume",
+        "(reflexive, informal) to pretend to be, to present oneself as though one were",
+        "(reflexive, Mexico) to surrender",
+        "(reflexive, transitive, vulgar, El Salvador) to fuck (used with third person direct objects only)",
+        "(transitive, colloquial, Rioplatense) to find someone sexually attractive (mostly to have a sexual encounter with)",
+        "(transitive, of weather) to announce, predict"
+    ],
+    "deber": [
+        "obligation, duty",
+        "debt",
+        "should, ought (modal noun)",
+        "(usually in the plural) homework",
+        "(transitive) to owe",
+        "(auxiliary) must, to need to, to have to (rarely used in the conditional with this meaning)",
+        "(auxiliary) should, to ought to, to be supposed to, to be to",
+        "(auxiliary) should have (in the preterite; having haber follow \"deber\" is optional and not required)",
+        "(auxiliary, emphatic) shall (future tense usually)",
+        "(reflexive with preposition a) to be due to, to be attributable to, to be the result of, to be caused by",
+        "(with de and infinitive) probably or most likely do or happen something (add a degree of insecurity to the verb)"
+    ],
+    "dejar": [
+        "(transitive) to leave (to place)",
+        "(transitive) to leave, to keep (to allow to continue)",
+        "(transitive) to leave (to cause, result in)",
+        "(transitive) to let, allow",
+        "(transitive) to let go, put down (to release from one's grasp)",
+        "(transitive) to drop off",
+        "(transitive) to leave, to abandon, to dump",
+        "(transitive) to give up, to lay off, to kick (colloquial)",
+        "(transitive) to set, to put, to make (in certain phrases)",
+        "(Spain, transitive, colloquial) to cut out (stop)",
+        "(intransitive) to leave off",
+        "(intransitive, or transitive with de) to cease, stop (doing something)",
+        "(reflexive, transitive with a) to be left, to be left to",
+        "(reflexive) to let (oneself), to let oneself go (cease to care about one's appearance)"
+    ],
+    "desaparecer": [
+        "(intransitive) to disappear, to go missing, to vanish, to be gone",
+        "(intransitive) to drop off (e.g. the map, the face of the earth)",
+        "(intransitive) to go away, to fade, to wear off, to subside"
+    ],
+    "descender": [
+        "to descend"
+    ],
+    "dispuesto": [
+        "willing, ready, game, down",
+        "(+ a + infinitive) willing to, ready to",
+        "past participle of disponer"
+    ],
+    "dividir": [
+        "to divide",
+        "to split",
+        "to split up",
+        "to partition (e.g. a territory)",
+        "(mathematics) to divide"
+    ],
+    "dominar": [
+        "to dominate",
+        "to hold sway"
+    ],
+    "empresa": [
+        "company",
+        "enterprise",
+        "task, undertaking"
+    ],
+    "engañar": [
+        "to trick, to deceive, to hoodwink, to cheat",
+        "to blindside",
+        "(reflexive) to fool oneself, to kid oneself"
+    ],
+    "engendrar": [
+        "to engender, spawn, beget"
+    ],
+    "enojar": [
+        "(transitive) to anger",
+        "(reflexive) to become angry"
+    ],
+    "esperar": [
+        "(transitive) to hope for, hope to (often with a verb in the subjunctive)",
+        "(transitive) to expect, look for (often with a verb in the indicative)",
+        "(transitive) to wait to, wait for, await",
+        "(intransitive, reflexive) to wait, to hold on (reflexive for emphatic use)",
+        "(intransitive) to hope",
+        "(intransitive) to expect (a baby)",
+        "(reflexive) to be expected, to expect (impersonal use)"
+    ],
+    "faltar": [
+        "(intransitive, or transitive with a or de) to be lacking, lack, not have",
+        "(intransitive) to remain",
+        "(intransitive) to be absent, missing",
+        "(transitive with a) to miss (a date or an appointment)"
+    ],
+    "gloriar": [
+        "(transitive) Synonym of glorificar",
+        "(takes a reflexive pronoun) To glorify. This term needs a translation to English. Please help out and add a translation, then remove the text {{rfdef}}."
+    ],
+    "haber": [
+        "(auxiliary verb taking past participle to build various perfect tenses) to have",
+        "(obsolete) to hold, to possess",
+        "(impersonal, in third person singular only) to exist; “there is”, “there are” (hay); “there was”, “there were” (había)",
+        "(dated or formal, outside of Spain) to have to (+ de + infinitive)",
+        "(Used only in the third-person existential form) to be necessary (+ que + infinitive)",
+        "used to denote a past obligation",
+        "asset",
+        "history",
+        "credit side"
+    ],
+    "lento": [
+        "slow"
+    ],
+    "levantado": [
+        "lofty; high",
+        "past participle of levantar"
+    ],
+    "llegar": [
+        "(intransitive) to arrive, get (to)",
+        "(intransitive) to get up to, to go up to (+ a or + hasta)",
+        "(intransitive) to be sufficient",
+        "(intransitive) to manage (be successful)"
+    ],
+    "luminoso": [
+        "luminous, bright"
+    ],
+    "necesitado": [
+        "needy, in need (of)",
+        "past participle of necesitar"
+    ],
+    "ocupar": [
+        "(transitive) to occupy (to take or use space)",
+        "(transitive) to occupy (to fill or hold a position)",
+        "(transitive) to occupy, to take up (time or space)",
+        "(transitive) to occupy, to reside in",
+        "(transitive) to employ (to hire to work for a job)",
+        "(transitive, Latin America) to use",
+        "(transitive, intransitive, Central America, Mexico) to need",
+        "(reflexive, with de) to look after (to watch or protect a person)",
+        "(reflexive, with de) to take on (a responsibility)"
+    ],
+    "ola": [
+        "wave (on the surface of a liquid)",
+        "(figuratively) sudden appearance of a large amount of something",
+        "Mexican wave"
+    ],
+    "olvidar": [
+        "(transitive) to forget (be forgotten by)",
+        "(reflexive, intransitive) to forget, elude, escape",
+        "(with de, reflexive, intransitive) to forget, to leave behind"
+    ],
+    "oír": [
+        "(intransitive) to hear",
+        "(transitive) to hear (passively perceive a sound)",
+        "(transitive) to listen to (actively pay attention to a sound or a person speaking)",
+        "(transitive) to heed; to listen to"
+    ],
+    "parecer": [
+        "(impersonal) to seem, to see fit",
+        "(takes a reflexive pronoun) to believe",
+        "(takes a reflexive pronoun) to think",
+        "to strike (seem, appear, make an impression)",
+        "(reflexive) to be like, to take after, to resemble",
+        "(archaic) appearance (used generally when a person is pretty)",
+        "opinion"
+    ],
+    "pasar": [
+        "(transitive) to pass, to hand, to slip",
+        "(intransitive) to happen",
+        "(transitive) to pass, to get past, to go past, to go by, to go over, to get through",
+        "(transitive) to spend time",
+        "(intransitive) to enter a room",
+        "(reflexive) to go too far, exaggerate",
+        "(reflexive) to exceed, surpass, go over",
+        "(reflexive) to ripen too much, become rotten, become off (food)",
+        "(transitive) to pass (filter)",
+        "(transitive) to strain, to sieve, to sift",
+        "(transitive) to break the law, rule, order",
+        "(transitive) to trespass (enter on someone's property without permission)",
+        "to puree (crush or grind food into a puree)",
+        "to omit, leave out",
+        "(transitive) to send, transmit",
+        "(transitive) to stand, tolerate, bear",
+        "to go through, to pass through, to swing by (+ por)",
+        "(with a + infinitive) to begin a process or action; (with ser) to become, to come to be",
+        "(Latin America) to pass an exam",
+        "(takes a reflexive pronoun) to stop by, to swing by",
+        "(takes a reflexive pronoun) to spend (time)"
+    ],
+    "pedir": [
+        "(transitive) to ask for something",
+        "to request someone else to do something",
+        "(transitive) to order something",
+        "(transitive) to call, call in (e.g. to call for help, to call for backup, to call in a favor)"
+    ],
+    "poner": [
+        "(transitive, reflexive or non-reflexive) to put, to put up, to place, to lay",
+        "(transitive) to set, to set up (e.g. set an alarm, set up chairs)",
+        "(transitive) to put on (e.g. put on a smile, a happy face, a brave face; put on a pot of coffee, put something on display)",
+        "(transitive) to choose, to designate (for a job, charge or responsibility)",
+        "(transitive) to make (e.g. make somebody nervous, jealous, sad, emotional, uncomfortable)",
+        "(transitive) to make, to give (in certain phrases; e.g. to make available, give an injection, to give effect)",
+        "(transitive) to say, to read (statement: indicate in written form)",
+        "(transitive) to name, to give a nickname",
+        "(transitive) to bring (e.g. to bring online, to bring order to, to bring up to speed or date, to bring to light)",
+        "(transitive) to lay (e.g. to lay eggs, lay the foundation or groundwork)",
+        "(transitive) to turn, to turn on (e.g. to turn the other cheek, turn on music, to turn upside-down)",
+        "(transitive) to get (in certain phrases)",
+        "(transitive) to call (in certain phrases; e.g. to call into question, call into doubt, call somebody's bluff)",
+        "(transitive) to pay (attention)",
+        "(transitive) to draw (e.g. to draw a line or set up a boundary)",
+        "(transitive) to plant, to set up (e.g. plant one's feet, plant a bomb, set up explosives, plant a bug, set up a camera, plant a weapon)",
+        "(Mexico, slang, transitive) to contribute; to bring",
+        "(electronics) to play",
+        "(Spain, colloquial, transitive) to turn on, make horny",
+        "(reflexive) to put on, to don, to change into (clothing, shoes, accoutrements)",
+        "(reflexive) to get",
+        "(reflexive) (of a heavenly body) to set (i.e., to sink beneath the horizon)",
+        "(reflexive) to become, to get (\"become\" is used in reference to entering into a physical or emotional state) (e.g. become anxious, fashionable, naughty, nervous, offensive, pale, sad, serious, stern, tense, ugly, violent, weird, etc.)",
+        "(reflexive) to start doing something, to begin, to get down to (+ a + infinitive)",
+        "(reflexive) to put oneself"
+    ],
+    "practicar": [
+        "(transitive) to practice",
+        "(transitive, intransitive) to exercise"
+    ],
+    "primicia": [
+        "scoop; exclusive (news reported before anyone else)",
+        "firstfruit"
+    ],
+    "probado": [
+        "proven, tried",
+        "past participle of probar"
     ],
     "producir": [
-        "produce"
-    ],
-    "aceitunas": [
-        "olives"
-    ],
-    "vid": [
-        "vine"
-    ],
-    "higos": [
-        "figs"
-    ],
-    "salada": [
-        "salty"
-    ],
-    "quién": [
-        "who"
-    ],
-    "sabio": [
-        "wise"
-    ],
-    "avisado": [
-        "warned"
-    ],
-    "muestre": [
-        "show"
-    ],
-    "conversación": [
-        "conversation"
-    ],
-    "tenéis": [
-        "you have"
-    ],
-    "envidia": [
-        "envy"
-    ],
-    "contención": [
-        "containment"
-    ],
-    "vuestros": [
-        "your"
-    ],
-    "corazones": [
-        "hearts"
-    ],
-    "gloriés": [
-        "glories"
-    ],
-    "mentirosos": [
-        "liars"
-    ],
-    "terrena": [
-        "terrestrial"
-    ],
-    "animal": [
-        "animal"
-    ],
-    "diabólica": [
-        "diabolic"
-    ],
-    "perturbación": [
-        "disturbance"
-    ],
-    "perversa": [
-        "wicked"
-    ],
-    "primeramente": [
-        "Firstly"
-    ],
-    "pacífica": [
-        "peaceful"
-    ],
-    "modesta": [
-        "modest"
-    ],
-    "benigna": [
-        "benign"
-    ],
-    "buenos": [
-        "good ones"
-    ],
-    "frutos": [
-        "fruits"
-    ],
-    "juzgadora": [
-        "judging"
-    ],
-    "fingida": [
-        "feigned"
-    ],
-    "fruto": [
-        "fruit"
-    ],
-    "siembra": [
-        "sowing"
-    ],
-    "aquellos": [
-        "those"
-    ],
-    "hacen": [
-        "make"
-    ],
-    "dónde": [
-        "where"
-    ],
-    "vienen": [
-        "they come"
-    ],
-    "guerras": [
-        "wars"
-    ],
-    "pleitos": [
-        "litigation"
-    ],
-    "concupiscencias": [
-        "lusts"
-    ],
-    "combaten": [
-        "they fight"
-    ],
-    "codiciáis": [
-        "you covet"
-    ],
-    "matáis": [
-        "you kill"
-    ],
-    "ardéis": [
-        "you burn"
-    ],
-    "podéis": [
-        "you can"
-    ],
-    "alcanzar": [
-        "attain"
-    ],
-    "combatís": [
-        "you fight"
-    ],
-    "gerreáis": [
-        "gerreáis"
-    ],
-    "deseáis": [
-        "you wish"
-    ],
-    "pedís": [
-        "you ask"
-    ],
-    "recibís": [
-        "you receive"
-    ],
-    "gastar": [
-        "to spend"
-    ],
-    "deleites": [
-        "delights"
-    ],
-    "adúlteros": [
-        "adulterers"
-    ],
-    "adúlteras": [
-        "adulteresses"
-    ],
-    "sabéis": [
-        "you know"
-    ],
-    "amistad": [
-        "friendship"
-    ],
-    "enemistad": [
-        "enmity"
-    ],
-    "constituye": [
-        "It constitutes"
-    ],
-    "enemigo": [
-        "enemy"
-    ],
-    "pensáis": [
-        "do you think"
-    ],
-    "causa": [
-        "cause"
-    ],
-    "mora": [
-        "Blackberry"
-    ],
-    "codicia": [
-        "greed"
-    ],
-    "gracia": [
-        "funny"
-    ],
-    "resiste": [
-        "resist"
-    ],
-    "soberbios": [
-        "arrogant"
-    ],
-    "humildes": [
-        "humble"
-    ],
-    "someteos": [
-        "submit"
-    ],
-    "resistid": [
-        "resist"
-    ],
-    "diablo": [
-        "Devil"
-    ],
-    "huirá": [
-        "will flee"
-    ],
-    "allegaos": [
-        "come close"
-    ],
-    "allegará": [
-        "will gather"
-    ],
-    "pecadores": [
-        "sinners"
-    ],
-    "limpiad": [
-        "clean up"
-    ],
-    "manos": [
-        "hands"
-    ],
-    "purificad": [
-        "purify"
-    ],
-    "afligíos": [
-        "afflict yourselves"
-    ],
-    "lamentad": [
-        "lament"
-    ],
-    "llorad": [
-        "cry"
-    ],
-    "risa": [
-        "laughter"
-    ],
-    "convierta": [
-        "convert"
-    ],
-    "lloro": [
-        "I cry"
-    ],
-    "vuestro": [
-        "your"
-    ],
-    "tristeza": [
-        "sadness"
-    ],
-    "humillaos": [
-        "humble yourselves"
-    ],
-    "ensalzará": [
-        "will extol"
-    ],
-    "murmuréis": [
-        "you will murmur"
-    ],
-    "unos": [
-        "some"
-    ],
-    "otros": [
-        "others"
-    ],
-    "murmura": [
-        "mutters"
-    ],
-    "juzga": [
-        "judge"
-    ],
-    "juzgas": [
-        "you judge"
-    ],
-    "guardador": [
-        "keeper"
-    ],
-    "juez": [
-        "judge"
-    ],
-    "dador": [
-        "giver"
+        "to produce",
+        "(reflexive) to occur, to be there, to take place, to happen, to arise, to come about (to be produced)"
+    ],
+    "prometer": [
+        "to promise"
+    ],
+    "propio": [
+        "own (belonging to)",
+        "proper",
+        "typical, characteristic"
+    ],
+    "poder": [
+        "power, reign",
+        "authorization",
+        "proxy (written certificate of authority to act for another)",
+        "to be able, can",
+        "(El Salvador, colloquial, reflexive) to be familiar with something, or with somebody's personality"
+    ],
+    "puro": [
+        "pure, clear",
+        "alone, sheer, mere, just, nothing less than",
+        "only, merely",
+        "cigar, puro",
+        "(Spain, colloquial) a fine (especially a big one)"
+    ],
+    "realizar": [
+        "to carry out, to perform, to conduct, to implement (e.g. a change, a task, project, plan, inspection, experiment, procedures)",
+        "to make real, to realize (bring about)",
+        "to fulfil, to achieve, to accomplish",
+        "to make (e.g. a profit, a purchase, a visit, a trip)",
+        "to produce, to make (e.g. a film)",
+        "to engage in (e.g. an activity, work, exercise)",
+        "(Belize) to realize (come to comprehend)[1]"
+    ],
+    "saber": [
+        "to know (a fact), to wit",
+        "to know how to do something",
+        "(in the preterite tense) to find out, to learn",
+        "to taste",
+        "to realize, to know (e.g. recognize)",
+        "to tell, to know (i.e. to discern or distinguish if something is the case)",
+        "(informal) to figure out",
+        "to hear from (+ de)",
+        "to hear of, to hear about, (+ de)",
+        "to learn of, to learn about, to find out about, to know about (+ de)",
+        "(reflexive) to be known",
+        "(reflexive) to know (extremely well)",
+        "knowledge"
+    ],
+    "saludar": [
+        "to greet",
+        "to wave"
     ],
     "salvar": [
-        "save"
-    ],
-    "perder": [
-        "to lose"
-    ],
-    "ea": [
-        "hey"
-    ],
-    "decís": [
-        "you say"
-    ],
-    "hoy": [
-        "today"
-    ],
-    "mañana": [
-        "morning"
-    ],
-    "iremos": [
-        "we'll go"
-    ],
-    "ciudad": [
-        "city"
-    ],
-    "estaremos": [
-        "we will be"
-    ],
-    "allá": [
-        "there"
-    ],
-    "año": [
-        "year"
-    ],
-    "compraremos": [
-        "we will buy"
-    ],
-    "mercadería": [
-        "commodity"
-    ],
-    "ganaremos": [
-        "we will win"
-    ],
-    "ciertamente": [
-        "certainly"
-    ],
-    "vapor": [
-        "steam"
-    ],
-    "aparece": [
-        "appears"
-    ],
-    "poco": [
-        "little bit"
-    ],
-    "tiempo": [
-        "weather"
-    ],
-    "desvanece": [
-        "fade away"
-    ],
-    "deberíais": [
-        "you should"
-    ],
-    "decir": [
-        "say"
-    ],
-    "viviéremos": [
-        "we will live"
-    ],
-    "haremos": [
-        "will"
-    ],
-    "aquello": [
-        "that"
-    ],
-    "jactáis": [
-        "you boast"
-    ],
-    "soberbias": [
-        "superb"
-    ],
-    "jactancia": [
-        "boasting"
-    ],
-    "mala": [
-        "bad"
-    ],
-    "sabe": [
-        "knows"
-    ],
-    "oh": [
-        "oh"
-    ],
-    "aullando": [
-        "howling"
-    ],
-    "miserias": [
-        "miseries"
-    ],
-    "vendrán": [
-        "they will come"
-    ],
-    "riquezas": [
-        "riches"
-    ],
-    "podridas": [
-        "rotten"
-    ],
-    "ropas": [
-        "clothes"
-    ],
-    "comidas": [
-        "foods"
-    ],
-    "polilla": [
-        "moth"
-    ],
-    "plata": [
-        "silver"
-    ],
-    "corrompidos": [
-        "corrupted"
-    ],
-    "orín": [
-        "urine"
-    ],
-    "testimonio": [
-        "testimony"
-    ],
-    "comerá": [
-        "will eat"
-    ],
-    "carnes": [
-        "meats"
-    ],
-    "allegado": [
-        "close"
-    ],
-    "tesoro": [
-        "treasure"
-    ],
-    "postreros": [
-        "last"
-    ],
-    "días": [
-        "days"
-    ],
-    "jornal": [
-        "wage"
-    ],
-    "obreros": [
-        "workers"
-    ],
-    "han": [
-        "they have"
-    ],
-    "segado": [
-        "mowed"
-    ],
-    "tierras": [
-        "land"
-    ],
-    "engaño": [
-        "cheated"
-    ],
-    "sido": [
-        "been"
-    ],
-    "pagado": [
-        "paid"
-    ],
-    "clama": [
-        "cries out"
-    ],
-    "clamores": [
-        "clamors"
-    ],
-    "habían": [
-        "they had"
-    ],
-    "entrado": [
-        "entered"
-    ],
-    "oídos": [
-        "ears"
-    ],
-    "ejércitos": [
-        "armies"
-    ],
-    "vivido": [
-        "vivid"
-    ],
-    "tierra": [
-        "land"
-    ],
-    "disolutos": [
-        "dissolute"
-    ],
-    "sacrificios": [
-        "sacrifices"
-    ],
-    "condenado": [
-        "condemned"
-    ],
-    "justo": [
-        "just"
-    ],
-    "hasta": [
-        "until"
-    ],
-    "venida": [
-        "coming"
-    ],
-    "labrador": [
-        "Labrador"
-    ],
-    "espera": [
-        "wait"
-    ],
-    "precioso": [
-        "beautiful"
-    ],
-    "aguardando": [
-        "waiting"
-    ],
-    "reciba": [
-        "receive"
-    ],
-    "lluvia": [
-        "rain"
-    ],
-    "temprana": [
-        "early"
-    ],
-    "tardía": [
-        "late"
-    ],
-    "confirmad": [
-        "confirm"
-    ],
-    "acerca": [
-        "about"
-    ],
-    "quejéis": [
-        "complain"
-    ],
-    "condenados": [
-        "doomed"
-    ],
-    "puerta": [
-        "gate"
-    ],
-    "tomad": [
-        "take"
-    ],
-    "ejemplo": [
-        "example"
-    ],
-    "aflicción": [
-        "affliction"
-    ],
-    "profetas": [
-        "prophets"
-    ],
-    "hablaron": [
-        "they spoke"
-    ],
-    "tenemos": [
-        "have"
-    ],
-    "bienaventurados": [
-        "blessed"
-    ],
-    "sufren": [
-        "suffer"
-    ],
-    "oído": [
-        "ear"
-    ],
-    "job": [
-        "job"
-    ],
-    "visto": [
-        "viewed"
-    ],
-    "misericordioso": [
-        "merciful"
-    ],
-    "piadoso": [
-        "pious"
-    ],
-    "juréis": [
-        "swear"
-    ],
-    "cielo": [
-        "sky"
-    ],
-    "juramento": [
-        "oath"
-    ],
-    "caigáis": [
-        "you fall"
-    ],
-    "afligido": [
-        "afflicted"
-    ],
-    "haga": [
-        "make"
-    ],
-    "oración": [
-        "sentence"
-    ],
-    "cante": [
-        "sing"
-    ],
-    "salmos": [
-        "psalms"
-    ],
-    "enfermo": [
-        "sick"
-    ],
-    "llame": [
-        "I called"
-    ],
-    "ancianos": [
-        "elderly"
-    ],
-    "iglesia": [
-        "church"
-    ],
-    "oren": [
-        "pray"
-    ],
-    "ungiéndole": [
-        "anointing him"
-    ],
-    "aceite": [
-        "oil"
-    ],
-    "salvará": [
-        "will save"
-    ],
-    "levantará": [
-        "will lift"
-    ],
-    "estuviere": [
-        "I will be"
-    ],
-    "pecados": [
-        "sins"
-    ],
-    "serán": [
-        "will be"
-    ],
-    "perdonados": [
-        "forgiven"
-    ],
-    "confesaos": [
-        "confess yourselves"
-    ],
-    "faltas": [
-        "faults"
-    ],
-    "rogad": [
-        "pray"
-    ],
-    "sanos": [
-        "healthy"
-    ],
-    "obrando": [
-        "working"
-    ],
-    "eficazmente": [
-        "effectively"
-    ],
-    "mucho": [
-        "a lot of"
-    ],
-    "elías": [
-        "elias"
-    ],
-    "sujeto": [
-        "subject"
-    ],
-    "semejantes": [
-        "similar"
-    ],
-    "pasiones": [
-        "passions"
-    ],
-    "rogó": [
-        "begged"
-    ],
-    "lloviese": [
-        "it rained"
-    ],
-    "llovió": [
-        "it rained"
-    ],
-    "tres": [
-        "three"
-    ],
-    "años": [
-        "years"
-    ],
-    "seis": [
-        "six"
-    ],
-    "meses": [
-        "months"
-    ],
-    "oró": [
-        "gold"
-    ],
-    "dió": [
-        "gave"
-    ],
-    "produjo": [
-        "produced"
-    ],
-    "errado": [
-        "wrong"
-    ],
-    "convirtiere": [
-        "will convert"
-    ],
-    "sepa": [
-        "know"
-    ],
-    "convertir": [
-        "turn into"
-    ],
-    "pecador": [
-        "sinner"
-    ],
-    "error": [
-        "mistake"
-    ],
-    "alma": [
-        "soul"
-    ],
-    "cubrirá": [
-        "will cover"
-    ],
-    "multitud": [
-        "crew"
+        "to save",
+        "to rescue",
+        "to salvage",
+        "(formal) to cover (a distance)"
+    ],
+    "seducir": [
+        "(transitive) to seduce"
+    ],
+    "seguido": [
+        "(Galicia, Latin America) often",
+        "consecutive",
+        "past participle of seguir"
+    ],
+    "sometido": [
+        "submissive, subordinate",
+        "past participle of someter"
+    ],
+    "soportar": [
+        "to bear, to endure, to withstand, put up with, tolerate, to stomach, to weather, to handle",
+        "to support a weight or load"
+    ],
+    "suceder": [
+        "to happen, to befall, to occur",
+        "to succeed to, to follow"
+    ],
+    "superar": [
+        "to surpass, exceed",
+        "to overcome",
+        "to beat, to outdo",
+        "to overtake, pass",
+        "to get over",
+        "(reciprocal) to outdo each other, to one-up each other",
+        "(reflexive) to outdo oneself",
+        "(reflexive) to be overcome",
+        "(reflexive) to be exceeded, to be surmounted, to be broken (e.g. a record broken)"
+    ],
+    "solo": [
+        "sole, only, unique, single",
+        "lonely, lonesome",
+        "alone, by oneself",
+        "automatically; self-, by itself",
+        "only, solely, just"
+    ],
+    "tener": [
+        "(transitive, literally) to have, possess",
+        "(transitive) to have, possess, to be (a condition or quality)",
+        "(transitive) to hold, grasp",
+        "(transitive) to contain, to hold (e.g. to \"hold the power to\", \"hold the key\", \"hold a clue\", \"hold the truth\", \"have a hold on\", \"hold in store\", \"hold all the cards\", \"hold in high regard\", etc.)",
+        "(transitive) to have, feel (internally)",
+        "(transitive) to make to feel",
+        "(transitive) to have (a measure or age)",
+        "(used with que) to have to",
+        "to get (e.g. to get a minute, to get an idea, to get a chance, to get a concussion/bruise/headache, to get in an accident, to get a place, to get a view of, to get a meeting, to get a vision, etc.)",
+        "to keep, to bear (in certain phrases; e.g. to bear in mind, bear a resemblance, keep a journal/diary, keep around something or someone)",
+        "to make (in a few select phrases)",
+        "(reflexive) to be taken (usually has deber for an auxiliary verb when used)"
+    ],
+    "tentar": [
+        "to tempt",
+        "to touch"
+    ],
+    "tribu": [
+        "tribe",
+        "(taxonomy) tribe"
+    ],
+    "ver": [
+        "(literally) to see, to spot",
+        "to see, to look at, to view (perceive)",
+        "to see, to tell, to observe",
+        "to see, to check (verify)",
+        "to watch",
+        "(reflexive) to look, to seem",
+        "(reflexive) to see oneself, to picture oneself",
+        "(reflexive) to find oneself, to be",
+        "(reciprocal) to see one another"
     ]
 }

@@ -46,7 +46,8 @@ languages = [{
     "gcloud_tts": True,
     "narakeet": {
         "tts": False
-    }
+    },
+    "biblical": True,
 }, {
     "name": "Hebrew",
     "flag": "il",
@@ -64,7 +65,8 @@ languages = [{
     "narakeet": {
         "tts": True,
         "voice": "Ayelet"
-    }
+    },
+    "biblical": True,
 }, {
     "name": "Spanish",
     "flag": "es",
@@ -73,7 +75,8 @@ languages = [{
         "bible": "vatican/sp"
     },
     "code": "es",
-    "gcloud_translate": False
+    "gcloud_translate": False,
+    "biblical": False,
 }]
 
 def json_to(result):
