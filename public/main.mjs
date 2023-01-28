@@ -1219,7 +1219,8 @@ function screen_main() {
         let label = l["name"];
         let b = button(document.body, `${flag_html_get(l)} ${label}` , async ev => {
             language_current = l;
-            language_current_definitions = await http_get(file_path_get("translations%2F" + language_current["code"] + `_${target_language_code}.json`));
+            language_current_definitions = await http_get(
+                file_path_get("translations%2F" + language_current["code"] + `_${target_language_code}.json`));
             bible_index = await http_get(file_path_bible_index_get('bsb'))
             screen_choose_book();
         });
