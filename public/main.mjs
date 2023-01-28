@@ -133,7 +133,7 @@ async function screen_choose_book() {
     let max_found = false;
     for (let key in bible_index) {
         let book_index = bible_index[key];
-        if (book_index.name === language_current.bible.min) {
+        if (!language_current.bible || book_index.name === language_current.bible.min) {
             min_found = true;
         }
         if (min_found && !max_found) {
@@ -155,7 +155,7 @@ async function screen_choose_book() {
                 b.click();
             }
         }
-        if (book_index.name === language_current.bible.max) {
+        if ( !language_current.bible || book_index.name === language_current.bible.max) {
             max_found = true;
         }
     }
