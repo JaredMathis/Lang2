@@ -16,7 +16,8 @@
         "gcloud_tts": true,
         "narakeet": {
             "tts": false
-        }
+        },
+        "biblical": true
     },
     {
         "name": "Hebrew",
@@ -35,7 +36,8 @@
         "narakeet": {
             "tts": true,
             "voice": "Ayelet"
-        }
+        },
+        "biblical": true
     },
     {
         "name": "Spanish",
@@ -45,6 +47,7 @@
             "bible": "vatican/sp"
         },
         "code": "es",
-        "gcloud_translate": false
+        "gcloud_translate": false,
+        "biblical": false
     }
 ]
