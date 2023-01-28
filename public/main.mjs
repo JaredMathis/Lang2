@@ -1221,7 +1221,11 @@ function screen_main() {
             language_current = l;
             language_current_definitions = await http_get(
                 file_path_get("translations%2F" + language_current["code"] + `_${target_language_code}.json`));
-            bible_index = await http_get(file_path_bible_index_get('bsb'))
+            if (language_current.biblical) {
+                bible_index = await http_get(file_path_bible_index_get('bsb'))
+            } else {
+                bible_index = await http_get(file_path_bible_index_get('vatican%2Fsp'))
+            }
             screen_choose_book();
         });
         if (language_first && hash_get()["Language"] === label) {
