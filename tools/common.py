@@ -72,7 +72,7 @@ languages = [{
     "flag": "es",
     "direction": "ltr",
     "path": {
-        "bible": "vatican/sp"
+        "bible": "vatican%2Fsp"
     },
     "code": "es",
     "gcloud_translate": False,

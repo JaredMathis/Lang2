@@ -478,7 +478,7 @@ async function bible_chapter_get(bible_version, book_key, chapter) {
         minimumIntegerDigits: 2,
         useGrouping: false
     });
-    console.log(padded)
+    // console.log({bible_version,padded,chapter})
     return await http_get(file_path_bible_get(`${bible_version}%2F${padded}%2F${chapter}.json`));
 }
 
