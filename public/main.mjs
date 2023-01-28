@@ -147,7 +147,7 @@ async function screen_choose_book() {
                 book_abberviation = book_index.name;
                 button_get = button;
             }
-            let b = button_fifth(
+            let b = button_get(
                 document.body,
                 book_abberviation, 
                 () => {
