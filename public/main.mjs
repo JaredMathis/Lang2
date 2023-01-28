@@ -137,8 +137,16 @@ async function screen_choose_book() {
             min_found = true;
         }
         if (min_found && !max_found) {
-            let book_name_length_max = 3;
-            let book_abberviation = book_index.name.replace(' ', '').substr(0, book_name_length_max);
+            let book_abberviation;
+            let button_get;
+            if (language_current.biblical) {
+                let book_name_length_max = 3;
+                book_abberviation = book_index.name.replace(' ', '').substr(0, book_name_length_max);
+                button_get = button_fifth
+            } else {
+                book_abberviation = book_index.name;
+                button_get = button;
+            }
             let b = button_fifth(
                 document.body,
                 book_abberviation, 
