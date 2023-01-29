@@ -460,7 +460,7 @@ async function screen_read_chapter(){
             }
 
         }
-        if (!language_current.biblical) {
+        if (language_current.biblical) {
             let verse_element_english = text(verse_element, '');
             verse_element_english.dir = "ltr";
             verse_element_english.innerHTML = english_version.tokens.join(' ')
