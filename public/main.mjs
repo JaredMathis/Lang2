@@ -4,6 +4,7 @@ let languages = await http_get(file_path_get("languages.json"))
 let language_current;
 let language_current_words;
 let language_current_definitions;
+let language_current_roots;
 let bible_index;
 let book_index_key;
 let book_index_value;
@@ -358,16 +359,19 @@ async function screen_read_chapter(){
             let token_root;
             let token_transliteration;
             let token_root_transliteration;
+            let root_definition;
             if (typeof token === typeof '') {
                 token_token = token;
-                token_root = 'TODO';
+                token_root = language_current_roots[token] ? language_current_roots[token].join(' ') : token;
                 token_transliteration = '';
                 token_root_transliteration = '';
+                root_definition = 'TODO';
             } else {
-                token_token = token
-                token_root = language_current_definitions[token.strong]["word"];
+                token_token = token;
+                root_definition = language_current_definitions[token.strong];
+                token_root = root_definition["word"];
                 token_transliteration = token.transliteration;
-                token_root_transliteration = language_current_definitions[token.strong]["transliteration"]
+                token_root_transliteration = ["transliteration"]
             }
 
             let translated = span(verse_element_original);
@@ -406,7 +410,7 @@ async function screen_read_chapter(){
             translation1.style['font-style'] = 'italic';
             translation1.style['font-size'] = "4.5vh";
             translation.style['font-weight'] = '400';
-            if (language_current_definitions[token.strong]) {
+            if (root_definition) {
                 let translation2 = span(translation, '');
                 let translation2_a = span(translation2);
                 let translation2_c = span(translation2_a, token_root);
@@ -435,12 +439,12 @@ async function screen_read_chapter(){
                 translitties.push(translation2_b);
                 let translation3 = span(
                     translation, 
-                    " " + definition_short(language_current_definitions[token.strong]["definition"]))
+                    " " + definition_short(root_definition))
                 translation3.style['font-size'] = "4.5vh";
                 translation3.style.opacity = '0.6';
                 let translation4 = span(
                     translation, 
-                    " " + (language_current_definitions[token.strong]["definition"]))
+                    " " + (root_definition))
                 translation4.style['font-size'] = "4.5vh";
                 translation4.style.opacity = '0.6';
                 element_two_click_toggle(translation3, translation4);
@@ -1248,6 +1252,10 @@ function screen_main() {
             language_current = l;
             language_current_definitions = await http_get(
                 file_path_get("translations%2F" + language_current["code"] + `_${target_language_code}.json`));
+            if (!language_current.biblical) {
+                language_current_roots = await http_get(
+                    file_path_get("roots%2F" + language_current["code"] + `.json`));
+            }
             if (language_current.biblical) {
                 bible_index = await http_get(file_path_bible_index_get('bsb'))
             } else {
