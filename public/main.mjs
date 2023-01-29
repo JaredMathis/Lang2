@@ -650,7 +650,7 @@ function word_playable_to_root(use_mistakes, word_playable) {
         }
         return { 
             word: word_playable, 
-            definition: language_current_definitions[keyify(word_playable)] 
+            definition: language_current_definitions[keyify(word_playable)].join(' ')
         };
     }
     return language_current_definitions[(use_mistakes || inflected_use)
