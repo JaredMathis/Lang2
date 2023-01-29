@@ -1109,7 +1109,7 @@ function screen_quiz(choice, use_mistakes) {
     for (let word_ of list_shuffle([current].concat(choices_wrong))) {
         let word = word_;
         if (!language_current.biblical) {
-            word = keyify(use_mistaskes ? word.strong : word);
+            word = keyify(use_mistakes ? word.strong : word);
         }
         let b = button(document.body, '', async () => {
             if (word === current) {
