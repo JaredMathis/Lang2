@@ -367,15 +367,14 @@ async function screen_read_chapter(){
                 let roots = language_current_roots[key];
                 if (roots) {
                     token_root = roots.join(' ');
-                    inflected_definition = language_current_definitions[key];
+                    inflected_definition = language_current_definitions[key].join('; ');
                 } else {
                     token_root = token;
                     inflected_definition = '';
                 }
                 token_transliteration = '';
                 token_root_transliteration = '';
-                root_definition = language_current_definitions[roots ? roots[0] : key];
-                debugger;
+                root_definition = language_current_definitions[roots ? roots[0] : key].join('; ');
             } else {
                 token_token = token;
                 root_definition = language_current_definitions[token.strong];
