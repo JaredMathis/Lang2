@@ -354,11 +354,20 @@ async function screen_read_chapter(){
             let spacer = span(verse_element_original, ' ');
             style_bible_word(spacer);
 
-            let token_token
+            let token_token;
+            let token_root;
+            let token_transliteration;
+            let token_root_transliteration;
             if (typeof token === typeof '') {
                 token_token = token;
+                token_root = 'TODO';
+                token_transliteration = '';
+                token_root_transliteration = '';
             } else {
                 token_token = token
+                token_root = language_current_definitions[token.strong]["word"];
+                token_transliteration = token.transliteration;
+                token_root_transliteration = language_current_definitions[token.strong]["transliteration"]
             }
 
             let translated = span(verse_element_original);
@@ -366,15 +375,15 @@ async function screen_read_chapter(){
             translitties.push(translated_a);
             let translated_c = span(translated_a, token_token);
             inflectties.push(translated_c);
-            let translated_d = span(translated_a, language_current_definitions[token.strong]["word"]);
+            let translated_d = span(translated_a, token_root);
             translated_d.hidden = true;
             inflectties.push(translated_d);
             let translated_b = span(translated);
             translated_b.hidden = true;
             translitties.push(translated_b);
-            let translated_e = span(translated_b, token.transliteration);
+            let translated_e = span(translated_b, token_transliteration);
             inflectties.push(translated_e);
-            let translated_f = span(translated_b, language_current_definitions[token.strong]["transliteration"]);
+            let translated_f = span(translated_b, token_root_transliteration);
             translated_f.hidden = true;
             inflectties.push(translated_f);
             [translated_c,translated_e,translated_d,translated_f].forEach(t => style_bible_word(t));
@@ -384,8 +393,8 @@ async function screen_read_chapter(){
                     await audio_play_try_lower_and_upper(
                         language_current_audio_code_get(), 
                         toggle_root_inflection_toggled 
-                            ? language_current_definitions[token.strong]["word"] 
-                            : token.token)
+                            ? token_root
+                            : token_token)
                 }
             });
 
@@ -407,7 +416,7 @@ async function screen_read_chapter(){
                 translation2_d.hidden = true;
                 let translation2_b = span(translation2);
                 translation2_b.hidden = true;
-                let translation2_e = span(translation2_b, language_current_definitions[token.strong]["transliteration"]);
+                let translation2_e = span(translation2_b, token_root_transliteration);
                 inflectties.push(translation2_e);
                 let translation2_f = span(translation2_b, token.transliteration);
                 translation2_f.hidden = true;
