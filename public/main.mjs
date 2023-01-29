@@ -360,6 +360,7 @@ async function screen_read_chapter(){
             let token_transliteration;
             let token_root_transliteration;
             let root_definition;
+            let inflected_definition;
             if (typeof token === typeof '') {
                 token_token = token;
                 token_root = language_current_roots[token] ? language_current_roots[token].join(' ') : token;
@@ -371,7 +372,8 @@ async function screen_read_chapter(){
                 root_definition = language_current_definitions[token.strong];
                 token_root = root_definition["word"];
                 token_transliteration = token.transliteration;
-                token_root_transliteration = ["transliteration"]
+                token_root_transliteration = ["transliteration"];
+                inflected_definition = token.translation;
             }
 
             let translated = span(verse_element_original);
@@ -406,7 +408,7 @@ async function screen_read_chapter(){
             translation.dir = 'ltr';
             translation.style['font-weight'] = '100';
             translation.hidden = true;
-            let translation1 = span(translation, token.translation + " ")
+            let translation1 = span(translation, inflected_definition + " ")
             translation1.style['font-style'] = 'italic';
             translation1.style['font-size'] = "4.5vh";
             translation.style['font-weight'] = '400';
