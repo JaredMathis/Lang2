@@ -1114,15 +1114,20 @@ function screen_quiz(choice, use_mistakes) {
             if (word === current) {
                 style_button_correct(b);
                 let word_audio;
-                if (!use_mistakes && inflected_use) {
-                    word_audio = word["token"];
+                if (!language_current.biblical) {
+                    word_audio = word;
                 } else {
-                    if (word.audio) {
-                        word_audio = word.audio;
+                    if (!use_mistakes && inflected_use) {
+                        word_audio = word["token"];
                     } else {
-                        word_audio = language_current_definitions[use_mistakes ? word.strong : word]["word"];
+                        if (word.audio) {
+                            word_audio = word.audio;
+                        } else {
+                            word_audio = language_current_definitions[use_mistakes ? word.strong : word]["word"];
+                        }
                     }
                 }
+                
                 try {
                     await audio_play_try_lower_and_upper(
                         language_current_audio_code_get(), 
