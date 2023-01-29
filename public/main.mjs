@@ -646,7 +646,7 @@ function string_remove(s, chars_to_remove) {
 
 
 async function audio_play_try_lower_and_upper(audio_language_code, translated) {
-    translated = string_remove(translated, `,`)
+    translated = string_remove(translated, `,:.`)
     let completed = false;
     return new Promise(async (resolve, reject) => {
         let inner = new Promise(async (resolve, reject) => {
