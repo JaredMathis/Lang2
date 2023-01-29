@@ -363,8 +363,9 @@ async function screen_read_chapter(){
             let inflected_definition;
             if (typeof token === typeof '') {
                 token_token = token;
-                if (language_current_roots[token]) {
-                    token_root = language_current_roots[token].join(' ');
+                let roots = language_current_roots[token];
+                if (roots) {
+                    token_root = roots.join(' ');
                     inflected_definition = 'TODO';
                 } else {
                     token_root = token;
