@@ -365,8 +365,10 @@ async function screen_read_chapter(){
                 token_token = token;
                 if (language_current_roots[token]) {
                     token_root = language_current_roots[token].join(' ');
+                    inflected_definition = 'TODO';
                 } else {
                     token_root = token;
+                    inflected_definition = '';
                 }
                 token_transliteration = '';
                 token_root_transliteration = '';
