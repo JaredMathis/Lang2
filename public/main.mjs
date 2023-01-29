@@ -391,7 +391,7 @@ async function screen_read_chapter(){
                 }
                 token_transliteration = '';
                 token_root_transliteration = '';
-                root_definition = language_current_definitions[roots ? roots[0] : key].join('; ');
+                root_definition = definitions_format(language_current_definitions[roots ? roots[0] : key]);
             } else {
                 token_token = token;
                 root_definition = language_current_definitions[token.strong];
