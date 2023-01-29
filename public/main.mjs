@@ -1053,7 +1053,8 @@ function screen_quiz(choice, use_mistakes) {
                     if (language_current.biblical) {
                         back = (parent, w) => text(parent, definition_short(w["definition"]));
                     } else {
-                        back = (parent, w) => text(parent, definition_short(definitions_format(w)));
+                        back = (parent, w) => 
+                            text(parent, definition_short(definitions_format(language_current_definitions[w])));
                     }
                 }
             } else {
