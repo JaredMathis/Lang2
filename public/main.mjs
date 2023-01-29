@@ -1142,7 +1142,8 @@ function screen_quiz(choice, use_mistakes) {
                 if (!use_mistakes) {
                     for (let w of [word, current]) {
                         let mistake_id = `${category_selected}::${w}`;
-                        let w_arg = language_current_definitions[w];
+                        let w_arg;
+                        w_arg = language_current_definitions[w];
                         let strong = w;
                         if (inflected_use) {
                             mistake_id = `${category_selected}::${w["token"]}`
