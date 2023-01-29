@@ -384,7 +384,7 @@ async function screen_read_chapter(){
                 let roots = language_current_roots[key];
                 if (roots) {
                     token_root = roots.join(' ');
-                    inflected_definition = language_current_definitions[key].join('; ');
+                    inflected_definition = definitions_format(language_current_definitions[key]);
                 } else {
                     token_root = token;
                     inflected_definition = '';
@@ -495,6 +495,10 @@ async function screen_read_chapter(){
     if (choose_verse_after_render) {
         choose_verse_after_render.scrollIntoView();
     }
+}
+
+function definitions_format(d) {
+    return d.join('; ')
 }
 
 function language_current_direction_ltr_get() {
@@ -1046,7 +1050,11 @@ function screen_quiz(choice, use_mistakes) {
                 if (inflected_use) {
                     back = (parent, w) => text(parent, definition_short(language_current_definitions[w["strong"]]["definition"]));
                 } else {
-                    back = (parent, w) => text(parent, definition_short(w["definition"]));
+                    if (language_current.biblical) {
+                        back = (parent, w) => text(parent, definition_short(w["definition"]));
+                    } else {
+                        back = (parent, w) => text(parent, definition_short(definitions_format(w)));
+                    }
                 }
             } else {
                 if (inflected_use) {
