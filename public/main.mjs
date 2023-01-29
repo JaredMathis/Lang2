@@ -196,9 +196,15 @@ async function screen_choose_chapter() {
             language_current_words = [];
             for (let verse of chapter_json) {
                 for (let token of verse.tokens) {
-                    let {strong} = token;
-                    if (!language_current_words.includes(strong)) {
-                        language_current_words.push(strong)
+                    let t;
+                    if (language_current.biblical) {
+                        let {strong} = token;
+                        strong = t
+                    } else {
+
+                    }
+                    if (!language_current_words.includes(t)) {
+                        language_current_words.push(t)
                     }
                 }
             }
