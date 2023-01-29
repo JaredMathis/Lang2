@@ -604,7 +604,7 @@ function element_text_bible_transliteration(parent, w) {
 }
 
 function element_text_bible_word(parent, w) {
-    let s1 = span(parent, w["word"]);
+    let s1 = span(parent, language_current.biblical ? w["word"] : w);
     style_bible_word(s1);
 }
 
@@ -1106,6 +1106,9 @@ function screen_quiz(choice, use_mistakes) {
 
     for (let word_ of list_shuffle([current].concat(choices_wrong))) {
         let word = word_;
+        if (!language_current.biblical) {
+            word = keyify(word);
+        }
         let b = button(document.body, '', async () => {
             if (word === current) {
                 style_button_correct(b);
@@ -1180,7 +1183,7 @@ function icon_root_get() {
 }
 
 function screen_quiz_w_get(use_mistakes, word) {
-    return (use_mistakes || inflected_use) ? word : language_current_definitions[word];
+    return (use_mistakes || inflected_use || !language_current.biblical) ? word : language_current_definitions[word];
 }
 
 function list_shuffle(array) {
