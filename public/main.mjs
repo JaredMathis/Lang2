@@ -460,14 +460,16 @@ async function screen_read_chapter(){
             }
 
         }
-        let verse_element_english = text(verse_element, '');
-        verse_element_english.dir = "ltr";
-        verse_element_english.innerHTML = english_version.tokens.join(' ')
-        verse_element_english.style['font-size'] = "4.5vh";
-        verse_element_english.style.color = '#000';
-        verse_element_english.style['font-style'] = 'italic';
-        verse_element_english.style['font-weight'] = '400';
-        englishes.push(verse_element_english);
+        if (!language_current.biblical) {
+            let verse_element_english = text(verse_element, '');
+            verse_element_english.dir = "ltr";
+            verse_element_english.innerHTML = english_version.tokens.join(' ')
+            verse_element_english.style['font-size'] = "4.5vh";
+            verse_element_english.style.color = '#000';
+            verse_element_english.style['font-style'] = 'italic';
+            verse_element_english.style['font-weight'] = '400';
+            englishes.push(verse_element_english);
+        }
 
         verse_element_previous_ = verse_element;
     }
