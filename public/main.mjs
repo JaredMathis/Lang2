@@ -373,7 +373,6 @@ async function screen_read_chapter(){
                 token_transliteration = '';
                 token_root_transliteration = '';
                 root_definition = 'TODO';
-                inflected_definition = token.translation;
             } else {
                 token_token = token;
                 root_definition = language_current_definitions[token.strong];
