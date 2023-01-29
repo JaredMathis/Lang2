@@ -655,7 +655,7 @@ function word_playable_to_root(use_mistakes, word_playable) {
         let w = keyify(word_playable);
         return { 
             word: w, 
-            definition: language_current_definitions[w].join('; ')
+            definition: definitions_format(language_current_definitions[w])
         };
     }
     return language_current_definitions[(use_mistakes || inflected_use)
