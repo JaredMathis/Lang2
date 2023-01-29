@@ -196,15 +196,11 @@ async function screen_choose_chapter() {
             language_current_words = [];
             for (let verse of chapter_json) {
                 for (let token of verse.tokens) {
-                    let t;
-                    if (language_current.biblical) {
-                        let {strong} = token;
-                        strong = t
-                    } else {
-
-                    }
-                    if (!language_current_words.includes(t)) {
-                        language_current_words.push(t)
+                    let ts = token_roots_get(token);
+                    for (let t of ts) {
+                        if (!language_current_words.includes(t)) {
+                            language_current_words.push(t)
+                        }
                     }
                 }
             }
@@ -215,6 +211,21 @@ async function screen_choose_chapter() {
             b.click();
         }
     }
+}
+
+function token_roots_get(token) {
+    let ts = [];
+    if (language_current.biblical) {
+        let { strong } = token;
+        ts.push(strong);
+    } else {
+        if (language_current_roots[token]) {
+            ts.push(...language_current_roots[token]);
+        } else {
+            ts.push(token);
+        }
+    }
+    return ts;
 }
 
 function style_color_and_border(element, color) {
