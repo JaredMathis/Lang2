@@ -636,7 +636,18 @@ function string_lower_contains(s) {
     return s.toUpperCase() !== s;
 }
 
+function string_remove(s, chars_to_remove) {
+    for (let c of chars_to_remove) {
+        let split = s.split(c);
+        s = split.join('');
+    }
+    return s;
+}
+
+
 async function audio_play_try_lower_and_upper(audio_language_code, translated) {
+    translated = string_remove(translated, `,`)
+    console.log({translated})
     let completed = false;
     return new Promise(async (resolve, reject) => {
         let inner = new Promise(async (resolve, reject) => {
