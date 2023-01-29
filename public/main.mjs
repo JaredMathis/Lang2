@@ -217,8 +217,9 @@ function token_roots_get(token) {
     let ts = [];
     if (language_current.biblical) {
         let { strong } = token;
-        ts.push(keyify(strong));
+        ts.push(strong);
     } else {
+        token = keyify(token);
         if (language_current_roots[token]) {
             ts.push(...language_current_roots[token]);
         } else {
