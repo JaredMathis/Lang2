@@ -648,9 +648,10 @@ function word_playable_to_root(use_mistakes, word_playable) {
         if (language_current_roots[word_playable]) {
             throw new Error('this needs redesigning')
         }
+        let w = keyify(word_playable);
         return { 
-            word: word_playable, 
-            definition: language_current_definitions[keyify(word_playable)].join(' ')
+            word: w, 
+            definition: language_current_definitions[w].join(' ')
         };
     }
     return language_current_definitions[(use_mistakes || inflected_use)
