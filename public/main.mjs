@@ -409,24 +409,24 @@ async function screen_read_chapter(){
             if (language_current_definitions[token.strong]) {
                 let translation2 = span(translation, '');
                 let translation2_a = span(translation2);
-                let translation2_c = span(translation2_a, language_current_definitions[token.strong]["word"]);
+                let translation2_c = span(translation2_a, token_root);
                 inflectties.push(translation2_c);
-                let translation2_d = span(translation2_a, token.token);
+                let translation2_d = span(translation2_a, token_token);
                 inflectties.push(translation2_d);
                 translation2_d.hidden = true;
                 let translation2_b = span(translation2);
                 translation2_b.hidden = true;
                 let translation2_e = span(translation2_b, token_root_transliteration);
                 inflectties.push(translation2_e);
-                let translation2_f = span(translation2_b, token.transliteration);
+                let translation2_f = span(translation2_b, token_transliteration);
                 translation2_f.hidden = true;
                 inflectties.push(translation2_f);
                 click(translation2, async () => {
                     await audio_play_try_lower_and_upper(
                         language_current_audio_code_get(), 
                         toggle_root_inflection_toggled 
-                            ? token.token
-                            : language_current_definitions[token.strong]["word"] )
+                            ? token_token
+                            : token_root)
                 })
                 translation2.style['font-size'] = "4.5vh";
                 translation2.style.opacity = '0.6';
