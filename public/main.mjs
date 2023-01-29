@@ -363,10 +363,15 @@ async function screen_read_chapter(){
             let inflected_definition;
             if (typeof token === typeof '') {
                 token_token = token;
-                token_root = language_current_roots[token] ? language_current_roots[token].join(' ') : token;
+                if (language_current_roots[token]) {
+                    token_root = language_current_roots[token].join(' ');
+                } else {
+                    token_root = token;
+                }
                 token_transliteration = '';
                 token_root_transliteration = '';
                 root_definition = 'TODO';
+                inflected_definition = token.translation;
             } else {
                 token_token = token;
                 root_definition = language_current_definitions[token.strong];
