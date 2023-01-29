@@ -380,7 +380,7 @@ async function screen_read_chapter(){
             let inflected_definition;
             if (typeof token === typeof '') {
                 token_token = token;
-                let key = keyify(token).toLowerCase();
+                let key = keyify(token);
                 let roots = language_current_roots[key];
                 if (roots) {
                     token_root = roots.join(' ');
@@ -726,7 +726,7 @@ async function audio_play_try_lower_and_upper(audio_language_code, translated) {
 }
 
 function keyify(translated) {
-    translated = string_remove(translated, `,:.`);
+    translated = string_remove(translated, `,:.`).toLowerCase();
     return translated;
 }
 
