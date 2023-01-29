@@ -610,11 +610,7 @@ function screen_study(choice, use_mistakes) {
     text_words_low_high(choice, use_mistakes ? "Mistakes" : "Words");
     let words_playable = words_playable_get(choice, use_mistakes)
     for (let word_playable of words_playable) {
-        let root_word = language_current_definitions[
-            (use_mistakes || inflected_use) 
-                ? word_playable.strong 
-                : word_playable
-            ];
+        let root_word = word_playable_to_root(use_mistakes, word_playable);
         if (!root_word) {
             console.log('missing word');
             continue;
@@ -645,6 +641,12 @@ function screen_study(choice, use_mistakes) {
             }
         }
     }
+}
+
+function word_playable_to_root(use_mistakes, word_playable) {
+    return language_current_definitions[(use_mistakes || inflected_use)
+        ? word_playable.strong
+        : word_playable];
 }
 
 function identity(a) {
