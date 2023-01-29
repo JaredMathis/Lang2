@@ -547,19 +547,29 @@ function words_playable_get(choice, use_mistakes) {
         let inflections = [];
         for (let verse of chapter_json) {
             for (let t of verse.tokens) {
-                let {strong} = t;
-                if (roots.includes(strong)) {
-                    let {token} = t;
-                    const root = language_current_definitions[strong]["word"];
-                    if (root === token) {
-                        continue;
+                if (language_current.biblical) {
+                    let {strong} = t;
+                    if (roots.includes(strong)) {
+                        let {token} = t;
+                        const root = language_current_definitions[strong]["word"];
+                        if (root === token) {
+                            continue;
+                        }
+                        if (inflections.filter(i => i.token.toLowerCase() === token.toLowerCase()).length === 0) {
+                            inflections.push({
+                                strong,
+                                token,
+                                root,
+                            })
+                        }
                     }
-                    if (inflections.filter(i => i.token.toLowerCase() === token.toLowerCase()).length === 0) {
-                        inflections.push({
-                            strong,
-                            token,
-                            root,
-                        })
+                } else {
+                    throw new Error('todo')
+                    let token_roots = token_roots_get(t);
+                    for (let tr of token_roots) {
+                        if (roots.includes(tr)) {
+
+                        }
                     }
                 }
             }
