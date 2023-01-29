@@ -366,14 +366,14 @@ async function screen_read_chapter(){
                 let roots = language_current_roots[token];
                 if (roots) {
                     token_root = roots.join(' ');
-                    inflected_definition = 'TODO';
+                    inflected_definition = language_current_definitions[token];
                 } else {
                     token_root = token;
                     inflected_definition = '';
                 }
                 token_transliteration = '';
                 token_root_transliteration = '';
-                root_definition = 'TODO';
+                root_definition = language_current_definitions[roots ? roots[0] : token];
             } else {
                 token_token = token;
                 root_definition = language_current_definitions[token.strong];
