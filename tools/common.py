@@ -75,6 +75,7 @@ languages = [{
         "bible": "vatican%2Fsp"
     },
     "code": "es",
+    "gcloud_code": "es-ES",
     "gcloud_translate": False,
     "biblical": False,
 }]
