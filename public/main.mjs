@@ -1109,7 +1109,7 @@ function screen_quiz(choice, use_mistakes) {
     for (let word_ of list_shuffle([current].concat(choices_wrong))) {
         let word = word_;
         if (!language_current.biblical) {
-            word = keyify(word);
+            word = keyify(use_mistaskes ? word.strong : word);
         }
         let b = button(document.body, '', async () => {
             if (word === current) {
@@ -1143,7 +1143,11 @@ function screen_quiz(choice, use_mistakes) {
                     for (let w of [word, current]) {
                         let mistake_id = `${category_selected}::${w}`;
                         let w_arg;
-                        w_arg = language_current_definitions[w];
+                        if (language_current.biblical) {
+                            w_arg = language_current_definitions[w];
+                        } else {
+                            w_arg = w;
+                        }
                         let strong = w;
                         if (inflected_use) {
                             mistake_id = `${category_selected}::${w["token"]}`
