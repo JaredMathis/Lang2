@@ -363,17 +363,19 @@ async function screen_read_chapter(){
             let inflected_definition;
             if (typeof token === typeof '') {
                 token_token = token;
-                let roots = language_current_roots[token];
+                let key = keyify(token).toLowerCase();
+                let roots = language_current_roots[key];
                 if (roots) {
                     token_root = roots.join(' ');
-                    inflected_definition = language_current_definitions[token];
+                    inflected_definition = language_current_definitions[key];
                 } else {
                     token_root = token;
                     inflected_definition = '';
                 }
                 token_transliteration = '';
                 token_root_transliteration = '';
-                root_definition = language_current_definitions[roots ? roots[0] : token];
+                root_definition = language_current_definitions[roots ? roots[0] : key];
+                debugger;
             } else {
                 token_token = token;
                 root_definition = language_current_definitions[token.strong];
@@ -646,7 +648,7 @@ function string_remove(s, chars_to_remove) {
 
 
 async function audio_play_try_lower_and_upper(audio_language_code, translated) {
-    translated = string_remove(translated, `,:.`)
+    translated = keyify(translated);
     let completed = false;
     return new Promise(async (resolve, reject) => {
         let inner = new Promise(async (resolve, reject) => {
@@ -683,6 +685,11 @@ async function audio_play_try_lower_and_upper(audio_language_code, translated) {
             }
         }, 5000);
     });
+}
+
+function keyify(translated) {
+    translated = string_remove(translated, `,:.`);
+    return translated;
 }
 
 async function audio_play_try(audio_language_code, translated) {
