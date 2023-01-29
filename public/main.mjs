@@ -644,7 +644,7 @@ function screen_study(choice, use_mistakes) {
 }
 
 function word_playable_to_root(use_mistakes, word_playable) {
-    if (!language.biblical) {
+    if (!language_current.biblical) {
         if (language_current_roots[word_playable]) {
             throw new Error('this needs redesigning')
         }
