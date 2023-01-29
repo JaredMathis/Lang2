@@ -354,10 +354,17 @@ async function screen_read_chapter(){
             let spacer = span(verse_element_original, ' ');
             style_bible_word(spacer);
 
+            let token_token
+            if (typeof token === typeof '') {
+                token_token = token;
+            } else {
+                token_token = token
+            }
+
             let translated = span(verse_element_original);
             let translated_a = span(translated);
             translitties.push(translated_a);
-            let translated_c = span(translated_a, token.token);
+            let translated_c = span(translated_a, token_token);
             inflectties.push(translated_c);
             let translated_d = span(translated_a, language_current_definitions[token.strong]["word"]);
             translated_d.hidden = true;
